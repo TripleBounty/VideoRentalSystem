@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VideoRentalSystem.Commands.Contracts
+namespace VideoRentalSystem.Models.Factories
 {
-    public interface ICommand
+    public interface IModelsFactory
     {
-        string Execute(IList<string> parameters);
     }
 }
