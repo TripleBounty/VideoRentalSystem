@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoRentalSystem", "VideoRentalSystem\VideoRentalSystem.csproj", "{7981FEE9-6A0B-4725-89A5-1DF24D13F4C8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoRentalSystem.Tests", "VideoRentalSystem.Tests\VideoRentalSystem.Tests.csproj", "{2780749C-ADD4-498E-9658-CF9416714D10}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7981FEE9-6A0B-4725-89A5-1DF24D13F4C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7981FEE9-6A0B-4725-89A5-1DF24D13F4C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7981FEE9-6A0B-4725-89A5-1DF24D13F4C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2780749C-ADD4-498E-9658-CF9416714D10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2780749C-ADD4-498E-9658-CF9416714D10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2780749C-ADD4-498E-9658-CF9416714D10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2780749C-ADD4-498E-9658-CF9416714D10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
