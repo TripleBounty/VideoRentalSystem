@@ -8,5 +8,10 @@ namespace VideoRentalSystem.Models.Factories
         {
             return new Country(name, code);
         }
+
+        public IEmployees CreateEmployees(string firstName, string lastName, int salary, int managerId)
+        {
+            return new Employees(firstName, lastName, salary, managerId);
+        }
     }
 }
