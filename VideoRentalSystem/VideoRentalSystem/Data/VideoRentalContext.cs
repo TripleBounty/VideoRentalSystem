@@ -1,5 +1,4 @@
 ﻿using System.Data.Entity;
-using VideoRentalSystem.Data.Contracts;
 using VideoRentalSystem.Models;
 
 namespace VideoRentalSystem.Data

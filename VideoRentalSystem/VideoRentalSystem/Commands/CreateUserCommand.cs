@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using VideoRentalSystem.Commands.Contracts;
-using VideoRentalSystem.Data;
+using VideoRentalSystem.Data.Contracts;
 using VideoRentalSystem.Models.Factories;
 
 namespace VideoRentalSystem.Commands

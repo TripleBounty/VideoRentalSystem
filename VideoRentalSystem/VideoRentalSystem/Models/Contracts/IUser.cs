@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VideoRentalSystem.Models
+﻿namespace VideoRentalSystem.Models.Contracts
 {
     public interface IUser
     {
-        int ID { get; set; }
+        int Id { get; set; }
     }
 }

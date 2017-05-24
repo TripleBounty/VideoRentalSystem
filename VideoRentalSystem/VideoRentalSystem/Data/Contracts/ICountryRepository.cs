@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VideoRentalSystem.Models;
+﻿using VideoRentalSystem.Models;
 
 namespace VideoRentalSystem.Data.Contracts
 {
     public interface ICountryRepository
     {
+        //TODO: inject interface 
         void CreateCountry(Country country);
     }
 }

@@ -1,9 +1,9 @@
 ﻿using System;
 using VideoRentalSystem.Commands.Contracts;
-using VideoRentalSystem.Data;
+using VideoRentalSystem.Data.Contracts;
 using VideoRentalSystem.Models.Factories;
 
-namespace VideoRentalSystem.Commands.Factories
+namespace VideoRentalSystem.Commands.Factory
 {
     public class CommandsFactory : ICommandsFactory
     {

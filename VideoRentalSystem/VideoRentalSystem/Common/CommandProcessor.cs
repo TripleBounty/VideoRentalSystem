@@ -3,7 +3,7 @@ using System.Linq;
 using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Common.Contracts;
 
-namespace ProjectManager.Common.Providers
+namespace VideoRentalSystem.Common
 {
     public class CommandProcessor : IProcessor
     {

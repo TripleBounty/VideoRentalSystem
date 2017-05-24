@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Ninject;
-using VideoRentalSystem.Data;
-using VideoRentalSystem.Models;
-using VideoRentalSystem.Common;
-using ProjectManager.Common.Providers;
-using VideoRentalSystem.Models.Factories;
-using VideoRentalSystem.Commands.Factories;
-using ProjectManager;
-using VideoRentalSystem.Data.Repository;
+﻿using Ninject;
+using VideoRentalSystem.Builder;
+using VideoRentalSystem.Core.Contracts;
 
 namespace VideoRentalSystem
 {
@@ -42,20 +31,10 @@ namespace VideoRentalSystem
             //     }
             // }
 
-            using (var videoRentalContext = new VideoRentalContext())
-            {
-                var consoleReader = new ConsoleReader();
-                var consoleWriter = new ConsoleWriter();
+            IKernel kernel = new StandardKernel(new BuildManager());
 
-                var modelFactory = new ModelsFactory();
-                var db = new Database(videoRentalContext);
-                var commandFactory = new CommandsFactory(db, modelFactory);
-
-                var commandProcessor = new CommandProcessor(commandFactory);
-
-                var engine = new Engine(consoleReader, consoleWriter, commandProcessor);
-                engine.Start();
-            }
+            IEngine engine = kernel.Get<IEngine>();
+            engine.Start();
         }
     }
 }

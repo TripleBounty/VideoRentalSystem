@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VideoRentalSystem.Data.Contracts;
+﻿using VideoRentalSystem.Data.Contracts;
+using VideoRentalSystem.Data.Repository;
 
-namespace VideoRentalSystem.Data.Repository
+namespace VideoRentalSystem.Data
 {
     public class Database : IDatabase
     {

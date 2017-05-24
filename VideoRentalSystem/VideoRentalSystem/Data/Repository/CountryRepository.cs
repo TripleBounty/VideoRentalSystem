@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VideoRentalSystem.Data.Contracts;
+﻿using VideoRentalSystem.Data.Contracts;
 using VideoRentalSystem.Models;
-using VideoRentalSystem.Models.Contracts;
 
 namespace VideoRentalSystem.Data.Repository
 {

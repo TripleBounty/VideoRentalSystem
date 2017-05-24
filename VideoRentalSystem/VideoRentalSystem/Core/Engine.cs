@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Text;
 using VideoRentalSystem.Common.Contracts;
+using VideoRentalSystem.Core.Contracts;
 
-namespace ProjectManager
+namespace VideoRentalSystem.Core
 {
-    public class Engine
+    public class Engine : IEngine
     {
         private IReader reader;
         private IWriter writer;
@@ -78,7 +79,7 @@ namespace ProjectManager
                 }
                 catch (Exception ex)
                 {
-                    builder.AppendLine("Opps, something happened. :(");
+                    builder.AppendLine("Opps, something happened. :( /n" + ex.Message);
                 }
             }
         }

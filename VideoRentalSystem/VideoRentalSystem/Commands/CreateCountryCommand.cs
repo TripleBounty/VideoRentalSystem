@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using VideoRentalSystem.Commands.Contracts;
-using VideoRentalSystem.Data;
+using VideoRentalSystem.Data.Contracts;
 using VideoRentalSystem.Models;
 using VideoRentalSystem.Models.Factories;
 
