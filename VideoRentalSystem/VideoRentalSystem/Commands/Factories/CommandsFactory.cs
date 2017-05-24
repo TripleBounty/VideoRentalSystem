@@ -22,6 +22,8 @@ namespace VideoRentalSystem.Commands.Factories
             {
                 case "createuser":
                     return this.CreateUserCommand();
+                case "createcountry":
+                    return this.CreateCountryCommand();
                 default:
                     throw new Exception("The passed command is not valid!");
             }
@@ -30,6 +32,11 @@ namespace VideoRentalSystem.Commands.Factories
         public ICommand CreateUserCommand()
         {
             return new CreateUserCommand(this.database, this.factory);
+        }
+
+        public ICommand CreateCountryCommand()
+        {
+            return new CreateCountryCommand(this.database, this.factory);
         }
 
 

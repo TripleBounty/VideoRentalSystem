@@ -7,8 +7,11 @@ using VideoRentalSystem.Models.Contracts;
 
 namespace VideoRentalSystem.Models.Factories
 {
-    public interface IModelsFactory
+    public class ModelsFactory : IModelsFactory
     {
-        ICountry CreateCountry(string name, string code);
+        public ICountry CreateCountry(string name, string code)
+        {
+            return new Country(name, code);
+        }
     }
 }

@@ -1,7 +1,8 @@
 ﻿namespace VideoRentalSystem.Commands.Contracts
 {
-   public interface ICommandsFactory
+    public interface ICommandsFactory
     {
         ICommand CreateCommandFromString(string commandName);
+        ICommand CreateUserCommand();
     }
 }

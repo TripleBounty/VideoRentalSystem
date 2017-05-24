@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace VideoRentalSystem.Models
 {
-    public interface IUser
+    public class User : IUser
     {
-        int ID { get; set; }
+        public int ID { get; set; }
     }
 }
