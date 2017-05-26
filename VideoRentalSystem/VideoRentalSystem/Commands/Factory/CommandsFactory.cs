@@ -29,12 +29,12 @@ namespace VideoRentalSystem.Commands.Factory
             }
         }
 
-        public ICommand CreateCountryCommand()
+        private ICommand CreateCountryCommand()
         {
             return new CreateCountryCommand(this.database, this.factory);
         }
 
-        public ICommand CreateEmployeesCommand()
+        private ICommand CreateEmployeesCommand()
         {
             return new CreateEmployeesCommand(this.database, this.factory);
         }

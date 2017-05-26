@@ -10,12 +10,10 @@ namespace VideoRentalSystem.Data
         public Database(VideoRentalContext context)
         {
             this.context = context;
-            this.Users = new UserRepository(context);
             this.Countries = new CountryRepository(context);
             this.Employees = new EmployeesRepository(context);
         }
 
-        public IUserRepository Users { get; private set; }
         public ICountryRepository Countries { get; private set; }
         public IEmployeesRepository Employees { get; private set; }
 

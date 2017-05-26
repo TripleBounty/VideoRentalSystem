@@ -2,7 +2,6 @@
 {
     public interface IDatabase
     {
-        IUserRepository Users { get; }
         ICountryRepository Countries { get; }
         IEmployeesRepository Employees { get; }
 

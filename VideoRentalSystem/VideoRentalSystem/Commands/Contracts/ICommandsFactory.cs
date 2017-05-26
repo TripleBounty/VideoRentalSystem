@@ -3,6 +3,5 @@
     public interface ICommandsFactory
     {
         ICommand CreateCommandFromString(string commandName);
-        ICommand CreateUserCommand();
     }
 }

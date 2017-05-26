@@ -4,7 +4,6 @@ namespace VideoRentalSystem.Data.Contracts
 {
     public interface IEmployeesRepository
     {
-            //TODO: inject interface 
-            void CreateEmployees(Employee employee);
+         void CreateEmployees(Employee employee);
     }
 }
