@@ -19,7 +19,10 @@ namespace VideoRentalSystem.Commands
 
         public string Execute(IList<string> parameters)
         {
-            var country = this.factory.CreateCountry(parameters[0], parameters[1]) as Country;
+            var countryName = parameters[0];
+            var countryCode = parameters[1];
+
+            var country = this.factory.CreateCountry(countryName, countryCode);
 
             db.Countries.CreateCountry(country);
             db.Complete();

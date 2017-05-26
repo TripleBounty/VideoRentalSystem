@@ -4,8 +4,8 @@ namespace VideoRentalSystem.Models.Factories
 {
     public interface IModelsFactory
     {
-        ICountry CreateCountry(string name, string code);
+        Country CreateCountry(string name, string code);
 
-        IEmployees CreateEmployees(string firstName, string lastName, int salary, int managerId);
+        Employee CreateEmployees(string firstName, string lastName, int salary, int managerId);
     }
 }

@@ -79,7 +79,8 @@ namespace VideoRentalSystem.Core
                 }
                 catch (Exception ex)
                 {
-                    builder.AppendLine("Opps, something happened. :( /n" + ex.Message);
+                    builder.AppendLine("Opps, something happened. :( /n" +
+                        "" + ex.Message);
                 }
             }
         }

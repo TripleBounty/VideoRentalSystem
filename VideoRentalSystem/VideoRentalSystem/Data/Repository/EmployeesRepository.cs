@@ -3,7 +3,7 @@ using VideoRentalSystem.Models;
 
 namespace VideoRentalSystem.Data.Repository
 {
-    public class EmployeesRepository : Repository<Employees>, IEmployeesRepository
+    public class EmployeesRepository : Repository<Employee>, IEmployeesRepository
     {
 
         public EmployeesRepository(VideoRentalContext context)
@@ -11,7 +11,7 @@ namespace VideoRentalSystem.Data.Repository
         {
         }
 
-        public void CreateEmployees(Employees employee)
+        public void CreateEmployees(Employee employee)
         {
             VideoRentalContext.EmployeesTable.Add(employee);
         }

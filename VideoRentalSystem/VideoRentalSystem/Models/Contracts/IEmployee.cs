@@ -1,6 +1,6 @@
 ﻿namespace VideoRentalSystem.Models.Contracts
 {
-    public interface IEmployees
+    public interface IEmployee
     {
         int Id { get; set; }
         string FirstName { get; set; }

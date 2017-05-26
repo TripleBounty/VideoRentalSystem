@@ -9,6 +9,6 @@ namespace VideoRentalSystem.Data
 
         public DbSet<User> UsersTable { get; set; }
 
-        public DbSet<Employees> EmployeesTable { get; set; }
+        public DbSet<Employee> EmployeesTable { get; set; }
     }
 }

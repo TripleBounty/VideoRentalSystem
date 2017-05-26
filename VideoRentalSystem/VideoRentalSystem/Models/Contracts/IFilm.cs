@@ -18,7 +18,7 @@ namespace VideoRentalSystem.Models.Contracts
         IList<Genre> Genre { get; set; }
 
         double Rating { get; set; }
-        IList<IAwards> Awards { get; set; }
+        IList<IAward> Awards { get; set; }
 
     }
 }

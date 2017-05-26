@@ -83,13 +83,13 @@
     <Compile Include="Models\Contracts\ICountry.cs" />
     <Compile Include="Models\Contracts\IUser.cs" />
     <Compile Include="Models\Country.cs" />
-    <Compile Include="Models\Employees.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Factories\IModelsFactory.cs" />
     <Compile Include="Models\Factories\ModelsFactory.cs" />
-    <Compile Include="Models\Contracts\IAwards.cs" />
+    <Compile Include="Models\Contracts\IAward.cs" />
     <Compile Include="Models\Contracts\IFilm.cs" />
     <Compile Include="Models\Enum\Genre.cs" />
-    <Compile Include="Models\Contracts\IEmployees.cs" />
+    <Compile Include="Models\Contracts\IEmployee.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Builder\BuildManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

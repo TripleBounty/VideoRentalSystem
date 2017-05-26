@@ -4,14 +4,14 @@ namespace VideoRentalSystem.Models.Factories
 {
     public class ModelsFactory : IModelsFactory
     {
-        public ICountry CreateCountry(string name, string code)
+        public Country CreateCountry(string name, string code)
         {
             return new Country(name, code);
         }
 
-        public IEmployees CreateEmployees(string firstName, string lastName, int salary, int managerId)
+        public Employee CreateEmployees(string firstName, string lastName, int salary, int managerId)
         {
-            return new Employees(firstName, lastName, salary, managerId);
+            return new Employee(firstName, lastName, salary, managerId);
         }
     }
 }

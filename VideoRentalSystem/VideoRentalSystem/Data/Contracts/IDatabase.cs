@@ -7,7 +7,5 @@
         IEmployeesRepository Employees { get; }
 
         int Complete();
-
-        void Dispose();
     }
 }

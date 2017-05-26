@@ -1,6 +1,6 @@
 ﻿namespace VideoRentalSystem.Models.Contracts
 {
-    public interface IAwards
+    public interface IAward
     {
     }
 }

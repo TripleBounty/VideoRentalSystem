@@ -17,7 +17,7 @@ namespace VideoRentalSystem.Builder
         {
             var consoleReader = this.Bind<IReader>().To<ConsoleReader>().InSingletonScope();
             var consoleWriter = this.Bind<IWriter>().To<ConsoleWriter>().InSingletonScope();
-            var videoRentalContext = this.Bind<VideoRentalContext>().To<VideoRentalContext>().InSingletonScope();
+            var videoRentalContext = this.Bind<VideoRentalContext>().ToSelf().InSingletonScope();
 
             var database = this.Bind<IDatabase>().To<Database>().InSingletonScope();
             var modelFactory = this.Bind<IModelsFactory>().To<ModelsFactory>().InSingletonScope();

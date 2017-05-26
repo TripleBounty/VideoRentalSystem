@@ -3,9 +3,9 @@ using VideoRentalSystem.Models.Contracts;
 
 namespace VideoRentalSystem.Models
 {
-    public class Employees : IEmployees
+    public class Employee : IEmployee
     {
-        public Employees (string firstName, string lastName, int salary, int managerId)
+        public Employee (string firstName, string lastName, int salary, int managerId)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
@@ -21,6 +21,9 @@ namespace VideoRentalSystem.Models
         public string LastName { get; set; }
 
         public int Salary { get; set; }
+        
+        //TODO: Replace managerID with Employee Manager object (Victor)
+        //public virtual Employee Manager { get; set; }
 
         public int ManagerId { get; set; }
     }

@@ -19,9 +19,12 @@ namespace VideoRentalSystem.Commands
 
         public string Execute(IList<string> parameters)
         {
+            var firstName = parameters[0];
+            var lastName = parameters[1];
             int salary = int.Parse(parameters[2]);
             int managerId = int.Parse(parameters[3]);
-            var employee = this.factory.CreateEmployees(parameters[0], parameters[1], salary, managerId) as Employees;
+
+            var employee = this.factory.CreateEmployees(firstName, lastName, salary, managerId);
 
             db.Employees.CreateEmployees(employee);
             db.Complete();
