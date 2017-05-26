@@ -20,15 +20,12 @@ namespace VideoRentalSystem.Core
 
         public void Start()
         {
-            var builder = new StringBuilder();
-
             while (true)
             {
                 var commandLine = this.reader.ReadLine();
 
                 if (commandLine.ToLower() == "exit")
                 {
-                    this.writer.Write(builder.ToString());
                     this.writer.WriteLine("Program terminated.");
                     break;
                 }
@@ -36,11 +33,11 @@ namespace VideoRentalSystem.Core
                 try
                 {
                     var executionResult = this.processor.ProcessCommand(commandLine);
-                    builder.AppendLine(executionResult);
+                    this.writer.WriteLine(executionResult);
                 }
                 catch (Exception ex)
                 {
-                    builder.AppendLine("Opps, something happened. :( /n" +
+                    this.writer.WriteLine("Opps, something happened. :( /n" +
                         "" + ex.Message);
                 }
             }
