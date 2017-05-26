@@ -13,48 +13,9 @@ namespace VideoRentalSystem.Core
 
         public Engine(IReader reader, IWriter writer, IProcessor processor)
         {
-            this.Reader = reader;
-            this.Writer = writer;
-            this.Processor = processor;
-        }
-
-        public IReader Reader
-        {
-            get
-            {
-                return this.reader;
-            }
-
-            set
-            {
-                this.reader = value;
-            }
-        }
-
-        public IWriter Writer
-        {
-            get
-            {
-                return this.writer;
-            }
-
-            set
-            {
-                this.writer = value;
-            }
-        }
-
-        public IProcessor Processor
-        {
-            get
-            {
-                return this.processor;
-            }
-
-            set
-            {
-                this.processor = value;
-            }
+            this.reader = reader;
+            this.writer = writer;
+            this.processor = processor;
         }
 
         public void Start()
