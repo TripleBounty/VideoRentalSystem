@@ -26,8 +26,8 @@ namespace VideoRentalSystem.Commands
 
             var employee = this.factory.CreateEmployee(firstName, lastName, salary, managerId);
 
-            db.Employees.Add(employee);
-            db.Complete();
+            this.db.Employees.Add(employee);
+            this.db.Complete();
 
             return "Employee created";
         }

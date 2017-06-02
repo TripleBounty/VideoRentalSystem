@@ -27,13 +27,11 @@ namespace VideoRentalSystem.Builder
             var commandFactory = this.Bind<ICommandsFactory>().To<CommandsFactory>().InSingletonScope();
             var commandProcesor = this.Bind<IProcessor>().To<CommandProcessor>().InSingletonScope();
 
-            //Bind commands
+            /////Bind commands
             this.Bind<ICommand>().To<CreateCountryCommand>().Named("CreateCountry");
             this.Bind<ICommand>().To<CreateEmployeeCommand>().Named("CreateEmployee");
 
             var engine = this.Bind<IEngine>().To<Engine>().InSingletonScope();
-
-
         }
     }
 }

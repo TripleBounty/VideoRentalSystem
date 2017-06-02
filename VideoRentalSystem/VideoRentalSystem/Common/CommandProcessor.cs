@@ -7,7 +7,6 @@ namespace VideoRentalSystem.Common
 {
     public class CommandProcessor : IProcessor
     {
-
         private ICommandsFactory factory;
 
         public CommandProcessor(ICommandsFactory factory)

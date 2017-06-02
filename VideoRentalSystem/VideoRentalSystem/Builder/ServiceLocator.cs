@@ -17,6 +17,7 @@ namespace VideoRentalSystem.Builder
         {
             this.kernel = kernel;
         }
+
         public ICommand GetCommand(string commandName)
         {
             return this.kernel.Get<ICommand>(commandName);

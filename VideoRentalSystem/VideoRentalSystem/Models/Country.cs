@@ -10,9 +10,11 @@ namespace VideoRentalSystem.Models
             this.Name = name;
             this.Code = code;
         }
-        [Key]
+
         public int Id { get; set; }
+
         public string Name { get; set; }
+
         public string Code { get; set; }
     }
 }

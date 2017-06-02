@@ -24,8 +24,8 @@ namespace VideoRentalSystem.Commands
 
             var country = this.factory.CreateCountry(countryName, countryCode);
 
-            db.Countries.Add(country);
-            db.Complete();
+            this.db.Countries.Add(country);
+            this.db.Complete();
 
             return "Country created";
         }

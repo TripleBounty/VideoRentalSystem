@@ -8,7 +8,6 @@ namespace VideoRentalSystem.Data
         public VideoRentalContext()
             : base("VideoRentalDBConnection")
         {
-
         }
 
         public DbSet<Country> CountriesTable { get; set; }

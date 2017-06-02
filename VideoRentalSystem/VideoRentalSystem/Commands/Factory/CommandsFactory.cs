@@ -17,9 +17,8 @@ namespace VideoRentalSystem.Commands.Factory
 
         public ICommand CreateCommandFromString(string commandName)
         {
-            //       throw new Exception("The passed command is not valid!");
-            return this.serviceLocator.GetCommand(commandName);
-           
+            ////       throw new Exception("The passed command is not valid!");
+            return this.serviceLocator.GetCommand(commandName);   
         }
     }
 }
