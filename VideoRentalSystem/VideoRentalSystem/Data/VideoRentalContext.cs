@@ -6,7 +6,7 @@ namespace VideoRentalSystem.Data
     public class VideoRentalContext : DbContext
     {
         public VideoRentalContext()
-            :base("VideoRentalDBConnection")
+            : base("VideoRentalDBConnection")
         {
 
         }
@@ -14,5 +14,10 @@ namespace VideoRentalSystem.Data
         public DbSet<Country> CountriesTable { get; set; }
 
         public DbSet<Employee> EmployeesTable { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
