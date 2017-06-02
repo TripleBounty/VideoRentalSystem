@@ -9,7 +9,7 @@ namespace VideoRentalSystem.Models.Factories
             return new Country(name, code);
         }
 
-        public Employee CreateEmployees(string firstName, string lastName, int salary, int managerId)
+        public Employee CreateEmployee(string firstName, string lastName, int salary, int managerId)
         {
             return new Employee(firstName, lastName, salary, managerId);
         }

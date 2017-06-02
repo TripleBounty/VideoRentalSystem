@@ -1,4 +1,5 @@
 ﻿using Ninject.Modules;
+using VideoRentalSystem.Commands;
 using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Commands.Factory;
 using VideoRentalSystem.Common;
@@ -21,8 +22,14 @@ namespace VideoRentalSystem.Builder
 
             var database = this.Bind<IDatabase>().To<Database>().InSingletonScope();
             var modelFactory = this.Bind<IModelsFactory>().To<ModelsFactory>().InSingletonScope();
+
+            this.Bind<IServiceLocator>().To<ServiceLocator>().InSingletonScope();
             var commandFactory = this.Bind<ICommandsFactory>().To<CommandsFactory>().InSingletonScope();
             var commandProcesor = this.Bind<IProcessor>().To<CommandProcessor>().InSingletonScope();
+
+            //Bind commands
+            this.Bind<ICommand>().To<CreateCountryCommand>().Named("CreateCountry");
+            this.Bind<ICommand>().To<CreateEmployeeCommand>().Named("CreateEmployee");
 
             var engine = this.Bind<IEngine>().To<Engine>().InSingletonScope();
 

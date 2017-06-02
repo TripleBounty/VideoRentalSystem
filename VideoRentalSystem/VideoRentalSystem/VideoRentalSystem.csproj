@@ -55,16 +55,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Builder\ServiceLocator.cs" />
     <Compile Include="Commands\Contracts\ICommand.cs" />
     <Compile Include="Commands\Contracts\ICommandsFactory.cs" />
     <Compile Include="Commands\CreateCountryCommand.cs" />
-    <Compile Include="Commands\CreateEmployeesCommand.cs" />
+    <Compile Include="Commands\CreateEmployeeCommand.cs" />
     <Compile Include="Commands\Factory\CommandsFactory.cs" />
     <Compile Include="Common\CommandProcessor.cs" />
     <Compile Include="Common\ConsoleReader.cs" />
     <Compile Include="Common\ConsoleWriter.cs" />
     <Compile Include="Common\Contracts\IProcessor.cs" />
     <Compile Include="Common\Contracts\IReader.cs" />
+    <Compile Include="Core\Contracts\IServiceLocator.cs" />
     <Compile Include="Common\Contracts\IWriter.cs" />
     <Compile Include="Core\Contracts\IEngine.cs" />
     <Compile Include="Core\Engine.cs" />
@@ -77,6 +79,7 @@
     <Compile Include="Data\Repository\EmployeesRepository.cs" />
     <Compile Include="Data\Repository\Repository.cs" />
     <Compile Include="Data\VideoRentalContext.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contracts\ICountry.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -94,6 +97,5 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
