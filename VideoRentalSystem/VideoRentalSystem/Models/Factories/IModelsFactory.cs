@@ -7,5 +7,7 @@ namespace VideoRentalSystem.Models.Factories
         Country CreateCountry(string name, string code);
 
         Employee CreateEmployees(string firstName, string lastName, int salary, int managerId);
+
+        Review CreateReview(int filmId, double rating, string description);
     }
 }

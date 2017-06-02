@@ -24,6 +24,8 @@ namespace VideoRentalSystem.Commands.Factory
                     return this.CreateCountryCommand();
                 case "createemployee":
                     return this.CreateEmployeesCommand();
+                case "createreview":
+                    return this.CreateReviewCommand();
                 default:
                     throw new Exception("The passed command is not valid!");
             }
@@ -37,6 +39,11 @@ namespace VideoRentalSystem.Commands.Factory
         private ICommand CreateEmployeesCommand()
         {
             return new CreateEmployeesCommand(this.database, this.factory);
+        }
+
+        private ICommand CreateReviewCommand()
+        {
+            return new CreateReviewCommand(this.database, this.factory);
         }
 
 

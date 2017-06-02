@@ -8,5 +8,7 @@ namespace VideoRentalSystem.Data
         public DbSet<Country> CountriesTable { get; set; }
 
         public DbSet<Employee> EmployeesTable { get; set; }
+
+        public DbSet<Review> ReviewsTable { get; set; }
     }
 }
