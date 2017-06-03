@@ -18,7 +18,7 @@ namespace VideoRentalSystem.Models
             this.Manager = manager;
         }
 
-        [Key]
+        
         public int Id { get; set; }
 
         public string FirstName { get; set; }
@@ -26,9 +26,6 @@ namespace VideoRentalSystem.Models
         public string LastName { get; set; }
 
         public int Salary { get; set; }
-
-        ////TODO: Replace managerID with Employee Manager object (Victor)
-        ////public virtual Employee Manager { get; set; }
 
         public Employee Manager { get; set; }
     }

@@ -24,10 +24,9 @@ namespace VideoRentalSystem.Commands.CreateCommands
             int salary = int.Parse(parameters[2]);
             int managerId = int.Parse(parameters[3]);
 
-            var result = db.Employees.SingleOrDefault(e => e.Id == managerId);
+            var employeeObj = db.Employees.SingleOrDefault(e => e.Id == managerId);
             
-            Console.WriteLine(result);
-            var employee = this.factory.CreateEmployee(firstName, lastName, salary, result);
+            var employee = this.factory.CreateEmployee(firstName, lastName, salary, employeeObj);
 
             this.db.Employees.Add(employee);
             this.db.Complete();

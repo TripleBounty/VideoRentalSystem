@@ -6,12 +6,12 @@ using VideoRentalSystem.Models.Factories;
 
 namespace VideoRentalSystem.Commands.CreateCommands
 {
-    public class CreateEmployeeCommand : ICommand
+    public class CreateManagerCommand : ICommand
     {
         private readonly IDatabase db;
         private readonly IModelsFactory factory;
 
-        public CreateEmployeeCommand(IDatabase db, IModelsFactory factory)
+        public CreateManagerCommand(IDatabase db, IModelsFactory factory)
         {
             this.db = db;
             this.factory = factory;
@@ -22,17 +22,13 @@ namespace VideoRentalSystem.Commands.CreateCommands
             var firstName = parameters[0];
             var lastName = parameters[1];
             int salary = int.Parse(parameters[2]);
-            int managerId = int.Parse(parameters[3]);
 
-            var result = db.Employees.SingleOrDefault(e => e.Id == managerId);
-            
-            Console.WriteLine(result);
-            var employee = this.factory.CreateEmployee(firstName, lastName, salary, result);
+            var employee = this.factory.CreateEmployee(firstName, lastName, salary, null);
 
             this.db.Employees.Add(employee);
             this.db.Complete();
 
-            return "Employee created";
+            return "Manager created";
         }
     }
 }
