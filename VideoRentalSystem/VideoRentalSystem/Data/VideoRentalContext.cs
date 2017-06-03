@@ -14,6 +14,8 @@ namespace VideoRentalSystem.Data
 
         public DbSet<Employee> EmployeesTable { get; set; }
 
+        public DbSet<Film> FilmTable { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

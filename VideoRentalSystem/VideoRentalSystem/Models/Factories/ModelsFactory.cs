@@ -1,4 +1,6 @@
-﻿using VideoRentalSystem.Models.Contracts;
+﻿using System;
+using VideoRentalSystem.Models.Contracts;
+using VideoRentalSystem.Models.Enum;
 
 namespace VideoRentalSystem.Models.Factories
 {
@@ -12,6 +14,11 @@ namespace VideoRentalSystem.Models.Factories
         public Employee CreateEmployee(string firstName, string lastName, int salary, int managerId)
         {
             return new Employee(firstName, lastName, salary, managerId);
+        }
+
+        public Film CreateFilm(string name, string summary, DateTime realiseDate, TimeSpan duration, VideoFormat format, int count, float rating)
+        {
+            return new Film(name, summary, realiseDate, duration, format, count, rating);
         }
     }
 }

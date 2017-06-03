@@ -1,4 +1,5 @@
-﻿using VideoRentalSystem.Data.Contracts;
+﻿using System;
+using VideoRentalSystem.Data.Contracts;
 using VideoRentalSystem.Data.Repository;
 
 namespace VideoRentalSystem.Data
@@ -17,6 +18,8 @@ namespace VideoRentalSystem.Data
         public ICountryRepository Countries { get; private set; }
 
         public IEmployeesRepository Employees { get; private set; }
+
+        public IFilmRepository Film { get; private set; }
 
         public int Complete()
         {

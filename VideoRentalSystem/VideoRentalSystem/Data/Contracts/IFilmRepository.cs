@@ -2,7 +2,7 @@
 
 namespace VideoRentalSystem.Data.Contracts
 {
-    public interface IEmployeesRepository : IRepository<Employee>
+    public interface IFilmRepository : IRepository<Film>
     {
     }
 }

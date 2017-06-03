@@ -6,6 +6,8 @@
 
         IEmployeesRepository Employees { get; }
 
+        IFilmRepository Film { get; }
+
         int Complete();
     }
 }
