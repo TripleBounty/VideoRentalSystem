@@ -32,8 +32,8 @@ namespace VideoRentalSystem.Migrations
 
         public override void Down()
         {
-            DropTable("dbo.Employees");
-            DropTable("dbo.Countries");
+            this.DropTable("dbo.Employees");
+            this.DropTable("dbo.Countries");
         }
     }
 }

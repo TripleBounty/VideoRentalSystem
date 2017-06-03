@@ -31,6 +31,7 @@ namespace VideoRentalSystem.Builder
             this.Bind<ICommand>().To<CreateCountryCommand>().Named("CreateCountry");
             this.Bind<ICommand>().To<CreateEmployeeCommand>().Named("CreateEmployee");
             this.Bind<ICommand>().To<CreateReviewCommand>().Named("CreateReview");
+            this.Bind<ICommand>().To<CreateFilmCommand>().Named("CreateFilm");
 
             var engine = this.Bind<IEngine>().To<Engine>().InSingletonScope();
         }

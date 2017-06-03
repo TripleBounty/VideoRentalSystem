@@ -25,8 +25,8 @@ namespace VideoRentalSystem.Commands
 
             var review = this.factory.CreateReview(rating, description);
 
-            db.Reviews.Add(review);
-            db.Complete();
+            this.db.Reviews.Add(review);
+            this.db.Complete();
 
             return "Review created";
         }

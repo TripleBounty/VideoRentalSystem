@@ -60,6 +60,7 @@
     <Compile Include="Commands\Contracts\ICommandsFactory.cs" />
     <Compile Include="Commands\CreateCountryCommand.cs" />
     <Compile Include="Commands\CreateEmployeeCommand.cs" />
+    <Compile Include="Commands\CreateFilmCommand.cs" />
     <Compile Include="Commands\CreateReviewCommand.cs" />
     <Compile Include="Commands\Factory\CommandsFactory.cs" />
     <Compile Include="Common\CommandProcessor.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Common\ConsoleWriter.cs" />
     <Compile Include="Common\Contracts\IProcessor.cs" />
     <Compile Include="Common\Contracts\IReader.cs" />
+    <Compile Include="Common\DateProvider.cs" />
     <Compile Include="Core\Contracts\IServiceLocator.cs" />
     <Compile Include="Common\Contracts\IWriter.cs" />
     <Compile Include="Core\Contracts\IEngine.cs" />
@@ -74,8 +76,10 @@
     <Compile Include="Data\Contracts\ICountryRepository.cs" />
     <Compile Include="Data\Contracts\IDatabase.cs" />
     <Compile Include="Data\Contracts\IEmployeesRepository.cs" />
+    <Compile Include="Data\Contracts\IFilmRepository.cs" />
     <Compile Include="Data\Contracts\IRepository.cs" />
     <Compile Include="Data\Database.cs" />
+    <Compile Include="Data\FilmRepository.cs" />
     <Compile Include="Data\Repository\CountryRepository.cs" />
     <Compile Include="Data\Repository\EmployeesRepository.cs" />
     <Compile Include="Data\Contracts\IReviewRepository.cs" />
@@ -86,33 +90,23 @@
     <Compile Include="Migrations\201706021814398_Initial.Designer.cs">
       <DependentUpon>201706021814398_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706030830258_AddReviewTable          .cs" />
-    <Compile Include="Migrations\201706030830258_AddReviewTable          .Designer.cs">
-      <DependentUpon>201706030830258_AddReviewTable          .cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706030922218_TestingEmployeeOneToOne.cs" />
-    <Compile Include="Migrations\201706030922218_TestingEmployeeOneToOne.Designer.cs">
-      <DependentUpon>201706030922218_TestingEmployeeOneToOne.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706030958180_Employeenewtest.cs" />
-    <Compile Include="Migrations\201706030958180_Employeenewtest.Designer.cs">
-      <DependentUpon>201706030958180_Employeenewtest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706031112211_EmployeeeTest v2.cs" />
-    <Compile Include="Migrations\201706031112211_EmployeeeTest v2.Designer.cs">
-      <DependentUpon>201706031112211_EmployeeeTest v2.cs</DependentUpon>
+    <Compile Include="Migrations\201706030956309_Added Film model.cs" />
+    <Compile Include="Migrations\201706030956309_Added Film model.Designer.cs">
+      <DependentUpon>201706030956309_Added Film model.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Award.cs" />
+    <Compile Include="Models\Enum\Category.cs" />
     <Compile Include="Models\Contracts\ICountry.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Enum\VideoFormat.cs" />
     <Compile Include="Models\Factories\IModelsFactory.cs" />
     <Compile Include="Models\Factories\ModelsFactory.cs" />
-    <Compile Include="Models\Contracts\IAward.cs" />
-    <Compile Include="Models\Contracts\IFilm.cs" />
     <Compile Include="Models\Enum\Genre.cs" />
     <Compile Include="Models\Contracts\IEmployee.cs" />
     <Compile Include="Builder\BuildManager.cs" />
+    <Compile Include="Models\Film.cs" />
     <Compile Include="Models\Contracts\IReview.cs" />
     <Compile Include="Models\Review.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -127,17 +121,8 @@
     <EmbeddedResource Include="Migrations\201706021814398_Initial.resx">
       <DependentUpon>201706021814398_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706030830258_AddReviewTable          .resx">
-      <DependentUpon>201706030830258_AddReviewTable          .cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706030922218_TestingEmployeeOneToOne.resx">
-      <DependentUpon>201706030922218_TestingEmployeeOneToOne.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706030958180_Employeenewtest.resx">
-      <DependentUpon>201706030958180_Employeenewtest.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706031112211_EmployeeeTest v2.resx">
-      <DependentUpon>201706031112211_EmployeeeTest v2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706030956309_Added Film model.resx">
+      <DependentUpon>201706030956309_Added Film model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

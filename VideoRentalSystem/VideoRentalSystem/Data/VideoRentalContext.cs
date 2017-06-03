@@ -16,6 +16,10 @@ namespace VideoRentalSystem.Data
 
         public IDbSet<Review> ReviewsTable { get; set; }
 
+        public DbSet<Film> FilmTable { get; set; }
+
+        public DbSet<Review> ReviewsTable { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
