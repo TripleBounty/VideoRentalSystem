@@ -45,7 +45,6 @@ namespace VideoRentalSystem.Migrations
                         Description = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
-            
         }
         
         public override void Down()

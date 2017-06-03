@@ -21,9 +21,9 @@ namespace VideoRentalSystem.Common
                 throw new Exception("No command has been provided!");
             }
 
-            var commandName = commandLine.Split(' ')[0];
+            var commandName = commandLine.Split(';')[0];
             var commandParameters = commandLine
-                .Split(' ')
+                .Split(';')
                 .Skip(1)
                 .ToList();
 

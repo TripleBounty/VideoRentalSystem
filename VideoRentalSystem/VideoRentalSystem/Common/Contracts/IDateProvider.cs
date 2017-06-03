@@ -1,4 +1,4 @@
-﻿namespace VideoRentalSystem.Common
+﻿namespace VideoRentalSystem.Common.Contracts
 {
     public interface IDateProvider
     {
