@@ -61,7 +61,6 @@
     <Compile Include="Commands\CreateCountryCommand.cs" />
     <Compile Include="Commands\CreateEmployeeCommand.cs" />
     <Compile Include="Commands\CreateFilmCommand.cs" />
-    <Compile Include="Commands\CreateEmployeesCommand.cs" />
     <Compile Include="Commands\CreateReviewCommand.cs" />
     <Compile Include="Commands\Factory\CommandsFactory.cs" />
     <Compile Include="Common\CommandProcessor.cs" />
