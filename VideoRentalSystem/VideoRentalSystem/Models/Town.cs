@@ -12,7 +12,6 @@ namespace VideoRentalSystem.Models
 
         private Town()
         {
-
         }
 
         public int Id { get; set; }

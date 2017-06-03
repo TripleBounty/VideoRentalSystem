@@ -1,5 +1,4 @@
-﻿using System.Text;
-using VideoRentalSystem.Models.Contracts;
+﻿using VideoRentalSystem.Models.Contracts;
 
 namespace VideoRentalSystem.Models
 {

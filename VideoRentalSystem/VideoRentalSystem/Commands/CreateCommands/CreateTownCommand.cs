@@ -5,7 +5,7 @@ using VideoRentalSystem.Models.Factories;
 
 namespace VideoRentalSystem.Commands.CreateCommands
 {
-    class CreateTownCommand : ICommand
+    public class CreateTownCommand : ICommand
     {
         private readonly IDatabase db;
         private readonly IModelsFactory factory;
@@ -18,18 +18,17 @@ namespace VideoRentalSystem.Commands.CreateCommands
 
         public string Execute(IList<string> parameters)
         {
-            var TownName = parameters[0];
+            var townName = parameters[0];
             var countryId = int.Parse(parameters[1]);
 
-            var country = db.Countries.SingleOrDefault(c => c.Id == countryId);
+            var country = this.db.Countries.SingleOrDefault(c => c.Id == countryId);
 
-            var town = this.factory.CreateTown(TownName, country);
+            var town = this.factory.CreateTown(townName, country);
 
             this.db.Towns.Add(town);
             this.db.Complete();
 
             return "Town created";
         }
-
     }
 }
