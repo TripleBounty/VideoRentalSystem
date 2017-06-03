@@ -21,5 +21,7 @@ namespace VideoRentalSystem.Models.Factories
         Review CreateReview(double rating, string description);
 
         Store CreateStore(string name, Address address);
+
+        FilmStaff CreateFilmStaff(string firstName, string lastName, DateTime birthDate, Country originePlace, StaffType type);
     }
 }

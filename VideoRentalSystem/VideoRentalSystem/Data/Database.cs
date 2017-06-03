@@ -19,6 +19,7 @@ namespace VideoRentalSystem.Data
             this.Reviews = new ReviewRepository(context);
             this.Film = new FilmRepository(context);
             this.Stores = new StoreRepository(context);
+            this.FilmStaffs = new FilmStaffRepository(context);
         }
 
         public ICountryRepository Countries { get; private set; }
@@ -36,6 +37,8 @@ namespace VideoRentalSystem.Data
         public IFilmRepository Film { get; private set; }
 
         public IStoreRepository Stores { get; private set; }
+
+        public IFilmStaffRepository FilmStaffs { get; private set; }
 
         public int Complete()
         {

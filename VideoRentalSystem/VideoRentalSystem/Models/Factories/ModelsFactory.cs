@@ -45,5 +45,10 @@ namespace VideoRentalSystem.Models.Factories
         {
             return new Store(name, address);
         }
+
+        public FilmStaff CreateFilmStaff(string firstName, string lastName, DateTime birthDate, Country originePlace, StaffType type)
+        {
+            return new FilmStaff(firstName, lastName, birthDate, originePlace, type);
+        }
     }
 }

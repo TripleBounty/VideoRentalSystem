@@ -64,10 +64,12 @@
     <Compile Include="Commands\CreateCommands\CreateReviewCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateAddressCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateStoreCommand.cs" />
+    <Compile Include="Commands\CreateCommands\CreateFilmStaffCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateTownCommand.cs" />
     <Compile Include="Commands\Factory\CommandsFactory.cs" />
     <Compile Include="Commands\ListingCommands\ListAllAddressesCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllStoresCommand.cs" />
+    <Compile Include="Commands\ListingCommands\ListAllFilmStaffsCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllTownsCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllCountriesCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllCustomersCommand.cs" />
@@ -92,6 +94,7 @@
     <Compile Include="Data\Contracts\IFilmRepository.cs" />
     <Compile Include="Data\Contracts\IRepository.cs" />
     <Compile Include="Data\Contracts\IStoreRepository.cs" />
+    <Compile Include="Data\Contracts\IFilmStaffRepository.cs" />
     <Compile Include="Data\Contracts\ITownRepository.cs" />
     <Compile Include="Data\Database.cs" />
     <Compile Include="Data\FilmRepository.cs" />
@@ -104,6 +107,7 @@
     <Compile Include="Data\Repository\ReviewRepository.cs" />
     <Compile Include="Data\Repository\AddessRepository.cs" />
     <Compile Include="Data\Repository\StoreRepository.cs" />
+    <Compile Include="Data\Repository\FilmStaffRepository.cs" />
     <Compile Include="Data\Repository\TownRepository.cs" />
     <Compile Include="Data\VideoRentalContext.cs" />
     <Compile Include="Migrations\201706021814398_Initial.cs" />
@@ -138,6 +142,10 @@
     <Compile Include="Migrations\201706031926081_add stores to film.Designer.cs">
       <DependentUpon>201706031926081_add stores to film.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706032018569_add film staff table.cs" />
+    <Compile Include="Migrations\201706032018569_add film staff table.Designer.cs">
+      <DependentUpon>201706032018569_add film staff table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Award.cs" />
@@ -146,6 +154,7 @@
     <Compile Include="Models\Contracts\ICountry.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Enum\StaffType.cs" />
     <Compile Include="Models\Enum\VideoFormat.cs" />
     <Compile Include="Models\Factories\IModelsFactory.cs" />
     <Compile Include="Models\Factories\ModelsFactory.cs" />
@@ -154,6 +163,7 @@
     <Compile Include="Builder\BuildManager.cs" />
     <Compile Include="Models\Film.cs" />
     <Compile Include="Models\Contracts\IReview.cs" />
+    <Compile Include="Models\FilmStaff.cs" />
     <Compile Include="Models\Review.cs" />
     <Compile Include="Models\Store.cs" />
     <Compile Include="Models\Town.cs" />
@@ -189,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706031926081_add stores to film.resx">
       <DependentUpon>201706031926081_add stores to film.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706032018569_add film staff table.resx">
+      <DependentUpon>201706032018569_add film staff table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

@@ -20,6 +20,7 @@ namespace VideoRentalSystem.Models
             this.Genres = new HashSet<Genre>();
             this.Awards = new HashSet<Award>();
             this.Stores = new HashSet<Store>();
+            this.FilmStaffs = new HashSet<FilmStaff>();
         }
 
         private Film()
@@ -58,5 +59,7 @@ namespace VideoRentalSystem.Models
         public float Rating { get; set; }
 
         public virtual ICollection<Award> Awards { get; set; }
+
+        public virtual ICollection<FilmStaff> FilmStaffs { get; set; }
     }
 }
