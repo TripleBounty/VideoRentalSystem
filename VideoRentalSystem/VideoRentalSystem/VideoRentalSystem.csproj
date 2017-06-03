@@ -62,8 +62,10 @@
     <Compile Include="Commands\CreateCommands\CreateFilmCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateManagerCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateReviewCommand.cs" />
+    <Compile Include="Commands\CreateCommands\CreateAddressCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateTownCommand.cs" />
     <Compile Include="Commands\Factory\CommandsFactory.cs" />
+    <Compile Include="Commands\ListingCommands\ListAllAddressesCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllTownsCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllCountriesCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllCustomersCommand.cs" />
@@ -94,8 +96,10 @@
     <Compile Include="Data\Repository\CustomerRepository.cs" />
     <Compile Include="Data\Repository\EmployeesRepository.cs" />
     <Compile Include="Data\Contracts\IReviewRepository.cs" />
+    <Compile Include="Data\Contracts\IAddessRepository.cs" />
     <Compile Include="Data\Repository\Repository.cs" />
     <Compile Include="Data\Repository\ReviewRepository.cs" />
+    <Compile Include="Data\Repository\AddessRepository.cs" />
     <Compile Include="Data\Repository\TownRepository.cs" />
     <Compile Include="Data\VideoRentalContext.cs" />
     <Compile Include="Migrations\201706021814398_Initial.cs" />
@@ -118,7 +122,12 @@
     <Compile Include="Migrations\201706031711342_add-town.Designer.cs">
       <DependentUpon>201706031711342_add-town.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706031827251_add address table.cs" />
+    <Compile Include="Migrations\201706031827251_add address table.Designer.cs">
+      <DependentUpon>201706031827251_add address table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Award.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Enum\Category.cs" />
@@ -158,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706031711342_add-town.resx">
       <DependentUpon>201706031711342_add-town.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706031827251_add address table.resx">
+      <DependentUpon>201706031827251_add address table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

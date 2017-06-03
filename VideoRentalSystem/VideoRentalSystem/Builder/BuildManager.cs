@@ -35,6 +35,9 @@ namespace VideoRentalSystem.Builder
             this.Bind<ICommand>().To<CreateTownCommand>().Named("CreateTown");
             this.Bind<ICommand>().To<ListAllTownsCommand>().Named("ListAllTowns");
 
+            this.Bind<ICommand>().To<CreateAddressCommand>().Named("CreateAddress");
+            this.Bind<ICommand>().To<ListAllAddressesCommand>().Named("ListAllAddresses");
+
             this.Bind<ICommand>().To<CreateEmployeeCommand>().Named("CreateEmployee");
             this.Bind<ICommand>().To<ListAllEmployeesCommand>().Named("ListAllEmployees");
 

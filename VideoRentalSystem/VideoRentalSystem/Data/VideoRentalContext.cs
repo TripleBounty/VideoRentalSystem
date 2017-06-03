@@ -14,6 +14,8 @@ namespace VideoRentalSystem.Data
 
         public IDbSet<Town> TownsTable { get; set; }
 
+        public IDbSet<Address> AddressesTable { get; set; }
+
         public IDbSet<Employee> EmployeesTable { get; set; }
 
         public IDbSet<Customer> CustomersTable { get; set; }
@@ -81,6 +83,20 @@ namespace VideoRentalSystem.Data
                 .Property(c => c.Code)
                 .HasMaxLength(2)
                 .IsRequired();
+
+            modelBuilder.Entity<Town>()
+                .Property(t => t.Name)
+                .HasMaxLength(40)
+                .IsRequired();
+
+            modelBuilder.Entity<Address>()
+                .Property(a => a.Street)
+                .HasMaxLength(150)
+                .IsRequired();
+
+            modelBuilder.Entity<Address>()
+                .Property(a => a.PostalCode)
+                .HasMaxLength(10);
         }
     }
 }

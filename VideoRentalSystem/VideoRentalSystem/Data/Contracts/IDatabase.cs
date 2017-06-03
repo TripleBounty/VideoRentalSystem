@@ -8,6 +8,8 @@ namespace VideoRentalSystem.Data.Contracts
 
         ITownRepository Towns { get; }
 
+        IAddessRepository Addesses { get; }
+
         IEmployeesRepository Employees { get; }
 
         ICustomerRepository Customers { get; }

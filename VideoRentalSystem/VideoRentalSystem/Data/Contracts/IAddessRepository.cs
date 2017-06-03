@@ -2,7 +2,7 @@
 
 namespace VideoRentalSystem.Data.Contracts
 {
-    public interface ICountryRepository : IRepository<Country>
+    public interface IAddessRepository : IRepository<Address>
     {
     }
 }
