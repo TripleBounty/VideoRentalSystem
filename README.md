@@ -4,7 +4,7 @@
 alt="IMAGE ALT TEXT HERE" width="480" height="140" border="10" /><br>
 
 1.0. Commands <br>
-<ol>
+<ul>
 <li>1.1.Create Commands <br><br>
 --CreateCountry - params - Initials, Country Code.<br>
 --CreateEmployee - params - First Name, Last Name, Salary, Manager Id.<br>
@@ -17,6 +17,6 @@ alt="IMAGE ALT TEXT HERE" width="480" height="140" border="10" /><br>
 </li>
 <li>1.3. Termination<br><br>
 --Exit<br></li>
-</ol>
+</ul>
 ⋅⋅* Enjoy ! 
 
