@@ -6,7 +6,7 @@ namespace VideoRentalSystem.Models
 {
     public class Film
     { 
-        public Film(string name, string summary, DateTime realiseDate, TimeSpan duration, VideoFormat format, int count)
+        public Film(string name, string summary, DateTime realiseDate, TimeSpan duration, VideoFormat format, int count, float rating)
         {
             this.Name = name;
             this.Summary = summary;
@@ -15,6 +15,13 @@ namespace VideoRentalSystem.Models
             this.VideoFormats = format;
             this.InStore = count;
 
+            this.Categories = new HashSet<MPAA_Rating>();
+            this.Genres = new HashSet<Genre>();
+            this.Awards = new HashSet<Award>();
+        }
+
+        private Film()
+        {
             this.Categories = new HashSet<MPAA_Rating>();
             this.Genres = new HashSet<Genre>();
             this.Awards = new HashSet<Award>();

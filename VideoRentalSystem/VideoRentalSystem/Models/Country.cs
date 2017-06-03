@@ -5,10 +5,6 @@ namespace VideoRentalSystem.Models
 {
     public class Country : ICountry
     {
-        private Country()
-        {
-        }
-
         public Country(string name, string code)
         {
             this.Name = name;
@@ -19,6 +15,10 @@ namespace VideoRentalSystem.Models
             : this(name, code)
         {
             this.Id = id;
+        }
+
+        private Country()
+        {
         }
 
         public int Id { get; set; }
