@@ -82,7 +82,7 @@
     <Compile Include="Data\Contracts\IFilmRepository.cs" />
     <Compile Include="Data\Contracts\IRepository.cs" />
     <Compile Include="Data\Database.cs" />
-    <Compile Include="Data\FilmRepository.cs" />
+    <Compile Include="Data\Repository\FilmRepository.cs" />
     <Compile Include="Data\Repository\CountryRepository.cs" />
     <Compile Include="Data\Repository\EmployeesRepository.cs" />
     <Compile Include="Data\Contracts\IReviewRepository.cs" />

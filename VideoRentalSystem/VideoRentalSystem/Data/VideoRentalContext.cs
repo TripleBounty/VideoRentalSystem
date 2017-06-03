@@ -22,6 +22,8 @@ namespace VideoRentalSystem.Data
         {
             this.CreateAddresseModels(modelBuilder);
             this.CreateReviewModel(modelBuilder);
+            this.CreateFilmModels(modelBuilder);
+            this.CreateAwardModels(modelBuilder);
 
             base.OnModelCreating(modelBuilder);
         }
@@ -29,11 +31,13 @@ namespace VideoRentalSystem.Data
         private void CreateReviewModel(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Review>()
-                .Property(r => r.Description).HasMaxLength(40)
-                                             .IsRequired();
+                .Property(r => r.Description)
+                .HasMaxLength(40)
+                .IsRequired();
 
             modelBuilder.Entity<Review>()
-                .Property(r => r.Rating).IsRequired();
+                .Property(r => r.Rating)
+                .IsRequired();
         }
 
         private void CreateAddresseModels(DbModelBuilder modelBuilder)
@@ -43,9 +47,48 @@ namespace VideoRentalSystem.Data
                .HasMaxLength(40)
                .IsRequired();
 
+            // TODO: fix country code max length
             modelBuilder.Entity<Country>()
                 .Property(c => c.Code)
                 .HasMaxLength(2)
+                .IsRequired();
+        }
+
+        private void CreateFilmModels(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Film>()
+                .Property(x => x.Name)
+                .HasMaxLength(255)
+                .IsRequired();
+
+            modelBuilder.Entity<Film>()
+                .Property(x => x.Summary)
+                .HasMaxLength(512)
+                .IsRequired();
+
+            modelBuilder.Entity<Film>()
+                .Property(x => x.ReleaseDate)
+                .IsRequired();
+
+            modelBuilder.Entity<Film>()
+                .Property(x => x.Duration)
+                .HasPrecision(0)
+                .IsRequired();
+
+            modelBuilder.Entity<Film>()
+                .Property(x => x.InStore)
+                .IsRequired();
+        }
+
+        private void CreateAwardModels(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Award>()
+                .Property(x => x.Name)
+                .HasMaxLength(255)
+                .IsRequired();
+
+            modelBuilder.Entity<Award>()
+                .Property(x => x.Date)
                 .IsRequired();
         }
     }

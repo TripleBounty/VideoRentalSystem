@@ -6,22 +6,17 @@ namespace VideoRentalSystem.Models
 {
     public class Film
     { 
-        public Film(string name, string summary, DateTime realiseDate, TimeSpan duration, VideoFormat format, int count, float rating)
+        public Film(string name, string summary, DateTime releaseDate, TimeSpan duration, VideoFormat format, int count)
         {
             this.Name = name;
             this.Summary = summary;
-            this.RealieseDate = realiseDate;
+            this.ReleaseDate = releaseDate;
             this.Duration = duration;
             this.VideoFormats = format;
             this.InStore = count;
 
-            this.Categories = new HashSet<MPAA_Rating>();
-            this.Genres = new HashSet<Genre>();
-            this.Awards = new HashSet<Award>();
-        }
+            this.IsDeleted = false;
 
-        private Film()
-        {
             this.Categories = new HashSet<MPAA_Rating>();
             this.Genres = new HashSet<Genre>();
             this.Awards = new HashSet<Award>();
@@ -40,7 +35,7 @@ namespace VideoRentalSystem.Models
 
         public string Summary { get; set; }
 
-        public DateTime RealieseDate { get; set; }
+        public DateTime ReleaseDate { get; set; }
 
         public TimeSpan Duration { get; set; }
 
@@ -58,7 +53,8 @@ namespace VideoRentalSystem.Models
         // public ICollection<Writer> Writers { get; set; }
 
         // public ICollection<Actor> Actors { get; set; }
-        //
         public virtual ICollection<Award> Awards { get; set; }
+
+        public bool IsDeleted { get; set; }
     }
 }
