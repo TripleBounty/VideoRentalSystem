@@ -4,7 +4,7 @@ using VideoRentalSystem.Data.Contracts;
 using VideoRentalSystem.Models;
 using VideoRentalSystem.Models.Factories;
 
-namespace VideoRentalSystem.Commands
+namespace VideoRentalSystem.Commands.CreateCommands
 {
     public class CreateReviewCommand : ICommand
     {

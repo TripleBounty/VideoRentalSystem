@@ -18,8 +18,6 @@ namespace VideoRentalSystem.Data
 
         public IDbSet<Film> FilmTable { get; set; }
 
-        public IDbSet<Review> ReviewsTable { get; set; }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             this.CreateAddresseModels(modelBuilder);

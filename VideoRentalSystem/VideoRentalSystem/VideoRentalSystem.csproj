@@ -58,10 +58,8 @@
     <Compile Include="Builder\ServiceLocator.cs" />
     <Compile Include="Commands\Contracts\ICommand.cs" />
     <Compile Include="Commands\Contracts\ICommandsFactory.cs" />
-    <Compile Include="Commands\CreateCountryCommand.cs" />
-    <Compile Include="Commands\CreateEmployeeCommand.cs" />
-    <Compile Include="Commands\CreateFilmCommand.cs" />
-    <Compile Include="Commands\CreateReviewCommand.cs" />
+    <Compile Include="Commands\CreateCommand\CreateFilmCommand.cs" />
+    <Compile Include="Commands\CreateCommand\CreateReviewCommand.cs" />
     <Compile Include="Commands\Factory\CommandsFactory.cs" />
     <Compile Include="Commands\ListingCommands\ListAllCountriesCommand.cs" />
     <Compile Include="Common\CommandProcessor.cs" />
@@ -74,6 +72,8 @@
     <Compile Include="Common\Contracts\IWriter.cs" />
     <Compile Include="Core\Contracts\IEngine.cs" />
     <Compile Include="Core\Engine.cs" />
+    <Compile Include="Commands\CreateCommand\CreateCountryCommand.cs" />
+    <Compile Include="Commands\CreateCommand\CreateEmployeeCommand.cs" />
     <Compile Include="Data\Contracts\ICountryRepository.cs" />
     <Compile Include="Data\Contracts\IDatabase.cs" />
     <Compile Include="Data\Contracts\IEmployeesRepository.cs" />
@@ -94,6 +94,10 @@
     <Compile Include="Migrations\201706030956309_Added Film model.cs" />
     <Compile Include="Migrations\201706030956309_Added Film model.Designer.cs">
       <DependentUpon>201706030956309_Added Film model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706031207549_Country Constraints.cs" />
+    <Compile Include="Migrations\201706031207549_Country Constraints.Designer.cs">
+      <DependentUpon>201706031207549_Country Constraints.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Award.cs" />
@@ -125,9 +129,10 @@
     <EmbeddedResource Include="Migrations\201706030956309_Added Film model.resx">
       <DependentUpon>201706030956309_Added Film model.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706031207549_Country Constraints.resx">
+      <DependentUpon>201706031207549_Country Constraints.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Commands\AddCommands\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

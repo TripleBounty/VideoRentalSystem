@@ -5,7 +5,7 @@ using VideoRentalSystem.Data.Contracts;
 using VideoRentalSystem.Models.Enum;
 using VideoRentalSystem.Models.Factories;
 
-namespace VideoRentalSystem.Commands
+namespace VideoRentalSystem.Commands.CreateCommands
 {
     public class CreateFilmCommand : ICommand
     {
