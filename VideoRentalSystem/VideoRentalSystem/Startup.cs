@@ -1,6 +1,7 @@
 ﻿using Ninject;
 using VideoRentalSystem.Builder;
 using VideoRentalSystem.Core.Contracts;
+using VideoRentalSystem.Data;
 
 namespace VideoRentalSystem
 {
@@ -10,6 +11,7 @@ namespace VideoRentalSystem
         {
             IKernel kernel = new StandardKernel(new BuildManager());
             IEngine engine = kernel.Get<IEngine>();
+           
 
             engine.Start();
         }

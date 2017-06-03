@@ -60,7 +60,6 @@
     <Compile Include="Commands\Contracts\ICommandsFactory.cs" />
     <Compile Include="Commands\CreateCountryCommand.cs" />
     <Compile Include="Commands\CreateEmployeeCommand.cs" />
-    <Compile Include="Commands\CreateEmployeesCommand.cs" />
     <Compile Include="Commands\CreateReviewCommand.cs" />
     <Compile Include="Commands\Factory\CommandsFactory.cs" />
     <Compile Include="Common\CommandProcessor.cs" />
@@ -87,6 +86,22 @@
     <Compile Include="Migrations\201706021814398_Initial.Designer.cs">
       <DependentUpon>201706021814398_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706030830258_AddReviewTable          .cs" />
+    <Compile Include="Migrations\201706030830258_AddReviewTable          .Designer.cs">
+      <DependentUpon>201706030830258_AddReviewTable          .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706030922218_TestingEmployeeOneToOne.cs" />
+    <Compile Include="Migrations\201706030922218_TestingEmployeeOneToOne.Designer.cs">
+      <DependentUpon>201706030922218_TestingEmployeeOneToOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706030958180_Employeenewtest.cs" />
+    <Compile Include="Migrations\201706030958180_Employeenewtest.Designer.cs">
+      <DependentUpon>201706030958180_Employeenewtest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706031112211_EmployeeeTest v2.cs" />
+    <Compile Include="Migrations\201706031112211_EmployeeeTest v2.Designer.cs">
+      <DependentUpon>201706031112211_EmployeeeTest v2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contracts\ICountry.cs" />
     <Compile Include="Models\Country.cs" />
@@ -111,6 +126,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201706021814398_Initial.resx">
       <DependentUpon>201706021814398_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706030830258_AddReviewTable          .resx">
+      <DependentUpon>201706030830258_AddReviewTable          .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706030922218_TestingEmployeeOneToOne.resx">
+      <DependentUpon>201706030922218_TestingEmployeeOneToOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706030958180_Employeenewtest.resx">
+      <DependentUpon>201706030958180_Employeenewtest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706031112211_EmployeeeTest v2.resx">
+      <DependentUpon>201706031112211_EmployeeeTest v2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

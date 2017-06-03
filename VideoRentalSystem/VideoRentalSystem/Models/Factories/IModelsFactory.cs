@@ -1,4 +1,5 @@
-﻿using VideoRentalSystem.Models.Contracts;
+﻿using System.Collections.Generic;
+using VideoRentalSystem.Models.Contracts;
 
 namespace VideoRentalSystem.Models.Factories
 {
@@ -6,8 +7,8 @@ namespace VideoRentalSystem.Models.Factories
     {
         Country CreateCountry(string name, string code);
 
-        Employee CreateEmployees(string firstName, string lastName, int salary, int managerId);
+        Employee CreateEmployee(string firstName, string lastName, int salary, Employee manager);
 
-        Review CreateReview(int filmId, double rating, string description);
+        Review CreateReview(double rating, string description);
     }
 }

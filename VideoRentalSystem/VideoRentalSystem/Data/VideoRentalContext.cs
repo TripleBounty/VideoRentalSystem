@@ -10,15 +10,25 @@ namespace VideoRentalSystem.Data
         {
         }
 
-        public DbSet<Country> CountriesTable { get; set; }
+        public IDbSet<Country> CountriesTable { get; set; }
 
-        public DbSet<Employee> EmployeesTable { get; set; }
+        public IDbSet<Employee> EmployeesTable { get; set; }
+
+        public IDbSet<Review> ReviewsTable { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<Review> ReviewsTable { get; set; }
+        private void CreateReviewModel(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Review>()
+                .Property(r => r.Description).HasMaxLength(40)
+                                             .IsRequired();
+
+            modelBuilder.Entity<Review>()
+                .Property(r => r.Rating).IsRequired();
+        }
     }
 }

@@ -11,18 +11,17 @@ namespace VideoRentalSystem.Models
 {
     public class Review : IReview
     {
-        public Review (int filmId, double rating, string description)
+        public Review ( double rating, string description)
         {
-            this.FilmId = filmId;
+            //this.Film = film;
             this.Rating = rating;
             this.Description = description;
         }
 
         public int Id { get; set; }
         
-        public int FilmId { get; set; }
+      //  public virtual ICollection<Film> Film { get; set; }
         
-        [Range (0.0,10.0)]
         public double Rating { get; set; }
 
 

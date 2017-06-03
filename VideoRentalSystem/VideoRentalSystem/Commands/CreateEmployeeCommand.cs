@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Data.Contracts;
-using VideoRentalSystem.Models;
 using VideoRentalSystem.Models.Factories;
 
 namespace VideoRentalSystem.Commands
@@ -24,7 +24,10 @@ namespace VideoRentalSystem.Commands
             int salary = int.Parse(parameters[2]);
             int managerId = int.Parse(parameters[3]);
 
-            var employee = this.factory.CreateEmployee(firstName, lastName, salary, managerId);
+            var result = db.Employees.SingleOrDefault(e => e.Id == managerId);
+            
+            Console.WriteLine(result);
+            var employee = this.factory.CreateEmployee(firstName, lastName, salary, result);
 
             this.db.Employees.Add(employee);
             this.db.Complete();

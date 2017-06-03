@@ -4,7 +4,7 @@
     {
         int Id { get; set; }
 
-        int FilmId { get; set; }
+       // Film Film { get; set; }
 
         double Rating { get; set; }
 
