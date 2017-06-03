@@ -20,5 +20,7 @@ namespace VideoRentalSystem.Data
         {
             base.OnModelCreating(modelBuilder);
         }
+
+        public DbSet<Review> ReviewsTable { get; set; }
     }
 }

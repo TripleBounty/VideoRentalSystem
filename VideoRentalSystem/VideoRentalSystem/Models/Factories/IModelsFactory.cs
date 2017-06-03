@@ -11,5 +11,7 @@ namespace VideoRentalSystem.Models.Factories
         Employee CreateEmployee(string firstName, string lastName, int salary, int managerId);
 
         Film CreateFilm(string name, string summary, DateTime realiseDate, TimeSpan duration, VideoFormat format, int count, float rating);
+
+        Review CreateReview(int filmId, double rating, string description);
     }
 }

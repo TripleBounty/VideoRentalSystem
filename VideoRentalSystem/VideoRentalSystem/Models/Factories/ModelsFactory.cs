@@ -16,6 +16,11 @@ namespace VideoRentalSystem.Models.Factories
             return new Employee(firstName, lastName, salary, managerId);
         }
 
+        public Review CreateReview(int filmId, double rating, string description)
+        {
+            return new Review(filmId, rating, description);
+        }
+
         public Film CreateFilm(string name, string summary, DateTime realiseDate, TimeSpan duration, VideoFormat format, int count, float rating)
         {
             return new Film(name, summary, realiseDate, duration, format, count, rating);
