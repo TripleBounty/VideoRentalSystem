@@ -90,6 +90,10 @@
     <Compile Include="Migrations\201706021814398_Initial.Designer.cs">
       <DependentUpon>201706021814398_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706030956309_Added Film model.cs" />
+    <Compile Include="Migrations\201706030956309_Added Film model.Designer.cs">
+      <DependentUpon>201706030956309_Added Film model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Award.cs" />
     <Compile Include="Models\Enum\Category.cs" />
@@ -116,6 +120,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201706021814398_Initial.resx">
       <DependentUpon>201706021814398_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706030956309_Added Film model.resx">
+      <DependentUpon>201706030956309_Added Film model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

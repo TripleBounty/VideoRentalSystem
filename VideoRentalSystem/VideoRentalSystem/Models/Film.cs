@@ -47,7 +47,6 @@ namespace VideoRentalSystem.Models
         public int InStore { get; set; }
 
         // TODO: director, write, actor
-
         // public ICollection<Director> Directors { get; set; }
 
         // public ICollection<Writer> Writers { get; set; }
