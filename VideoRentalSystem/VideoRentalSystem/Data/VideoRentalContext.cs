@@ -12,6 +12,8 @@ namespace VideoRentalSystem.Data
 
         public IDbSet<Country> CountriesTable { get; set; }
 
+        public IDbSet<Town> TownsTable { get; set; }
+
         public IDbSet<Employee> EmployeesTable { get; set; }
 
         public IDbSet<Review> ReviewsTable { get; set; }

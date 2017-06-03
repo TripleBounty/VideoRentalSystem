@@ -6,6 +6,8 @@ namespace VideoRentalSystem.Data.Contracts
     {
         ICountryRepository Countries { get; }
 
+        ITownRepository Towns { get; }
+
         IEmployeesRepository Employees { get; }
 
         IReviewRepository Reviews { get; }

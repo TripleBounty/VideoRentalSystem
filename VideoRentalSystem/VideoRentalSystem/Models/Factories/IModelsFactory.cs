@@ -8,6 +8,8 @@ namespace VideoRentalSystem.Models.Factories
     {
         Country CreateCountry(string name, string code);
 
+        Town CreateTown(string name, Country country);
+
         Employee CreateEmployee(string firstName, string lastName, int salary, Employee manager);
 
         Film CreateFilm(string name, string summary, DateTime realiseDate, TimeSpan duration, VideoFormat format, int count, float rating);

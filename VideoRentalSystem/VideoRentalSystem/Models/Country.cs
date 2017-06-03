@@ -11,12 +11,6 @@ namespace VideoRentalSystem.Models
             this.Code = code;
         }
 
-        public Country(int id, string name, string code)
-            : this(name, code)
-        {
-            this.Id = id;
-        }
-
         private Country()
         {
         }

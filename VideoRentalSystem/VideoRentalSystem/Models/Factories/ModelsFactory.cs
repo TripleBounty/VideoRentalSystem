@@ -1,5 +1,4 @@
 ﻿using System;
-using VideoRentalSystem.Models.Contracts;
 using VideoRentalSystem.Models.Enum;
 
 namespace VideoRentalSystem.Models.Factories
@@ -9,6 +8,11 @@ namespace VideoRentalSystem.Models.Factories
         public Country CreateCountry(string name, string code)
         {
             return new Country(name, code);
+        }
+
+        public Town CreateTown(string name, Country country)
+        {
+            return new Town(name, country);
         }
 
         public Employee CreateEmployee(string firstName, string lastName, int salary, Employee manager)
