@@ -6,7 +6,7 @@ namespace VideoRentalSystem.Models
 {
     public class Film
     { 
-        public Film()
+        private Film()
         {
             this.Categories = new HashSet<MPAA_Rating>();
             this.Genres = new HashSet<Genre>();

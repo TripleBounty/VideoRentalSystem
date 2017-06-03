@@ -4,6 +4,11 @@ namespace VideoRentalSystem.Models
 {
     public class Award
     {
+        private Award()
+        {
+
+        }
+
         public int Id { get; set; }
 
         public string Name { get; set; }
