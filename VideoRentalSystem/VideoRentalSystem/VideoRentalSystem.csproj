@@ -58,8 +58,9 @@
     <Compile Include="Builder\ServiceLocator.cs" />
     <Compile Include="Commands\Contracts\ICommand.cs" />
     <Compile Include="Commands\Contracts\ICommandsFactory.cs" />
-    <Compile Include="Commands\CreateCommand\CreateFilmCommand.cs" />
-    <Compile Include="Commands\CreateCommand\CreateReviewCommand.cs" />
+    <Compile Include="Commands\CreateCommands\CreateFilmCommand.cs" />
+    <Compile Include="Commands\CreateCommands\CreateManagerCommand.cs" />
+    <Compile Include="Commands\CreateCommands\CreateReviewCommand.cs" />
     <Compile Include="Commands\Factory\CommandsFactory.cs" />
     <Compile Include="Commands\ListingCommands\ListAllCountriesCommand.cs" />
     <Compile Include="Common\CommandProcessor.cs" />
@@ -72,8 +73,8 @@
     <Compile Include="Common\Contracts\IWriter.cs" />
     <Compile Include="Core\Contracts\IEngine.cs" />
     <Compile Include="Core\Engine.cs" />
-    <Compile Include="Commands\CreateCommand\CreateCountryCommand.cs" />
-    <Compile Include="Commands\CreateCommand\CreateEmployeeCommand.cs" />
+    <Compile Include="Commands\CreateCommands\CreateCountryCommand.cs" />
+    <Compile Include="Commands\CreateCommands\CreateEmployeeCommand.cs" />
     <Compile Include="Data\Contracts\ICountryRepository.cs" />
     <Compile Include="Data\Contracts\IDatabase.cs" />
     <Compile Include="Data\Contracts\IEmployeesRepository.cs" />
