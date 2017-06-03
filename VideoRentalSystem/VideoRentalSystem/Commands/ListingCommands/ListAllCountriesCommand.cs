@@ -21,7 +21,7 @@ namespace VideoRentalSystem.Commands.ListingCommands
         {
             var contries = this.db.Countries.GetAll();
 
-            return String.Join("\n", contries);
+            return string.Join("\n", contries);
         }
     }
 }

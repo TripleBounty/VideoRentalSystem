@@ -18,7 +18,7 @@ namespace VideoRentalSystem.Models.Factories
 
         public Review CreateReview(double rating, string description)
         {
-            return new Review( rating, description);
+            return new Review(rating, description);
         }
 
         public Film CreateFilm(string name, string summary, DateTime realiseDate, TimeSpan duration, VideoFormat format, int count, float rating)

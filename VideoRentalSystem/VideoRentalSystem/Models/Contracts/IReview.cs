@@ -5,7 +5,6 @@
         int Id { get; set; }
 
        // Film Film { get; set; }
-
         double Rating { get; set; }
 
         string Description { get; set; }

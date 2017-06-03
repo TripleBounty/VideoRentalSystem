@@ -6,10 +6,6 @@ namespace VideoRentalSystem.Models
 {
     public class Employee : IEmployee
     {
-        private Employee()
-        {
-
-        }
         public Employee(string firstName, string lastName, int salary, Employee manager)
         {
             this.FirstName = firstName;
@@ -18,7 +14,10 @@ namespace VideoRentalSystem.Models
             this.Manager = manager;
         }
 
-        
+        private Employee()
+        {
+        }
+
         public int Id { get; set; }
 
         public string FirstName { get; set; }

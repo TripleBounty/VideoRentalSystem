@@ -6,7 +6,6 @@ namespace VideoRentalSystem.Models
     {
         private Award()
         {
-
         }
 
         public int Id { get; set; }
