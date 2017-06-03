@@ -36,8 +36,8 @@ namespace VideoRentalSystem.Models
 
             stringBuilder.AppendLine($"{this.Id} {this.Name}");
             stringBuilder.AppendLine(Address.ToString());
-            stringBuilder.AppendLine(String.Join("\n", Employees));
-            stringBuilder.AppendLine(String.Join("\n", Films));
+            stringBuilder.AppendLine(String.Join("\n", this.Employees));
+            stringBuilder.AppendLine(String.Join("\n", this.Films));
 
             return stringBuilder.ToString();
         }

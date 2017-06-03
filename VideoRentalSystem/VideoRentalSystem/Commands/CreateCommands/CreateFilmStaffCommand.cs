@@ -20,7 +20,6 @@ namespace VideoRentalSystem.Commands.CreateCommands
 
         public string Execute(IList<string> parameters)
         {
-
             var firstName = parameters[0];
             var lastName = parameters[1];
             DateTime birthDate = Convert.ToDateTime(parameters[2]);

@@ -20,7 +20,6 @@ namespace VideoRentalSystem.Models.Factories
             return new Address(street, postalCode, town, country);
         }
 
-
         public Employee CreateEmployee(string firstName, string lastName, int salary, Employee manager)
         {
             return new Employee(firstName, lastName, salary, manager);
