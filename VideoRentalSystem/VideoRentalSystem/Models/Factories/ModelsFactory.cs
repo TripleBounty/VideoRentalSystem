@@ -40,5 +40,10 @@ namespace VideoRentalSystem.Models.Factories
         {
             return new Film(name, summary, realiseDate, duration, format, count, rating);
         }
+
+        public Store CreateStore(string name, Address address)
+        {
+            return new Store(name, address);
+        }
     }
 }

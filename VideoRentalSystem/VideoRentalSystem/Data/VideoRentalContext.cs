@@ -24,6 +24,8 @@ namespace VideoRentalSystem.Data
 
         public IDbSet<Film> FilmTable { get; set; }
 
+        public IDbSet<Store> StoreTable { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             this.CreateAddresseModels(modelBuilder);

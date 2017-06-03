@@ -67,7 +67,7 @@ namespace VideoRentalSystem.Models
             }
         }
 
-        public Employee Manager { get; set; }
+        public virtual Employee Manager { get; set; }
 
         public override string ToString()
         {

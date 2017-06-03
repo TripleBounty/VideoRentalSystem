@@ -18,6 +18,8 @@ namespace VideoRentalSystem.Data.Contracts
 
         IFilmRepository Film { get; }
 
+        IStoreRepository Stores { get; }
+
         int Complete();
     }
 }

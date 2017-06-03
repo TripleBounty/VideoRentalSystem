@@ -50,6 +50,9 @@ namespace VideoRentalSystem.Builder
 
             this.Bind<ICommand>().To<CreateFilmCommand>().Named("CreateFilm");
 
+            this.Bind<ICommand>().To<CreateStoreCommand>().Named("CreateStore");
+            this.Bind<ICommand>().To<ListAllStoresCommand>().Named("ListAllStores");
+
             var engine = this.Bind<IEngine>().To<Engine>().InSingletonScope();
         }
     }
