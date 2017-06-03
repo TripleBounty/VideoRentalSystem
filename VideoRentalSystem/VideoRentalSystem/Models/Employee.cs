@@ -1,16 +1,21 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using VideoRentalSystem.Models.Contracts;
 
 namespace VideoRentalSystem.Models
 {
     public class Employee : IEmployee
     {
-        public Employee(string firstName, string lastName, int salary, int managerId)
+        private Employee()
+        {
+
+        }
+        public Employee(string firstName, string lastName, int salary, Employee manager)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
             this.Salary = salary;
-            this.ManagerId = managerId;
+            this.Manager = manager;
         }
 
         [Key]
@@ -25,6 +30,6 @@ namespace VideoRentalSystem.Models
         ////TODO: Replace managerID with Employee Manager object (Victor)
         ////public virtual Employee Manager { get; set; }
 
-        public int ManagerId { get; set; }
+        public Employee Manager { get; set; }
     }
 }

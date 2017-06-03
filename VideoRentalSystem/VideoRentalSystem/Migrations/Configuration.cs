@@ -9,7 +9,7 @@ namespace VideoRentalSystem.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            this.AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(VideoRentalSystem.Data.VideoRentalContext context)

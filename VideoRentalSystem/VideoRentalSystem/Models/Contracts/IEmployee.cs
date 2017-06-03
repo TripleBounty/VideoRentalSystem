@@ -1,4 +1,6 @@
-﻿namespace VideoRentalSystem.Models.Contracts
+﻿using System.Collections.Generic;
+
+namespace VideoRentalSystem.Models.Contracts
 {
     public interface IEmployee
     {
@@ -10,6 +12,6 @@
 
         int Salary { get; set; }
 
-        int ManagerId { get; set; }
+        Employee Manager { get; set; }
     }
 }

@@ -10,14 +10,32 @@ namespace VideoRentalSystem.Data
         {
         }
 
-        public DbSet<Country> Countries { get; set; }
+        public IDbSet<Country> CountriesTable { get; set; }
 
-        public DbSet<Employee> Employees { get; set; }
+        public IDbSet<Employee> EmployeesTable { get; set; }
+
+        public IDbSet<Review> ReviewsTable { get; set; }
+
+        public IDbSet<Film> FilmTable { get; set; }
+
+        public IDbSet<Review> ReviewsTable { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             this.CreateAddresseModels(modelBuilder);
+            this.CreateReviewModel(modelBuilder);
+
             base.OnModelCreating(modelBuilder);
+        }
+
+        private void CreateReviewModel(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Review>()
+                .Property(r => r.Description).HasMaxLength(40)
+                                             .IsRequired();
+
+            modelBuilder.Entity<Review>()
+                .Property(r => r.Rating).IsRequired();
         }
 
         private void CreateAddresseModels(DbModelBuilder modelBuilder)
