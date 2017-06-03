@@ -33,6 +33,7 @@ namespace VideoRentalSystem.Builder
             this.Bind<ICommand>().To<CreateEmployeeCommand>().Named("CreateEmployee");
             this.Bind<ICommand>().To<CreateManagerCommand>().Named("CreateManager");
             this.Bind<ICommand>().To<ListAllCountriesCommand>().Named("ListAllCountries");
+            this.Bind<ICommand>().To<ListAllEmployeesCommand>().Named("ListAllEmployees");
             this.Bind<ICommand>().To<CreateReviewCommand>().Named("CreateReview");
             this.Bind<ICommand>().To<CreateFilmCommand>().Named("CreateFilm");
             

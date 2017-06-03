@@ -63,6 +63,7 @@
     <Compile Include="Commands\CreateCommands\CreateReviewCommand.cs" />
     <Compile Include="Commands\Factory\CommandsFactory.cs" />
     <Compile Include="Commands\ListingCommands\ListAllCountriesCommand.cs" />
+    <Compile Include="Commands\ListingCommands\ListAllEmployeesCommand.cs" />
     <Compile Include="Common\CommandProcessor.cs" />
     <Compile Include="Common\ConsoleReader.cs" />
     <Compile Include="Common\ConsoleWriter.cs" />

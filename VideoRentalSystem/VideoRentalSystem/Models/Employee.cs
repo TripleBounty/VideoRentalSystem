@@ -28,5 +28,10 @@ namespace VideoRentalSystem.Models
         public int Salary { get; set; }
 
         public Employee Manager { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("{0} {1} {2} {3} {4}", this.Id, this.FirstName, this.LastName, this.Salary, this.Manager);
+        }
     }
 }
