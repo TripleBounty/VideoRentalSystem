@@ -1,25 +1,24 @@
 ﻿using System;
 using VideoRentalSystem.Common.Validations;
-using VideoRentalSystem.Models.Contracts;
 
 namespace VideoRentalSystem.Models
 {
-    public class Employee : IEmployee
+    public class Customer
     {
         private string firstName;
         private string lastName;
-        private int salary;
-        private Employee manager;
+        private DateTime birthDate;
+       // private Actor favouriteActors;
 
-        public Employee(string firstName, string lastName, int salary, Employee manager)
+        public Customer(string firstName, string lastName, DateTime birthDate)//,Actor favouriteActors)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
-            this.Salary = salary;
-            this.Manager = manager;
+            this.BirthDate = birthDate;
+            // this.FavouriteActors = facouriteActors;
         }
 
-        private Employee()
+        private Customer()
         {
         }
 
@@ -53,25 +52,13 @@ namespace VideoRentalSystem.Models
             }
         }
 
-        public int Salary
-        {
-            get
-            {
-                return this.salary;
-            }
+        public DateTime BirthDate { get; set; }
 
-            set
-            {
-                EmployeeValidator.ValidateSalary(value);
-                this.salary = value;
-            }
-        }
-
-        public Employee Manager { get; set; }
+       // public ICollection<Actor> Actors { get; set; }
 
         public override string ToString()
         {
-            return string.Format("{0}, {1}, {2}, {3}BGN", this.Id, this.firstName, this.lastName, this.salary);
+            return string.Format("{0}, {1}, {2}, born on: {3}", this.Id, this.firstName, this.lastName, this.BirthDate.ToString());
         }
     }
 }

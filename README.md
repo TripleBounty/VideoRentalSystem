@@ -8,15 +8,21 @@ alt="IMAGE ALT TEXT HERE" width="480" height="140" border="10" /><br>
 <li>1.1.Create Commands <br><br>
 --CreateCountry - params - Initials, Country Code.<br>
 --CreateEmployee - params - First Name, Last Name, Salary, Manager Id.<br>
---CreateManager - params - First Name, Last Name, Salary.<br><br>
+--CreateManager - params - First Name, Last Name, Salary.<br>
+--CreateCustomer - params - First Name, Last Name, Birthdate MM/dd/YYYY.<br><br>
 <br>
 </li>
 <li>1.2. List Commands<br><br>
 --ListAllCountries - no params -<br>
---ListAllEmployees - no params -<br><br>
+--ListAllEmployees - no params -<br>
+--ListAllCustomers - no params -<br><br>
 </li>
 <li>1.3. Termination<br><br>
 --Exit<br></li>
 </ul>
+<br>
+<br>
 ⋅⋅* Enjoy ! 
-
+<br><br>
+<img src="http://static2.fjcdn.com/comments/5854232+_758b797f435687856ce7fa12ba87da9a.png" 
+alt="IMAGE ALT TEXT HERE" width="480" height="180" border="10" /><br>

@@ -10,6 +10,8 @@ namespace VideoRentalSystem.Data.Contracts
 
         IEmployeesRepository Employees { get; }
 
+        ICustomerRepository Customers { get; }
+
         IReviewRepository Reviews { get; }
 
         IFilmRepository Film { get; }

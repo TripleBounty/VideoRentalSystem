@@ -7,13 +7,13 @@ namespace VideoRentalSystem.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class addtown : IMigrationMetadata
+    public sealed partial class CustomerMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addtown));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CustomerMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "201706031640585_add town"; }
+            get { return "201706031643145_CustomerMigration"; }
         }
         
         string IMigrationMetadata.Source
