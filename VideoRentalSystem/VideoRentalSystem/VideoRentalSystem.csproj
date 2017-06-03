@@ -70,6 +70,7 @@
     <Compile Include="Common\Contracts\IProcessor.cs" />
     <Compile Include="Common\Contracts\IReader.cs" />
     <Compile Include="Common\Contracts\IDateProvider.cs" />
+    <Compile Include="Common\Validations\EmployeeValidator.cs" />
     <Compile Include="Core\Contracts\IServiceLocator.cs" />
     <Compile Include="Common\Contracts\IWriter.cs" />
     <Compile Include="Core\Contracts\IEngine.cs" />

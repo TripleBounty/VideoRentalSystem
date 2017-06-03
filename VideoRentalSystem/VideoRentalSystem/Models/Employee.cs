@@ -1,11 +1,16 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System;
+using VideoRentalSystem.Common.Validations;
 using VideoRentalSystem.Models.Contracts;
 
 namespace VideoRentalSystem.Models
 {
     public class Employee : IEmployee
     {
+        private string firstName;
+        private string lastName;
+        private int salary;
+        private Employee manager;
+
         public Employee(string firstName, string lastName, int salary, Employee manager)
         {
             this.FirstName = firstName;
@@ -20,17 +25,53 @@ namespace VideoRentalSystem.Models
 
         public int Id { get; set; }
 
-        public string FirstName { get; set; }
+        public string FirstName
+        {
+            get
+            {
+                return this.firstName;
+            }
 
-        public string LastName { get; set; }
+            set
+            {
+                EmployeeValidator.ValidateName(value);
+                this.firstName = value;
+            }
+        }
 
-        public int Salary { get; set; }
+        public string LastName
+        {
+            get
+            {
+                return this.lastName;
+            }
+
+            set
+            {
+                EmployeeValidator.ValidateLastName(value);
+                this.lastName = value;
+            }
+        }
+
+        public int Salary
+        {
+            get
+            {
+                return this.salary;
+            }
+
+            set
+            {
+                EmployeeValidator.ValidateSalary(value);
+                this.salary = value;
+            }
+        }
 
         public Employee Manager { get; set; }
 
         public override string ToString()
         {
-            return string.Format("{0} {1} {2} {3} {4}", this.Id, this.FirstName, this.LastName, this.Salary, this.Manager);
+            return string.Format("{0}, {1}, {2}, {3}BGN", this.Id, this.firstName, this.lastName, this.salary);
         }
     }
 }
