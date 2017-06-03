@@ -67,7 +67,7 @@
     <Compile Include="Common\ConsoleWriter.cs" />
     <Compile Include="Common\Contracts\IProcessor.cs" />
     <Compile Include="Common\Contracts\IReader.cs" />
-    <Compile Include="Common\DateProvider.cs" />
+    <Compile Include="Common\Contracts\IDateProvider.cs" />
     <Compile Include="Core\Contracts\IServiceLocator.cs" />
     <Compile Include="Common\Contracts\IWriter.cs" />
     <Compile Include="Core\Contracts\IEngine.cs" />
