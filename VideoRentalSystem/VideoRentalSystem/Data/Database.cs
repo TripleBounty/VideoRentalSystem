@@ -14,6 +14,7 @@ namespace VideoRentalSystem.Data
             this.context = context;
             this.Countries = new CountryRepository(context);
             this.Employees = new EmployeesRepository(context);
+            this.Customers = new CustomerRepository(context);
             this.Reviews = new ReviewRepository(context);
             this.Film = new FilmRepository(context);
         }
@@ -21,6 +22,8 @@ namespace VideoRentalSystem.Data
         public ICountryRepository Countries { get; private set; }
 
         public IEmployeesRepository Employees { get; private set; }
+
+        public ICustomerRepository Customers { get; private set; }
 
         public IReviewRepository Reviews { get; private set; }
 

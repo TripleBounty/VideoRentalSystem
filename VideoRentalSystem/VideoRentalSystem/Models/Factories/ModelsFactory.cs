@@ -16,6 +16,11 @@ namespace VideoRentalSystem.Models.Factories
             return new Employee(firstName, lastName, salary, manager);
         }
 
+        public Customer CreateCustomer(string firstName, string lastName, DateTime birthDate)
+        {
+            return new Customer(firstName, lastName, birthDate);
+        }
+
         public Review CreateReview(double rating, string description)
         {
             return new Review(rating, description);

@@ -58,11 +58,13 @@
     <Compile Include="Builder\ServiceLocator.cs" />
     <Compile Include="Commands\Contracts\ICommand.cs" />
     <Compile Include="Commands\Contracts\ICommandsFactory.cs" />
+    <Compile Include="Commands\CreateCommands\CreateCustomerCimmand.cs" />
     <Compile Include="Commands\CreateCommands\CreateFilmCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateManagerCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateReviewCommand.cs" />
     <Compile Include="Commands\Factory\CommandsFactory.cs" />
     <Compile Include="Commands\ListingCommands\ListAllCountriesCommand.cs" />
+    <Compile Include="Commands\ListingCommands\ListAllCustomersCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllEmployeesCommand.cs" />
     <Compile Include="Common\CommandProcessor.cs" />
     <Compile Include="Common\ConsoleReader.cs" />
@@ -78,6 +80,7 @@
     <Compile Include="Commands\CreateCommands\CreateCountryCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateEmployeeCommand.cs" />
     <Compile Include="Data\Contracts\ICountryRepository.cs" />
+    <Compile Include="Data\Contracts\ICustomerRepository.cs" />
     <Compile Include="Data\Contracts\IDatabase.cs" />
     <Compile Include="Data\Contracts\IEmployeesRepository.cs" />
     <Compile Include="Data\Contracts\IFilmRepository.cs" />
@@ -85,6 +88,7 @@
     <Compile Include="Data\Database.cs" />
     <Compile Include="Data\FilmRepository.cs" />
     <Compile Include="Data\Repository\CountryRepository.cs" />
+    <Compile Include="Data\Repository\CustomerRepository.cs" />
     <Compile Include="Data\Repository\EmployeesRepository.cs" />
     <Compile Include="Data\Contracts\IReviewRepository.cs" />
     <Compile Include="Data\Repository\Repository.cs" />
@@ -102,8 +106,13 @@
     <Compile Include="Migrations\201706031207549_Country Constraints.Designer.cs">
       <DependentUpon>201706031207549_Country Constraints.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706031643145_CustomerMigration.cs" />
+    <Compile Include="Migrations\201706031643145_CustomerMigration.Designer.cs">
+      <DependentUpon>201706031643145_CustomerMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Award.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Enum\Category.cs" />
     <Compile Include="Models\Contracts\ICountry.cs" />
     <Compile Include="Models\Country.cs" />
@@ -134,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706031207549_Country Constraints.resx">
       <DependentUpon>201706031207549_Country Constraints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706031643145_CustomerMigration.resx">
+      <DependentUpon>201706031643145_CustomerMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
