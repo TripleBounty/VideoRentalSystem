@@ -1,6 +1,9 @@
 ﻿using Ninject;
+using System;
 using VideoRentalSystem.Builder;
 using VideoRentalSystem.Core.Contracts;
+using VideoRentalSystem.Data;
+using VideoRentalSystem.Models;
 
 namespace VideoRentalSystem
 {

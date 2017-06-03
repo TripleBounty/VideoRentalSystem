@@ -58,9 +58,10 @@
     <Compile Include="Builder\ServiceLocator.cs" />
     <Compile Include="Commands\Contracts\ICommand.cs" />
     <Compile Include="Commands\Contracts\ICommandsFactory.cs" />
-    <Compile Include="Commands\CreateCountryCommand.cs" />
-    <Compile Include="Commands\CreateEmployeeCommand.cs" />
+    <Compile Include="Commands\CreateCommands\CreateCountryCommand.cs" />
+    <Compile Include="Commands\CreateCommands\CreateEmployeeCommand.cs" />
     <Compile Include="Commands\Factory\CommandsFactory.cs" />
+    <Compile Include="Commands\ListingCommands\ListAllCountriesCommand.cs" />
     <Compile Include="Common\CommandProcessor.cs" />
     <Compile Include="Common\ConsoleReader.cs" />
     <Compile Include="Common\ConsoleWriter.cs" />
@@ -82,6 +83,10 @@
     <Compile Include="Migrations\201706021814398_Initial.cs" />
     <Compile Include="Migrations\201706021814398_Initial.Designer.cs">
       <DependentUpon>201706021814398_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706030850064_add country constraint.cs" />
+    <Compile Include="Migrations\201706030850064_add country constraint.Designer.cs">
+      <DependentUpon>201706030850064_add country constraint.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contracts\ICountry.cs" />
@@ -106,6 +111,12 @@
     <EmbeddedResource Include="Migrations\201706021814398_Initial.resx">
       <DependentUpon>201706021814398_Initial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706030850064_add country constraint.resx">
+      <DependentUpon>201706030850064_add country constraint.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Commands\AddCommands\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

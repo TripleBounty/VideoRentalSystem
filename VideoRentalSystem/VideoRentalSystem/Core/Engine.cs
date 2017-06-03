@@ -37,7 +37,7 @@ namespace VideoRentalSystem.Core
                 }
                 catch (Exception ex)
                 {
-                    this.writer.WriteLine("Opps, something happened. :( /n" + ex.Message);
+                    this.writer.WriteLine("Opps, something happened. :( \n" + ex.Message);
                 }
             }
         }

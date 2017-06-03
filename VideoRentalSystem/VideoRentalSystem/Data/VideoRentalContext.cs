@@ -10,13 +10,27 @@ namespace VideoRentalSystem.Data
         {
         }
 
-        public DbSet<Country> CountriesTable { get; set; }
+        public DbSet<Country> Countries { get; set; }
 
-        public DbSet<Employee> EmployeesTable { get; set; }
+        public DbSet<Employee> Employees { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            this.CreateAddresseModels(modelBuilder);
             base.OnModelCreating(modelBuilder);
+        }
+
+        private void CreateAddresseModels(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Country>()
+                .Property(c => c.Name)
+               .HasMaxLength(40)
+               .IsRequired();
+
+            modelBuilder.Entity<Country>()
+                .Property(c => c.Code)
+                .HasMaxLength(2)
+                .IsRequired();
         }
     }
 }
