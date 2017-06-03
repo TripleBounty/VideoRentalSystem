@@ -29,9 +29,8 @@ namespace VideoRentalSystem.Commands.CreateCommands
 
             // TODO: tryParse
             var inStoreCount = int.Parse(parameters[5]);
-            var ration = float.Parse(parameters[6]);
 
-            var film = this.factory.CreateFilm(filmName, summary, realiseDate, duration, videoFormat, inStoreCount, ration);
+            var film = this.factory.CreateFilm(filmName, summary, realiseDate, duration, videoFormat, inStoreCount);
 
             this.db.Film.Add(film);
             this.db.Complete();

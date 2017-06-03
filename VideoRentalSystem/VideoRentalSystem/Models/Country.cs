@@ -7,7 +7,6 @@ namespace VideoRentalSystem.Models
     {
         private Country()
         {
-
         }
 
         public Country(string name, string code)

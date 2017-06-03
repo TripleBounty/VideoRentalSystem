@@ -21,9 +21,9 @@ namespace VideoRentalSystem.Models.Factories
             return new Review( rating, description);
         }
 
-        public Film CreateFilm(string name, string summary, DateTime realiseDate, TimeSpan duration, VideoFormat format, int count, float rating)
+        public Film CreateFilm(string name, string summary, DateTime realiseDate, TimeSpan duration, VideoFormat format, int count)
         {
-            return new Film(name, summary, realiseDate, duration, format, count, rating);
+            return new Film(name, summary, realiseDate, duration, format, count);
         }
     }
 }

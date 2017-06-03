@@ -8,8 +8,8 @@ namespace VideoRentalSystem.Models
     {
         private Employee()
         {
-
         }
+
         public Employee(string firstName, string lastName, int salary, Employee manager)
         {
             this.FirstName = firstName;
@@ -18,7 +18,6 @@ namespace VideoRentalSystem.Models
             this.Manager = manager;
         }
 
-        
         public int Id { get; set; }
 
         public string FirstName { get; set; }
