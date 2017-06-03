@@ -4,10 +4,8 @@ using VideoRentalSystem.Models.Contracts;
 
 namespace VideoRentalSystem.Data.Repository
 {
-    //TODO: may or maynot be coupled
     public class EmployeesRepository : Repository<Employee>, IEmployeesRepository
     {
-
         public EmployeesRepository(VideoRentalContext context)
             : base(context)
         {
@@ -15,8 +13,7 @@ namespace VideoRentalSystem.Data.Repository
 
         private VideoRentalContext VideoRentalContext
         {
-            get { return Context as VideoRentalContext; }
+            get { return this.Context as VideoRentalContext; }
         }
     }
 }
-

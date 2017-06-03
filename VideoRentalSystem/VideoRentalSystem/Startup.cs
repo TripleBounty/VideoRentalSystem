@@ -9,8 +9,8 @@ namespace VideoRentalSystem
         public static void Main(string[] args)
         {
             IKernel kernel = new StandardKernel(new BuildManager());
-
             IEngine engine = kernel.Get<IEngine>();
+
             engine.Start();
         }
     }
