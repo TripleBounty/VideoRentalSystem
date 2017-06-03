@@ -16,5 +16,6 @@ namespace VideoRentalSystem.Models
 
         // TODO: organisations
         // public Organisation  Organisation { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }

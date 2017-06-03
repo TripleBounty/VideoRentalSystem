@@ -105,6 +105,14 @@
     <Compile Include="Migrations\201706031306346_remove rating from film.Designer.cs">
       <DependentUpon>201706031306346_remove rating from film.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706031529186_add isDeleted to film.cs" />
+    <Compile Include="Migrations\201706031529186_add isDeleted to film.Designer.cs">
+      <DependentUpon>201706031529186_add isDeleted to film.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706031530183_add award isDeleted.cs" />
+    <Compile Include="Migrations\201706031530183_add award isDeleted.Designer.cs">
+      <DependentUpon>201706031530183_add award isDeleted.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Award.cs" />
     <Compile Include="Models\Enum\Category.cs" />
@@ -140,6 +148,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706031306346_remove rating from film.resx">
       <DependentUpon>201706031306346_remove rating from film.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706031529186_add isDeleted to film.resx">
+      <DependentUpon>201706031529186_add isDeleted to film.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706031530183_add award isDeleted.resx">
+      <DependentUpon>201706031530183_add award isDeleted.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
