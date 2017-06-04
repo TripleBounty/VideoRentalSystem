@@ -14,7 +14,7 @@ namespace VideoRentalSystem.Models.Factories
 
         Employee CreateEmployee(string firstName, string lastName, int salary, Employee manager);
 
-        Film CreateFilm(string name, string summary, DateTime realiseDate, TimeSpan duration, VideoFormat format);
+        Film CreateFilm(string name, string summary, DateTime realiseDate, TimeSpan duration);
 
         Customer CreateCustomer(string firstName, string lastName, DateTime birthDate);
 

@@ -8,6 +8,8 @@ namespace VideoRentalSystem.Models
         {
             this.Name = name;
             this.Date = date;
+
+            this.IsDeleted = false;
         }
 
         public Award()

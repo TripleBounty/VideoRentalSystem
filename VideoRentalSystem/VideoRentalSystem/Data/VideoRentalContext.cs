@@ -89,7 +89,6 @@ namespace VideoRentalSystem.Data
                .HasMaxLength(40)
                .IsRequired();
 
-            // TODO: fix country code max length
             modelBuilder.Entity<Country>()
                 .Property(c => c.Code)
                 .HasMaxLength(2)

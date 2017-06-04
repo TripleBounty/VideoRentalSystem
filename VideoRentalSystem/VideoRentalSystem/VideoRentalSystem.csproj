@@ -153,6 +153,10 @@
     <Compile Include="Migrations\201706040824032_isdeleted to film again.Designer.cs">
       <DependentUpon>201706040824032_isdeleted to film again.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706040847415_remove videoformat from film.cs" />
+    <Compile Include="Migrations\201706040847415_remove videoformat from film.Designer.cs">
+      <DependentUpon>201706040847415_remove videoformat from film.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Award.cs" />
@@ -212,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706040824032_isdeleted to film again.resx">
       <DependentUpon>201706040824032_isdeleted to film again.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706040847415_remove videoformat from film.resx">
+      <DependentUpon>201706040847415_remove videoformat from film.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
