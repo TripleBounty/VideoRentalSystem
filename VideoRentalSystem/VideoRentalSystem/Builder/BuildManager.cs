@@ -56,8 +56,6 @@ namespace VideoRentalSystem.Builder
 
             this.Bind<ICommand>().To<CreateFilmStaffCommand>().Named("CreateFilmStaff");
             this.Bind<ICommand>().To<ListAllFilmStaffsCommand>().Named("ListAllFilmStaffs");
-
-            
             
             var engine = this.Bind<IEngine>().To<Engine>().InSingletonScope();
         }

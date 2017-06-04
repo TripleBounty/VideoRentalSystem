@@ -23,7 +23,7 @@ namespace VideoRentalSystem.Models
             this.FilmStaffs = new HashSet<FilmStaff>();
         }
 
-        private Film()
+        public Film()
         {
             this.Categories = new HashSet<MPAA_Rating>();
             this.Genres = new HashSet<Genre>();
@@ -54,9 +54,10 @@ namespace VideoRentalSystem.Models
         // public ICollection<Writer> Writers { get; set; }
 
         // public ICollection<Actor> Actors { get; set; }
-        
         public virtual ICollection<Award> Awards { get; set; }
 
         public virtual ICollection<FilmStaff> FilmStaffs { get; set; }
+
+        public bool IsDeleted { get; set; }
     }
 }

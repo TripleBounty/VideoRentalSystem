@@ -10,7 +10,7 @@ namespace VideoRentalSystem.Models
             this.Country = country;
         }
 
-        private Town()
+        public Town()
         {
         }
 

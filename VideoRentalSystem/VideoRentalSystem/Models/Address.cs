@@ -16,7 +16,7 @@ namespace VideoRentalSystem.Models
             this.Country = country;
         }
 
-        private Address()
+        public Address()
         {
         }
 

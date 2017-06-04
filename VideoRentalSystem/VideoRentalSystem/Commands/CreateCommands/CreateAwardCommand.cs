@@ -6,7 +6,7 @@ using VideoRentalSystem.Models.Factories;
 
 namespace VideoRentalSystem.Commands.CreateCommands
 {
-    class CreateAwardCommand : ICommand
+    public class CreateAwardCommand : ICommand
     {
         private readonly IDatabase db;
         private readonly IModelsFactory factory;

@@ -9,7 +9,8 @@ namespace VideoRentalSystem.Models
         private string firstName;
         private string lastName;
         private int salary;
-        private Employee manager;
+
+       //// private Employee manager;
 
         public Employee(string firstName, string lastName, int salary, Employee manager)
         {
@@ -19,7 +20,7 @@ namespace VideoRentalSystem.Models
             this.Manager = manager;
         }
 
-        private Employee()
+        public Employee()
         {
         }
 

@@ -10,7 +10,7 @@ namespace VideoRentalSystem.Models
             this.Date = date;
         }
 
-        private Award()
+        public Award()
         {
         }
 

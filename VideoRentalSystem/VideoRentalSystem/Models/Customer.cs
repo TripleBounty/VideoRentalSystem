@@ -7,18 +7,19 @@ namespace VideoRentalSystem.Models
     {
         private string firstName;
         private string lastName;
-        private DateTime birthDate;
-       // private Actor favouriteActors;
+        //// private DateTime birthDate;
+        //// private Actor favouriteActors;
 
-        public Customer(string firstName, string lastName, DateTime birthDate)//,Actor favouriteActors)
+        //// ,Actor favouriteActors)
+        public Customer(string firstName, string lastName, DateTime birthDate) 
         {
             this.FirstName = firstName;
             this.LastName = lastName;
             this.BirthDate = birthDate;
-            // this.FavouriteActors = facouriteActors;
+            //// this.FavouriteActors = facouriteActors;
         }
 
-        private Customer()
+        public Customer()
         {
         }
 
@@ -54,8 +55,7 @@ namespace VideoRentalSystem.Models
 
         public DateTime BirthDate { get; set; }
 
-       // public ICollection<Actor> Actors { get; set; }
-
+        //// public ICollection<Actor> Actors { get; set; }
         public override string ToString()
         {
             return string.Format("{0}, {1}, {2}, born on: {3}", this.Id, this.firstName, this.lastName, this.BirthDate.ToString());

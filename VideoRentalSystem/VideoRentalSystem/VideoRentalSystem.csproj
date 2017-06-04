@@ -149,6 +149,10 @@
     <Compile Include="Migrations\201706032018569_add film staff table.Designer.cs">
       <DependentUpon>201706032018569_add film staff table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706040824032_isdeleted to film again.cs" />
+    <Compile Include="Migrations\201706040824032_isdeleted to film again.Designer.cs">
+      <DependentUpon>201706040824032_isdeleted to film again.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Award.cs" />
@@ -205,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706032018569_add film staff table.resx">
       <DependentUpon>201706032018569_add film staff table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706040824032_isdeleted to film again.resx">
+      <DependentUpon>201706040824032_isdeleted to film again.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

@@ -12,7 +12,7 @@ namespace VideoRentalSystem.Models
             this.Description = description;
         }
 
-        private Review()
+        public Review()
         {
         }
 

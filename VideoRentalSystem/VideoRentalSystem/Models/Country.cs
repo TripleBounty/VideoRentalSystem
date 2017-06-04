@@ -10,7 +10,7 @@ namespace VideoRentalSystem.Models
             this.Code = code;
         }
 
-        private Country()
+        public Country()
         {
         }
 

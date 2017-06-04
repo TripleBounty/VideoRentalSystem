@@ -19,7 +19,7 @@ namespace VideoRentalSystem.Models
             this.Films = new HashSet<Film>();
         }
 
-        private FilmStaff()
+        public FilmStaff()
         {
         }
 

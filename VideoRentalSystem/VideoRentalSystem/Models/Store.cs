@@ -16,7 +16,7 @@ namespace VideoRentalSystem.Models
             this.Employees = new HashSet<Employee>();
         }
 
-        private Store()
+        public Store()
         {
         }
 
@@ -36,8 +36,8 @@ namespace VideoRentalSystem.Models
 
             stringBuilder.AppendLine($"{this.Id} {this.Name}");
             stringBuilder.AppendLine(Address.ToString());
-            stringBuilder.AppendLine(String.Join("\n", this.Employees));
-            stringBuilder.AppendLine(String.Join("\n", this.Films));
+            stringBuilder.AppendLine(string.Join("\n", this.Employees));
+            stringBuilder.AppendLine(string.Join("\n", this.Films));
 
             return stringBuilder.ToString();
         }
