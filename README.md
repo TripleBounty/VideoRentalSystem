@@ -3,6 +3,8 @@
 <img src="https://vignette2.wikia.nocookie.net/tinytower/images/b/bd/Video_Rental.png/revision/latest?cb=20130515011338"
 alt="IMAGE ALT TEXT HERE" width="480" height="140" border="10" /><br>
 
+Commands separator ";" <br>
+
 1.0. Commands <br>
 <ul>
 <li>1.1.Create Commands <br><br>
@@ -25,7 +27,9 @@ alt="IMAGE ALT TEXT HERE" width="480" height="140" border="10" /><br>
 --ListAllCustomers - no params <br><br>
 </li>
 <li>1.3. Update Commands<br><br>
-
+--UpdateCountry - params - CountryId, Initials, Country Code.<br>
+--UpdateTown - params - TownId, TownName, CountryId.<br>
+--UpdateAddress - params - AddressId, Street, PostalCode, TownID.<br>
 </li>
 <li>1.3. Termination<br><br>
 --Exit<br></li>
