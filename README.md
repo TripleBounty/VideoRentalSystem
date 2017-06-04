@@ -15,14 +15,17 @@ alt="IMAGE ALT TEXT HERE" width="480" height="140" border="10" /><br>
 <br>
 </li>
 <li>1.2. List Commands<br><br>
---ListAllCountries - no params -<br>
---CountryDetails - params - CountryId -<br>
---ListAllTowns - no params -<br>
---TownDetails - params - TownId -<br>
---ListAllAddresses - no params -<br>
---AddressDetails - params - AddressId -<br>
---ListAllEmployees - no params -<br>
---ListAllCustomers - no params -<br><br>
+--ListAllCountries - no params<br>
+--CountryDetails - params - CountryId<br>
+--ListAllTowns - no params <br>
+--TownDetails - params - TownId <br>
+--ListAllAddresses - no params <br>
+--AddressDetails - params - AddressId <br>
+--ListAllEmployees - no params <br>
+--ListAllCustomers - no params <br><br>
+</li>
+<li>1.3. Update Commands<br><br>
+
 </li>
 <li>1.3. Termination<br><br>
 --Exit<br></li>

@@ -3,6 +3,7 @@ using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Commands.CreateCommands;
 using VideoRentalSystem.Commands.Factory;
 using VideoRentalSystem.Commands.ListingCommands;
+using VideoRentalSystem.Commands.UpdateCommands;
 using VideoRentalSystem.Common;
 using VideoRentalSystem.Common.Contracts;
 using VideoRentalSystem.Core;
@@ -32,14 +33,17 @@ namespace VideoRentalSystem.Builder
             this.Bind<ICommand>().To<CreateCountryCommand>().Named("CreateCountry");
             this.Bind<ICommand>().To<CountryDetailsCommand>().Named("CountryDetails");
             this.Bind<ICommand>().To<ListAllCountriesCommand>().Named("ListAllCountries");
+            this.Bind<ICommand>().To<UpdateCountryCommand>().Named("UpdateCountry");
 
             this.Bind<ICommand>().To<CreateTownCommand>().Named("CreateTown");
             this.Bind<ICommand>().To<TownDetailsCommand>().Named("TownDetails");
             this.Bind<ICommand>().To<ListAllTownsCommand>().Named("ListAllTowns");
+            this.Bind<ICommand>().To<UpdateTownCommand>().Named("UpdateTown");
 
             this.Bind<ICommand>().To<CreateAddressCommand>().Named("CreateAddress");
             this.Bind<ICommand>().To<AddressDetailsCommand>().Named("AddressDetails");
             this.Bind<ICommand>().To<ListAllAddressesCommand>().Named("ListAllAddresses");
+            this.Bind<ICommand>().To<UpdateAddressCommand>().Named("UpdateAddress");
 
             this.Bind<ICommand>().To<CreateEmployeeCommand>().Named("CreateEmployee");
             this.Bind<ICommand>().To<ListAllEmployeesCommand>().Named("ListAllEmployees");
