@@ -1,15 +1,18 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using VideoRentalSystem.Models.Contracts;
 
 namespace VideoRentalSystem.Models
 {
-    public class Review : IReview
+    public class Review
     {
         public Review(double rating, string description)
         {
             ////this.Film = film;
             this.Rating = rating;
             this.Description = description;
+        }
+
+        public Review()
+        {
         }
 
         public int Id { get; set; }

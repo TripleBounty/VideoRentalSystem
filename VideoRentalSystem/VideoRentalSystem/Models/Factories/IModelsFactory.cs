@@ -1,5 +1,4 @@
 ﻿using System;
-using VideoRentalSystem.Models.Contracts;
 using VideoRentalSystem.Models.Enum;
 
 namespace VideoRentalSystem.Models.Factories
@@ -8,12 +7,24 @@ namespace VideoRentalSystem.Models.Factories
     {
         Country CreateCountry(string name, string code);
 
+        Town CreateTown(string name, Country country);
+
+        Address CreateAddress(string street, string postalCode, Town town, Country country);
+
         Employee CreateEmployee(string firstName, string lastName, int salary, Employee manager);
+
+        Film CreateFilm(string name, string summary, DateTime realiseDate, TimeSpan duration);
 
         Customer CreateCustomer(string firstName, string lastName, DateTime birthDate);
 
-        Film CreateFilm(string name, string summary, DateTime realiseDate, TimeSpan duration, VideoFormat format, int count, float rating);
-
         Review CreateReview(double rating, string description);
+
+        Store CreateStore(string name, Address address);
+
+        Storage CreateStorage(Store store, Film film, int quantity, VideoFormat videoFormat);
+
+        FilmStaff CreateFilmStaff(string firstName, string lastName, DateTime birthDate, Country originePlace, StaffType type);
+
+        Award CreateAward(string name, DateTime awardDate);
     }
 }

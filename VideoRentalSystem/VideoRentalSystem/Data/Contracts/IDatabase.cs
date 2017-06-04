@@ -6,6 +6,10 @@ namespace VideoRentalSystem.Data.Contracts
     {
         ICountryRepository Countries { get; }
 
+        ITownRepository Towns { get; }
+
+        IAddessRepository Addesses { get; }
+
         IEmployeesRepository Employees { get; }
 
         ICustomerRepository Customers { get; }
@@ -13,6 +17,14 @@ namespace VideoRentalSystem.Data.Contracts
         IReviewRepository Reviews { get; }
 
         IFilmRepository Film { get; }
+
+        IStoreRepository Stores { get; }
+
+        IStorageRepository Storages { get; }
+
+        IFilmStaffRepository FilmStaffs { get; }
+
+        IAwardRepository Award { get; }
 
         int Complete();
     }

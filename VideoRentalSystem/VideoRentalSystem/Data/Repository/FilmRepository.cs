@@ -1,8 +1,7 @@
 ﻿using VideoRentalSystem.Data.Contracts;
-using VideoRentalSystem.Data.Repository;
 using VideoRentalSystem.Models;
 
-namespace VideoRentalSystem.Data
+namespace VideoRentalSystem.Data.Repository
 {
     public class FilmRepository : Repository<Film>, IFilmRepository
     {

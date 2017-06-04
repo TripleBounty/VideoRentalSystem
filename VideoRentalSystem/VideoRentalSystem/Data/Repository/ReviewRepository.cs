@@ -1,7 +1,5 @@
-﻿using VideoRentalSystem.Data.Contracts;
-using VideoRentalSystem.Data.Repository.Contracts;
+﻿using VideoRentalSystem.Data.Repository.Contracts;
 using VideoRentalSystem.Models;
-using VideoRentalSystem.Models.Contracts;
 
 namespace VideoRentalSystem.Data.Repository
 {

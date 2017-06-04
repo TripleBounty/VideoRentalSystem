@@ -1,15 +1,14 @@
-﻿using System;
-using VideoRentalSystem.Common.Validations;
-using VideoRentalSystem.Models.Contracts;
+﻿using VideoRentalSystem.Common.Validations;
 
 namespace VideoRentalSystem.Models
 {
-    public class Employee : IEmployee
+    public class Employee
     {
         private string firstName;
         private string lastName;
         private int salary;
-        private Employee manager;
+
+       //// private Employee manager;
 
         public Employee(string firstName, string lastName, int salary, Employee manager)
         {
@@ -19,7 +18,7 @@ namespace VideoRentalSystem.Models
             this.Manager = manager;
         }
 
-        private Employee()
+        public Employee()
         {
         }
 
@@ -67,7 +66,7 @@ namespace VideoRentalSystem.Models
             }
         }
 
-        public Employee Manager { get; set; }
+        public virtual Employee Manager { get; set; }
 
         public override string ToString()
         {

@@ -1,27 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using VideoRentalSystem.Models.Enum;
 
 namespace VideoRentalSystem.Models
 {
     public class Film
     { 
-        public Film(string name, string summary, DateTime realiseDate, TimeSpan duration, VideoFormat format, int count, float rating)
+        public Film(string name, string summary, DateTime releaseDate, TimeSpan duration)
         {
             this.Name = name;
             this.Summary = summary;
-            this.RealieseDate = realiseDate;
+            this.ReleaseDate = releaseDate;
             this.Duration = duration;
-            this.VideoFormats = format;
-            this.InStore = count;
-            this.Rating = rating;
+
+            this.IsDeleted = false;
 
             this.Categories = new HashSet<MPAA_Rating>();
             this.Genres = new HashSet<Genre>();
             this.Awards = new HashSet<Award>();
+            this.FilmStaffs = new HashSet<FilmStaff>();
         }
 
-        private Film()
+        public Film()
         {
             this.Categories = new HashSet<MPAA_Rating>();
             this.Genres = new HashSet<Genre>();
@@ -34,7 +35,7 @@ namespace VideoRentalSystem.Models
 
         public string Summary { get; set; }
 
-        public DateTime RealieseDate { get; set; }
+        public DateTime ReleaseDate { get; set; }
 
         public TimeSpan Duration { get; set; }
 
@@ -42,18 +43,31 @@ namespace VideoRentalSystem.Models
 
         public virtual ICollection<Genre> Genres { get; set; }
 
-        public VideoFormat VideoFormats { get; set; }
-
-        public int InStore { get; set; }
-
-        // TODO: director, write, actor
-        // public ICollection<Director> Directors { get; set; }
-
-        // public ICollection<Writer> Writers { get; set; }
-
-        // public ICollection<Actor> Actors { get; set; }
-        public float Rating { get; set; }
-
         public virtual ICollection<Award> Awards { get; set; }
+
+        public virtual ICollection<FilmStaff> FilmStaffs { get; set; }
+
+        public bool IsDeleted { get; set; }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+
+            sb.Append("Film: ");
+            sb.AppendLine(this.Name);
+            sb.Append("Release date: ");
+            sb.AppendLine(this.ReleaseDate.ToString());
+            sb.Append("Duration: ");
+            sb.AppendLine(this.Duration.TotalMinutes.ToString());
+            sb.Append("Rating: ");
+            sb.AppendLine(string.Join(",", this.Categories));
+            sb.Append("Genres: ");
+            sb.AppendLine(string.Join(",", this.Genres));
+            sb.Append("Awards: ");
+            sb.AppendLine(string.Join(",", this.Awards));
+            //// TODO FilmStaff
+
+            return sb.ToString();
+        }
     }
 }
