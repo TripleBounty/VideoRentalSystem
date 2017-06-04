@@ -17,6 +17,11 @@ namespace VideoRentalSystem.Commands.ListingCommands
         {
             var storages = this.db.Storages.GetAll();
 
+            if (storages.Count == 0)
+            {
+                return "No Storage available";
+            }
+
             return string.Join("\n", storages);
         }
     }

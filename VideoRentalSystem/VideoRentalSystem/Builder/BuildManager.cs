@@ -72,6 +72,9 @@ namespace VideoRentalSystem.Builder
 
             this.Bind<ICommand>().To<CreateStorageCommand>().Named("CreateStorage");
             this.Bind<ICommand>().To<ListAllStoragesCommand>().Named("ListAllStorages");
+            this.Bind<ICommand>().To<StorageDetailsCommand>().Named("StorageDetails");
+            this.Bind<ICommand>().To<AddFilmQuantityCommand>().Named("AddFilmQuantity");
+            this.Bind<ICommand>().To<RemoveFilmQuantityCommand>().Named("RemoveFilmQuantity");
 
             this.Bind<ICommand>().To<CreateFilmStaffCommand>().Named("CreateFilmStaff");
             this.Bind<ICommand>().To<ListAllFilmStaffsCommand>().Named("ListAllFilmStaffs");

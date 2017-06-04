@@ -31,7 +31,7 @@ namespace VideoRentalSystem.Commands.RemoveCommands
             var storeIdParsed = int.TryParse(parameters[0], out storeId);
             if (!storeIdParsed)
             {
-                return "Not Valid Town Id. Fill in numeric value!";
+                return "Not Valid Store Id. Fill in numeric value!";
             }
 
             var store = this.db.Stores.SingleOrDefault(s => s.Id == storeId);

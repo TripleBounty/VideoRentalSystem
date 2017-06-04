@@ -16,6 +16,7 @@ Commands separator ";" <br>
 --CreateCustomer - params - First Name, Last Name, Birthdate MM/dd/YYYY.<br>
 --CreateFilmStaff - params - First Name, Last Name, Birthdate MM/dd/YYYY, CountryId, Type.<br>
 --CreateStore - params - StoreName, AddressId.<br>
+--CreateStorage - params - StoreName, AddressId.<br>
 <br><br>
 </li>
 <li>1.2. List Commands<br><br>
@@ -29,6 +30,8 @@ Commands separator ";" <br>
 --ListAllCustomers - no params <br>
 --ListAllStores - no params <br>
 --StoreDetails - params - StoreId <br>
+--ListAllStorages - no params <br>
+--StoragesDetails - params - StoreId <br>
 <br><br>
 </li>
 <li>1.3. Update Commands<br><br>
@@ -39,10 +42,12 @@ Commands separator ";" <br>
 </li>
 <li>1.4. Add Commands<br><br>
 --AddStoreEmployee - params - StoreId, EmployeeId.<br>
+--AddFilmQuantityCommand - params - StorageId, Qunatity.<br>
 <br><br>
 </li>
 <li>1.5. Remove Commands<br><br>
 --RemoveStoreEmployee - params - StoreId, EmployeeId.<br>
+--RemoveFilmQuantityCommand - params - StorageId, Qunatity.<br>
 <br><br>
 </li>
 <li>1.6. Termination<br><br>
