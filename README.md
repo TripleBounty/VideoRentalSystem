@@ -15,6 +15,7 @@ Commands separator ";" <br>
 --CreateManager - params - First Name, Last Name, Salary.<br>
 --CreateCustomer - params - First Name, Last Name, Birthdate MM/dd/YYYY.<br>
 --CreateFilmStaff - params - First Name, Last Name, Birthdate MM/dd/YYYY, CountryId, Type.<br>
+--CreateStore - params - StoreName, AddressId.<br>
 <br><br>
 </li>
 <li>1.2. List Commands<br><br>
@@ -26,6 +27,8 @@ Commands separator ";" <br>
 --AddressDetails - params - AddressId <br>
 --ListAllEmployees - no params <br>
 --ListAllCustomers - no params <br>
+--ListAllStores - no params <br>
+--StoreDetails - params - StoreId <br>
 <br><br>
 </li>
 <li>1.3. Update Commands<br><br>
@@ -34,26 +37,34 @@ Commands separator ";" <br>
 --UpdateAddress - params - AddressId, Street, PostalCode, TownID.<br>
 <br><br>
 </li>
-<li>1.3. Termination<br><br>
+<li>1.4. Add Commands<br><br>
+--AddStoreEmployee - params - StoreId, EmployeeId.<br>
+<br><br>
+</li>
+<li>1.5. Remove Commands<br><br>
+--RemoveStoreEmployee - params - StoreId, EmployeeId.<br>
+<br><br>
+</li>
+<li>1.6. Termination<br><br>
 --Exit<br>
 </li>
 <br><br>
-<li>1.4. Enums<br><br>
+<li>1.7. Enums<br><br>
   <ul>
-  <li>1.4.1 StaffType<br><br>
+  <li>1.7.1 StaffType<br>
         Actor<br>
         Director<br>
         Writer<br>
   </li>
-  <li>1.4.2 Category<br><br>
+  <li>1.7.2 Category<br>
     G<br>
     PG<br>
     PG13<br>
     R<br>
     NC17<br>
   </li>
-  <li>1.4.3 Genre<br><br>
-  action = 0,
+  <li>1.7.3 Genre<br>
+      action<br>
       adventure<br>
       animation<br>
       biographz<br>
@@ -75,7 +86,7 @@ Commands separator ";" <br>
       super_heroe<br>
       thriller<br>
   </li>
-  <li>1.4.4 VideoFormat<br><br>
+  <li>1.7.4 VideoFormat<br>
       CD <br>
       DVD <br>
       HDDVD <br>

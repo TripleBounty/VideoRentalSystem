@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Data.Contracts;
 using VideoRentalSystem.Models.Factories;
@@ -18,10 +19,30 @@ namespace VideoRentalSystem.Commands.CreateCommands
 
         public string Execute(IList<string> parameters)
         {
+            if (parameters.Count != 2)
+            {
+                return "Not valid number of parameters";
+            }
+
+            if (parameters.Any(x => x == string.Empty))
+            {
+                return "Some of the passed parameters are empty!";
+            }
+
             var storeName = parameters[0];
-            var addressId = int.Parse(parameters[1]);
+            int addressId;
+            var addressIdParsed = int.TryParse(parameters[1], out addressId);
+            if (!addressIdParsed)
+            {
+                return "Not Valid Address Id. Fill in numeric value!";
+            }
 
             var address = this.db.Addesses.SingleOrDefault(c => c.Id == addressId);
+
+            if (address == null)
+            {
+                return "Address with such id doesn't exist!";
+            }
 
             var store = this.factory.CreateStore(storeName, address);
 

@@ -1,8 +1,10 @@
 ﻿using Ninject.Modules;
+using VideoRentalSystem.Commands.AddCommands;
 using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Commands.CreateCommands;
 using VideoRentalSystem.Commands.Factory;
 using VideoRentalSystem.Commands.ListingCommands;
+using VideoRentalSystem.Commands.RemoveCommands;
 using VideoRentalSystem.Commands.UpdateCommands;
 using VideoRentalSystem.Common;
 using VideoRentalSystem.Common.Contracts;
@@ -64,8 +66,11 @@ namespace VideoRentalSystem.Builder
 
             this.Bind<ICommand>().To<CreateStoreCommand>().Named("CreateStore");
             this.Bind<ICommand>().To<ListAllStoresCommand>().Named("ListAllStores");
+            this.Bind<ICommand>().To<StoreDetailsCommand>().Named("StoreDetails");
+            this.Bind<ICommand>().To<AddStoreEmployeeCommand>().Named("AddStoreEmployee");
+            this.Bind<ICommand>().To<RemoveStoreEmployeeCommand>().Named("RemoveStoreEmployee");
 
-            this.Bind<ICommand>().To<CreateStorageCommand>().Named("CreateStore");
+            this.Bind<ICommand>().To<CreateStorageCommand>().Named("CreateStorage");
             this.Bind<ICommand>().To<ListAllStoragesCommand>().Named("ListAllStorages");
 
             this.Bind<ICommand>().To<CreateFilmStaffCommand>().Named("CreateFilmStaff");

@@ -43,6 +43,7 @@ namespace VideoRentalSystem.Data
             this.CreateFilmModels(modelBuilder);
             this.CreateFilmStaffModel(modelBuilder);
             this.CreateAwardModels(modelBuilder);
+            this.CreateStoreModel(modelBuilder);
 
             base.OnModelCreating(modelBuilder);
         }
@@ -167,6 +168,14 @@ namespace VideoRentalSystem.Data
                .Property(f => f.LastName)
                .HasMaxLength(50)
                .IsRequired();
+        }
+
+        private void CreateStoreModel(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Store>()
+                .Property(s => s.Name)
+                .HasMaxLength(50)
+                .IsRequired();
         }
     }
 }
