@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using VideoRentalSystem.Models.Enum;
 
 namespace VideoRentalSystem.Models
 {
     public class Film
-    {
-        public Film(string name, string summary, DateTime releaseDate, TimeSpan duration, VideoFormat format)
+    { 
+        public Film(string name, string summary, DateTime releaseDate, TimeSpan duration)
         {
             this.Name = name;
             this.Summary = summary;
             this.ReleaseDate = releaseDate;
             this.Duration = duration;
-            this.VideoFormats = format;
 
             this.IsDeleted = false;
 
@@ -45,16 +45,31 @@ namespace VideoRentalSystem.Models
 
         public VideoFormat VideoFormats { get; set; }
 
-        // TODO: director, write, actor
-        // public ICollection<Director> Directors { get; set; }
-
-        // public ICollection<Writer> Writers { get; set; }
-
-        // public ICollection<Actor> Actors { get; set; }
         public virtual ICollection<Award> Awards { get; set; }
 
         public virtual ICollection<FilmStaff> FilmStaffs { get; set; }
 
         public bool IsDeleted { get; set; }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+
+            sb.Append("Film: ");
+            sb.AppendLine(this.Name);
+            sb.Append("Release date: ");
+            sb.AppendLine(this.ReleaseDate.ToString());
+            sb.Append("Duration: ");
+            sb.AppendLine(this.Duration.TotalMinutes.ToString());
+            sb.Append("Rating: ");
+            sb.AppendLine(string.Join(",", this.Categories));
+            sb.Append("Genres: ");
+            sb.AppendLine(string.Join(",", this.Genres));
+            sb.Append("Awards: ");
+            sb.AppendLine(string.Join(",", this.Awards));
+            //// TODO FilmStaff
+
+            return sb.ToString();
+        }
     }
 }
