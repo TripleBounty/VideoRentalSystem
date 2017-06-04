@@ -14,7 +14,7 @@ namespace VideoRentalSystem.Models
 
         public int Id { get; set; }
 
-        ////  public virtual ICollection<Film> Film { get; set; }
+        public virtual ICollection<Film> Film { get; set; }
 
         public double Rating { get; set; }
 
