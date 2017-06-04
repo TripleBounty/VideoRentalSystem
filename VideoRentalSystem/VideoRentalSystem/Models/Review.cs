@@ -26,8 +26,7 @@ namespace VideoRentalSystem.Models
 
         public override string ToString()
         {
-            return string.Format("{0}Rated at:{1} Stars, {2}Decription: {3}{4}", 
-                                                          this.Film, this.Rating, System.Environment.NewLine, this.Description, System.Environment.NewLine);
+            return string.Format("{0}Rated at:{1} Stars, {2}Decription: {3}{4}", this.Film, this.Rating, System.Environment.NewLine, this.Description, System.Environment.NewLine);
         }
     }
 }

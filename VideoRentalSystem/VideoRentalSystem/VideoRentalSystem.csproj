@@ -132,7 +132,6 @@
     <Compile Include="Data\Repository\StorageRepository.cs" />
     <Compile Include="Data\Repository\TownRepository.cs" />
     <Compile Include="Data\VideoRentalContext.cs" />
-    <Compile Include="Loaders\LoadFromJSON.cs" />
     <Compile Include="Migrations\201706021814398_Initial.cs" />
     <Compile Include="Migrations\201706021814398_Initial.Designer.cs">
       <DependentUpon>201706021814398_Initial.cs</DependentUpon>
