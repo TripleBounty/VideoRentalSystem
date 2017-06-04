@@ -184,10 +184,6 @@
     <Compile Include="Migrations\201706040948428_ReviewsChange.Designer.cs">
       <DependentUpon>201706040948428_ReviewsChange.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706040951094_ReviewsFilm.cs" />
-    <Compile Include="Migrations\201706040951094_ReviewsFilm.Designer.cs">
-      <DependentUpon>201706040951094_ReviewsFilm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Award.cs" />
@@ -257,9 +253,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706040948428_ReviewsChange.resx">
       <DependentUpon>201706040948428_ReviewsChange.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706040951094_ReviewsFilm.resx">
-      <DependentUpon>201706040951094_ReviewsFilm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
