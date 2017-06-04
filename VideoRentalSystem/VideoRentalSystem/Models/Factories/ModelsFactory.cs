@@ -30,9 +30,9 @@ namespace VideoRentalSystem.Models.Factories
             return new Customer(firstName, lastName, birthDate);
         }
 
-        public Review CreateReview(double rating, string description)
+        public Review CreateReview(double rating, string description, Film film)
         {
-            return new Review(rating, description);
+            return new Review(rating, description, film);
         }
 
         public Film CreateFilm(string name, string summary, DateTime realiseDate, TimeSpan duration)

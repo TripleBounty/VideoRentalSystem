@@ -22,7 +22,9 @@ namespace VideoRentalSystem.Commands.CreateCommands
             double rating = double.Parse(parameters[1]);
             string description = parameters[2];
 
-            var review = this.factory.CreateReview(rating, description);
+            var filmObj = this.db.Film.SingleOrDefault(e => e.Id == filmId);
+
+            var review = this.factory.CreateReview(rating, description, filmObj);
 
             this.db.Reviews.Add(review);
             this.db.Complete();

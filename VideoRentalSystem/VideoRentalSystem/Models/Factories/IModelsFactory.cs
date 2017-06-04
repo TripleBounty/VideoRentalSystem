@@ -17,7 +17,7 @@ namespace VideoRentalSystem.Models.Factories
 
         Customer CreateCustomer(string firstName, string lastName, DateTime birthDate);
 
-        Review CreateReview(double rating, string description);
+        Review CreateReview(double rating, string description, Film film);
 
         Store CreateStore(string name, Address address);
 

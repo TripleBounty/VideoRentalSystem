@@ -47,6 +47,7 @@ namespace VideoRentalSystem.Builder
             this.Bind<ICommand>().To<ListAllCustomersCommand>().Named("ListAllCustomers");
 
             this.Bind<ICommand>().To<CreateReviewCommand>().Named("CreateReview");
+            this.Bind<ICommand>().To<ListAllReviewsCommand>().Named("ListAllReviews");
 
             this.Bind<ICommand>().To<CreateFilmCommand>().Named("CreateFilm");
             this.Bind<ICommand>().To<CreateAwardCommand>().Named("CreateAward");
