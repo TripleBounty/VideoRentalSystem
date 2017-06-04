@@ -18,6 +18,8 @@ namespace VideoRentalSystem.Data
 
         public IDbSet<Film> FilmTable { get; set; }
 
+        public IDbSet<Award> AwardTable { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             this.CreateAddresseModels(modelBuilder);
@@ -73,10 +75,6 @@ namespace VideoRentalSystem.Data
             modelBuilder.Entity<Film>()
                 .Property(x => x.Duration)
                 .HasPrecision(0)
-                .IsRequired();
-
-            modelBuilder.Entity<Film>()
-                .Property(x => x.InStore)
                 .IsRequired();
         }
 

@@ -4,6 +4,12 @@ namespace VideoRentalSystem.Models
 {
     public class Award
     {
+        public Award(string name, DateTime date)
+        {
+            this.Name = name;
+            this.Date = date;
+        }
+
         private Award()
         {
         }

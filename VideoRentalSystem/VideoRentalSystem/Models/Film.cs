@@ -6,14 +6,13 @@ namespace VideoRentalSystem.Models
 {
     public class Film
     { 
-        public Film(string name, string summary, DateTime releaseDate, TimeSpan duration, VideoFormat format, int count)
+        public Film(string name, string summary, DateTime releaseDate, TimeSpan duration, VideoFormat format)
         {
             this.Name = name;
             this.Summary = summary;
             this.ReleaseDate = releaseDate;
             this.Duration = duration;
             this.VideoFormats = format;
-            this.InStore = count;
 
             this.IsDeleted = false;
 
@@ -44,8 +43,6 @@ namespace VideoRentalSystem.Models
         public virtual ICollection<Genre> Genres { get; set; }
 
         public VideoFormat VideoFormats { get; set; }
-
-        public int InStore { get; set; }
 
         // TODO: director, write, actor
         // public ICollection<Director> Directors { get; set; }

@@ -58,6 +58,7 @@
     <Compile Include="Builder\ServiceLocator.cs" />
     <Compile Include="Commands\Contracts\ICommand.cs" />
     <Compile Include="Commands\Contracts\ICommandsFactory.cs" />
+    <Compile Include="Commands\CreateCommands\CreateAwardCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateFilmCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateManagerCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateReviewCommand.cs" />
@@ -76,12 +77,14 @@
     <Compile Include="Core\Engine.cs" />
     <Compile Include="Commands\CreateCommands\CreateCountryCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateEmployeeCommand.cs" />
+    <Compile Include="Data\Contracts\IAwardRepository.cs" />
     <Compile Include="Data\Contracts\ICountryRepository.cs" />
     <Compile Include="Data\Contracts\IDatabase.cs" />
     <Compile Include="Data\Contracts\IEmployeesRepository.cs" />
     <Compile Include="Data\Contracts\IFilmRepository.cs" />
     <Compile Include="Data\Contracts\IRepository.cs" />
     <Compile Include="Data\Database.cs" />
+    <Compile Include="Data\Repository\AwardRepository.cs" />
     <Compile Include="Data\Repository\FilmRepository.cs" />
     <Compile Include="Data\Repository\CountryRepository.cs" />
     <Compile Include="Data\Repository\EmployeesRepository.cs" />
@@ -112,6 +115,18 @@
     <Compile Include="Migrations\201706031530183_add award isDeleted.cs" />
     <Compile Include="Migrations\201706031530183_add award isDeleted.Designer.cs">
       <DependentUpon>201706031530183_add award isDeleted.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706031536152_test max lenght.cs" />
+    <Compile Include="Migrations\201706031536152_test max lenght.Designer.cs">
+      <DependentUpon>201706031536152_test max lenght.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706040725549_award and film isdeleted field.cs" />
+    <Compile Include="Migrations\201706040725549_award and film isdeleted field.Designer.cs">
+      <DependentUpon>201706040725549_award and film isdeleted field.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706040756188_award.cs" />
+    <Compile Include="Migrations\201706040756188_award.Designer.cs">
+      <DependentUpon>201706040756188_award.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Award.cs" />
@@ -154,6 +169,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706031530183_add award isDeleted.resx">
       <DependentUpon>201706031530183_add award isDeleted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706031536152_test max lenght.resx">
+      <DependentUpon>201706031536152_test max lenght.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706040725549_award and film isdeleted field.resx">
+      <DependentUpon>201706040725549_award and film isdeleted field.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706040756188_award.resx">
+      <DependentUpon>201706040756188_award.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

@@ -12,6 +12,8 @@ namespace VideoRentalSystem.Data.Contracts
 
         IFilmRepository Film { get; }
 
+        IAwardRepository Award { get; }
+
         int Complete();
     }
 }

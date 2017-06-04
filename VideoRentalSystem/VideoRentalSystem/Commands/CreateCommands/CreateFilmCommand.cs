@@ -27,10 +27,7 @@ namespace VideoRentalSystem.Commands.CreateCommands
             TimeSpan duration = TimeSpan.FromMinutes(double.Parse(parameters[3]));
             VideoFormat videoFormat = (VideoFormat)Enum.Parse(typeof(VideoFormat), parameters[4], true);
 
-            // TODO: tryParse
-            var inStoreCount = int.Parse(parameters[5]);
-
-            var film = this.factory.CreateFilm(filmName, summary, realiseDate, duration, videoFormat, inStoreCount);
+            var film = this.factory.CreateFilm(filmName, summary, realiseDate, duration, videoFormat);
 
             this.db.Film.Add(film);
             this.db.Complete();
