@@ -80,7 +80,10 @@
     <Compile Include="Commands\CreateCommands\CreateFilmStaffCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateTownCommand.cs" />
     <Compile Include="Commands\Factory\CommandsFactory.cs" />
+    <Compile Include="Commands\ListingCommands\AddressDetailsCommand.cs" />
+    <Compile Include="Commands\ListingCommands\TownDetailsCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllAddressesCommand.cs" />
+    <Compile Include="Commands\ListingCommands\CountryDetailsCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllReviewsCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllStoragesCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllStoresCommand.cs" />

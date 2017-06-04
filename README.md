@@ -16,8 +16,11 @@ alt="IMAGE ALT TEXT HERE" width="480" height="140" border="10" /><br>
 </li>
 <li>1.2. List Commands<br><br>
 --ListAllCountries - no params -<br>
+--CountryDetails - params - CountryId -<br>
 --ListAllTowns - no params -<br>
+--TownDetails - params - TownId -<br>
 --ListAllAddresses - no params -<br>
+--AddressDetails - params - AddressId -<br>
 --ListAllEmployees - no params -<br>
 --ListAllCustomers - no params -<br><br>
 </li>
