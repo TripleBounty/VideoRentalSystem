@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Data.Contracts;
 using VideoRentalSystem.Models.Factories;
@@ -18,6 +19,16 @@ namespace VideoRentalSystem.Commands.CreateCommands
 
         public string Execute(IList<string> parameters)
         {
+            if (parameters.Count != 2)
+            {
+                return "Not valid number of parameters";
+            }
+
+            if (parameters.Any(x => x == string.Empty))
+            {
+                return "Some of the passed parameters are empty!";
+            }
+
             var countryName = parameters[0];
             var countryCode = parameters[1];
 

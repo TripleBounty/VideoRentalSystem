@@ -8,7 +8,7 @@ namespace VideoRentalSystem.Data.Contracts
     {
         TEntity Get(int id);
 
-        IEnumerable<TEntity> GetAll();
+        ICollection<TEntity> GetAll();
 
         IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
 

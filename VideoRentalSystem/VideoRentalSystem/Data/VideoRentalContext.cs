@@ -1,4 +1,6 @@
-﻿using System.Data.Entity;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure.Annotations;
 using VideoRentalSystem.Models;
 
 namespace VideoRentalSystem.Data
@@ -89,12 +91,20 @@ namespace VideoRentalSystem.Data
             modelBuilder.Entity<Country>()
                 .Property(c => c.Name)
                .HasMaxLength(40)
-               .IsRequired();
+               .IsRequired()
+               .HasColumnAnnotation(
+                    IndexAnnotation.AnnotationName,
+                    new IndexAnnotation(
+                    new IndexAttribute("IX_UniqueName") { IsUnique = true }));
 
             modelBuilder.Entity<Country>()
                 .Property(c => c.Code)
                 .HasMaxLength(2)
-                .IsRequired();
+                .IsRequired()
+                .HasColumnAnnotation(
+                    IndexAnnotation.AnnotationName,
+                    new IndexAnnotation(
+                    new IndexAttribute("IX_UniqueCode") { IsUnique = true }));
 
             modelBuilder.Entity<Town>()
                 .Property(t => t.Name)

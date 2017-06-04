@@ -24,10 +24,8 @@ namespace VideoRentalSystem.Models
         {
             var stringBuilder = new StringBuilder();
 
-            stringBuilder.Append("Town: ");
-            stringBuilder.AppendLine(this.Name);
-            stringBuilder.Append("Country: ");
-            stringBuilder.Append(this.Country.ToString());
+            stringBuilder.AppendLine($"Town: {this.Name}");
+            stringBuilder.Append($"Country: {this.Country.ToString()}");
 
             return stringBuilder.ToString();
         }
