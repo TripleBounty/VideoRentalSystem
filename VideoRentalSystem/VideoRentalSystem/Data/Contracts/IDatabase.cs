@@ -20,6 +20,8 @@ namespace VideoRentalSystem.Data.Contracts
 
         IStoreRepository Stores { get; }
 
+        IStorageRepository Storages { get; }
+
         IFilmStaffRepository FilmStaffs { get; }
 
         IAwardRepository Award { get; }

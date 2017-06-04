@@ -21,6 +21,8 @@ namespace VideoRentalSystem.Models.Factories
 
         Store CreateStore(string name, Address address);
 
+        Storage CreateStorage(Store store, Film film, int quantity, VideoFormat videoFormat);
+
         FilmStaff CreateFilmStaff(string firstName, string lastName, DateTime birthDate, Country originePlace, StaffType type);
 
         Award CreateAward(string name, DateTime awardDate);

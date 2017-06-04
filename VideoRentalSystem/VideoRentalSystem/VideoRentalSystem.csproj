@@ -64,11 +64,13 @@
     <Compile Include="Commands\CreateCommands\CreateManagerCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateReviewCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateAddressCommand.cs" />
+    <Compile Include="Commands\CreateCommands\CreateStorageCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateStoreCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateFilmStaffCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateTownCommand.cs" />
     <Compile Include="Commands\Factory\CommandsFactory.cs" />
     <Compile Include="Commands\ListingCommands\ListAllAddressesCommand.cs" />
+    <Compile Include="Commands\ListingCommands\ListAllStoragesCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllStoresCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllFilmStaffsCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllTownsCommand.cs" />
@@ -97,6 +99,7 @@
     <Compile Include="Data\Contracts\IRepository.cs" />
     <Compile Include="Data\Contracts\IStoreRepository.cs" />
     <Compile Include="Data\Contracts\IFilmStaffRepository.cs" />
+    <Compile Include="Data\Contracts\IStorageRepository.cs" />
     <Compile Include="Data\Contracts\ITownRepository.cs" />
     <Compile Include="Data\Database.cs" />
     <Compile Include="Data\Repository\AwardRepository.cs" />
@@ -111,6 +114,7 @@
     <Compile Include="Data\Repository\AddessRepository.cs" />
     <Compile Include="Data\Repository\StoreRepository.cs" />
     <Compile Include="Data\Repository\FilmStaffRepository.cs" />
+    <Compile Include="Data\Repository\StorageRepository.cs" />
     <Compile Include="Data\Repository\TownRepository.cs" />
     <Compile Include="Data\VideoRentalContext.cs" />
     <Compile Include="Migrations\201706021814398_Initial.cs" />
@@ -169,6 +173,7 @@
     <Compile Include="Models\Film.cs" />
     <Compile Include="Models\FilmStaff.cs" />
     <Compile Include="Models\Review.cs" />
+    <Compile Include="Models\Storage.cs" />
     <Compile Include="Models\Store.cs" />
     <Compile Include="Models\Town.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

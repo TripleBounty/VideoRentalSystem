@@ -5,7 +5,7 @@ using VideoRentalSystem.Models.Enum;
 namespace VideoRentalSystem.Models
 {
     public class Film
-    { 
+    {
         public Film(string name, string summary, DateTime releaseDate, TimeSpan duration, VideoFormat format)
         {
             this.Name = name;
@@ -19,7 +19,6 @@ namespace VideoRentalSystem.Models
             this.Categories = new HashSet<MPAA_Rating>();
             this.Genres = new HashSet<Genre>();
             this.Awards = new HashSet<Award>();
-            this.Stores = new HashSet<Store>();
             this.FilmStaffs = new HashSet<FilmStaff>();
         }
 
@@ -45,8 +44,6 @@ namespace VideoRentalSystem.Models
         public virtual ICollection<Genre> Genres { get; set; }
 
         public VideoFormat VideoFormats { get; set; }
-
-        public ICollection<Store> Stores { get; set; }
 
         // TODO: director, write, actor
         // public ICollection<Director> Directors { get; set; }
