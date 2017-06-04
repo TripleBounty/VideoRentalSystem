@@ -19,6 +19,8 @@ namespace VideoRentalSystem.Models
             this.Categories = new HashSet<MPAA_Rating>();
             this.Genres = new HashSet<Genre>();
             this.Awards = new HashSet<Award>();
+            this.Stores = new HashSet<Store>();
+            this.FilmStaffs = new HashSet<FilmStaff>();
         }
 
         private Film()
@@ -44,14 +46,17 @@ namespace VideoRentalSystem.Models
 
         public VideoFormat VideoFormats { get; set; }
 
+        public ICollection<Store> Stores { get; set; }
+
         // TODO: director, write, actor
         // public ICollection<Director> Directors { get; set; }
 
         // public ICollection<Writer> Writers { get; set; }
 
         // public ICollection<Actor> Actors { get; set; }
+        
         public virtual ICollection<Award> Awards { get; set; }
 
-        public bool IsDeleted { get; set; }
+        public virtual ICollection<FilmStaff> FilmStaffs { get; set; }
     }
 }

@@ -12,6 +12,10 @@ namespace VideoRentalSystem.Models
             this.Description = description;
         }
 
+        private Review()
+        {
+        }
+
         public int Id { get; set; }
 
         ////  public virtual ICollection<Film> Film { get; set; }

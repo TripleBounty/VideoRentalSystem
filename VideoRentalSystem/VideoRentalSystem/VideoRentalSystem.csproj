@@ -59,11 +59,21 @@
     <Compile Include="Commands\Contracts\ICommand.cs" />
     <Compile Include="Commands\Contracts\ICommandsFactory.cs" />
     <Compile Include="Commands\CreateCommands\CreateAwardCommand.cs" />
+    <Compile Include="Commands\CreateCommands\CreateCustomerCimmand.cs" />
     <Compile Include="Commands\CreateCommands\CreateFilmCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateManagerCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateReviewCommand.cs" />
+    <Compile Include="Commands\CreateCommands\CreateAddressCommand.cs" />
+    <Compile Include="Commands\CreateCommands\CreateStoreCommand.cs" />
+    <Compile Include="Commands\CreateCommands\CreateFilmStaffCommand.cs" />
+    <Compile Include="Commands\CreateCommands\CreateTownCommand.cs" />
     <Compile Include="Commands\Factory\CommandsFactory.cs" />
+    <Compile Include="Commands\ListingCommands\ListAllAddressesCommand.cs" />
+    <Compile Include="Commands\ListingCommands\ListAllStoresCommand.cs" />
+    <Compile Include="Commands\ListingCommands\ListAllFilmStaffsCommand.cs" />
+    <Compile Include="Commands\ListingCommands\ListAllTownsCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllCountriesCommand.cs" />
+    <Compile Include="Commands\ListingCommands\ListAllCustomersCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllEmployeesCommand.cs" />
     <Compile Include="Common\CommandProcessor.cs" />
     <Compile Include="Common\ConsoleReader.cs" />
@@ -71,6 +81,7 @@
     <Compile Include="Common\Contracts\IProcessor.cs" />
     <Compile Include="Common\Contracts\IReader.cs" />
     <Compile Include="Common\Contracts\IDateProvider.cs" />
+    <Compile Include="Common\Validations\EmployeeValidator.cs" />
     <Compile Include="Core\Contracts\IServiceLocator.cs" />
     <Compile Include="Common\Contracts\IWriter.cs" />
     <Compile Include="Core\Contracts\IEngine.cs" />
@@ -79,18 +90,28 @@
     <Compile Include="Commands\CreateCommands\CreateEmployeeCommand.cs" />
     <Compile Include="Data\Contracts\IAwardRepository.cs" />
     <Compile Include="Data\Contracts\ICountryRepository.cs" />
+    <Compile Include="Data\Contracts\ICustomerRepository.cs" />
     <Compile Include="Data\Contracts\IDatabase.cs" />
     <Compile Include="Data\Contracts\IEmployeesRepository.cs" />
     <Compile Include="Data\Contracts\IFilmRepository.cs" />
     <Compile Include="Data\Contracts\IRepository.cs" />
+    <Compile Include="Data\Contracts\IStoreRepository.cs" />
+    <Compile Include="Data\Contracts\IFilmStaffRepository.cs" />
+    <Compile Include="Data\Contracts\ITownRepository.cs" />
     <Compile Include="Data\Database.cs" />
     <Compile Include="Data\Repository\AwardRepository.cs" />
     <Compile Include="Data\Repository\FilmRepository.cs" />
     <Compile Include="Data\Repository\CountryRepository.cs" />
+    <Compile Include="Data\Repository\CustomerRepository.cs" />
     <Compile Include="Data\Repository\EmployeesRepository.cs" />
     <Compile Include="Data\Contracts\IReviewRepository.cs" />
+    <Compile Include="Data\Contracts\IAddessRepository.cs" />
     <Compile Include="Data\Repository\Repository.cs" />
     <Compile Include="Data\Repository\ReviewRepository.cs" />
+    <Compile Include="Data\Repository\AddessRepository.cs" />
+    <Compile Include="Data\Repository\StoreRepository.cs" />
+    <Compile Include="Data\Repository\FilmStaffRepository.cs" />
+    <Compile Include="Data\Repository\TownRepository.cs" />
     <Compile Include="Data\VideoRentalContext.cs" />
     <Compile Include="Migrations\201706021814398_Initial.cs" />
     <Compile Include="Migrations\201706021814398_Initial.Designer.cs">
@@ -104,36 +125,39 @@
     <Compile Include="Migrations\201706031207549_Country Constraints.Designer.cs">
       <DependentUpon>201706031207549_Country Constraints.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706031306346_remove rating from film.cs" />
-    <Compile Include="Migrations\201706031306346_remove rating from film.Designer.cs">
-      <DependentUpon>201706031306346_remove rating from film.cs</DependentUpon>
+    <Compile Include="Migrations\201706031643145_CustomerMigration.cs" />
+    <Compile Include="Migrations\201706031643145_CustomerMigration.Designer.cs">
+      <DependentUpon>201706031643145_CustomerMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706031529186_add isDeleted to film.cs" />
-    <Compile Include="Migrations\201706031529186_add isDeleted to film.Designer.cs">
-      <DependentUpon>201706031529186_add isDeleted to film.cs</DependentUpon>
+    <Compile Include="Migrations\201706031711342_add-town.cs" />
+    <Compile Include="Migrations\201706031711342_add-town.Designer.cs">
+      <DependentUpon>201706031711342_add-town.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706031530183_add award isDeleted.cs" />
-    <Compile Include="Migrations\201706031530183_add award isDeleted.Designer.cs">
-      <DependentUpon>201706031530183_add award isDeleted.cs</DependentUpon>
+    <Compile Include="Migrations\201706031827251_add address table.cs" />
+    <Compile Include="Migrations\201706031827251_add address table.Designer.cs">
+      <DependentUpon>201706031827251_add address table.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706031536152_test max lenght.cs" />
-    <Compile Include="Migrations\201706031536152_test max lenght.Designer.cs">
-      <DependentUpon>201706031536152_test max lenght.cs</DependentUpon>
+    <Compile Include="Migrations\201706031921012_add store table.cs" />
+    <Compile Include="Migrations\201706031921012_add store table.Designer.cs">
+      <DependentUpon>201706031921012_add store table.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706040725549_award and film isdeleted field.cs" />
-    <Compile Include="Migrations\201706040725549_award and film isdeleted field.Designer.cs">
-      <DependentUpon>201706040725549_award and film isdeleted field.cs</DependentUpon>
+    <Compile Include="Migrations\201706031926081_add stores to film.cs" />
+    <Compile Include="Migrations\201706031926081_add stores to film.Designer.cs">
+      <DependentUpon>201706031926081_add stores to film.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706040756188_award.cs" />
-    <Compile Include="Migrations\201706040756188_award.Designer.cs">
-      <DependentUpon>201706040756188_award.cs</DependentUpon>
+    <Compile Include="Migrations\201706032018569_add film staff table.cs" />
+    <Compile Include="Migrations\201706032018569_add film staff table.Designer.cs">
+      <DependentUpon>201706032018569_add film staff table.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Award.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Enum\Category.cs" />
     <Compile Include="Models\Contracts\ICountry.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Enum\StaffType.cs" />
     <Compile Include="Models\Enum\VideoFormat.cs" />
     <Compile Include="Models\Factories\IModelsFactory.cs" />
     <Compile Include="Models\Factories\ModelsFactory.cs" />
@@ -142,7 +166,10 @@
     <Compile Include="Builder\BuildManager.cs" />
     <Compile Include="Models\Film.cs" />
     <Compile Include="Models\Contracts\IReview.cs" />
+    <Compile Include="Models\FilmStaff.cs" />
     <Compile Include="Models\Review.cs" />
+    <Compile Include="Models\Store.cs" />
+    <Compile Include="Models\Town.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -161,23 +188,23 @@
     <EmbeddedResource Include="Migrations\201706031207549_Country Constraints.resx">
       <DependentUpon>201706031207549_Country Constraints.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706031306346_remove rating from film.resx">
-      <DependentUpon>201706031306346_remove rating from film.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706031643145_CustomerMigration.resx">
+      <DependentUpon>201706031643145_CustomerMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706031529186_add isDeleted to film.resx">
-      <DependentUpon>201706031529186_add isDeleted to film.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706031711342_add-town.resx">
+      <DependentUpon>201706031711342_add-town.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706031530183_add award isDeleted.resx">
-      <DependentUpon>201706031530183_add award isDeleted.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706031827251_add address table.resx">
+      <DependentUpon>201706031827251_add address table.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706031536152_test max lenght.resx">
-      <DependentUpon>201706031536152_test max lenght.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706031921012_add store table.resx">
+      <DependentUpon>201706031921012_add store table.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706040725549_award and film isdeleted field.resx">
-      <DependentUpon>201706040725549_award and film isdeleted field.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706031926081_add stores to film.resx">
+      <DependentUpon>201706031926081_add stores to film.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706040756188_award.resx">
-      <DependentUpon>201706040756188_award.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706032018569_add film staff table.resx">
+      <DependentUpon>201706032018569_add film staff table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

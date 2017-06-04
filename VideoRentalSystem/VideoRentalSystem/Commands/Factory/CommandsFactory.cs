@@ -1,8 +1,5 @@
-﻿using System;
-using VideoRentalSystem.Commands.Contracts;
+﻿using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Core.Contracts;
-using VideoRentalSystem.Data.Contracts;
-using VideoRentalSystem.Models.Factories;
 
 namespace VideoRentalSystem.Commands.Factory
 {

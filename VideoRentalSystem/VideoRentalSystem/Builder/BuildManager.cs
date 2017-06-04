@@ -30,13 +30,34 @@ namespace VideoRentalSystem.Builder
 
             /////Bind commands
             this.Bind<ICommand>().To<CreateCountryCommand>().Named("CreateCountry");
-            this.Bind<ICommand>().To<CreateEmployeeCommand>().Named("CreateEmployee");
-            this.Bind<ICommand>().To<CreateManagerCommand>().Named("CreateManager");
             this.Bind<ICommand>().To<ListAllCountriesCommand>().Named("ListAllCountries");
+
+            this.Bind<ICommand>().To<CreateTownCommand>().Named("CreateTown");
+            this.Bind<ICommand>().To<ListAllTownsCommand>().Named("ListAllTowns");
+
+            this.Bind<ICommand>().To<CreateAddressCommand>().Named("CreateAddress");
+            this.Bind<ICommand>().To<ListAllAddressesCommand>().Named("ListAllAddresses");
+
+            this.Bind<ICommand>().To<CreateEmployeeCommand>().Named("CreateEmployee");
             this.Bind<ICommand>().To<ListAllEmployeesCommand>().Named("ListAllEmployees");
+
+            this.Bind<ICommand>().To<CreateManagerCommand>().Named("CreateManager");
+
+            this.Bind<ICommand>().To<CreateCustomerCommand>().Named("CreateCustomer");
+            this.Bind<ICommand>().To<ListAllCustomersCommand>().Named("ListAllCustomers");
+
             this.Bind<ICommand>().To<CreateReviewCommand>().Named("CreateReview");
+
             this.Bind<ICommand>().To<CreateFilmCommand>().Named("CreateFilm");
             this.Bind<ICommand>().To<CreateAwardCommand>().Named("CreateAward");
+
+            this.Bind<ICommand>().To<CreateStoreCommand>().Named("CreateStore");
+            this.Bind<ICommand>().To<ListAllStoresCommand>().Named("ListAllStores");
+
+            this.Bind<ICommand>().To<CreateFilmStaffCommand>().Named("CreateFilmStaff");
+            this.Bind<ICommand>().To<ListAllFilmStaffsCommand>().Named("ListAllFilmStaffs");
+
+            
             
             var engine = this.Bind<IEngine>().To<Engine>().InSingletonScope();
         }

@@ -12,7 +12,13 @@ namespace VideoRentalSystem.Data
 
         public IDbSet<Country> CountriesTable { get; set; }
 
+        public IDbSet<Town> TownsTable { get; set; }
+
+        public IDbSet<Address> AddressesTable { get; set; }
+
         public IDbSet<Employee> EmployeesTable { get; set; }
+
+        public IDbSet<Customer> CustomersTable { get; set; }
 
         public IDbSet<Review> ReviewsTable { get; set; }
 
@@ -20,14 +26,48 @@ namespace VideoRentalSystem.Data
 
         public IDbSet<Award> AwardTable { get; set; }
 
+        public IDbSet<Store> StoreTable { get; set; }
+
+        public IDbSet<FilmStaff> FilmStaffTable { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             this.CreateAddresseModels(modelBuilder);
             this.CreateReviewModel(modelBuilder);
+            this.CreateEmployeeModel(modelBuilder);
+            this.CreateCustomerModel(modelBuilder);
             this.CreateFilmModels(modelBuilder);
             this.CreateAwardModels(modelBuilder);
 
             base.OnModelCreating(modelBuilder);
+        }
+
+        private void CreateEmployeeModel(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Employee>()
+                .Property(e => e.FirstName).HasMaxLength(25)
+                                             .IsRequired();
+
+            modelBuilder.Entity<Employee>()
+                .Property(e => e.LastName).HasMaxLength(25)
+                                            .IsRequired();
+
+            modelBuilder.Entity<Employee>()
+                .Property(e => e.Salary).IsRequired();
+        }
+
+        private void CreateCustomerModel(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Customer>()
+                .Property(e => e.FirstName).HasMaxLength(25)
+                                             .IsRequired();
+
+            modelBuilder.Entity<Customer>()
+                .Property(e => e.LastName).HasMaxLength(25)
+                                            .IsRequired();
+
+            modelBuilder.Entity<Customer>()
+                .Property(e => e.BirthDate).IsRequired();
         }
 
         private void CreateReviewModel(DbModelBuilder modelBuilder)
@@ -54,6 +94,20 @@ namespace VideoRentalSystem.Data
                 .Property(c => c.Code)
                 .HasMaxLength(2)
                 .IsRequired();
+
+            modelBuilder.Entity<Town>()
+                .Property(t => t.Name)
+                .HasMaxLength(40)
+                .IsRequired();
+
+            modelBuilder.Entity<Address>()
+                .Property(a => a.Street)
+                .HasMaxLength(150)
+                .IsRequired();
+
+            modelBuilder.Entity<Address>()
+                .Property(a => a.PostalCode)
+                .HasMaxLength(10);
         }
 
         private void CreateFilmModels(DbModelBuilder modelBuilder)

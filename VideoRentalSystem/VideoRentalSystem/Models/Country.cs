@@ -1,5 +1,4 @@
-﻿using System.Text;
-using VideoRentalSystem.Models.Contracts;
+﻿using VideoRentalSystem.Models.Contracts;
 
 namespace VideoRentalSystem.Models
 {
@@ -9,12 +8,6 @@ namespace VideoRentalSystem.Models
         {
             this.Name = name;
             this.Code = code;
-        }
-
-        public Country(int id, string name, string code)
-            : this(name, code)
-        {
-            this.Id = id;
         }
 
         private Country()
