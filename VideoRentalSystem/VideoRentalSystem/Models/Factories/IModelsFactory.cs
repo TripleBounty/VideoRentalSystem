@@ -1,5 +1,4 @@
 ﻿using System;
-using VideoRentalSystem.Models.Contracts;
 using VideoRentalSystem.Models.Enum;
 
 namespace VideoRentalSystem.Models.Factories

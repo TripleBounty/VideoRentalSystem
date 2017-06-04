@@ -1,9 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using VideoRentalSystem.Models.Contracts;
 
 namespace VideoRentalSystem.Models
 {
-    public class Review : IReview
+    public class Review
     {
         public Review(double rating, string description)
         {

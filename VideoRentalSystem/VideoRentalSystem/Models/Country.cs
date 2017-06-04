@@ -1,8 +1,6 @@
-﻿using VideoRentalSystem.Models.Contracts;
-
-namespace VideoRentalSystem.Models
+﻿namespace VideoRentalSystem.Models
 {
-    public class Country : ICountry
+    public class Country
     {
         public Country(string name, string code)
         {

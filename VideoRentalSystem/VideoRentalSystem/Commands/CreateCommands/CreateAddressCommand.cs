@@ -25,7 +25,7 @@ namespace VideoRentalSystem.Commands.CreateCommands
             var town = this.db.Towns.SingleOrDefault(t => t.Id == townId);
             var country = town.Country;
 
-            var address = this.factory.CreateAddress(street, postalCode, town, null);
+            var address = this.factory.CreateAddress(street, postalCode, town, country);
 
             this.db.Addesses.Add(address);
             this.db.Complete();

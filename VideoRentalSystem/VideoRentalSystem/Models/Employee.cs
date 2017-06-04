@@ -1,10 +1,8 @@
-﻿using System;
-using VideoRentalSystem.Common.Validations;
-using VideoRentalSystem.Models.Contracts;
+﻿using VideoRentalSystem.Common.Validations;
 
 namespace VideoRentalSystem.Models
 {
-    public class Employee : IEmployee
+    public class Employee
     {
         private string firstName;
         private string lastName;
