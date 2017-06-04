@@ -43,8 +43,6 @@ namespace VideoRentalSystem.Models
 
         public virtual ICollection<Genre> Genres { get; set; }
 
-        public VideoFormat VideoFormats { get; set; }
-
         public virtual ICollection<Award> Awards { get; set; }
 
         public virtual ICollection<FilmStaff> FilmStaffs { get; set; }

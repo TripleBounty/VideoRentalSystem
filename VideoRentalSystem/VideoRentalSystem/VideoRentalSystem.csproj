@@ -161,6 +161,10 @@
     <Compile Include="Migrations\201706040847415_remove videoformat from film.Designer.cs">
       <DependentUpon>201706040847415_remove videoformat from film.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706040930196_add storage.cs" />
+    <Compile Include="Migrations\201706040930196_add storage.Designer.cs">
+      <DependentUpon>201706040930196_add storage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Award.cs" />
@@ -221,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706040847415_remove videoformat from film.resx">
       <DependentUpon>201706040847415_remove videoformat from film.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706040930196_add storage.resx">
+      <DependentUpon>201706040930196_add storage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

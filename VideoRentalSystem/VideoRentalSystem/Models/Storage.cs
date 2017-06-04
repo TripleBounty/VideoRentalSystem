@@ -21,6 +21,8 @@ namespace VideoRentalSystem.Models
         {
         }
 
+        public int Id { get; set; }
+
         public Store Store { get; set; }
 
         public Film Film { get; set; }
