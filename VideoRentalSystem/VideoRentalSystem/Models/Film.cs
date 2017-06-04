@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using VideoRentalSystem.Models.Enum;
 
 namespace VideoRentalSystem.Models
@@ -50,5 +51,26 @@ namespace VideoRentalSystem.Models
         public virtual ICollection<FilmStaff> FilmStaffs { get; set; }
 
         public bool IsDeleted { get; set; }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+
+            sb.Append("Film: ");
+            sb.AppendLine(this.Name);
+            sb.Append("Release date: ");
+            sb.AppendLine(this.ReleaseDate.ToString());
+            sb.Append("Duration: ");
+            sb.AppendLine(this.Duration.TotalMinutes.ToString());
+            sb.Append("Rating: ");
+            sb.AppendLine(string.Join(",", this.Categories));
+            sb.Append("Genres: ");
+            sb.AppendLine(string.Join(",", this.Genres));
+            sb.Append("Awards: ");
+            sb.AppendLine(string.Join(",", this.Awards));
+            //// TODO FilmStaff
+
+            return sb.ToString();
+        }
     }
 }
