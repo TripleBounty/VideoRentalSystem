@@ -25,7 +25,6 @@ namespace VideoRentalSystem.Commands.CreateCommands
             var summary = parameters[1];
             DateTime realiseDate = Convert.ToDateTime(parameters[2]);
             TimeSpan duration = TimeSpan.FromMinutes(double.Parse(parameters[3]));
-            VideoFormat videoFormat = (VideoFormat)Enum.Parse(typeof(VideoFormat), parameters[4], true);
 
             var film = this.factory.CreateFilm(filmName, summary, realiseDate, duration);
 
