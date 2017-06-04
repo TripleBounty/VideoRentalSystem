@@ -41,6 +41,7 @@ namespace VideoRentalSystem.Data
             this.CreateEmployeeModel(modelBuilder);
             this.CreateCustomerModel(modelBuilder);
             this.CreateFilmModels(modelBuilder);
+            this.CreateFilmStaffModel(modelBuilder);
             this.CreateAwardModels(modelBuilder);
 
             base.OnModelCreating(modelBuilder);
@@ -153,6 +154,19 @@ namespace VideoRentalSystem.Data
             modelBuilder.Entity<Award>()
                 .Property(x => x.Date)
                 .IsRequired();
+        }
+
+        private void CreateFilmStaffModel(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<FilmStaff>()
+                .Property(f => f.FirstName)
+                .HasMaxLength(50)
+                .IsRequired();
+
+            modelBuilder.Entity<FilmStaff>()
+               .Property(f => f.LastName)
+               .HasMaxLength(50)
+               .IsRequired();
         }
     }
 }

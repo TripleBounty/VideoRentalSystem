@@ -198,6 +198,10 @@
     <Compile Include="Migrations\201706041627284_remove country from address.Designer.cs">
       <DependentUpon>201706041627284_remove country from address.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706041855326_add filmstaff constraints.cs" />
+    <Compile Include="Migrations\201706041855326_add filmstaff constraints.Designer.cs">
+      <DependentUpon>201706041855326_add filmstaff constraints.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Award.cs" />
@@ -273,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706041627284_remove country from address.resx">
       <DependentUpon>201706041627284_remove country from address.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706041855326_add filmstaff constraints.resx">
+      <DependentUpon>201706041855326_add filmstaff constraints.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

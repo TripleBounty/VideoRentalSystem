@@ -13,8 +13,9 @@ Commands separator ";" <br>
 --CreateAddress - params - Street, PostalCode, TownID.<br>
 --CreateEmployee - params - First Name, Last Name, Salary, Manager Id.<br>
 --CreateManager - params - First Name, Last Name, Salary.<br>
---CreateCustomer - params - First Name, Last Name, Birthdate MM/dd/YYYY.<br><br>
-<br>
+--CreateCustomer - params - First Name, Last Name, Birthdate MM/dd/YYYY.<br>
+--CreateFilmStaff - params - First Name, Last Name, Birthdate MM/dd/YYYY, CountryId, Type.<br>
+<br><br>
 </li>
 <li>1.2. List Commands<br><br>
 --ListAllCountries - no params<br>
@@ -24,18 +25,72 @@ Commands separator ";" <br>
 --ListAllAddresses - no params <br>
 --AddressDetails - params - AddressId <br>
 --ListAllEmployees - no params <br>
---ListAllCustomers - no params <br><br>
+--ListAllCustomers - no params <br>
+<br><br>
 </li>
 <li>1.3. Update Commands<br><br>
 --UpdateCountry - params - CountryId, Initials, Country Code.<br>
 --UpdateTown - params - TownId, TownName, CountryId.<br>
 --UpdateAddress - params - AddressId, Street, PostalCode, TownID.<br>
+<br><br>
 </li>
 <li>1.3. Termination<br><br>
---Exit<br></li>
+--Exit<br>
+</li>
+<br><br>
+<li>1.4. Enums<br><br>
+  <ul>
+  <li>1.4.1 StaffType<br><br>
+        Actor<br>
+        Director<br>
+        Writer<br>
+  </li>
+  <li>1.4.2 Category<br><br>
+    G<br>
+    PG<br>
+    PG13<br>
+    R<br>
+    NC17<br>
+  </li>
+  <li>1.4.3 Genre<br><br>
+  action = 0,
+      adventure<br>
+      animation<br>
+      biographz<br>
+      comedy<br>
+      crime<br>
+      disaster<br>
+      documentary<br>
+      drama<br>
+      family<br>
+      horror<br>
+      musical<br>
+      satire<br>
+      science_finction<br>
+      war<br>
+      westerns<br>
+      mystery<br>
+      fantasy<br>
+      romance<br>
+      super_heroe<br>
+      thriller<br>
+  </li>
+  <li>1.4.4 VideoFormat<br><br>
+      CD <br>
+      DVD <br>
+      HDDVD <br>
+      BluRay <br>
+      BluRay3D <br>
+      BluRay4K <br>
+      VHS <br>
+  </li>
+  </ul>
+</li>
+<br><br>
 </ul>
 <br>
 <br>
+
 ⋅⋅* Enjoy !
 <br><br>
 <img src="http://static2.fjcdn.com/comments/5854232+_758b797f435687856ce7fa12ba87da9a.png"

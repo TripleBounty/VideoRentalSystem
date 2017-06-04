@@ -43,7 +43,7 @@ namespace VideoRentalSystem.Models
 
             stringBuilder.AppendLine($"{this.FirstName} {this.LastName} {this.BirthDate}");
             stringBuilder.AppendLine($"Type: {this.Type}");
-            stringBuilder.AppendLine($"Origine: {this.OriginePlace}");
+            stringBuilder.Append($"Origine: {this.OriginePlace}");
 
             return stringBuilder.ToString();
         }
