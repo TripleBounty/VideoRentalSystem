@@ -75,11 +75,13 @@
     <Compile Include="Commands\CreateCommands\CreateManagerCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateReviewCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateAddressCommand.cs" />
+    <Compile Include="Commands\CreateCommands\CreateStorageCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateStoreCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateFilmStaffCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateTownCommand.cs" />
     <Compile Include="Commands\Factory\CommandsFactory.cs" />
     <Compile Include="Commands\ListingCommands\ListAllAddressesCommand.cs" />
+    <Compile Include="Commands\ListingCommands\ListAllStoragesCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllStoresCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllFilmStaffsCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllTownsCommand.cs" />
@@ -108,6 +110,7 @@
     <Compile Include="Data\Contracts\IRepository.cs" />
     <Compile Include="Data\Contracts\IStoreRepository.cs" />
     <Compile Include="Data\Contracts\IFilmStaffRepository.cs" />
+    <Compile Include="Data\Contracts\IStorageRepository.cs" />
     <Compile Include="Data\Contracts\ITownRepository.cs" />
     <Compile Include="Data\Database.cs" />
     <Compile Include="Data\Repository\AwardRepository.cs" />
@@ -122,6 +125,7 @@
     <Compile Include="Data\Repository\AddessRepository.cs" />
     <Compile Include="Data\Repository\StoreRepository.cs" />
     <Compile Include="Data\Repository\FilmStaffRepository.cs" />
+    <Compile Include="Data\Repository\StorageRepository.cs" />
     <Compile Include="Data\Repository\TownRepository.cs" />
     <Compile Include="Data\VideoRentalContext.cs" />
     <Compile Include="Migrations\201706021814398_Initial.cs" />
@@ -168,12 +172,15 @@
     <Compile Include="Migrations\201706040847415_remove videoformat from film.Designer.cs">
       <DependentUpon>201706040847415_remove videoformat from film.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706040930196_add storage.cs" />
+    <Compile Include="Migrations\201706040930196_add storage.Designer.cs">
+      <DependentUpon>201706040930196_add storage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Award.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Enum\Category.cs" />
-    <Compile Include="Models\Contracts\ICountry.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Enum\StaffType.cs" />
@@ -181,12 +188,11 @@
     <Compile Include="Models\Factories\IModelsFactory.cs" />
     <Compile Include="Models\Factories\ModelsFactory.cs" />
     <Compile Include="Models\Enum\Genre.cs" />
-    <Compile Include="Models\Contracts\IEmployee.cs" />
     <Compile Include="Builder\BuildManager.cs" />
     <Compile Include="Models\Film.cs" />
-    <Compile Include="Models\Contracts\IReview.cs" />
     <Compile Include="Models\FilmStaff.cs" />
     <Compile Include="Models\Review.cs" />
+    <Compile Include="Models\Storage.cs" />
     <Compile Include="Models\Store.cs" />
     <Compile Include="Models\Town.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -230,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706040847415_remove videoformat from film.resx">
       <DependentUpon>201706040847415_remove videoformat from film.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706040930196_add storage.resx">
+      <DependentUpon>201706040930196_add storage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

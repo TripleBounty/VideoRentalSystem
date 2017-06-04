@@ -1,5 +1,4 @@
 ﻿using System;
-using VideoRentalSystem.Models.Contracts;
 using VideoRentalSystem.Models.Enum;
 
 namespace VideoRentalSystem.Models.Factories
@@ -21,6 +20,8 @@ namespace VideoRentalSystem.Models.Factories
         Review CreateReview(double rating, string description);
 
         Store CreateStore(string name, Address address);
+
+        Storage CreateStorage(Store store, Film film, int quantity, VideoFormat videoFormat);
 
         FilmStaff CreateFilmStaff(string firstName, string lastName, DateTime birthDate, Country originePlace, StaffType type);
 

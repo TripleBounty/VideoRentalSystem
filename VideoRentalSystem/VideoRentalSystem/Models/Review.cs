@@ -1,9 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
-using VideoRentalSystem.Models.Contracts;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace VideoRentalSystem.Models
 {
-    public class Review : IReview
+    public class Review
     {
         public Review(double rating, string description)
         {
@@ -18,7 +18,7 @@ namespace VideoRentalSystem.Models
 
         public int Id { get; set; }
 
-        ////  public virtual ICollection<Film> Film { get; set; }
+        public virtual ICollection<Film> Film { get; set; }
 
         public double Rating { get; set; }
 

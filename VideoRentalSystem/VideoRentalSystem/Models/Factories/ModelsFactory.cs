@@ -50,6 +50,11 @@ namespace VideoRentalSystem.Models.Factories
             return new Store(name, address);
         }
 
+        public Storage CreateStorage(Store store, Film film, int quantity, VideoFormat videoFormat)
+        {
+            return new Storage(store, film, quantity, videoFormat);
+        }
+
         public FilmStaff CreateFilmStaff(string firstName, string lastName, DateTime birthDate, Country originePlace, StaffType type)
         {
             return new FilmStaff(firstName, lastName, birthDate, originePlace, type);

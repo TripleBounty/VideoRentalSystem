@@ -12,7 +12,6 @@ namespace VideoRentalSystem.Models
         {
             this.Name = name;
             this.Address = address;
-            this.Films = new HashSet<Film>();
             this.Employees = new HashSet<Employee>();
         }
 
@@ -26,8 +25,6 @@ namespace VideoRentalSystem.Models
 
         public virtual Address Address { get; set; }
 
-        public virtual ICollection<Film> Films { get; set; }
-
         public virtual ICollection<Employee> Employees { get; set; }
 
         public override string ToString()
@@ -37,7 +34,6 @@ namespace VideoRentalSystem.Models
             stringBuilder.AppendLine($"{this.Id} {this.Name}");
             stringBuilder.AppendLine(Address.ToString());
             stringBuilder.AppendLine(string.Join("\n", this.Employees));
-            stringBuilder.AppendLine(string.Join("\n", this.Films));
 
             return stringBuilder.ToString();
         }

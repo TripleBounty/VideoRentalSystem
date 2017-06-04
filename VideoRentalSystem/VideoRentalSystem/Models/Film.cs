@@ -19,7 +19,6 @@ namespace VideoRentalSystem.Models
             this.Categories = new HashSet<MPAA_Rating>();
             this.Genres = new HashSet<Genre>();
             this.Awards = new HashSet<Award>();
-            this.Stores = new HashSet<Store>();
             this.FilmStaffs = new HashSet<FilmStaff>();
         }
 
@@ -43,8 +42,6 @@ namespace VideoRentalSystem.Models
         public virtual ICollection<MPAA_Rating> Categories { get; set; }
 
         public virtual ICollection<Genre> Genres { get; set; }
-
-        public virtual ICollection<Store> Stores { get; set; }
 
         public virtual ICollection<Award> Awards { get; set; }
 
