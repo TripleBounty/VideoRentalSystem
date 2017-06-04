@@ -1,0 +1,63 @@
+{
+    "employee": {
+        "emp0": {
+            // Employee
+            "FirstName": "Pencho",
+            "LastName": "Minkov",
+            "Salary": 120,
+            "ManagerId": 1
+        },
+        "emp1": { // Employee
+            "FirstName": "Mitko",
+            "LastName": "Strahilov",
+            "Salary": 124,
+            "ManagerId": 1
+        },
+        "emp2": { // Employee
+            "FirstName": "David",
+            "LastName": "Minkov",
+            "Salary": 124,
+            "ManagerId": 1
+        },
+        "emp3": { // Employee
+            "FirstName": "NaSakoto",
+            "LastName": "Jakata",
+            "Salary": 350,
+            "ManagerId": 1
+        },
+        "emp4": { // Employee
+            "FirstName": "Gosho",
+            "LastName": "Hackera",
+            "Salary": 2100,
+            "ManagerId": 1
+        }
+        ,
+        "emp5": { // Employee
+            "FirstName": "Tosho",
+            "LastName": "Hackera",
+            "Salary": 1900,
+            "ManagerId": 1
+        }
+        ,
+        "emp6": { // Employee
+            "FirstName": "Osman",
+            "LastName": "Penchev",
+            "Salary": 10,
+            "ManagerId": 1
+        }
+        ,
+        "emp7": { // Employee
+            "FirstName": "Herman",
+            "LastName": "Flores",
+            "Salary": 210,
+            "ManagerId": 1
+        }
+        ,
+        "emp8": { // Employee
+            "FirstName": "Sonya",
+            "LastName": "Blade",
+            "Salary": 2500,
+            "ManagerId": 1
+        }
+    }
+}

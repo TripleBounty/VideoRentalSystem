@@ -89,6 +89,9 @@
     <Compile Include="Commands\ListingCommands\ListAllCountriesCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllCustomersCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllEmployeesCommand.cs" />
+    <Compile Include="Commands\LoadCommands\LoadCustomerFromJSONCommand.cs" />
+    <Compile Include="Commands\LoadCommands\LoadEmployeeFromJSONCommand.cs" />
+    <Compile Include="Commands\LoadCommands\LoadReviewFromJSONCommand.cs" />
     <Compile Include="Common\CommandProcessor.cs" />
     <Compile Include="Common\ConsoleReader.cs" />
     <Compile Include="Common\ConsoleWriter.cs" />
@@ -129,6 +132,7 @@
     <Compile Include="Data\Repository\StorageRepository.cs" />
     <Compile Include="Data\Repository\TownRepository.cs" />
     <Compile Include="Data\VideoRentalContext.cs" />
+    <Compile Include="Loaders\LoadFromJSON.cs" />
     <Compile Include="Migrations\201706021814398_Initial.cs" />
     <Compile Include="Migrations\201706021814398_Initial.Designer.cs">
       <DependentUpon>201706021814398_Initial.cs</DependentUpon>
@@ -209,6 +213,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Loaders\Customers.json" />
+    <None Include="Loaders\Employees.json" />
+    <None Include="Loaders\Reviews.json" />
     <None Include="packages.config" />
     <None Include="Settings.StyleCop" />
   </ItemGroup>

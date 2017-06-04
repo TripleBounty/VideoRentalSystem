@@ -40,14 +40,17 @@ namespace VideoRentalSystem.Builder
 
             this.Bind<ICommand>().To<CreateEmployeeCommand>().Named("CreateEmployee");
             this.Bind<ICommand>().To<ListAllEmployeesCommand>().Named("ListAllEmployees");
+            this.Bind<ICommand>().To<LoadEmployeeFromJSONCommand>().Named("LoadEmployeeFromJSON");
 
             this.Bind<ICommand>().To<CreateManagerCommand>().Named("CreateManager");
 
             this.Bind<ICommand>().To<CreateCustomerCommand>().Named("CreateCustomer");
             this.Bind<ICommand>().To<ListAllCustomersCommand>().Named("ListAllCustomers");
+            this.Bind<ICommand>().To<LoadCustomerFromJSONCommand>().Named("LoadCustomerFromJSON");
 
             this.Bind<ICommand>().To<CreateReviewCommand>().Named("CreateReview");
             this.Bind<ICommand>().To<ListAllReviewsCommand>().Named("ListAllReviews");
+            this.Bind<ICommand>().To<LoadReviewFromJSONCommand>().Named("LoadReveiwFromJSON");
 
             this.Bind<ICommand>().To<CreateFilmCommand>().Named("CreateFilm");
             this.Bind<ICommand>().To<CreateAwardCommand>().Named("CreateAward");
