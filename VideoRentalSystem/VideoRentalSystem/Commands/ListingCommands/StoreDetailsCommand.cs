@@ -33,7 +33,7 @@ namespace VideoRentalSystem.Commands.ListingCommands
                 return "Not Valid Store Id. Fill in numeric value!";
             }
 
-            var store = this.db.Stores.SingleOrDefault(c => c.Id == storeId);
+            var store = this.db.Stores.SingleOrDefault(s => s.Id == storeId);
             if (store == null)
             {
                 return "Store with such id doesn't exist!";

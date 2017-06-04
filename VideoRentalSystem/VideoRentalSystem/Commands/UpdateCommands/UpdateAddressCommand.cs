@@ -36,10 +36,10 @@ namespace VideoRentalSystem.Commands.UpdateCommands
                 return "Not Valid Address Id. Fill in numeric value!";
             }
 
-            var address = this.db.Addesses.SingleOrDefault(t => t.Id == addressId);
+            var address = this.db.Addesses.SingleOrDefault(a => a.Id == addressId);
             if (address == null)
             {
-                return "Town with such id doesn't exist!";
+                return "Address with such id doesn't exist!";
             }
 
             var street = parameters[1];

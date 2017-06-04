@@ -37,7 +37,7 @@ namespace VideoRentalSystem.Commands.CreateCommands
                 return "Not Valid Address Id. Fill in numeric value!";
             }
 
-            var address = this.db.Addesses.SingleOrDefault(c => c.Id == addressId);
+            var address = this.db.Addesses.SingleOrDefault(a => a.Id == addressId);
 
             if (address == null)
             {

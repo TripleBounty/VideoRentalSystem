@@ -33,7 +33,7 @@ namespace VideoRentalSystem.Commands.ListingCommands
                 return "Not Valid Town Id. Fill in numeric value!";
             }
 
-            var town = this.db.Towns.SingleOrDefault(c => c.Id == townId);
+            var town = this.db.Towns.SingleOrDefault(t => t.Id == townId);
             if (town == null)
             {
                 return "Town with such id doesn't exist!";
