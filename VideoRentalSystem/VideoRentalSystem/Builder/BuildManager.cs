@@ -3,7 +3,7 @@ using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Commands.CreateCommands;
 using VideoRentalSystem.Commands.Factory;
 using VideoRentalSystem.Commands.ListingCommands;
-using VideoRentalSystem.Commands.UpdateCommands.AddCommands;
+using VideoRentalSystem.Commands.UpdateCommands.AddToCommands;
 using VideoRentalSystem.Common;
 using VideoRentalSystem.Common.Contracts;
 using VideoRentalSystem.Core;
@@ -53,6 +53,8 @@ namespace VideoRentalSystem.Builder
             this.Bind<ICommand>().To<CreateFilmCommand>().Named("CreateFilm");
             this.Bind<ICommand>().To<AddFilmCategory>().Named("AddFilmCategory");
 
+            this.Bind<ICommand>().To<CreateFilmRating>().Named("CreateFilmRating");
+            this.Bind<ICommand>().To<CreateFilmGenre>().Named("CreateFilmGenre");
             this.Bind<ICommand>().To<CreateAwardCommand>().Named("CreateAward");
 
             this.Bind<ICommand>().To<CreateStoreCommand>().Named("CreateStore");

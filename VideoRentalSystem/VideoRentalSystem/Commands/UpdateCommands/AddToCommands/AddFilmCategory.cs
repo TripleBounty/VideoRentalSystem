@@ -2,10 +2,8 @@
 using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Data.Contracts;
 using VideoRentalSystem.Models.Factories;
-using VideoRentalSystem.Models.Enum;
-using System;
 
-namespace VideoRentalSystem.Commands.UpdateCommands.AddCommands
+namespace VideoRentalSystem.Commands.UpdateCommands.AddToCommands
 {
     public class AddFilmCategory : ICommand
     {
@@ -21,11 +19,11 @@ namespace VideoRentalSystem.Commands.UpdateCommands.AddCommands
         public string Execute(IList<string> parameters)
         {
             var filmName = parameters[0];
-            var filmCategory = (MPAA_Rating) Enum.Parse(typeof(MPAA_Rating), parameters[1].ToUpper());
+           // var filmCategory = (MPAA_Rating) Enum.Parse(typeof(MPAA_Rating), parameters[1].ToUpper());
 
-            db.Film.SingleOrDefault(x => x.Name == filmName).Categories.Add(filmCategory);
+            //db.Films.SingleOrDefault(x => x.Name == filmName).Categories.Add(filmCategory);
 
-            this.db.Complete();
+           // this.db.Complete();
 
             return "MPAA rationg added to " + filmName;
         }

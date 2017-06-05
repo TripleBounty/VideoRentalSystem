@@ -26,7 +26,7 @@ namespace VideoRentalSystem.Commands.CreateCommands
             VideoFormat videoFormat = (VideoFormat)Enum.Parse(typeof(VideoFormat), parameters[3], true);
 
             var store = this.db.Stores.SingleOrDefault(s => s.Id == storeId);
-            var film = this.db.Film.SingleOrDefault(f => f.Id == filmId);
+            var film = this.db.Films.SingleOrDefault(f => f.Id == filmId);
 
             var storage = this.factory.CreateStorage(store, film, quantity, videoFormat);
 

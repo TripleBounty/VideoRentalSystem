@@ -59,9 +59,9 @@ namespace VideoRentalSystem.Models
             sb.Append("Duration: ");
             sb.AppendLine(this.Duration.TotalMinutes.ToString());
             sb.Append("Rating: ");
-            sb.AppendLine(string.Join(",", this.Categories.ToString()));
+            sb.AppendLine(string.Join(",", this.Categories));
             sb.Append("Genres: ");
-            sb.AppendLine(string.Join(",", this.Genres.ToString()));
+            sb.AppendLine(string.Join(",", this.Genres));
             sb.Append("Awards: ");
             sb.AppendLine(string.Join(",", this.Awards.ToString()));
             //// TODO FilmStaff

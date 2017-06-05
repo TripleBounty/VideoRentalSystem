@@ -8,18 +8,13 @@ namespace VideoRentalSystem.Models
         {
         }
 
-        public FilmRating(MPAA_Rating rating)
+        public FilmRating(string rating)
         {
             this.AgeRating = rating;
         }
 
         public int Id { get; set; }
 
-        public MPAA_Rating AgeRating { get; set; }
-
-        public override string ToString()
-        {
-            return AgeRating.ToString();
-        }
+        public string AgeRating { get; set; }
     }
 }

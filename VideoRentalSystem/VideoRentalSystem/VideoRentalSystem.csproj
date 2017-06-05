@@ -62,6 +62,8 @@
     <Compile Include="Commands\Contracts\ICommandsFactory.cs" />
     <Compile Include="Commands\CreateCommands\CreateAwardCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateCustomerCimmand.cs" />
+    <Compile Include="Commands\CreateCommands\CreateFilmGenre.cs" />
+    <Compile Include="Commands\CreateCommands\CreateFilmRating.cs" />
     <Compile Include="Commands\CreateCommands\CreateFilmCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateManagerCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateReviewCommand.cs" />
@@ -80,7 +82,7 @@
     <Compile Include="Commands\ListingCommands\ListAllCountriesCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllCustomersCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllEmployeesCommand.cs" />
-    <Compile Include="Commands\UpdateCommands\AddCommands\AddFilmCategory.cs" />
+    <Compile Include="Commands\UpdateCommands\AddToCommands\AddFilmCategory.cs" />
     <Compile Include="Common\CommandProcessor.cs" />
     <Compile Include="Common\ConsoleReader.cs" />
     <Compile Include="Common\ConsoleWriter.cs" />
@@ -99,6 +101,8 @@
     <Compile Include="Data\Contracts\ICustomerRepository.cs" />
     <Compile Include="Data\Contracts\IDatabase.cs" />
     <Compile Include="Data\Contracts\IEmployeesRepository.cs" />
+    <Compile Include="Data\Contracts\IFilmGenreRepository.cs" />
+    <Compile Include="Data\Contracts\IFilmRatingRepository.cs" />
     <Compile Include="Data\Contracts\IFilmRepository.cs" />
     <Compile Include="Data\Contracts\IRepository.cs" />
     <Compile Include="Data\Contracts\IStoreRepository.cs" />
@@ -106,6 +110,8 @@
     <Compile Include="Data\Contracts\IStorageRepository.cs" />
     <Compile Include="Data\Contracts\ITownRepository.cs" />
     <Compile Include="Data\Database.cs" />
+    <Compile Include="Data\Repository\FilmGenreRepository.cs" />
+    <Compile Include="Data\Repository\FilmRatingRepository.cs" />
     <Compile Include="Data\Repository\AwardRepository.cs" />
     <Compile Include="Data\Repository\FilmRepository.cs" />
     <Compile Include="Data\Repository\CountryRepository.cs" />
