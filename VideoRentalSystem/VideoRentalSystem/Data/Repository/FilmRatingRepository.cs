@@ -6,7 +6,7 @@ namespace VideoRentalSystem.Data.Repository
     public class FilmRatingRepository : Repository<FilmRating>, IFilmRatingRepository
     {
         public FilmRatingRepository(VideoRentalContext context)
-            :base(context)
+            : base(context)
         {
         }
 

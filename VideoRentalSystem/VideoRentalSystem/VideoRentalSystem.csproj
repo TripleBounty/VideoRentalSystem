@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Builder\ServiceLocator.cs" />
+    <Compile Include="Commands\AddCommands\AddAwardFilmCommand.cs" />
     <Compile Include="Commands\AddCommands\AddFilmQuantityCommand.cs" />
     <Compile Include="Commands\AddCommands\AddStoreEmployeeCommand.cs" />
     <Compile Include="Commands\Contracts\ICommand.cs" />
@@ -213,6 +214,10 @@
     <Compile Include="Migrations\201706052023583_Genres and Rating tables.Designer.cs">
       <DependentUpon>201706052023583_Genres and Rating tables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706052036480_merging with my db.cs" />
+    <Compile Include="Migrations\201706052036480_merging with my db.Designer.cs">
+      <DependentUpon>201706052036480_merging with my db.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Award.cs" />
@@ -297,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706052023583_Genres and Rating tables.resx">
       <DependentUpon>201706052023583_Genres and Rating tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706052036480_merging with my db.resx">
+      <DependentUpon>201706052036480_merging with my db.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

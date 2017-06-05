@@ -21,8 +21,8 @@ namespace VideoRentalSystem.Commands.CreateCommands
             var genre = parameters[0];
             var newGenre = this.factory.CreateFilmGenre(genre);
 
-            db.FilmGenres.Add(newGenre);
-            db.Complete();
+            this.db.FilmGenres.Add(newGenre);
+            this.db.Complete();
 
             return "new genre created";
         }

@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using System;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure.Annotations;
 using VideoRentalSystem.Models;
@@ -45,12 +44,12 @@ namespace VideoRentalSystem.Data
             this.CreateReviewModel(modelBuilder);
             this.CreateEmployeeModel(modelBuilder);
             this.CreateCustomerModel(modelBuilder);
-            this.CreateFilmModels(modelBuilder);
+            this.CreateFilmModel(modelBuilder);
             this.CreateFilmStaffModel(modelBuilder);
-            this.CreateAwardModels(modelBuilder);
+            this.CreateAwardModel(modelBuilder);
             this.CreateStoreModel(modelBuilder);
             
-            this.CreateCategoryModel(modelBuilder);
+            this.CreateFilmRatingModel(modelBuilder);
             this.CreateGenreModel(modelBuilder);
             
             base.OnModelCreating(modelBuilder);
@@ -161,7 +160,7 @@ namespace VideoRentalSystem.Data
                 .IsRequired();
         }
 
-        private void CreateCategoryModel(DbModelBuilder modelBuilder)
+        private void CreateFilmRatingModel(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<FilmRating>()
                 .Property(x => x.AgeRating)

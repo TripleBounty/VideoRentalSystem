@@ -23,8 +23,8 @@ namespace VideoRentalSystem.Commands.CreateCommands
 
             var newRating = this.factory.CreateFilmRating(rating);
 
-            db.FilmRating.Add(newRating);
-            db.Complete();
+            this.db.FilmRating.Add(newRating);
+            this.db.Complete();
 
             return "new film rating created";
         }

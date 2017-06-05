@@ -51,7 +51,7 @@ namespace VideoRentalSystem.Commands.CreateCommands
                 return "Not Valid Film Id. Fill in numeric value!";
             }
 
-            var film = this.db.Film.SingleOrDefault(f => f.Id == filmId);
+            var film = this.db.Films.SingleOrDefault(f => f.Id == filmId);
             if (film == null)
             {
                 return "Film with such id doesn't exist!";

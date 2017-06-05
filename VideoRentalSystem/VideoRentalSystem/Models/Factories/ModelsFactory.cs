@@ -69,7 +69,5 @@ namespace VideoRentalSystem.Models.Factories
         {
             return new FilmStaff(firstName, lastName, birthDate, originePlace, type);
         }
-
-        
     }
 }
