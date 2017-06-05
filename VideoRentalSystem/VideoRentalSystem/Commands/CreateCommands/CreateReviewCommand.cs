@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Data.Contracts;
 using VideoRentalSystem.Models.Factories;
@@ -23,6 +24,11 @@ namespace VideoRentalSystem.Commands.CreateCommands
             string description = parameters[2];
 
             var filmObj = this.db.Film.SingleOrDefault(e => e.Id == filmId);
+
+            if(filmObj == null)
+            {
+                throw new ArgumentException(String.Format("You are trying to write a review for a non existing movie !"));
+            }
 
             var review = this.factory.CreateReview(rating, description, filmObj);
 

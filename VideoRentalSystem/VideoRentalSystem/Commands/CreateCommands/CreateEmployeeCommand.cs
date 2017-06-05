@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Data.Contracts;
 using VideoRentalSystem.Models.Factories;
@@ -24,9 +25,14 @@ namespace VideoRentalSystem.Commands.CreateCommands
             int managerId = int.Parse(parameters[3]);
 
             var employeeObj = this.db.Employees.SingleOrDefault(e => e.Id == managerId);
-            
-            var employee = this.factory.CreateEmployee(firstName, lastName, salary, employeeObj);
 
+            if (employeeObj == null)
+            {
+                throw new ArgumentException(String.Format("The managerId cannot be null or you are trying to get a non existand Manager!"));
+            }
+
+            var employee = this.factory.CreateEmployee(firstName, lastName, salary, employeeObj);
+                        
             this.db.Employees.Add(employee);
             this.db.Complete();
 
