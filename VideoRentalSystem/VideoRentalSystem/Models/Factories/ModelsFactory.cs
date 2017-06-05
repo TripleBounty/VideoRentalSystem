@@ -40,6 +40,16 @@ namespace VideoRentalSystem.Models.Factories
             return new Film(name, summary, realiseDate, duration);
         }
 
+        public FilmRating CreateFilmRating(string rating)
+        {
+            return new FilmRating(rating);
+        }
+
+        public FilmGenre CreateFilmGenre(string genre)
+        {
+            return new FilmGenre(genre);
+        }
+
         public Award CreateAward(string name, DateTime awardDate)
         {
             return new Award(name, awardDate);
@@ -59,5 +69,7 @@ namespace VideoRentalSystem.Models.Factories
         {
             return new FilmStaff(firstName, lastName, birthDate, originePlace, type);
         }
+
+        
     }
 }
