@@ -1,5 +1,7 @@
-﻿using System;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure.Annotations;
 using VideoRentalSystem.Models;
 
 namespace VideoRentalSystem.Data
@@ -43,10 +45,13 @@ namespace VideoRentalSystem.Data
             this.CreateReviewModel(modelBuilder);
             this.CreateEmployeeModel(modelBuilder);
             this.CreateCustomerModel(modelBuilder);
-            this.CreateFilmModel(modelBuilder);
+            this.CreateFilmModels(modelBuilder);
+            this.CreateFilmStaffModel(modelBuilder);
+            this.CreateAwardModels(modelBuilder);
+            this.CreateStoreModel(modelBuilder);
+            
             this.CreateCategoryModel(modelBuilder);
             this.CreateGenreModel(modelBuilder);
-            this.CreateAwardModel(modelBuilder);
             
             base.OnModelCreating(modelBuilder);
         }
@@ -96,12 +101,20 @@ namespace VideoRentalSystem.Data
             modelBuilder.Entity<Country>()
                 .Property(c => c.Name)
                .HasMaxLength(40)
-               .IsRequired();
+               .IsRequired()
+               .HasColumnAnnotation(
+                    IndexAnnotation.AnnotationName,
+                    new IndexAnnotation(
+                    new IndexAttribute("IX_UniqueName") { IsUnique = true }));
 
             modelBuilder.Entity<Country>()
                 .Property(c => c.Code)
                 .HasMaxLength(2)
-                .IsRequired();
+                .IsRequired()
+                .HasColumnAnnotation(
+                    IndexAnnotation.AnnotationName,
+                    new IndexAnnotation(
+                    new IndexAttribute("IX_UniqueCode") { IsUnique = true }));
 
             modelBuilder.Entity<Town>()
                 .Property(t => t.Name)
@@ -165,6 +178,27 @@ namespace VideoRentalSystem.Data
 
             modelBuilder.Entity<Award>()
                 .Property(x => x.Date)
+                .IsRequired();
+        }
+
+        private void CreateFilmStaffModel(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<FilmStaff>()
+                .Property(f => f.FirstName)
+                .HasMaxLength(50)
+                .IsRequired();
+
+            modelBuilder.Entity<FilmStaff>()
+               .Property(f => f.LastName)
+               .HasMaxLength(50)
+               .IsRequired();
+        }
+
+        private void CreateStoreModel(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Store>()
+                .Property(s => s.Name)
+                .HasMaxLength(50)
                 .IsRequired();
         }
     }

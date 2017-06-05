@@ -1,0 +1,78 @@
+{
+  "review": {
+    "emp0": {
+      // Review
+      "FilmId": 1,
+      "Rating": 7.2,
+      "Description": "I was not very satisfied mitko is crazy"
+    },
+    "emp1": { // Review
+      "FilmId": 1,
+      "Rating": 9.2,
+      "Description": "I loved it"
+    },
+    "emp2": { // Review
+      "FilmId": 1,
+      "Rating": 7.7,
+      "Description": "Moderatelly satisfying"
+    },
+    "emp3": { // Review
+      "FilmId": 1,
+      "Rating": 1.3,
+      "Description": "This movie is a waste of time"
+    },
+    "emp4": { // Review
+      "FilmId": 1,
+      "Rating": 3.2,
+      "Description": "Not very interesting"
+    }
+    ,
+    "emp5": { // Review
+      "FilmId": 1,
+      "Rating": 3.9,
+      "Description": "The worst"
+    }
+    ,
+    "emp6": { // Review
+      "FilmId": 1,
+      "Rating": 4.1,
+      "Description": "BAD"
+    }
+    ,
+    "emp7": { // Review
+      "FilmId": 1,
+      "Rating": 6.1,
+      "Description": "Meh it was good"
+    }
+    ,
+    "emp8": { // Review
+      "FilmId": 1,
+      "Rating": 3.2,
+      "Description": "I've seen better"
+    }
+    ,
+    "emp9": { // Review
+      "FilmId": 1,
+      "Rating": 7.2,
+      "Description": "Mitko nqma da izbira poveche filmi"
+    }
+    ,
+    "emp10": { // Review
+      "FilmId": 1,
+      "Rating": 1.2,
+      "Description": "Not very interesting"
+    }
+    ,
+    "emp11": { // Review
+      "FilmId": 1,
+      "Rating": 3.2,
+      "Description": "OMG"
+    }
+    ,
+    "emp12": { // Review
+      "FilmId": 1,
+      "Rating": 6.2,
+      "Description": "Worst move ever"
+    }
+  }
+}

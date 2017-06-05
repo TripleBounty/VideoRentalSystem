@@ -2,24 +2,21 @@
 using System.Linq;
 using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Data.Contracts;
-using VideoRentalSystem.Models.Factories;
 
-namespace VideoRentalSystem.Commands.CreateCommands
+namespace VideoRentalSystem.Commands.ListingCommands
 {
-    public class CreateTownCommand : ICommand
+    public class CountryDetailsCommand : ICommand
     {
         private readonly IDatabase db;
-        private readonly IModelsFactory factory;
 
-        public CreateTownCommand(IDatabase db, IModelsFactory factory)
+        public CountryDetailsCommand(IDatabase db)
         {
             this.db = db;
-            this.factory = factory;
         }
 
         public string Execute(IList<string> parameters)
         {
-            if (parameters.Count != 2)
+            if (parameters.Count != 1)
             {
                 return "Not valid number of parameters";
             }
@@ -29,9 +26,8 @@ namespace VideoRentalSystem.Commands.CreateCommands
                 return "Some of the passed parameters are empty!";
             }
 
-            var townName = parameters[0];
             int countryId;
-            var countryIdParsed = int.TryParse(parameters[1], out countryId);
+            var countryIdParsed = int.TryParse(parameters[0], out countryId);
             if (!countryIdParsed)
             {
                 return "Not Valid Country Id. Fill in numeric value!";
@@ -43,12 +39,7 @@ namespace VideoRentalSystem.Commands.CreateCommands
                 return "Country with such id doesn't exist!";
             }
 
-            var town = this.factory.CreateTown(townName, country);
-
-            this.db.Towns.Add(town);
-            this.db.Complete();
-
-            return "Town created";
+            return country.ToString();
         }
     }
 }

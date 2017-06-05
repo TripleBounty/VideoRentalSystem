@@ -4,14 +4,14 @@ using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Data.Contracts;
 using VideoRentalSystem.Models.Factories;
 
-namespace VideoRentalSystem.Commands.CreateCommands
+namespace VideoRentalSystem.Commands.UpdateCommands
 {
-    public class CreateAddressCommand : ICommand
+    public class UpdateAddressCommand : ICommand
     {
         private readonly IDatabase db;
         private readonly IModelsFactory factory;
 
-        public CreateAddressCommand(IDatabase db, IModelsFactory factory)
+        public UpdateAddressCommand(IDatabase db, IModelsFactory factory)
         {
             this.db = db;
             this.factory = factory;
@@ -19,7 +19,7 @@ namespace VideoRentalSystem.Commands.CreateCommands
 
         public string Execute(IList<string> parameters)
         {
-            if (parameters.Count != 3)
+            if (parameters.Count != 4)
             {
                 return "Not valid number of parameters";
             }
@@ -29,10 +29,23 @@ namespace VideoRentalSystem.Commands.CreateCommands
                 return "Some of the passed parameters are empty!";
             }
 
-            var street = parameters[0];
-            var postalCode = parameters[1];
+            int addressId;
+            var addressIdParsed = int.TryParse(parameters[0], out addressId);
+            if (!addressIdParsed)
+            {
+                return "Not Valid Address Id. Fill in numeric value!";
+            }
+
+            var address = this.db.Addesses.SingleOrDefault(a => a.Id == addressId);
+            if (address == null)
+            {
+                return "Address with such id doesn't exist!";
+            }
+
+            var street = parameters[1];
+            var postalCode = parameters[2];
             int townId;
-            var townIdParsed = int.TryParse(parameters[2], out townId);
+            var townIdParsed = int.TryParse(parameters[3], out townId);
             if (!townIdParsed)
             {
                 return "Not Valid Town Id. Fill in numeric value!";
@@ -44,12 +57,13 @@ namespace VideoRentalSystem.Commands.CreateCommands
                 return "Town with such id doesn't exist!";
             }
 
-            var address = this.factory.CreateAddress(street, postalCode, town);
+            address.Street = street;
+            address.PostalCode = postalCode;
+            address.Town = town;
 
-            this.db.Addesses.Add(address);
             this.db.Complete();
 
-            return "Address created";
+            return "Address updated";
         }
     }
 }

@@ -1,0 +1,54 @@
+{
+    "customer": {
+        "emp0": {
+            // Employee
+            "FirstName": "Telerikcho",
+            "LastName": "Minkov",
+            "BirthDate": "11/11/1992"
+        },
+        "emp1": { // Employee
+            "FirstName": "Ochko",
+            "LastName": "Strahilov",
+            "BirthDate": "11/11/1991"
+        },
+        "emp2": { // Employee
+            "FirstName": "Stanley",
+            "LastName": "Minkov",
+            "BirthDate": "11/11/1996"
+        },
+        "emp3": { // Employee
+            "FirstName": "NaRizoto",
+            "LastName": "Jakata",
+            "BirthDate": "11/11/1999"
+        },
+        "emp4": { // Employee
+            "FirstName": "Dimitros",
+            "LastName": "Vamos",
+            "BirthDate": "11/11/1995"
+        }
+        ,
+        "emp5": { // Employee
+            "FirstName": "Mitkos",
+            "LastName": "Karastakis",
+            "BirthDate": "11/11/1992"
+        }
+        ,
+        "emp6": { // Employee
+            "FirstName": "Pencho",
+            "LastName": "Penchev",
+            "BirthDate": "11/11/1991"
+        }
+        ,
+        "emp7": { // Employee
+            "FirstName": "Herher",
+            "LastName": "Florman",
+            "BirthDate": "11/11/1998"
+        }
+        ,
+        "emp8": { // Employee
+            "FirstName": "Tanya",
+            "LastName": "Blader",
+            "BirthDate": "01/11/1993"
+        }
+    }
+}

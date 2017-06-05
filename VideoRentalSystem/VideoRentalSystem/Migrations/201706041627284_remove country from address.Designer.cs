@@ -7,13 +7,13 @@ namespace VideoRentalSystem.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ReviewsFilm : IMigrationMetadata
+    public sealed partial class removecountryfromaddress : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ReviewsFilm));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(removecountryfromaddress));
         
         string IMigrationMetadata.Id
         {
-            get { return "201706040951094_ReviewsFilm"; }
+            get { return "201706041627284_remove country from address"; }
         }
         
         string IMigrationMetadata.Source

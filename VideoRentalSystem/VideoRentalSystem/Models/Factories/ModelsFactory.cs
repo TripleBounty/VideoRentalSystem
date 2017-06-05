@@ -15,9 +15,9 @@ namespace VideoRentalSystem.Models.Factories
             return new Town(name, country);
         }
 
-        public Address CreateAddress(string street, string postalCode, Town town, Country country)
+        public Address CreateAddress(string street, string postalCode, Town town)
         {
-            return new Address(street, postalCode, town, country);
+            return new Address(street, postalCode, town);
         }
 
         public Employee CreateEmployee(string firstName, string lastName, int salary, Employee manager)

@@ -2,24 +2,21 @@
 using System.Linq;
 using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Data.Contracts;
-using VideoRentalSystem.Models.Factories;
 
-namespace VideoRentalSystem.Commands.CreateCommands
+namespace VideoRentalSystem.Commands.ListingCommands
 {
-    public class CreateAddressCommand : ICommand
+    public class TownDetailsCommand : ICommand
     {
         private readonly IDatabase db;
-        private readonly IModelsFactory factory;
 
-        public CreateAddressCommand(IDatabase db, IModelsFactory factory)
+        public TownDetailsCommand(IDatabase db)
         {
             this.db = db;
-            this.factory = factory;
         }
 
         public string Execute(IList<string> parameters)
         {
-            if (parameters.Count != 3)
+            if (parameters.Count != 1)
             {
                 return "Not valid number of parameters";
             }
@@ -29,10 +26,8 @@ namespace VideoRentalSystem.Commands.CreateCommands
                 return "Some of the passed parameters are empty!";
             }
 
-            var street = parameters[0];
-            var postalCode = parameters[1];
             int townId;
-            var townIdParsed = int.TryParse(parameters[2], out townId);
+            var townIdParsed = int.TryParse(parameters[0], out townId);
             if (!townIdParsed)
             {
                 return "Not Valid Town Id. Fill in numeric value!";
@@ -44,12 +39,7 @@ namespace VideoRentalSystem.Commands.CreateCommands
                 return "Town with such id doesn't exist!";
             }
 
-            var address = this.factory.CreateAddress(street, postalCode, town);
-
-            this.db.Addesses.Add(address);
-            this.db.Complete();
-
-            return "Address created";
+            return town.ToString();
         }
     }
 }

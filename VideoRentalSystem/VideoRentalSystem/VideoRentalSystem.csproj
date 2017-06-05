@@ -58,6 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Builder\ServiceLocator.cs" />
+    <Compile Include="Commands\AddCommands\AddFilmQuantityCommand.cs" />
+    <Compile Include="Commands\AddCommands\AddStoreEmployeeCommand.cs" />
     <Compile Include="Commands\Contracts\ICommand.cs" />
     <Compile Include="Commands\Contracts\ICommandsFactory.cs" />
     <Compile Include="Commands\CreateCommands\CreateAwardCommand.cs" />
@@ -73,7 +75,12 @@
     <Compile Include="Commands\CreateCommands\CreateFilmStaffCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateTownCommand.cs" />
     <Compile Include="Commands\Factory\CommandsFactory.cs" />
+    <Compile Include="Commands\ListingCommands\AddressDetailsCommand.cs" />
+    <Compile Include="Commands\ListingCommands\StorageDetailsCommand.cs" />
+    <Compile Include="Commands\ListingCommands\StoreDetailsCommand.cs" />
+    <Compile Include="Commands\ListingCommands\TownDetailsCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllAddressesCommand.cs" />
+    <Compile Include="Commands\ListingCommands\CountryDetailsCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllReviewsCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllStoragesCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllStoresCommand.cs" />
@@ -82,7 +89,14 @@
     <Compile Include="Commands\ListingCommands\ListAllCountriesCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllCustomersCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllEmployeesCommand.cs" />
-    <Compile Include="Commands\UpdateCommands\AddToCommands\AddFilmCategory.cs" />
+    <Compile Include="Commands\LoadCommands\LoadCustomerFromJSONCommand.cs" />
+    <Compile Include="Commands\LoadCommands\LoadEmployeeFromJSONCommand.cs" />
+    <Compile Include="Commands\LoadCommands\LoadReviewFromJSONCommand.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveFilmQuantityCommand.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveStoreEmployeeCommand.cs" />
+    <Compile Include="Commands\UpdateCommands\UpdateAddressCommand.cs" />
+    <Compile Include="Commands\UpdateCommands\UpdateCountryCommand.cs" />
+    <Compile Include="Commands\UpdateCommands\UpdateTownCommand.cs" />
     <Compile Include="Common\CommandProcessor.cs" />
     <Compile Include="Common\ConsoleReader.cs" />
     <Compile Include="Common\ConsoleWriter.cs" />
@@ -179,9 +193,21 @@
     <Compile Include="Migrations\201706040948428_ReviewsChange.Designer.cs">
       <DependentUpon>201706040948428_ReviewsChange.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706040951094_ReviewsFilm.cs" />
-    <Compile Include="Migrations\201706040951094_ReviewsFilm.Designer.cs">
-      <DependentUpon>201706040951094_ReviewsFilm.cs</DependentUpon>
+    <Compile Include="Migrations\201706041523173_add address constraints.cs" />
+    <Compile Include="Migrations\201706041523173_add address constraints.Designer.cs">
+      <DependentUpon>201706041523173_add address constraints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706041627284_remove country from address.cs" />
+    <Compile Include="Migrations\201706041627284_remove country from address.Designer.cs">
+      <DependentUpon>201706041627284_remove country from address.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706041855326_add filmstaff constraints.cs" />
+    <Compile Include="Migrations\201706041855326_add filmstaff constraints.Designer.cs">
+      <DependentUpon>201706041855326_add filmstaff constraints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706041935061_add store constraint.cs" />
+    <Compile Include="Migrations\201706041935061_add store constraint.Designer.cs">
+      <DependentUpon>201706041935061_add store constraint.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201706052023583_Genres and Rating tables.cs" />
     <Compile Include="Migrations\201706052023583_Genres and Rating tables.Designer.cs">
@@ -211,6 +237,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Loaders\Customers.json" />
+    <None Include="Loaders\Employees.json" />
+    <None Include="Loaders\Reviews.json" />
     <None Include="packages.config" />
     <None Include="Settings.StyleCop" />
   </ItemGroup>
@@ -254,8 +283,17 @@
     <EmbeddedResource Include="Migrations\201706040948428_ReviewsChange.resx">
       <DependentUpon>201706040948428_ReviewsChange.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706040951094_ReviewsFilm.resx">
-      <DependentUpon>201706040951094_ReviewsFilm.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706041523173_add address constraints.resx">
+      <DependentUpon>201706041523173_add address constraints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706041627284_remove country from address.resx">
+      <DependentUpon>201706041627284_remove country from address.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706041855326_add filmstaff constraints.resx">
+      <DependentUpon>201706041855326_add filmstaff constraints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706041935061_add store constraint.resx">
+      <DependentUpon>201706041935061_add store constraint.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706052023583_Genres and Rating tables.resx">
       <DependentUpon>201706052023583_Genres and Rating tables.cs</DependentUpon>

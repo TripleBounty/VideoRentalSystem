@@ -21,7 +21,7 @@ namespace VideoRentalSystem.Data.Repository
             return this.Context.Set<TEntity>().Find(id);
         }
 
-        public IEnumerable<TEntity> GetAll()
+        public ICollection<TEntity> GetAll()
         {
             return this.Context.Set<TEntity>().ToList();
         }

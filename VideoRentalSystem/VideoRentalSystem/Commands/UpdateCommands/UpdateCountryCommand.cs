@@ -4,14 +4,14 @@ using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Data.Contracts;
 using VideoRentalSystem.Models.Factories;
 
-namespace VideoRentalSystem.Commands.CreateCommands
+namespace VideoRentalSystem.Commands.UpdateCommands
 {
-    public class CreateAddressCommand : ICommand
+    public class UpdateCountryCommand : ICommand
     {
         private readonly IDatabase db;
         private readonly IModelsFactory factory;
 
-        public CreateAddressCommand(IDatabase db, IModelsFactory factory)
+        public UpdateCountryCommand(IDatabase db, IModelsFactory factory)
         {
             this.db = db;
             this.factory = factory;
@@ -29,27 +29,28 @@ namespace VideoRentalSystem.Commands.CreateCommands
                 return "Some of the passed parameters are empty!";
             }
 
-            var street = parameters[0];
-            var postalCode = parameters[1];
-            int townId;
-            var townIdParsed = int.TryParse(parameters[2], out townId);
-            if (!townIdParsed)
+            int countryId;
+            var countryIdParsed = int.TryParse(parameters[0], out countryId);
+            if (!countryIdParsed)
             {
-                return "Not Valid Town Id. Fill in numeric value!";
+                return "Not Valid Country Id. Fill in numeric value!";
             }
 
-            var town = this.db.Towns.SingleOrDefault(t => t.Id == townId);
-            if (town == null)
+            var country = this.db.Countries.SingleOrDefault(c => c.Id == countryId);
+            if (country == null)
             {
-                return "Town with such id doesn't exist!";
+                return "Country with such id doesn't exist!";
             }
 
-            var address = this.factory.CreateAddress(street, postalCode, town);
+            var countryName = parameters[1];
+            var countryCode = parameters[2];
 
-            this.db.Addesses.Add(address);
+            country.Name = countryName;
+            country.Code = countryCode;
+
             this.db.Complete();
 
-            return "Address created";
+            return "Country updated";
         }
     }
 }

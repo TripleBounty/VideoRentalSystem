@@ -5,7 +5,7 @@ using System.Text;
 namespace VideoRentalSystem.Models
 {
     public class Film
-    { 
+    {
         public Film(string name, string summary, DateTime releaseDate, TimeSpan duration)
         {
             this.Name = name;
@@ -26,6 +26,7 @@ namespace VideoRentalSystem.Models
             this.Categories = new HashSet<FilmRating>();
             this.Genres = new HashSet<FilmGenre>();
             this.Awards = new HashSet<Award>();
+            this.FilmStaffs = new HashSet<FilmStaff>();
         }
 
         public int Id { get; set; }

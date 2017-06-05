@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Data.Contracts;
 using VideoRentalSystem.Models.Enum;
@@ -20,13 +21,55 @@ namespace VideoRentalSystem.Commands.CreateCommands
 
         public string Execute(IList<string> parameters)
         {
-            var storeId = int.Parse(parameters[0]);
-            var filmId = int.Parse(parameters[1]);
-            var quantity = int.Parse(parameters[2]);
-            VideoFormat videoFormat = (VideoFormat)Enum.Parse(typeof(VideoFormat), parameters[3], true);
+            if (parameters.Count != 4)
+            {
+                return "Not valid number of parameters";
+            }
+
+            if (parameters.Any(x => x == string.Empty))
+            {
+                return "Some of the passed parameters are empty!";
+            }
+
+            int storeId;
+            var storeIdParsed = int.TryParse(parameters[0], out storeId);
+            if (!storeIdParsed)
+            {
+                return "Not Valid Store Id. Fill in numeric value!";
+            }
 
             var store = this.db.Stores.SingleOrDefault(s => s.Id == storeId);
-            var film = this.db.Films.SingleOrDefault(f => f.Id == filmId);
+            if (store == null)
+            {
+                return "Store with such id doesn't exist!";
+            }
+
+            int filmId;
+            var filmIdParsed = int.TryParse(parameters[1], out filmId);
+            if (!filmIdParsed)
+            {
+                return "Not Valid Film Id. Fill in numeric value!";
+            }
+
+            var film = this.db.Film.SingleOrDefault(f => f.Id == filmId);
+            if (film == null)
+            {
+                return "Film with such id doesn't exist!";
+            }
+
+            int quantity;
+            var quantityParsed = int.TryParse(parameters[2], out quantity);
+            if (!quantityParsed || quantity <= 0)
+            {
+                return "Not Valid Quantity. Fill in numeric value!";
+            }
+
+            VideoFormat videoFormat;
+            var videoFormatParsed = Enum.TryParse<VideoFormat>(parameters[3], true, out videoFormat);
+            if (!videoFormatParsed)
+            {
+                return "Not Valid Video Format!";
+            }
 
             var storage = this.factory.CreateStorage(store, film, quantity, videoFormat);
 

@@ -17,6 +17,11 @@ namespace VideoRentalSystem.Commands.ListingCommands
         {
             var filmStaffs = this.db.FilmStaffs.GetAll();
 
+            if (filmStaffs.Count == 0)
+            {
+                return "No Staff available";
+            }
+
             return string.Join("\n", filmStaffs);
         }
     }

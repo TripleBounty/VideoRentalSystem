@@ -15,9 +15,13 @@ namespace VideoRentalSystem.Commands.ListingCommands
 
         public string Execute(IList<string> parameters)
         {
-            var contries = this.db.Countries.GetAll();
+            var countries = this.db.Countries.GetAll();
+            if (countries.Count == 0)
+            {
+                return "No Country available";
+            }
 
-            return string.Join("\n", contries);
+            return string.Join("\n", countries);
         }
     }
 }
