@@ -60,6 +60,8 @@
     <Compile Include="Builder\ServiceLocator.cs" />
     <Compile Include="Commands\AddCommands\AddAwardFilmCommand.cs" />
     <Compile Include="Commands\AddCommands\AddFilmQuantityCommand.cs" />
+    <Compile Include="Commands\AddCommands\AddGenreFilmCommand.cs" />
+    <Compile Include="Commands\AddCommands\AddRatingFilmCommand.cs" />
     <Compile Include="Commands\AddCommands\AddStoreEmployeeCommand.cs" />
     <Compile Include="Commands\Contracts\ICommand.cs" />
     <Compile Include="Commands\Contracts\ICommandsFactory.cs" />

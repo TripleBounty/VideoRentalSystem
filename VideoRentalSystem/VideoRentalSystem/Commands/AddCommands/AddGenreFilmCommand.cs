@@ -5,16 +5,15 @@ using VideoRentalSystem.Data.Contracts;
 
 namespace VideoRentalSystem.Commands.AddCommands
 {
-    public class AddAwardFilmCommand : ICommand
+    public class AddGenreFilmCommand : ICommand
     {
-        private readonly IDatabase db;
+        private IDatabase db;
 
-        public AddAwardFilmCommand(IDatabase db)
+        public AddGenreFilmCommand(IDatabase data)
         {
-            this.db = db;
+            this.db = data;
         }
 
-        // TODO: validations
         public string Execute(IList<string> parameters)
         {
             if (parameters.Count != 2)
@@ -26,20 +25,20 @@ namespace VideoRentalSystem.Commands.AddCommands
             var film = this.db.Films.SingleOrDefault(x => x.Name == filmName);
             if (film == null)
             {
-                return "film not found";
+                return "Film not found";
             }
 
-            var awardName = parameters[1];
-            var award = this.db.Award.SingleOrDefault(x => x.Name == awardName);
-            if (award == null)
+            var genreName = parameters[1];
+            var genre = this.db.FilmGenres.SingleOrDefault(x => x.Genre == genreName);
+            if (genre == null)
             {
-                return "award not found";
+                return "Genre not found";
             }
 
-            film.Awards.Add(award);
+            film.Genres.Add(genre);
             this.db.Complete();
 
-            return awardName + " added to " + filmName;
+            return genreName + " added to " + filmName;
         }
     }
 }
