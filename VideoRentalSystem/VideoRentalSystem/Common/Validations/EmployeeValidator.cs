@@ -32,7 +32,7 @@ namespace VideoRentalSystem.Common.Validations
             if (value < MinSalary || value > MaxSalary)
             {
                 throw new ArgumentOutOfRangeException(
-                      $"{nameof(value)} must be between 0 and 150000.");
+                      $"The Salary must be between 0 and 150000.");
             }
         }
     }
