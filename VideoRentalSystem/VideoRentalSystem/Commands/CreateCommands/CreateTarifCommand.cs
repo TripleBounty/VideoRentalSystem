@@ -38,7 +38,7 @@ namespace VideoRentalSystem.Commands.CreateCommands
             }
 
             decimal price;
-            var priceParsed = decimal.TryParse(parameters[1], out price);
+            var priceParsed = decimal.TryParse(parameters[2], out price);
             if (!priceParsed)
             {
                 return "Not Valid Price. Fill in numeric value!";

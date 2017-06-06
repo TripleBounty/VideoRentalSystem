@@ -18,8 +18,9 @@ Commands separator ";" <br>
 --CreateFilmGenre -  params - Genre.<br>
 --CreateFilmRating - params - Rating.<br>
 --CreateFilmStaff - params - First Name, Last Name, Birthdate MM/dd/YYYY, CountryId, Type.<br>
---CreateStore - params - StoreName, AddressId.<br>
---CreateStorage - params - StoreName, AddressId.<br>
+--CreateStore - params - Store Name, AddressId.<br>
+--CreateStorage - params - Store Name, AddressId.<br>
+--CreateTarif - params - Tarif Name, Max number of days, Price.<br>
 <br><br>
 </li>
 <li>1.2. List Commands<br><br>
@@ -35,6 +36,9 @@ Commands separator ";" <br>
 --StoreDetails - params - StoreId <br>
 --ListAllStorages - no params <br>
 --StoragesDetails - params - StoreId <br>
+--ListAllTarifs - no params <br>
+--ListAllTarifsByType - params - Y/N (Active/Deactivated)<br>
+--TarifDetails - params - TarifId <br>
 <br><br>
 </li>
 <li>1.3. Update Commands<br><br>
@@ -54,6 +58,7 @@ Commands separator ";" <br>
 <li>1.5. Remove Commands<br><br>
 --RemoveStoreEmployee - params - StoreId, EmployeeId.<br>
 --RemoveFilmQuantityCommand - params - StorageId, Qunatity.<br>
+--RemoveTarifCommand - params - TarifId.<br>
 <br><br>
 </li>
 <li>1.6. Termination<br><br>

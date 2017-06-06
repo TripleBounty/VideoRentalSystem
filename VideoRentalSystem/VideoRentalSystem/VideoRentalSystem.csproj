@@ -92,6 +92,7 @@
     <Compile Include="Commands\CreateCommands\CreateTownCommand.cs" />
     <Compile Include="Commands\Factory\CommandsFactory.cs" />
     <Compile Include="Commands\ListingCommands\AddressDetailsCommand.cs" />
+    <Compile Include="Commands\ListingCommands\ListAllTarifsByTypeCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllTarifsCommand.cs" />
     <Compile Include="Commands\ListingCommands\StorageDetailsCommand.cs" />
     <Compile Include="Commands\ListingCommands\StoreDetailsCommand.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="Commands\LoadCommands\LoadCustomerFromJSONCommand.cs" />
     <Compile Include="Commands\LoadCommands\LoadEmployeeFromJSONCommand.cs" />
     <Compile Include="Commands\LoadCommands\LoadReviewFromJSONCommand.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveTarifCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveFilmQuantityCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveStoreEmployeeCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateAddressCommand.cs" />
@@ -181,6 +183,10 @@
     <Compile Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.Designer.cs">
       <DependentUpon>201706052150102_InitialDatabaseCreation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\VideoRentalLoanContext\201706061945407_add isDeleted property.cs" />
+    <Compile Include="Migrations\VideoRentalLoanContext\201706061945407_add isDeleted property.Designer.cs">
+      <DependentUpon>201706061945407_add isDeleted property.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\VideoRentalLoanContext\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Award.cs" />
@@ -224,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.resx">
       <DependentUpon>201706052150102_InitialDatabaseCreation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\VideoRentalLoanContext\201706061945407_add isDeleted property.resx">
+      <DependentUpon>201706061945407_add isDeleted property.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

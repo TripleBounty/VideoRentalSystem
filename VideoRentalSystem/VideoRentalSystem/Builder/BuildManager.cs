@@ -12,6 +12,8 @@ using VideoRentalSystem.Core;
 using VideoRentalSystem.Core.Contracts;
 using VideoRentalSystem.Data;
 using VideoRentalSystem.Data.Contracts;
+using VideoRentalSystem.Data.Postgre;
+using VideoRentalSystem.Data.Postgre.Contracts;
 using VideoRentalSystem.Models.Factories;
 
 namespace VideoRentalSystem.Builder
@@ -25,6 +27,7 @@ namespace VideoRentalSystem.Builder
             var videoRentalContext = this.Bind<VideoRentalContext>().ToSelf().InSingletonScope();
 
             var database = this.Bind<IDatabase>().To<Database>().InSingletonScope();
+            this.Bind<IDatabasePostgre>().To<DatabasePostgre>().InSingletonScope();
             var modelFactory = this.Bind<IModelsFactory>().To<ModelsFactory>().InSingletonScope();
 
             this.Bind<IServiceLocator>().To<ServiceLocator>().InSingletonScope();
@@ -85,6 +88,12 @@ namespace VideoRentalSystem.Builder
 
             this.Bind<ICommand>().To<CreateFilmStaffCommand>().Named("CreateFilmStaff");
             this.Bind<ICommand>().To<ListAllFilmStaffsCommand>().Named("ListAllFilmStaffs");
+
+            this.Bind<ICommand>().To<CreateTarifCommand>().Named("CreateTarif");
+            this.Bind<ICommand>().To<TarifDetailsCommand>().Named("TarifDetails");
+            this.Bind<ICommand>().To<ListAllTarifsCommand>().Named("ListAllTarifs");
+            this.Bind<ICommand>().To<ListAllTarifsByTypeCommand>().Named("ListAllTarifsByType");
+            this.Bind<ICommand>().To<RemoveTarifCommand>().Named("RemoveTarif");
 
             var engine = this.Bind<IEngine>().To<Engine>().InSingletonScope();
         }
