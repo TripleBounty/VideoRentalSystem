@@ -7,13 +7,16 @@ Commands separator ";" <br>
 
 1.0. Commands <br>
 <ul>
-<li>1.1.Create Commands <br><br>
+<li>1.1. Create Commands <br><br>
 --CreateCountry - params - Initials, Country Code.<br>
 --CreateTown - params - TownName, CountryId.<br>
 --CreateAddress - params - Street, PostalCode, TownID.<br>
 --CreateEmployee - params - First Name, Last Name, Salary, Manager Id.<br>
 --CreateManager - params - First Name, Last Name, Salary.<br>
 --CreateCustomer - params - First Name, Last Name, Birthdate MM/dd/YYYY.<br>
+--CreateFilm - params - Film Name, Summary, Release date MM/dd/YYYY.<br>
+--CreateFilmGenre -  params - Genre.<br>
+--CreateFilmRating - params - Rating.<br>
 --CreateFilmStaff - params - First Name, Last Name, Birthdate MM/dd/YYYY, CountryId, Type.<br>
 --CreateStore - params - StoreName, AddressId.<br>
 --CreateStorage - params - StoreName, AddressId.<br>
@@ -41,6 +44,9 @@ Commands separator ";" <br>
 <br><br>
 </li>
 <li>1.4. Add Commands<br><br>
+--AddAwardToFilm - params - FilmName, Award.<br>
+--AddGenreToFilm - params - FilmName, Genre.<br>
+--AddRatingToFilm - params - FilmName, Rating.<br>
 --AddStoreEmployee - params - StoreId, EmployeeId.<br>
 --AddFilmQuantityCommand - params - StorageId, Qunatity.<br>
 <br><br>
@@ -61,36 +67,6 @@ Commands separator ";" <br>
         Director<br>
         Writer<br>
   </li>
-  <li>1.7.2 Category<br>
-    G<br>
-    PG<br>
-    PG13<br>
-    R<br>
-    NC17<br>
-  </li>
-  <li>1.7.3 Genre<br>
-      action<br>
-      adventure<br>
-      animation<br>
-      biographz<br>
-      comedy<br>
-      crime<br>
-      disaster<br>
-      documentary<br>
-      drama<br>
-      family<br>
-      horror<br>
-      musical<br>
-      satire<br>
-      science_finction<br>
-      war<br>
-      westerns<br>
-      mystery<br>
-      fantasy<br>
-      romance<br>
-      super_heroe<br>
-      thriller<br>
-  </li>
   <li>1.7.4 VideoFormat<br>
       CD <br>
       DVD <br>
@@ -106,8 +82,3 @@ Commands separator ";" <br>
 </ul>
 <br>
 <br>
-
-⋅⋅* Enjoy !
-<br><br>
-<img src="http://static2.fjcdn.com/comments/5854232+_758b797f435687856ce7fa12ba87da9a.png"
-alt="IMAGE ALT TEXT HERE" width="480" height="180" border="10" /><br>
