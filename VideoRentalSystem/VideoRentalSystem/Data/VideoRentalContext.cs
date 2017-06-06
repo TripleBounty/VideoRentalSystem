@@ -26,6 +26,10 @@ namespace VideoRentalSystem.Data
 
         public IDbSet<Film> FilmTable { get; set; }
 
+        public IDbSet<FilmGenre> FilmGenreTable { get; set; }
+
+        public IDbSet<FilmRating> FilmCategoryTable { get; set; }
+
         public IDbSet<Award> AwardTable { get; set; }
 
         public IDbSet<Store> StoreTable { get; set; }
@@ -40,11 +44,14 @@ namespace VideoRentalSystem.Data
             this.CreateReviewModel(modelBuilder);
             this.CreateEmployeeModel(modelBuilder);
             this.CreateCustomerModel(modelBuilder);
-            this.CreateFilmModels(modelBuilder);
+            this.CreateFilmModel(modelBuilder);
             this.CreateFilmStaffModel(modelBuilder);
-            this.CreateAwardModels(modelBuilder);
+            this.CreateAwardModel(modelBuilder);
             this.CreateStoreModel(modelBuilder);
-
+            
+            this.CreateFilmRatingModel(modelBuilder);
+            this.CreateGenreModel(modelBuilder);
+            
             base.OnModelCreating(modelBuilder);
         }
 
@@ -123,7 +130,7 @@ namespace VideoRentalSystem.Data
                 .HasMaxLength(10);
         }
 
-        private void CreateFilmModels(DbModelBuilder modelBuilder)
+        private void CreateFilmModel(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Film>()
                 .Property(x => x.Name)
@@ -145,7 +152,23 @@ namespace VideoRentalSystem.Data
                 .IsRequired();
         }
 
-        private void CreateAwardModels(DbModelBuilder modelBuilder)
+        private void CreateGenreModel(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<FilmGenre>()
+                .Property(x => x.Genre)
+                .HasMaxLength(40)
+                .IsRequired();
+        }
+
+        private void CreateFilmRatingModel(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<FilmRating>()
+                .Property(x => x.AgeRating)
+                .HasMaxLength(40)
+                .IsRequired();
+        }
+
+        private void CreateAwardModel(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Award>()
                 .Property(x => x.Name)

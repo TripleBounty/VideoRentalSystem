@@ -62,7 +62,13 @@ namespace VideoRentalSystem.Builder
             this.Bind<ICommand>().To<LoadReviewFromJSONCommand>().Named("LoadReveiwFromJSON");
 
             this.Bind<ICommand>().To<CreateFilmCommand>().Named("CreateFilm");
+
+            // this.Bind<ICommand>().To<AddFilmCategory>().Named("AddFilmCategory");
+            this.Bind<ICommand>().To<CreateFilmRating>().Named("CreateFilmRating");
+            this.Bind<ICommand>().To<CreateFilmGenre>().Named("CreateFilmGenre");
             this.Bind<ICommand>().To<CreateAwardCommand>().Named("CreateAward");
+            this.Bind<ICommand>().To<AddAwardFilmCommand>().Named("AddAwardToFilm");
+            this.Bind<ICommand>().To<AddGenreFilmCommand>().Named("AddGenreToFilm");
 
             this.Bind<ICommand>().To<CreateStoreCommand>().Named("CreateStore");
             this.Bind<ICommand>().To<ListAllStoresCommand>().Named("ListAllStores");

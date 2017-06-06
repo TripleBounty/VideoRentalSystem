@@ -1,4 +1,5 @@
-﻿using VideoRentalSystem.Data.Contracts;
+﻿using System;
+using VideoRentalSystem.Data.Contracts;
 using VideoRentalSystem.Data.Repository;
 using VideoRentalSystem.Data.Repository.Contracts;
 
@@ -17,7 +18,9 @@ namespace VideoRentalSystem.Data
             this.Employees = new EmployeesRepository(context);
             this.Customers = new CustomerRepository(context);
             this.Reviews = new ReviewRepository(context);
-            this.Film = new FilmRepository(context);
+            this.Films = new FilmRepository(context);
+            this.FilmGenres = new FilmGenreRepository(context);
+            this.FilmRating = new FilmRatingRepository(context);
             this.Stores = new StoreRepository(context);
             this.Storages = new StorageRepository(context);
             this.FilmStaffs = new FilmStaffRepository(context);
@@ -36,7 +39,11 @@ namespace VideoRentalSystem.Data
 
         public IReviewRepository Reviews { get; private set; }
 
-        public IFilmRepository Film { get; private set; }
+        public IFilmRepository Films { get; private set; }
+
+        public IFilmGenreRepository FilmGenres { get; private set; }
+
+        public IFilmRatingRepository FilmRating { get; private set; }
 
         public IStoreRepository Stores { get; private set; }
 

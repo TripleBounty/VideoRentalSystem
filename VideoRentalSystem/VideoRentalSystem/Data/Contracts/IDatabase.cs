@@ -16,7 +16,11 @@ namespace VideoRentalSystem.Data.Contracts
 
         IReviewRepository Reviews { get; }
 
-        IFilmRepository Film { get; }
+        IFilmRepository Films { get; }
+
+        IFilmGenreRepository FilmGenres { get; }
+
+        IFilmRatingRepository FilmRating { get; }
 
         IStoreRepository Stores { get; }
 

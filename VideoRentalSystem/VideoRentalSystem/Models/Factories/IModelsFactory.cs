@@ -15,6 +15,10 @@ namespace VideoRentalSystem.Models.Factories
 
         Film CreateFilm(string name, string summary, DateTime realiseDate, TimeSpan duration);
 
+        FilmRating CreateFilmRating(string rating);
+
+        FilmGenre CreateFilmGenre(string genre);
+
         Customer CreateCustomer(string firstName, string lastName, DateTime birthDate);
 
         Review CreateReview(double rating, string description, Film film);

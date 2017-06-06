@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using VideoRentalSystem.Models.Enum;
 
 namespace VideoRentalSystem.Models
 {
@@ -16,16 +15,16 @@ namespace VideoRentalSystem.Models
 
             this.IsDeleted = false;
 
-            this.Categories = new HashSet<MPAA_Rating>();
-            this.Genres = new HashSet<Genre>();
+            this.Categories = new HashSet<FilmRating>();
+            this.Genres = new HashSet<FilmGenre>();
             this.Awards = new HashSet<Award>();
             this.FilmStaffs = new HashSet<FilmStaff>();
         }
 
         public Film()
         {
-            this.Categories = new HashSet<MPAA_Rating>();
-            this.Genres = new HashSet<Genre>();
+            this.Categories = new HashSet<FilmRating>();
+            this.Genres = new HashSet<FilmGenre>();
             this.Awards = new HashSet<Award>();
             this.FilmStaffs = new HashSet<FilmStaff>();
         }
@@ -40,9 +39,9 @@ namespace VideoRentalSystem.Models
 
         public TimeSpan Duration { get; set; }
 
-        public virtual ICollection<MPAA_Rating> Categories { get; set; }
+        public virtual ICollection<FilmRating> Categories { get; set; }
 
-        public virtual ICollection<Genre> Genres { get; set; }
+        public virtual ICollection<FilmGenre> Genres { get; set; }
 
         public virtual ICollection<Award> Awards { get; set; }
 
@@ -65,7 +64,7 @@ namespace VideoRentalSystem.Models
             sb.Append("Genres: ");
             sb.AppendLine(string.Join(",", this.Genres));
             sb.Append("Awards: ");
-            sb.AppendLine(string.Join(",", this.Awards));
+            sb.AppendLine(string.Join(",", this.Awards.ToString()));
             //// TODO FilmStaff
 
             return sb.ToString();
