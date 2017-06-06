@@ -33,7 +33,7 @@ namespace VideoRentalSystem.Models
 
         public override string ToString()
         {
-            return $"Store: {this.Store.Id} Film: {this.Film.Id} Format: {this.VideoFormat} Quantity: {this.Quantity}";
+            return $"Storage: {this.Store.Id} Film: {this.Film.Id} Format: {this.VideoFormat} Quantity: {this.Quantity}";
         }
     }
 }

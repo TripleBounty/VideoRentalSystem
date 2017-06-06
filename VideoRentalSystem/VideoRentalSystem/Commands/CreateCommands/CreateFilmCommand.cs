@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Data.Contracts;
-using VideoRentalSystem.Models.Enum;
 using VideoRentalSystem.Models.Factories;
 
 namespace VideoRentalSystem.Commands.CreateCommands
@@ -28,7 +27,7 @@ namespace VideoRentalSystem.Commands.CreateCommands
 
             var film = this.factory.CreateFilm(filmName, summary, realiseDate, duration);
 
-            this.db.Film.Add(film);
+            this.db.Films.Add(film);
             this.db.Complete();
 
             return "Film created";

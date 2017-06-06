@@ -9,11 +9,15 @@ namespace VideoRentalSystem.Models.Factories
 
         Town CreateTown(string name, Country country);
 
-        Address CreateAddress(string street, string postalCode, Town town, Country country);
+        Address CreateAddress(string street, string postalCode, Town town);
 
         Employee CreateEmployee(string firstName, string lastName, int salary, Employee manager);
 
         Film CreateFilm(string name, string summary, DateTime realiseDate, TimeSpan duration);
+
+        FilmRating CreateFilmRating(string rating);
+
+        FilmGenre CreateFilmGenre(string genre);
 
         Customer CreateCustomer(string firstName, string lastName, DateTime birthDate);
 

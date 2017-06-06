@@ -15,9 +15,14 @@ namespace VideoRentalSystem.Commands.ListingCommands
 
         public string Execute(IList<string> parameters)
         {
-            var towns = this.db.Stores.GetAll();
+            var stores = this.db.Stores.GetAll();
 
-            return string.Join("\n", towns);
+            if (stores.Count == 0)
+            {
+                return "No Store available";
+            }
+
+            return string.Join("\n", stores);
         }
     }
 }

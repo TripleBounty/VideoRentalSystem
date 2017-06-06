@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace VideoRentalSystem.Models
 {
@@ -17,6 +14,7 @@ namespace VideoRentalSystem.Models
 
         public Store()
         {
+            this.Employees = new HashSet<Employee>();
         }
 
         public int Id { get; set; }
@@ -33,7 +31,16 @@ namespace VideoRentalSystem.Models
 
             stringBuilder.AppendLine($"{this.Id} {this.Name}");
             stringBuilder.AppendLine(Address.ToString());
-            stringBuilder.AppendLine(string.Join("\n", this.Employees));
+
+            if (this.Employees.Count != 0)
+            {
+                stringBuilder.AppendLine("Employees");
+                stringBuilder.Append(string.Join("\n", this.Employees));
+            }
+            else
+            {
+                stringBuilder.Append("No employee");
+            }
 
             return stringBuilder.ToString();
         }

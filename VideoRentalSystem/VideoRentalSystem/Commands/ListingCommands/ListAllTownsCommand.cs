@@ -16,6 +16,10 @@ namespace VideoRentalSystem.Commands.ListingCommands
         public string Execute(IList<string> parameters)
         {
             var towns = this.db.Towns.GetAll();
+            if (towns.Count == 0)
+            {
+                return "No Town available";
+            }
 
             return string.Join("\n", towns);
         }

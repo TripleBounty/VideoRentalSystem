@@ -16,6 +16,10 @@ namespace VideoRentalSystem.Commands.ListingCommands
         public string Execute(IList<string> parameters)
         {
             var addresses = this.db.Addesses.GetAll();
+            if (addresses.Count == 0)
+            {
+                return "No Addresse available";
+            }
 
             return string.Join("\n", addresses);
         }

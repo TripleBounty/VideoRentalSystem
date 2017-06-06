@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace VideoRentalSystem.Models
 {
     public class Address
     {
-        public Address(string street, string postalCode, Town town, Country country)
+        public Address(string street, string postalCode, Town town)
         {
             this.Street = street;
             this.PostalCode = postalCode;
             this.Town = town;
-            this.Country = country;
         }
 
         public Address()
@@ -28,16 +23,12 @@ namespace VideoRentalSystem.Models
 
         public virtual Town Town { get; set; }
 
-        public virtual Country Country { get; set; }
-
         public override string ToString()
         {
             var stringBuilder = new StringBuilder();
 
-            stringBuilder.Append("Street: ");
-            stringBuilder.AppendLine(this.Street);
-            stringBuilder.Append("Postal Code: ");
-            stringBuilder.AppendLine(this.PostalCode);
+            stringBuilder.AppendLine($"Street: {this.Street}");
+            stringBuilder.AppendLine($"Postal Code: {this.PostalCode}");
             stringBuilder.Append(this.Town.ToString());
 
             return stringBuilder.ToString();

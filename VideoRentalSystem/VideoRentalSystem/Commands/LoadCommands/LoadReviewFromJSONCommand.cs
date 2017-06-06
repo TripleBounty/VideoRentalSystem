@@ -33,7 +33,7 @@ namespace VideoRentalSystem.Commands.CreateCommands
                         double rating = currentReview.Rating;
                         string description = currentReview.Description;
 
-                        var filmObj = this.db.Film.SingleOrDefault(e => e.Id == filmId);
+                        var filmObj = this.db.Films.SingleOrDefault(e => e.Id == filmId);
 
                         var review = this.factory.CreateReview(rating, description, filmObj);
 

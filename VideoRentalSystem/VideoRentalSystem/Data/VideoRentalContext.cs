@@ -1,4 +1,6 @@
-﻿using System.Data.Entity;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure.Annotations;
 using VideoRentalSystem.Models;
 
 namespace VideoRentalSystem.Data
@@ -24,6 +26,10 @@ namespace VideoRentalSystem.Data
 
         public IDbSet<Film> FilmTable { get; set; }
 
+        public IDbSet<FilmGenre> FilmGenreTable { get; set; }
+
+        public IDbSet<FilmRating> FilmCategoryTable { get; set; }
+
         public IDbSet<Award> AwardTable { get; set; }
 
         public IDbSet<Store> StoreTable { get; set; }
@@ -38,9 +44,14 @@ namespace VideoRentalSystem.Data
             this.CreateReviewModel(modelBuilder);
             this.CreateEmployeeModel(modelBuilder);
             this.CreateCustomerModel(modelBuilder);
-            this.CreateFilmModels(modelBuilder);
-            this.CreateAwardModels(modelBuilder);
-
+            this.CreateFilmModel(modelBuilder);
+            this.CreateFilmStaffModel(modelBuilder);
+            this.CreateAwardModel(modelBuilder);
+            this.CreateStoreModel(modelBuilder);
+            
+            this.CreateFilmRatingModel(modelBuilder);
+            this.CreateGenreModel(modelBuilder);
+            
             base.OnModelCreating(modelBuilder);
         }
 
@@ -89,12 +100,20 @@ namespace VideoRentalSystem.Data
             modelBuilder.Entity<Country>()
                 .Property(c => c.Name)
                .HasMaxLength(40)
-               .IsRequired();
+               .IsRequired()
+               .HasColumnAnnotation(
+                    IndexAnnotation.AnnotationName,
+                    new IndexAnnotation(
+                    new IndexAttribute("IX_UniqueName") { IsUnique = true }));
 
             modelBuilder.Entity<Country>()
                 .Property(c => c.Code)
                 .HasMaxLength(2)
-                .IsRequired();
+                .IsRequired()
+                .HasColumnAnnotation(
+                    IndexAnnotation.AnnotationName,
+                    new IndexAnnotation(
+                    new IndexAttribute("IX_UniqueCode") { IsUnique = true }));
 
             modelBuilder.Entity<Town>()
                 .Property(t => t.Name)
@@ -111,7 +130,7 @@ namespace VideoRentalSystem.Data
                 .HasMaxLength(10);
         }
 
-        private void CreateFilmModels(DbModelBuilder modelBuilder)
+        private void CreateFilmModel(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Film>()
                 .Property(x => x.Name)
@@ -133,7 +152,23 @@ namespace VideoRentalSystem.Data
                 .IsRequired();
         }
 
-        private void CreateAwardModels(DbModelBuilder modelBuilder)
+        private void CreateGenreModel(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<FilmGenre>()
+                .Property(x => x.Genre)
+                .HasMaxLength(40)
+                .IsRequired();
+        }
+
+        private void CreateFilmRatingModel(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<FilmRating>()
+                .Property(x => x.AgeRating)
+                .HasMaxLength(40)
+                .IsRequired();
+        }
+
+        private void CreateAwardModel(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Award>()
                 .Property(x => x.Name)
@@ -142,6 +177,27 @@ namespace VideoRentalSystem.Data
 
             modelBuilder.Entity<Award>()
                 .Property(x => x.Date)
+                .IsRequired();
+        }
+
+        private void CreateFilmStaffModel(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<FilmStaff>()
+                .Property(f => f.FirstName)
+                .HasMaxLength(50)
+                .IsRequired();
+
+            modelBuilder.Entity<FilmStaff>()
+               .Property(f => f.LastName)
+               .HasMaxLength(50)
+               .IsRequired();
+        }
+
+        private void CreateStoreModel(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Store>()
+                .Property(s => s.Name)
+                .HasMaxLength(50)
                 .IsRequired();
         }
     }

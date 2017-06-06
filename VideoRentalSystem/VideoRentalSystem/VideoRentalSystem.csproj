@@ -40,8 +40,8 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="itextsharp, Version=5.5.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <HintPath>..\packages\iTextSharp.5.5.8\lib\itextsharp.dll</HintPath>
+    <Reference Include="Mono.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.2.2.7\lib\net45\Mono.Security.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -50,18 +50,17 @@
     <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
     </Reference>
+    <Reference Include="Npgsql, Version=2.2.7.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.2.2.7\lib\net45\Npgsql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Npgsql.EntityFramework, Version=2.2.7.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.EntityFramework.2.2.7\lib\net45\Npgsql.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.SQLite, Version=1.0.105.1, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Data.SQLite.Core.1.0.105.1\lib\net451\System.Data.SQLite.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data.SQLite.EF6, Version=1.0.105.1, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.105.1\lib\net451\System.Data.SQLite.EF6.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data.SQLite.Linq, Version=1.0.105.1, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.105.1\lib\net451\System.Data.SQLite.Linq.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -71,10 +70,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Builder\ServiceLocator.cs" />
+    <Compile Include="Commands\AddCommands\AddAwardFilmCommand.cs" />
+    <Compile Include="Commands\AddCommands\AddFilmQuantityCommand.cs" />
+    <Compile Include="Commands\AddCommands\AddGenreFilmCommand.cs" />
+    <Compile Include="Commands\AddCommands\AddRatingFilmCommand.cs" />
+    <Compile Include="Commands\AddCommands\AddStoreEmployeeCommand.cs" />
     <Compile Include="Commands\Contracts\ICommand.cs" />
     <Compile Include="Commands\Contracts\ICommandsFactory.cs" />
     <Compile Include="Commands\CreateCommands\CreateAwardCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateCustomerCimmand.cs" />
+    <Compile Include="Commands\CreateCommands\CreateFilmGenre.cs" />
+    <Compile Include="Commands\CreateCommands\CreateFilmRating.cs" />
     <Compile Include="Commands\CreateCommands\CreateFilmCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateManagerCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateReviewCommand.cs" />
@@ -84,7 +90,12 @@
     <Compile Include="Commands\CreateCommands\CreateFilmStaffCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateTownCommand.cs" />
     <Compile Include="Commands\Factory\CommandsFactory.cs" />
+    <Compile Include="Commands\ListingCommands\AddressDetailsCommand.cs" />
+    <Compile Include="Commands\ListingCommands\StorageDetailsCommand.cs" />
+    <Compile Include="Commands\ListingCommands\StoreDetailsCommand.cs" />
+    <Compile Include="Commands\ListingCommands\TownDetailsCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllAddressesCommand.cs" />
+    <Compile Include="Commands\ListingCommands\CountryDetailsCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllReviewsCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllStoragesCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllStoresCommand.cs" />
@@ -96,6 +107,11 @@
     <Compile Include="Commands\LoadCommands\LoadCustomerFromJSONCommand.cs" />
     <Compile Include="Commands\LoadCommands\LoadEmployeeFromJSONCommand.cs" />
     <Compile Include="Commands\LoadCommands\LoadReviewFromJSONCommand.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveFilmQuantityCommand.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveStoreEmployeeCommand.cs" />
+    <Compile Include="Commands\UpdateCommands\UpdateAddressCommand.cs" />
+    <Compile Include="Commands\UpdateCommands\UpdateCountryCommand.cs" />
+    <Compile Include="Commands\UpdateCommands\UpdateTownCommand.cs" />
     <Compile Include="Common\CommandProcessor.cs" />
     <Compile Include="Common\ConsoleReader.cs" />
     <Compile Include="Common\ConsoleWriter.cs" />
@@ -114,6 +130,8 @@
     <Compile Include="Data\Contracts\ICustomerRepository.cs" />
     <Compile Include="Data\Contracts\IDatabase.cs" />
     <Compile Include="Data\Contracts\IEmployeesRepository.cs" />
+    <Compile Include="Data\Contracts\IFilmGenreRepository.cs" />
+    <Compile Include="Data\Contracts\IFilmRatingRepository.cs" />
     <Compile Include="Data\Contracts\IFilmRepository.cs" />
     <Compile Include="Data\Contracts\IRepository.cs" />
     <Compile Include="Data\Contracts\IStoreRepository.cs" />
@@ -121,6 +139,8 @@
     <Compile Include="Data\Contracts\IStorageRepository.cs" />
     <Compile Include="Data\Contracts\ITownRepository.cs" />
     <Compile Include="Data\Database.cs" />
+    <Compile Include="Data\Repository\FilmGenreRepository.cs" />
+    <Compile Include="Data\Repository\FilmRatingRepository.cs" />
     <Compile Include="Data\Repository\AwardRepository.cs" />
     <Compile Include="Data\Repository\FilmRepository.cs" />
     <Compile Include="Data\Repository\CountryRepository.cs" />
@@ -135,87 +155,49 @@
     <Compile Include="Data\Repository\FilmStaffRepository.cs" />
     <Compile Include="Data\Repository\StorageRepository.cs" />
     <Compile Include="Data\Repository\TownRepository.cs" />
+    <Compile Include="Data\Postgre\VideoRentalLoanContext.cs" />
     <Compile Include="Data\VideoRentalContext.cs" />
-    <Compile Include="Migrations\201706021814398_Initial.cs" />
-    <Compile Include="Migrations\201706021814398_Initial.Designer.cs">
-      <DependentUpon>201706021814398_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\VideoRentalContext\201706052149449_InitialDatabaseCreation.cs" />
+    <Compile Include="Migrations\VideoRentalContext\201706052149449_InitialDatabaseCreation.Designer.cs">
+      <DependentUpon>201706052149449_InitialDatabaseCreation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706030956309_Added Film model.cs" />
-    <Compile Include="Migrations\201706030956309_Added Film model.Designer.cs">
-      <DependentUpon>201706030956309_Added Film model.cs</DependentUpon>
+    <Compile Include="Migrations\VideoRentalContext\201706060830057_RatingGenreModels.cs" />
+    <Compile Include="Migrations\VideoRentalContext\201706060830057_RatingGenreModels.Designer.cs">
+      <DependentUpon>201706060830057_RatingGenreModels.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706031207549_Country Constraints.cs" />
-    <Compile Include="Migrations\201706031207549_Country Constraints.Designer.cs">
-      <DependentUpon>201706031207549_Country Constraints.cs</DependentUpon>
+    <Compile Include="Migrations\VideoRentalContext\Configuration.cs" />
+    <Compile Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.cs" />
+    <Compile Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.Designer.cs">
+      <DependentUpon>201706052150102_InitialDatabaseCreation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706031643145_CustomerMigration.cs" />
-    <Compile Include="Migrations\201706031643145_CustomerMigration.Designer.cs">
-      <DependentUpon>201706031643145_CustomerMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706031711342_add-town.cs" />
-    <Compile Include="Migrations\201706031711342_add-town.Designer.cs">
-      <DependentUpon>201706031711342_add-town.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706031827251_add address table.cs" />
-    <Compile Include="Migrations\201706031827251_add address table.Designer.cs">
-      <DependentUpon>201706031827251_add address table.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706031921012_add store table.cs" />
-    <Compile Include="Migrations\201706031921012_add store table.Designer.cs">
-      <DependentUpon>201706031921012_add store table.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706031926081_add stores to film.cs" />
-    <Compile Include="Migrations\201706031926081_add stores to film.Designer.cs">
-      <DependentUpon>201706031926081_add stores to film.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706032018569_add film staff table.cs" />
-    <Compile Include="Migrations\201706032018569_add film staff table.Designer.cs">
-      <DependentUpon>201706032018569_add film staff table.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706040824032_isdeleted to film again.cs" />
-    <Compile Include="Migrations\201706040824032_isdeleted to film again.Designer.cs">
-      <DependentUpon>201706040824032_isdeleted to film again.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706040847415_remove videoformat from film.cs" />
-    <Compile Include="Migrations\201706040847415_remove videoformat from film.Designer.cs">
-      <DependentUpon>201706040847415_remove videoformat from film.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706040930196_add storage.cs" />
-    <Compile Include="Migrations\201706040930196_add storage.Designer.cs">
-      <DependentUpon>201706040930196_add storage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706040948428_ReviewsChange.cs" />
-    <Compile Include="Migrations\201706040948428_ReviewsChange.Designer.cs">
-      <DependentUpon>201706040948428_ReviewsChange.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706040951094_ReviewsFilm.cs" />
-    <Compile Include="Migrations\201706040951094_ReviewsFilm.Designer.cs">
-      <DependentUpon>201706040951094_ReviewsFilm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\VideoRentalLoanContext\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Award.cs" />
+    <Compile Include="Models\FilmRating.cs" />
     <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\Enum\Category.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Enum\StaffType.cs" />
     <Compile Include="Models\Enum\VideoFormat.cs" />
     <Compile Include="Models\Factories\IModelsFactory.cs" />
     <Compile Include="Models\Factories\ModelsFactory.cs" />
-    <Compile Include="Models\Enum\Genre.cs" />
     <Compile Include="Builder\BuildManager.cs" />
     <Compile Include="Models\Film.cs" />
+    <Compile Include="Models\FilmGenre.cs" />
     <Compile Include="Models\FilmStaff.cs" />
+    <Compile Include="Models\Loan.cs" />
     <Compile Include="Models\Review.cs" />
     <Compile Include="Models\Storage.cs" />
     <Compile Include="Models\Store.cs" />
+    <Compile Include="Models\Tarif.cs" />
     <Compile Include="Models\Town.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Loaders\Customers.json" />
     <None Include="Loaders\Employees.json" />
     <None Include="Loaders\Reviews.json" />
@@ -223,56 +205,21 @@
     <None Include="Settings.StyleCop" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706021814398_Initial.resx">
-      <DependentUpon>201706021814398_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\VideoRentalContext\201706052149449_InitialDatabaseCreation.resx">
+      <DependentUpon>201706052149449_InitialDatabaseCreation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706030956309_Added Film model.resx">
-      <DependentUpon>201706030956309_Added Film model.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\VideoRentalContext\201706060830057_RatingGenreModels.resx">
+      <DependentUpon>201706060830057_RatingGenreModels.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706031207549_Country Constraints.resx">
-      <DependentUpon>201706031207549_Country Constraints.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.resx">
+      <DependentUpon>201706052150102_InitialDatabaseCreation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706031643145_CustomerMigration.resx">
-      <DependentUpon>201706031643145_CustomerMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706052023583_Genres and Rating tables.resx">
+      <DependentUpon>201706052023583_Genres and Rating tables.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706031711342_add-town.resx">
-      <DependentUpon>201706031711342_add-town.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706031827251_add address table.resx">
-      <DependentUpon>201706031827251_add address table.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706031921012_add store table.resx">
-      <DependentUpon>201706031921012_add store table.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706031926081_add stores to film.resx">
-      <DependentUpon>201706031926081_add stores to film.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706032018569_add film staff table.resx">
-      <DependentUpon>201706032018569_add film staff table.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706040824032_isdeleted to film again.resx">
-      <DependentUpon>201706040824032_isdeleted to film again.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706040847415_remove videoformat from film.resx">
-      <DependentUpon>201706040847415_remove videoformat from film.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706040930196_add storage.resx">
-      <DependentUpon>201706040930196_add storage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706040948428_ReviewsChange.resx">
-      <DependentUpon>201706040948428_ReviewsChange.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706040951094_ReviewsFilm.resx">
-      <DependentUpon>201706040951094_ReviewsFilm.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706052036480_merging with my db.resx">
+      <DependentUpon>201706052036480_merging with my db.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\System.Data.SQLite.Core.1.0.105.1\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.105.1\build\net451\System.Data.SQLite.Core.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.105.1\build\net451\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.105.1\build\net451\System.Data.SQLite.Core.targets'))" />
-  </Target>
 </Project>

@@ -1,8 +1,11 @@
 ﻿using Ninject.Modules;
+using VideoRentalSystem.Commands.AddCommands;
 using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Commands.CreateCommands;
 using VideoRentalSystem.Commands.Factory;
 using VideoRentalSystem.Commands.ListingCommands;
+using VideoRentalSystem.Commands.RemoveCommands;
+using VideoRentalSystem.Commands.UpdateCommands;
 using VideoRentalSystem.Common;
 using VideoRentalSystem.Common.Contracts;
 using VideoRentalSystem.Core;
@@ -30,13 +33,19 @@ namespace VideoRentalSystem.Builder
 
             /////Bind commands
             this.Bind<ICommand>().To<CreateCountryCommand>().Named("CreateCountry");
+            this.Bind<ICommand>().To<CountryDetailsCommand>().Named("CountryDetails");
             this.Bind<ICommand>().To<ListAllCountriesCommand>().Named("ListAllCountries");
+            this.Bind<ICommand>().To<UpdateCountryCommand>().Named("UpdateCountry");
 
             this.Bind<ICommand>().To<CreateTownCommand>().Named("CreateTown");
+            this.Bind<ICommand>().To<TownDetailsCommand>().Named("TownDetails");
             this.Bind<ICommand>().To<ListAllTownsCommand>().Named("ListAllTowns");
+            this.Bind<ICommand>().To<UpdateTownCommand>().Named("UpdateTown");
 
             this.Bind<ICommand>().To<CreateAddressCommand>().Named("CreateAddress");
+            this.Bind<ICommand>().To<AddressDetailsCommand>().Named("AddressDetails");
             this.Bind<ICommand>().To<ListAllAddressesCommand>().Named("ListAllAddresses");
+            this.Bind<ICommand>().To<UpdateAddressCommand>().Named("UpdateAddress");
 
             this.Bind<ICommand>().To<CreateEmployeeCommand>().Named("CreateEmployee");
             this.Bind<ICommand>().To<ListAllEmployeesCommand>().Named("ListAllEmployees");
@@ -53,17 +62,29 @@ namespace VideoRentalSystem.Builder
             this.Bind<ICommand>().To<LoadReviewFromJSONCommand>().Named("LoadReveiwFromJSON");
 
             this.Bind<ICommand>().To<CreateFilmCommand>().Named("CreateFilm");
+
+            // this.Bind<ICommand>().To<AddFilmCategory>().Named("AddFilmCategory");
+            this.Bind<ICommand>().To<CreateFilmRating>().Named("CreateFilmRating");
+            this.Bind<ICommand>().To<CreateFilmGenre>().Named("CreateFilmGenre");
             this.Bind<ICommand>().To<CreateAwardCommand>().Named("CreateAward");
+            this.Bind<ICommand>().To<AddAwardFilmCommand>().Named("AddAwardToFilm");
+            this.Bind<ICommand>().To<AddGenreFilmCommand>().Named("AddGenreToFilm");
 
             this.Bind<ICommand>().To<CreateStoreCommand>().Named("CreateStore");
             this.Bind<ICommand>().To<ListAllStoresCommand>().Named("ListAllStores");
+            this.Bind<ICommand>().To<StoreDetailsCommand>().Named("StoreDetails");
+            this.Bind<ICommand>().To<AddStoreEmployeeCommand>().Named("AddStoreEmployee");
+            this.Bind<ICommand>().To<RemoveStoreEmployeeCommand>().Named("RemoveStoreEmployee");
 
-            this.Bind<ICommand>().To<CreateStorageCommand>().Named("CreateStore");
+            this.Bind<ICommand>().To<CreateStorageCommand>().Named("CreateStorage");
             this.Bind<ICommand>().To<ListAllStoragesCommand>().Named("ListAllStorages");
+            this.Bind<ICommand>().To<StorageDetailsCommand>().Named("StorageDetails");
+            this.Bind<ICommand>().To<AddFilmQuantityCommand>().Named("AddFilmQuantity");
+            this.Bind<ICommand>().To<RemoveFilmQuantityCommand>().Named("RemoveFilmQuantity");
 
             this.Bind<ICommand>().To<CreateFilmStaffCommand>().Named("CreateFilmStaff");
             this.Bind<ICommand>().To<ListAllFilmStaffsCommand>().Named("ListAllFilmStaffs");
-            
+
             var engine = this.Bind<IEngine>().To<Engine>().InSingletonScope();
         }
     }
