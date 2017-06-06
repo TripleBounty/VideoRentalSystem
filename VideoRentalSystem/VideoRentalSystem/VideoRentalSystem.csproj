@@ -118,6 +118,8 @@
     <Compile Include="Common\Contracts\IProcessor.cs" />
     <Compile Include="Common\Contracts\IReader.cs" />
     <Compile Include="Common\Contracts\IDateProvider.cs" />
+    <Compile Include="Common\DefaultTimeProvider.cs" />
+    <Compile Include="Common\TimeProvider.cs" />
     <Compile Include="Common\Validations\EmployeeValidator.cs" />
     <Compile Include="Core\Contracts\IServiceLocator.cs" />
     <Compile Include="Common\Contracts\IWriter.cs" />
@@ -139,6 +141,12 @@
     <Compile Include="Data\Contracts\IStorageRepository.cs" />
     <Compile Include="Data\Contracts\ITownRepository.cs" />
     <Compile Include="Data\Database.cs" />
+    <Compile Include="Data\Postgre\Contracts\ITarifRepository.cs" />
+    <Compile Include="Data\Postgre\Contracts\ILoanRepository.cs" />
+    <Compile Include="Data\Postgre\Contracts\IDatabasePostgre.cs" />
+    <Compile Include="Data\Postgre\DatabasePostgre.cs" />
+    <Compile Include="Data\Repository\TarifRepository.cs" />
+    <Compile Include="Data\Repository\LoanRepository.cs" />
     <Compile Include="Data\Repository\FilmGenreRepository.cs" />
     <Compile Include="Data\Repository\FilmRatingRepository.cs" />
     <Compile Include="Data\Repository\AwardRepository.cs" />
@@ -215,5 +223,6 @@
       <DependentUpon>201706052150102_InitialDatabaseCreation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
