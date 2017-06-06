@@ -21,7 +21,7 @@ namespace VideoRentalSystem.Models
 
         public int MaxNumberOfDays { get; set; }
 
-        public Decimal Price { get; set; }
+        public decimal Price { get; set; }
 
         public override string ToString()
         {

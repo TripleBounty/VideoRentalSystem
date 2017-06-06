@@ -214,12 +214,6 @@
     <EmbeddedResource Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.resx">
       <DependentUpon>201706052150102_InitialDatabaseCreation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706052023583_Genres and Rating tables.resx">
-      <DependentUpon>201706052023583_Genres and Rating tables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706052036480_merging with my db.resx">
-      <DependentUpon>201706052036480_merging with my db.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -25,9 +25,9 @@ namespace VideoRentalSystem.Commands.CreateCommands
 
             var filmObj = this.db.Films.SingleOrDefault(e => e.Id == filmId);
 
-            if(filmObj == null)
+            if (filmObj == null)
             {
-                throw new ArgumentException(String.Format("You are trying to write a review for a non existing movie !"));
+                throw new ArgumentException(string.Format("You are trying to write a review for a non existing movie !"));
             }
 
             var review = this.factory.CreateReview(rating, description, filmObj);
