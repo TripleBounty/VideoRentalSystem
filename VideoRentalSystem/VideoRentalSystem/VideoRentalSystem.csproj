@@ -161,6 +161,10 @@
     <Compile Include="Migrations\VideoRentalContext\201706052149449_InitialDatabaseCreation.Designer.cs">
       <DependentUpon>201706052149449_InitialDatabaseCreation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\VideoRentalContext\201706060830057_RatingGenreModels.cs" />
+    <Compile Include="Migrations\VideoRentalContext\201706060830057_RatingGenreModels.Designer.cs">
+      <DependentUpon>201706060830057_RatingGenreModels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\VideoRentalContext\Configuration.cs" />
     <Compile Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.cs" />
     <Compile Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.Designer.cs">
@@ -191,7 +195,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Loaders\Customers.json" />
     <None Include="Loaders\Employees.json" />
     <None Include="Loaders\Reviews.json" />
@@ -201,6 +207,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\VideoRentalContext\201706052149449_InitialDatabaseCreation.resx">
       <DependentUpon>201706052149449_InitialDatabaseCreation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\VideoRentalContext\201706060830057_RatingGenreModels.resx">
+      <DependentUpon>201706060830057_RatingGenreModels.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.resx">
       <DependentUpon>201706052150102_InitialDatabaseCreation.cs</DependentUpon>
