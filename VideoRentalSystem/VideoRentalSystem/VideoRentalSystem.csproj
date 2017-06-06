@@ -88,11 +88,14 @@
     <Compile Include="Commands\CreateCommands\CreateStorageCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateStoreCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateFilmStaffCommand.cs" />
+    <Compile Include="Commands\CreateCommands\CreateTarifCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateTownCommand.cs" />
     <Compile Include="Commands\Factory\CommandsFactory.cs" />
     <Compile Include="Commands\ListingCommands\AddressDetailsCommand.cs" />
+    <Compile Include="Commands\ListingCommands\ListAllTarifsCommand.cs" />
     <Compile Include="Commands\ListingCommands\StorageDetailsCommand.cs" />
     <Compile Include="Commands\ListingCommands\StoreDetailsCommand.cs" />
+    <Compile Include="Commands\ListingCommands\TarifDetailsCommand.cs" />
     <Compile Include="Commands\ListingCommands\TownDetailsCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllAddressesCommand.cs" />
     <Compile Include="Commands\ListingCommands\CountryDetailsCommand.cs" />

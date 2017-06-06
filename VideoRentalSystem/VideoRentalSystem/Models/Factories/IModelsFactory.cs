@@ -30,5 +30,9 @@ namespace VideoRentalSystem.Models.Factories
         FilmStaff CreateFilmStaff(string firstName, string lastName, DateTime birthDate, Country originePlace, StaffType type);
 
         Award CreateAward(string name, DateTime awardDate);
+
+        Loan CreateLoan(int storeId, int filmId, int customerId);
+
+        Tarif CreateTarif(string name, int maxNumberOfDays, decimal price);
     }
 }
