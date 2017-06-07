@@ -99,6 +99,7 @@ namespace VideoRentalSystem.Builder
 
             this.Bind<ICommand>().To<CreateFilmStaffCommand>().Named("CreateFilmStaff");
             this.Bind<ICommand>().To<ListAllFilmStaffsCommand>().Named("ListAllFilmStaffs");
+            this.Bind<ICommand>().To<AddFilmStaffCommand>().Named("AddFilmStaff");
 
             this.Bind<ICommand>().To<CreateTarifCommand>().Named("CreateTarif");
             this.Bind<ICommand>().To<TarifDetailsCommand>().Named("TarifDetails");
