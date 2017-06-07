@@ -116,9 +116,11 @@
     <Compile Include="Commands\LoadCommands\LoadReviewFromJSONCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveEmployeeCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveManagerCommand.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveReviewCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveTarifCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveFilmQuantityCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveStoreEmployeeCommand.cs" />
+    <Compile Include="Commands\RemoveCommands\ReviewCustomerCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateAddressCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateCountryCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateEmployeeCommand.cs" />
