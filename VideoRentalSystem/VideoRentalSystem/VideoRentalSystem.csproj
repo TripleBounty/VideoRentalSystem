@@ -93,6 +93,7 @@
     <Compile Include="Commands\CreateCommands\CreateTownCommand.cs" />
     <Compile Include="Commands\Factory\CommandsFactory.cs" />
     <Compile Include="Commands\ListingCommands\AddressDetailsCommand.cs" />
+    <Compile Include="Commands\ListingCommands\ListAllGenresCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllTarifsByTypeCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllLoansCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllTarifsCommand.cs" />
@@ -112,13 +113,20 @@
     <Compile Include="Commands\ListingCommands\ListAllEmployeesCommand.cs" />
     <Compile Include="Commands\LoadCommands\LoadCustomerFromJSONCommand.cs" />
     <Compile Include="Commands\LoadCommands\LoadEmployeeFromJSONCommand.cs" />
+    <Compile Include="Commands\LoadCommands\LoadFilmGenresFromJSON.cs" />
     <Compile Include="Commands\LoadCommands\LoadReviewFromJSONCommand.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveEmployeeCommand.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveManagerCommand.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveReviewCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveTarifCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveFilmQuantityCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveStoreEmployeeCommand.cs" />
+    <Compile Include="Commands\RemoveCommands\ReviewCustomerCommand.cs" />
     <Compile Include="Commands\UpdateCommands\EndLoanCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateAddressCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateCountryCommand.cs" />
+    <Compile Include="Commands\UpdateCommands\UpdateEmployeeCommand.cs" />
+    <Compile Include="Commands\UpdateCommands\UpdateManagerCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateTarifCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateTownCommand.cs" />
     <Compile Include="Common\CommandProcessor.cs" />
@@ -182,6 +190,10 @@
     <Compile Include="Migrations\VideoRentalContext\201706060830057_RatingGenreModels.Designer.cs">
       <DependentUpon>201706060830057_RatingGenreModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\VideoRentalContext\201706071640185_Customer1.cs" />
+    <Compile Include="Migrations\VideoRentalContext\201706071640185_Customer1.Designer.cs">
+      <DependentUpon>201706071640185_Customer1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\VideoRentalContext\Configuration.cs" />
     <Compile Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.cs" />
     <Compile Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.Designer.cs">
@@ -190,6 +202,10 @@
     <Compile Include="Migrations\VideoRentalLoanContext\201706061945407_add isDeleted property.cs" />
     <Compile Include="Migrations\VideoRentalLoanContext\201706061945407_add isDeleted property.Designer.cs">
       <DependentUpon>201706061945407_add isDeleted property.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\VideoRentalLoanContext\201706071320490_customer.cs" />
+    <Compile Include="Migrations\VideoRentalLoanContext\201706071320490_customer.Designer.cs">
+      <DependentUpon>201706071320490_customer.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\VideoRentalLoanContext\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
@@ -232,11 +248,17 @@
     <EmbeddedResource Include="Migrations\VideoRentalContext\201706060830057_RatingGenreModels.resx">
       <DependentUpon>201706060830057_RatingGenreModels.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\VideoRentalContext\201706071640185_Customer1.resx">
+      <DependentUpon>201706071640185_Customer1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.resx">
       <DependentUpon>201706052150102_InitialDatabaseCreation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\VideoRentalLoanContext\201706061945407_add isDeleted property.resx">
       <DependentUpon>201706061945407_add isDeleted property.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\VideoRentalLoanContext\201706071320490_customer.resx">
+      <DependentUpon>201706071320490_customer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

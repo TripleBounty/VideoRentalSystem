@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Text;
 
 namespace VideoRentalSystem.Models
 {
@@ -26,7 +27,17 @@ namespace VideoRentalSystem.Models
 
         public override string ToString()
         {
-            return string.Format("{0}Rated at:{1} Stars, {2}Decription: {3}{4}", this.Film, this.Rating, System.Environment.NewLine, this.Description, System.Environment.NewLine);
+            var sb = new StringBuilder();
+
+            sb.Append("Review for the movie: ");
+            sb.AppendLine(this.Film.Name.ToString());
+            sb.Append("Description: ");
+            sb.AppendLine(this.Description);
+            sb.Append("Rated at: ");
+            sb.Append(this.Rating);
+            sb.AppendLine("Starts");
+
+            return sb.ToString();
         }
     }
 }

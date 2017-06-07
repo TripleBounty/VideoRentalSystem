@@ -48,10 +48,10 @@ namespace VideoRentalSystem.Data
             this.CreateFilmStaffModel(modelBuilder);
             this.CreateAwardModel(modelBuilder);
             this.CreateStoreModel(modelBuilder);
-            
+
             this.CreateFilmRatingModel(modelBuilder);
             this.CreateGenreModel(modelBuilder);
-            
+
             base.OnModelCreating(modelBuilder);
         }
 

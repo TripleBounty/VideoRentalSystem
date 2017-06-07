@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using VideoRentalSystem.Models.Enum;
 
 namespace VideoRentalSystem.Models.Factories
@@ -19,7 +20,7 @@ namespace VideoRentalSystem.Models.Factories
 
         FilmGenre CreateFilmGenre(string genre);
 
-        Customer CreateCustomer(string firstName, string lastName, DateTime birthDate);
+        Customer CreateCustomer(string firstName, string lastName, DateTime birthDate, List<Film> films, List<FilmGenre> genres, List<Review> reviews);
 
         Review CreateReview(double rating, string description, Film film);
 

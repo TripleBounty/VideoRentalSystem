@@ -53,22 +53,33 @@ namespace VideoRentalSystem.Builder
             this.Bind<ICommand>().To<CreateEmployeeCommand>().Named("CreateEmployee");
             this.Bind<ICommand>().To<ListAllEmployeesCommand>().Named("ListAllEmployees");
             this.Bind<ICommand>().To<LoadEmployeeFromJSONCommand>().Named("LoadEmployeeFromJSON");
+            this.Bind<ICommand>().To<UpdateEmployeeCommand>().Named("UpdateEmployee");
+            this.Bind<ICommand>().To<RemoveEmployeeCommand>().Named("RemoveEmployee");
 
             this.Bind<ICommand>().To<CreateManagerCommand>().Named("CreateManager");
+            this.Bind<ICommand>().To<RemoveManagerCommand>().Named("RemoveManager");
+            this.Bind<ICommand>().To<UpdateManagerCommand>().Named("UpdateManager");
 
             this.Bind<ICommand>().To<CreateCustomerCommand>().Named("CreateCustomer");
             this.Bind<ICommand>().To<ListAllCustomersCommand>().Named("ListAllCustomers");
             this.Bind<ICommand>().To<LoadCustomerFromJSONCommand>().Named("LoadCustomerFromJSON");
+            this.Bind<ICommand>().To<RemoveCustomerCommand>().Named("RemoveCustomer");
+
 
             this.Bind<ICommand>().To<CreateReviewCommand>().Named("CreateReview");
             this.Bind<ICommand>().To<ListAllReviewsCommand>().Named("ListAllReviews");
             this.Bind<ICommand>().To<LoadReviewFromJSONCommand>().Named("LoadReveiwFromJSON");
+            this.Bind<ICommand>().To<RemoveReviewCommand>().Named("RemoveReview");
+
 
             this.Bind<ICommand>().To<CreateFilmCommand>().Named("CreateFilm");
 
             // this.Bind<ICommand>().To<AddFilmCategory>().Named("AddFilmCategory");
-            this.Bind<ICommand>().To<CreateFilmRatingCommand>().Named("CreateFilmRating");
-            this.Bind<ICommand>().To<CreateFilmGenreCommand>().Named("CreateFilmGenre");
+            this.Bind<ICommand>().To<CreateFilmRating>().Named("CreateFilmRating");
+            this.Bind<ICommand>().To<CreateFilmGenre>().Named("CreateFilmGenre");
+            this.Bind<ICommand>().To<LoadFilmGenresFromJSONCommand>().Named("LoadFilmGenreFromJSON");
+            this.Bind<ICommand>().To<ListAllGenresCommand>().Named("ListAllFilmGenres");
+
             this.Bind<ICommand>().To<CreateAwardCommand>().Named("CreateAward");
             this.Bind<ICommand>().To<AddAwardFilmCommand>().Named("AddAwardToFilm");
             this.Bind<ICommand>().To<AddGenreFilmCommand>().Named("AddGenreToFilm");
