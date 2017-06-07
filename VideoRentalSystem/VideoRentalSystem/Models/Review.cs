@@ -1,14 +1,13 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
+﻿using System.Text;
 
 namespace VideoRentalSystem.Models
 {
     public class Review
     {
-        public Review(double rating, string description, Film film)
+        public Review(double rating, string description, Film film, Customer customer)
         {
             this.Film = film;
+            this.Customer = customer;
             this.Rating = rating;
             this.Description = description;
         }
@@ -21,6 +20,8 @@ namespace VideoRentalSystem.Models
 
         public virtual Film Film { get; set; }
 
+        public virtual Customer Customer { get; set; }
+
         public double Rating { get; set; }
 
         public string Description { get; set; }
@@ -31,6 +32,8 @@ namespace VideoRentalSystem.Models
 
             sb.Append("Review for the movie: ");
             sb.AppendLine(this.Film.Name.ToString());
+            sb.Append("Submited by: ");
+            sb.AppendLine(this.Customer.FirstName.ToString());
             sb.Append("Description: ");
             sb.AppendLine(this.Description);
             sb.Append("Rated at: ");

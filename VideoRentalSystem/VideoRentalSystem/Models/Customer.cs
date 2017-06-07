@@ -10,18 +10,31 @@ namespace VideoRentalSystem.Models
         private string firstName;
         private string lastName;
 
-        public Customer(string firstName, string lastName, DateTime birthDate, List<Film> films, List<FilmGenre> genres, List<Review> reviews)
+        public Customer(string firstName, string lastName, DateTime birthDate, ICollection<Film> films, ICollection<FilmGenre> genres)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
             this.BirthDate = birthDate;
             this.Films = new HashSet<Film>(films);
             this.Genres = new HashSet<FilmGenre>(genres);
-            this.Reviews = new HashSet<Review>(reviews);
+            this.Reviews = new HashSet<Review>();
+        }
+
+        public Customer(string firstName, string lastName, DateTime birthDate)
+        {
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.BirthDate = birthDate;
+            this.Films = new HashSet<Film>();
+            this.Genres = new HashSet<FilmGenre>();
+            this.Reviews = new HashSet<Review>();
         }
 
         public Customer()
         {
+            this.Films = new HashSet<Film>();
+            this.Genres = new HashSet<FilmGenre>();
+            this.Reviews = new HashSet<Review>();
         }
 
         public int Id { get; set; }

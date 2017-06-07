@@ -192,6 +192,10 @@
     <Compile Include="Migrations\VideoRentalContext\201706071640185_Customer1.Designer.cs">
       <DependentUpon>201706071640185_Customer1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\VideoRentalContext\201706072011133_Customers23.cs" />
+    <Compile Include="Migrations\VideoRentalContext\201706072011133_Customers23.Designer.cs">
+      <DependentUpon>201706072011133_Customers23.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\VideoRentalContext\Configuration.cs" />
     <Compile Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.cs" />
     <Compile Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.Designer.cs">
@@ -248,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\VideoRentalContext\201706071640185_Customer1.resx">
       <DependentUpon>201706071640185_Customer1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\VideoRentalContext\201706072011133_Customers23.resx">
+      <DependentUpon>201706072011133_Customers23.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.resx">
       <DependentUpon>201706052150102_InitialDatabaseCreation.cs</DependentUpon>

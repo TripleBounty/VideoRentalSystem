@@ -32,11 +32,13 @@ namespace VideoRentalSystem.Commands.CreateCommands
                     foreach (var currentReview in reviews)
                     {
                         int filmId;
+                        int customerId;
                         double rating;
 
                         try
                         {
                             filmId = currentReview.FilmId;
+                            customerId = currentReview.CustomerId;
                             rating = currentReview.Rating;
                         }
                         catch (Exception)
@@ -55,7 +57,13 @@ namespace VideoRentalSystem.Commands.CreateCommands
                             return "Film with such id doesn't exist!";
                         }
 
-                        var review = this.factory.CreateReview(rating, description, filmObj);
+                        var customerObj = this.db.Customers.SingleOrDefault(e => e.Id == customerId);
+                        if (customerObj == null)
+                        {
+                            return "Film with such id doesn't exist!";
+                        }
+
+                        var review = this.factory.CreateReview(rating, description, filmObj, customerObj);
 
                         this.db.Reviews.Add(review);
                         this.db.Complete();

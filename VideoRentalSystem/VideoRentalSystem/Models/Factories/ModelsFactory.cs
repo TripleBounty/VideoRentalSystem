@@ -27,14 +27,14 @@ namespace VideoRentalSystem.Models.Factories
             return new Employee(firstName, lastName, salary, manager);
         }
 
-        public Customer CreateCustomer(string firstName, string lastName, DateTime birthDate, List<Film> films, List<FilmGenre> genres, List<Review> reviews)
+        public Customer CreateCustomer(string firstName, string lastName, DateTime birthDate, List<Film> films, List<FilmGenre> genres)
         {
-            return new Customer(firstName, lastName, birthDate, films, genres, reviews);
+            return new Customer(firstName, lastName, birthDate, films, genres);
         }
 
-        public Review CreateReview(double rating, string description, Film film)
+        public Review CreateReview(double rating, string description, Film film, Customer customer)
         {
-            return new Review(rating, description, film);
+            return new Review(rating, description, film, customer);
         }
 
         public Film CreateFilm(string name, string summary, DateTime realiseDate, TimeSpan duration)

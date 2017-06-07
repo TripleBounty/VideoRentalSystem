@@ -19,6 +19,7 @@ namespace VideoRentalSystem.Models
             this.Genres = new HashSet<FilmGenre>();
             this.Awards = new HashSet<Award>();
             this.FilmStaffs = new HashSet<FilmStaff>();
+            this.Customers = new HashSet<Customer>();
         }
 
         public Film()
@@ -27,6 +28,7 @@ namespace VideoRentalSystem.Models
             this.Genres = new HashSet<FilmGenre>();
             this.Awards = new HashSet<Award>();
             this.FilmStaffs = new HashSet<FilmStaff>();
+            this.Customers = new HashSet<Customer>();
         }
 
         public int Id { get; set; }
@@ -44,6 +46,8 @@ namespace VideoRentalSystem.Models
         public virtual ICollection<FilmGenre> Genres { get; set; }
 
         public virtual ICollection<Award> Awards { get; set; }
+
+        public virtual ICollection<Customer> Customers { get; set; }
 
         public virtual ICollection<FilmStaff> FilmStaffs { get; set; }
 

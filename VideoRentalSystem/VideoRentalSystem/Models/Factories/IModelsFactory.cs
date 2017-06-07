@@ -20,9 +20,9 @@ namespace VideoRentalSystem.Models.Factories
 
         FilmGenre CreateFilmGenre(string genre);
 
-        Customer CreateCustomer(string firstName, string lastName, DateTime birthDate, List<Film> films, List<FilmGenre> genres, List<Review> reviews);
+        Customer CreateCustomer(string firstName, string lastName, DateTime birthDate, List<Film> films, List<FilmGenre> genres);
 
-        Review CreateReview(double rating, string description, Film film);
+        Review CreateReview(double rating, string description, Film film, Customer customer);
 
         Store CreateStore(string name, Address address);
 

@@ -95,7 +95,7 @@ namespace VideoRentalSystem.Commands.CreateCommands
                             genres.Add(reviewObj);
                         }
 
-                        var customer = this.factory.CreateCustomer(firstName, lastName, birthDate, films, genres, reviews);
+                        var customer = this.factory.CreateCustomer(firstName, lastName, birthDate, films, genres);
 
                         this.db.Customers.Add(customer);
                         this.db.Complete();
