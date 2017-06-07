@@ -93,6 +93,7 @@
     <Compile Include="Commands\CreateCommands\CreateTownCommand.cs" />
     <Compile Include="Commands\Factory\CommandsFactory.cs" />
     <Compile Include="Commands\ListingCommands\AddressDetailsCommand.cs" />
+    <Compile Include="Commands\ListingCommands\ListAllGenresCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllTarifsByTypeCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllTarifsCommand.cs" />
     <Compile Include="Commands\ListingCommands\StorageDetailsCommand.cs" />
