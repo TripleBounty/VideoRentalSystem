@@ -71,5 +71,15 @@ namespace VideoRentalSystem.Models.Factories
         {
             return new FilmStaff(firstName, lastName, birthDate, originePlace, type);
         }
+
+        public Loan CreateLoan(int storeId, int filmId, int customerId)
+        {
+            return new Loan(storeId, filmId, customerId);
+        }
+
+        public Tarif CreateTarif(string name, int maxNumberOfDays, decimal price)
+        {
+            return new Tarif(name, maxNumberOfDays, price);
+        }
     }
 }

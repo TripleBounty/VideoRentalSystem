@@ -9,6 +9,7 @@ namespace VideoRentalSystem.Models
             this.Name = name;
             this.MaxNumberOfDays = maxNumberOfDays;
             this.Price = price;
+            this.IsDeleted = false;
         }
 
         public Tarif()
@@ -23,9 +24,12 @@ namespace VideoRentalSystem.Models
 
         public decimal Price { get; set; }
 
+        public bool IsDeleted { get; set; }
+
         public override string ToString()
         {
-            return $"{this.Id}. {this.Name} Max days on this tarif: {this.MaxNumberOfDays} Price: {this.Price}";
+            var active = this.IsDeleted ? "No" : "Yes";
+            return $"{this.Id}. {this.Name} Max days on this tarif: {this.MaxNumberOfDays} Price: {this.Price:C2} Active:{active}";
         }
     }
 }

@@ -1,15 +1,17 @@
 ﻿using System;
+using System.Text;
+using VideoRentalSystem.Common;
 
 namespace VideoRentalSystem.Models
 {
     public class Loan
     {
-        public Loan(int storeId, int filmId, int customerId, DateTime startDate)
+        public Loan(int storeId, int filmId, int customerId)
         {
             this.StoreId = storeId;
             this.FilmId = filmId;
             this.CustomerId = customerId;
-            this.StartDate = startDate;
+            this.StartDate = TimeProvider.Current.UtcNow;
         }
 
         public Loan()
