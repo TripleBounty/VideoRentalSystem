@@ -5,5 +5,6 @@ namespace VideoRentalSystem.Data.Postgre.Contracts
 {
     public interface ITarifRepository : IRepository<Tarif>
     {
+        bool CheckTarif(int tarifId);
     }
 }

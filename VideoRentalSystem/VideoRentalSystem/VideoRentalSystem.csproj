@@ -88,6 +88,7 @@
     <Compile Include="Commands\CreateCommands\CreateStorageCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateStoreCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateFilmStaffCommand.cs" />
+    <Compile Include="Commands\CreateCommands\CreateLoanCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateTarifCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateTownCommand.cs" />
     <Compile Include="Commands\Factory\CommandsFactory.cs" />
@@ -116,6 +117,7 @@
     <Compile Include="Commands\RemoveCommands\RemoveStoreEmployeeCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateAddressCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateCountryCommand.cs" />
+    <Compile Include="Commands\UpdateCommands\UpdateTarifCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateTownCommand.cs" />
     <Compile Include="Common\CommandProcessor.cs" />
     <Compile Include="Common\ConsoleReader.cs" />

@@ -8,13 +8,18 @@ namespace VideoRentalSystem.Common
 
         public static TimeProvider Current
         {
-            get { return TimeProvider.current; }
+            get
+            {
+                return TimeProvider.current;
+            }
+
             set
             {
                 if (value == null)
                 {
                     throw new ArgumentNullException("value");
                 }
+
                 TimeProvider.current = value;
             }
         }

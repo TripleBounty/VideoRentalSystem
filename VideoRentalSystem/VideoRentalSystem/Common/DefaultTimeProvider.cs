@@ -1,21 +1,23 @@
 ﻿using System;
+
 namespace VideoRentalSystem.Common
 {
     public class DefaultTimeProvider : TimeProvider
     {
-        private readonly static DefaultTimeProvider instance =
-           new DefaultTimeProvider();
+        private static readonly DefaultTimeProvider Provider = new DefaultTimeProvider();
 
-        private DefaultTimeProvider() { }
-
-        public override DateTime UtcNow
+        private DefaultTimeProvider()
         {
-            get { return DateTime.UtcNow; }
         }
 
         public static DefaultTimeProvider Instance
         {
-            get { return DefaultTimeProvider.instance; }
+            get { return DefaultTimeProvider.Provider; }
+        }
+
+        public override DateTime UtcNow
+        {
+            get { return DateTime.UtcNow; }
         }
     }
 }

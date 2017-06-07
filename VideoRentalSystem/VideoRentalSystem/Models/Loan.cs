@@ -31,6 +31,5 @@ namespace VideoRentalSystem.Models
         public DateTime EndDate { get; set; }
 
         public Tarif Tarif { get; set; }
-
     }
 }

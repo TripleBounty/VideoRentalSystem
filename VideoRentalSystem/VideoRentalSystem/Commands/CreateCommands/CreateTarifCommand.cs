@@ -44,7 +44,13 @@ namespace VideoRentalSystem.Commands.CreateCommands
                 return "Not Valid Price. Fill in numeric value!";
             }
 
-            var tarif = this.factory.CreateTarif(name, maxNumberOfDays, price);
+            var tarif = this.db.Tarifs.SingleOrDefault(t => t.MaxNumberOfDays == maxNumberOfDays && t.IsDeleted == false);
+            if (tarif != null)
+            {
+                return $"Tarif with such max number of days already exist!\n{tarif.ToString()}";
+            }
+
+            tarif = this.factory.CreateTarif(name, maxNumberOfDays, price);
 
             this.db.Tarifs.Add(tarif);
             this.db.Complete();

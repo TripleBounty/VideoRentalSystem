@@ -94,6 +94,9 @@ namespace VideoRentalSystem.Builder
             this.Bind<ICommand>().To<ListAllTarifsCommand>().Named("ListAllTarifs");
             this.Bind<ICommand>().To<ListAllTarifsByTypeCommand>().Named("ListAllTarifsByType");
             this.Bind<ICommand>().To<RemoveTarifCommand>().Named("RemoveTarif");
+            this.Bind<ICommand>().To<UpdateTarifCommand>().Named("UpdateTarif");
+
+            this.Bind<ICommand>().To<CreateLoanCommand>().Named("CreateLoan");
 
             var engine = this.Bind<IEngine>().To<Engine>().InSingletonScope();
         }
