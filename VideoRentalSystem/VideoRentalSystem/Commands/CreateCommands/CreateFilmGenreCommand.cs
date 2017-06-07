@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Data.Contracts;
 using VideoRentalSystem.Models.Factories;
 
 namespace VideoRentalSystem.Commands.CreateCommands
 {
-    public class CreateFilmRating : ICommand
+    public class CreateFilmGenreCommand : ICommand
     {
         private readonly IDatabase db;
         private readonly IModelsFactory factory;
 
-        public CreateFilmRating(IDatabase db, IModelsFactory factory)
+        public CreateFilmGenreCommand(IDatabase db, IModelsFactory factory)
         {
             this.db = db;
             this.factory = factory;
@@ -19,14 +18,13 @@ namespace VideoRentalSystem.Commands.CreateCommands
 
         public string Execute(IList<string> parameters)
         {
-            var rating = parameters[0];
+            var genre = parameters[0];
+            var newGenre = this.factory.CreateFilmGenre(genre);
 
-            var newRating = this.factory.CreateFilmRating(rating);
-
-            this.db.FilmRating.Add(newRating);
+            this.db.FilmGenres.Add(newGenre);
             this.db.Complete();
 
-            return "new film rating created";
+            return "new genre created";
         }
     }
 }

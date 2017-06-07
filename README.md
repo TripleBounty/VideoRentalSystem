@@ -21,6 +21,8 @@ Commands separator ";" <br>
 --CreateStore - params - Store Name, AddressId.<br>
 --CreateStorage - params - Store Name, AddressId.<br>
 --CreateTarif - params - Tarif Name, Max number of days, Price.<br>
+--CreateLoan - params - StoreId, FilmId, CustomerId<br>
+
 <br><br>
 </li>
 <li>1.2. List Commands<br><br>
@@ -39,12 +41,15 @@ Commands separator ";" <br>
 --ListAllTarifs - no params <br>
 --ListAllTarifsByType - params - Y/N (Active/Deactivated)<br>
 --TarifDetails - params - TarifId <br>
+--ListAllLoans - no params <br>
 <br><br>
 </li>
 <li>1.3. Update Commands<br><br>
 --UpdateCountry - params - CountryId, Initials, Country Code.<br>
 --UpdateTown - params - TownId, TownName, CountryId.<br>
 --UpdateAddress - params - AddressId, Street, PostalCode, TownID.<br>
+--UpdateTarif - params - TarifId, Name, Price.<br>
+--EndLoan - params - LoanId.<br>
 <br><br>
 </li>
 <li>1.4. Add Commands<br><br>
@@ -52,13 +57,13 @@ Commands separator ";" <br>
 --AddGenreToFilm - params - FilmName, Genre.<br>
 --AddRatingToFilm - params - FilmName, Rating.<br>
 --AddStoreEmployee - params - StoreId, EmployeeId.<br>
---AddFilmQuantityCommand - params - StorageId, Qunatity.<br>
+--AddFilmQuantity - params - StorageId, Qunatity.<br>
 <br><br>
 </li>
 <li>1.5. Remove Commands<br><br>
 --RemoveStoreEmployee - params - StoreId, EmployeeId.<br>
---RemoveFilmQuantityCommand - params - StorageId, Qunatity.<br>
---RemoveTarifCommand - params - TarifId.<br>
+--RemoveFilmQuantity - params - StorageId, Qunatity.<br>
+--RemoveTarif - params - TarifId.<br>
 <br><br>
 </li>
 <li>1.6. Termination<br><br>

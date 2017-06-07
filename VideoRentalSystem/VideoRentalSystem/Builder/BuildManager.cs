@@ -67,8 +67,8 @@ namespace VideoRentalSystem.Builder
             this.Bind<ICommand>().To<CreateFilmCommand>().Named("CreateFilm");
 
             // this.Bind<ICommand>().To<AddFilmCategory>().Named("AddFilmCategory");
-            this.Bind<ICommand>().To<CreateFilmRating>().Named("CreateFilmRating");
-            this.Bind<ICommand>().To<CreateFilmGenre>().Named("CreateFilmGenre");
+            this.Bind<ICommand>().To<CreateFilmRatingCommand>().Named("CreateFilmRating");
+            this.Bind<ICommand>().To<CreateFilmGenreCommand>().Named("CreateFilmGenre");
             this.Bind<ICommand>().To<CreateAwardCommand>().Named("CreateAward");
             this.Bind<ICommand>().To<AddAwardFilmCommand>().Named("AddAwardToFilm");
             this.Bind<ICommand>().To<AddGenreFilmCommand>().Named("AddGenreToFilm");
@@ -97,6 +97,8 @@ namespace VideoRentalSystem.Builder
             this.Bind<ICommand>().To<UpdateTarifCommand>().Named("UpdateTarif");
 
             this.Bind<ICommand>().To<CreateLoanCommand>().Named("CreateLoan");
+            this.Bind<ICommand>().To<EndLoanCommand>().Named("EndLoan");
+            this.Bind<ICommand>().To<ListAllLoansCommand>().Named("ListAllLoans");
 
             var engine = this.Bind<IEngine>().To<Engine>().InSingletonScope();
         }

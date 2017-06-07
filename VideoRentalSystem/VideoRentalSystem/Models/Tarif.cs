@@ -29,7 +29,7 @@ namespace VideoRentalSystem.Models
         public override string ToString()
         {
             var active = this.IsDeleted ? "No" : "Yes";
-            return $"{this.Id}. {this.Name} Max days on this tarif: {this.MaxNumberOfDays} Price: {this.Price:C2} Active:{active}";
+            return $"{this.Id}. {this.Name} Max days on this tarif: {this.MaxNumberOfDays} Price per day: {this.Price:C2} Active:{active}";
         }
     }
 }

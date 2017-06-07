@@ -79,8 +79,8 @@
     <Compile Include="Commands\Contracts\ICommandsFactory.cs" />
     <Compile Include="Commands\CreateCommands\CreateAwardCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateCustomerCimmand.cs" />
-    <Compile Include="Commands\CreateCommands\CreateFilmGenre.cs" />
-    <Compile Include="Commands\CreateCommands\CreateFilmRating.cs" />
+    <Compile Include="Commands\CreateCommands\CreateFilmGenreCommand.cs" />
+    <Compile Include="Commands\CreateCommands\CreateFilmRatingCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateFilmCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateManagerCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateReviewCommand.cs" />
@@ -94,6 +94,7 @@
     <Compile Include="Commands\Factory\CommandsFactory.cs" />
     <Compile Include="Commands\ListingCommands\AddressDetailsCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllTarifsByTypeCommand.cs" />
+    <Compile Include="Commands\ListingCommands\ListAllLoansCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllTarifsCommand.cs" />
     <Compile Include="Commands\ListingCommands\StorageDetailsCommand.cs" />
     <Compile Include="Commands\ListingCommands\StoreDetailsCommand.cs" />
@@ -115,6 +116,7 @@
     <Compile Include="Commands\RemoveCommands\RemoveTarifCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveFilmQuantityCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveStoreEmployeeCommand.cs" />
+    <Compile Include="Commands\UpdateCommands\EndLoanCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateAddressCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateCountryCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateTarifCommand.cs" />
