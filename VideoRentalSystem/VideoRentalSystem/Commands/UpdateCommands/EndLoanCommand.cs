@@ -39,7 +39,7 @@ namespace VideoRentalSystem.Commands.UpdateCommands
 
             var loan = this.db.Loans.SingleOrDefault(l => l.Id == loanId);
 
-            if(loan == null)
+            if (loan == null)
             {
                 return "Loan with such id doesn't exist";
             }

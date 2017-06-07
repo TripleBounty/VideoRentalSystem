@@ -121,7 +121,11 @@
     <Compile Include="Commands\LoadCommands\LoadReviewFromJSONCommand.cs" />
     <Compile Include="Commands\PdfPrintCommands\ListAllCustomersToPdfCommand.cs" />
     <Compile Include="Commands\PdfPrintCommands\ListAllEmployeesToPdfCommand.cs" />
+    <Compile Include="Commands\PdfPrintCommands\ListAllGenresToPdfCommand.cs" />
+    <Compile Include="Commands\PdfPrintCommands\ListAllLoansToPdfCommand.cs" />
     <Compile Include="Commands\PdfPrintCommands\ListAllReviewsToPdfCommand.cs" />
+    <Compile Include="Commands\PdfPrintCommands\ListAllStoragesToPdfCommand.cs" />
+    <Compile Include="Commands\PdfPrintCommands\ListAllStoresToPdfCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveEmployeeCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveManagerCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveReviewCommand.cs" />

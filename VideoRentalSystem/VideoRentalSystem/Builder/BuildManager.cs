@@ -74,7 +74,6 @@ namespace VideoRentalSystem.Builder
             this.Bind<ICommand>().To<LoadReviewFromJSONCommand>().Named("LoadReviewsFromJSON");
             this.Bind<ICommand>().To<RemoveReviewCommand>().Named("RemoveReview");
 
-
             this.Bind<ICommand>().To<CreateFilmCommand>().Named("CreateFilm");
 
             // this.Bind<ICommand>().To<AddFilmCategory>().Named("AddFilmCategory");

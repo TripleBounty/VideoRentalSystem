@@ -1,3 +1,4 @@
+#region Component Designer generated code
 namespace VideoRentalSystem.Migrations.VideoRentalContext
 {
     using System;
@@ -38,3 +39,4 @@ namespace VideoRentalSystem.Migrations.VideoRentalContext
         }
     }
 }
+#endregion

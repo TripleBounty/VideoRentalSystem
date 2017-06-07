@@ -47,6 +47,7 @@ namespace VideoRentalSystem.Commands.CreateCommands
                     Environment.NewLine +
                     "The correct format is: FirstName string;LastName string;Birthdate dd/mm/yyyy; FilmIds 1,2,3; GenreIds 1,2,3"));
             }
+
             int[] filmIds = null;
             int[] genreIds = null;
             List<Film> films = new List<Film>();
