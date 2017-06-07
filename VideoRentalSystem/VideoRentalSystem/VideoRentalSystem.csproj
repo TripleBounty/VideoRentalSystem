@@ -114,12 +114,15 @@
     <Compile Include="Commands\LoadCommands\LoadEmployeeFromJSONCommand.cs" />
     <Compile Include="Commands\LoadCommands\LoadFilmGenresFromJSON.cs" />
     <Compile Include="Commands\LoadCommands\LoadReviewFromJSONCommand.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveEmployeeCommand.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveManagerCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveTarifCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveFilmQuantityCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveStoreEmployeeCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateAddressCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateCountryCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateEmployeeCommand.cs" />
+    <Compile Include="Commands\UpdateCommands\UpdateManagerCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateTarifCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateTownCommand.cs" />
     <Compile Include="Common\CommandProcessor.cs" />
