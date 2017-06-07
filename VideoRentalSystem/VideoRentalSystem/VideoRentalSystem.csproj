@@ -74,13 +74,14 @@
     <Compile Include="Commands\AddCommands\AddFilmQuantityCommand.cs" />
     <Compile Include="Commands\AddCommands\AddGenreFilmCommand.cs" />
     <Compile Include="Commands\AddCommands\AddRatingFilmCommand.cs" />
+    <Compile Include="Commands\AddCommands\AddFilmStaffCommand.cs" />
     <Compile Include="Commands\AddCommands\AddStoreEmployeeCommand.cs" />
     <Compile Include="Commands\Contracts\ICommand.cs" />
     <Compile Include="Commands\Contracts\ICommandsFactory.cs" />
     <Compile Include="Commands\CreateCommands\CreateAwardCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateCustomerCimmand.cs" />
-    <Compile Include="Commands\CreateCommands\CreateFilmGenre.cs" />
-    <Compile Include="Commands\CreateCommands\CreateFilmRating.cs" />
+    <Compile Include="Commands\CreateCommands\CreateFilmGenreCommand.cs" />
+    <Compile Include="Commands\CreateCommands\CreateFilmRatingCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateFilmCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateManagerCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateReviewCommand.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="Commands\ListingCommands\AddressDetailsCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllGenresCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllTarifsByTypeCommand.cs" />
+    <Compile Include="Commands\ListingCommands\ListAllLoansCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllTarifsCommand.cs" />
     <Compile Include="Commands\ListingCommands\StorageDetailsCommand.cs" />
     <Compile Include="Commands\ListingCommands\StoreDetailsCommand.cs" />
@@ -121,6 +123,7 @@
     <Compile Include="Commands\RemoveCommands\RemoveFilmQuantityCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveStoreEmployeeCommand.cs" />
     <Compile Include="Commands\RemoveCommands\ReviewCustomerCommand.cs" />
+    <Compile Include="Commands\UpdateCommands\EndLoanCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateAddressCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateCountryCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateEmployeeCommand.cs" />
@@ -188,9 +191,9 @@
     <Compile Include="Migrations\VideoRentalContext\201706060830057_RatingGenreModels.Designer.cs">
       <DependentUpon>201706060830057_RatingGenreModels.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\VideoRentalContext\201706071640185_Customer1.cs" />
-    <Compile Include="Migrations\VideoRentalContext\201706071640185_Customer1.Designer.cs">
-      <DependentUpon>201706071640185_Customer1.cs</DependentUpon>
+    <Compile Include="Migrations\VideoRentalContext\201706071834088_customer.cs" />
+    <Compile Include="Migrations\VideoRentalContext\201706071834088_customer.Designer.cs">
+      <DependentUpon>201706071834088_customer.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\VideoRentalContext\201706072011133_Customers23.cs" />
     <Compile Include="Migrations\VideoRentalContext\201706072011133_Customers23.Designer.cs">
@@ -204,10 +207,6 @@
     <Compile Include="Migrations\VideoRentalLoanContext\201706061945407_add isDeleted property.cs" />
     <Compile Include="Migrations\VideoRentalLoanContext\201706061945407_add isDeleted property.Designer.cs">
       <DependentUpon>201706061945407_add isDeleted property.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\VideoRentalLoanContext\201706071320490_customer.cs" />
-    <Compile Include="Migrations\VideoRentalLoanContext\201706071320490_customer.Designer.cs">
-      <DependentUpon>201706071320490_customer.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\VideoRentalLoanContext\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
@@ -250,8 +249,8 @@
     <EmbeddedResource Include="Migrations\VideoRentalContext\201706060830057_RatingGenreModels.resx">
       <DependentUpon>201706060830057_RatingGenreModels.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\VideoRentalContext\201706071640185_Customer1.resx">
-      <DependentUpon>201706071640185_Customer1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\VideoRentalContext\201706071834088_customer.resx">
+      <DependentUpon>201706071834088_customer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\VideoRentalContext\201706072011133_Customers23.resx">
       <DependentUpon>201706072011133_Customers23.cs</DependentUpon>
@@ -261,9 +260,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\VideoRentalLoanContext\201706061945407_add isDeleted property.resx">
       <DependentUpon>201706061945407_add isDeleted property.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\VideoRentalLoanContext\201706071320490_customer.resx">
-      <DependentUpon>201706071320490_customer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
