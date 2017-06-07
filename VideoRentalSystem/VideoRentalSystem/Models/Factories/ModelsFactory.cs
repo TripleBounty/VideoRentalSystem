@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using VideoRentalSystem.Models.Enum;
 
 namespace VideoRentalSystem.Models.Factories
@@ -25,9 +27,9 @@ namespace VideoRentalSystem.Models.Factories
             return new Employee(firstName, lastName, salary, manager);
         }
 
-        public Customer CreateCustomer(string firstName, string lastName, DateTime birthDate)
+        public Customer CreateCustomer(string firstName, string lastName, DateTime birthDate, List<Film> films, List<FilmGenre> genres, List<Review> reviews)
         {
-            return new Customer(firstName, lastName, birthDate);
+            return new Customer(firstName, lastName, birthDate, films, genres, reviews);
         }
 
         public Review CreateReview(double rating, string description, Film film)

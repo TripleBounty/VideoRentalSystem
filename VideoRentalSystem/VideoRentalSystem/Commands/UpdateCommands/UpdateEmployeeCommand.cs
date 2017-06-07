@@ -5,14 +5,14 @@ using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Data.Contracts;
 using VideoRentalSystem.Models.Factories;
 
-namespace VideoRentalSystem.Commands.CreateCommands
+namespace VideoRentalSystem.Commands.UpdateCommands
 {
-    public class CreateEmployeeCommand : ICommand
+    public class UpdateEmployeeCommand : ICommand
     {
         private readonly IDatabase db;
         private readonly IModelsFactory factory;
 
-        public CreateEmployeeCommand(IDatabase db, IModelsFactory factory)
+        public UpdateEmployeeCommand(IDatabase db, IModelsFactory factory)
         {
             this.db = db;
             this.factory = factory;
@@ -20,7 +20,7 @@ namespace VideoRentalSystem.Commands.CreateCommands
 
         public string Execute(IList<string> parameters)
         {
-            if (parameters.Count != 4)
+            if (parameters.Count != 5)
             {
                 return "Not valid number of parameters";
             }
@@ -28,18 +28,31 @@ namespace VideoRentalSystem.Commands.CreateCommands
             if (parameters.Any(x => x == string.Empty))
             {
                 return "Some of the passed parameters are empty!";
+            }            
+            
+            int employeeId;
+            var employeeIdParsed = int.TryParse(parameters[0], out employeeId);
+            if (!employeeIdParsed)
+            {
+                return "Not Valid Country Id. Fill in numeric value!";
             }
 
-            var firstName = parameters[0];
-            var lastName = parameters[1];
+            var employee = this.db.Employees.SingleOrDefault(c => c.Id == employeeId);
+            if (employee == null)
+            {
+                return "Country with such id doesn't exist!";
+            }
+
+            var firstName = parameters[1];
+            var lastName = parameters[2];
 
             int salary;
             int managerId;
 
             try
             {
-                salary = int.Parse(parameters[2]);
-                managerId = int.Parse(parameters[3]);
+                salary = int.Parse(parameters[3]);
+                managerId = int.Parse(parameters[4]);
             }
             catch
             {
@@ -56,12 +69,14 @@ namespace VideoRentalSystem.Commands.CreateCommands
                     "The managerId cannot be null or you are trying to get a non existand Manager!"));
             }
 
-            var employee = this.factory.CreateEmployee(firstName, lastName, salary, employeeObj);
-                        
-            this.db.Employees.Add(employee);
+            employee.FirstName = firstName;
+            employee.LastName = lastName;
+            employee.Salary = salary;
+            employee.Manager = employeeObj;
+
             this.db.Complete();
 
-            return "Employee created";
+            return "Employee updated";
         }
     }
 }

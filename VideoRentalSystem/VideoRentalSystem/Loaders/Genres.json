@@ -1,0 +1,28 @@
+{
+    "genre": {
+        "emp0": {
+            // Genres
+            "Genre":"Horror"
+        },
+        "emp1": {
+            // Genres
+            "Genre":"Comedy"
+        },
+        "emp2": {
+            // Genres
+            "Genre":"Action"
+        },
+        "emp3": {
+            // Genres
+            "Genre":"Fantasy"
+        },
+        "emp4": {
+            // Genres
+            "Genre":"Adventure"
+        },
+        "emp5": {
+            // Genres
+            "Genre":"Racing"
+        }
+    }
+}

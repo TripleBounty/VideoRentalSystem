@@ -166,8 +166,7 @@ namespace VideoRentalSystem.Migrations.VideoRentalContext
                 .ForeignKey("dbo.Films", t => t.Film_Id, cascadeDelete: true)
                 .ForeignKey("dbo.FilmStaffs", t => t.FilmStaff_Id, cascadeDelete: true)
                 .Index(t => t.Film_Id)
-                .Index(t => t.FilmStaff_Id);
-            
+                .Index(t => t.FilmStaff_Id);            
         }
         
         public override void Down()

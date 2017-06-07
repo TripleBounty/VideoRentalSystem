@@ -50,6 +50,7 @@ namespace VideoRentalSystem.Builder
             this.Bind<ICommand>().To<CreateEmployeeCommand>().Named("CreateEmployee");
             this.Bind<ICommand>().To<ListAllEmployeesCommand>().Named("ListAllEmployees");
             this.Bind<ICommand>().To<LoadEmployeeFromJSONCommand>().Named("LoadEmployeeFromJSON");
+            this.Bind<ICommand>().To<UpdateEmployeeCommand>().Named("UpdateEmployee");
 
             this.Bind<ICommand>().To<CreateManagerCommand>().Named("CreateManager");
 
@@ -66,6 +67,9 @@ namespace VideoRentalSystem.Builder
             // this.Bind<ICommand>().To<AddFilmCategory>().Named("AddFilmCategory");
             this.Bind<ICommand>().To<CreateFilmRating>().Named("CreateFilmRating");
             this.Bind<ICommand>().To<CreateFilmGenre>().Named("CreateFilmGenre");
+            this.Bind<ICommand>().To<LoadFilmGenresFromJSONCommand>().Named("LoadFilmGenreFromJSON");
+            this.Bind<ICommand>().To<ListAllGenresCommand>().Named("ListAllFilmGenres");
+
             this.Bind<ICommand>().To<CreateAwardCommand>().Named("CreateAward");
             this.Bind<ICommand>().To<AddAwardFilmCommand>().Named("AddAwardToFilm");
             this.Bind<ICommand>().To<AddGenreFilmCommand>().Named("AddGenreToFilm");
