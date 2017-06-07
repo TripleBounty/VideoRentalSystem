@@ -190,9 +190,9 @@
     <Compile Include="Migrations\VideoRentalContext\201706060830057_RatingGenreModels.Designer.cs">
       <DependentUpon>201706060830057_RatingGenreModels.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\VideoRentalContext\201706071640185_Customer1.cs" />
-    <Compile Include="Migrations\VideoRentalContext\201706071640185_Customer1.Designer.cs">
-      <DependentUpon>201706071640185_Customer1.cs</DependentUpon>
+    <Compile Include="Migrations\VideoRentalContext\201706071834088_customer.cs" />
+    <Compile Include="Migrations\VideoRentalContext\201706071834088_customer.Designer.cs">
+      <DependentUpon>201706071834088_customer.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\VideoRentalContext\Configuration.cs" />
     <Compile Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.cs" />
@@ -202,10 +202,6 @@
     <Compile Include="Migrations\VideoRentalLoanContext\201706061945407_add isDeleted property.cs" />
     <Compile Include="Migrations\VideoRentalLoanContext\201706061945407_add isDeleted property.Designer.cs">
       <DependentUpon>201706061945407_add isDeleted property.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\VideoRentalLoanContext\201706071320490_customer.cs" />
-    <Compile Include="Migrations\VideoRentalLoanContext\201706071320490_customer.Designer.cs">
-      <DependentUpon>201706071320490_customer.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\VideoRentalLoanContext\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
@@ -248,17 +244,14 @@
     <EmbeddedResource Include="Migrations\VideoRentalContext\201706060830057_RatingGenreModels.resx">
       <DependentUpon>201706060830057_RatingGenreModels.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\VideoRentalContext\201706071640185_Customer1.resx">
-      <DependentUpon>201706071640185_Customer1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\VideoRentalContext\201706071834088_customer.resx">
+      <DependentUpon>201706071834088_customer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.resx">
       <DependentUpon>201706052150102_InitialDatabaseCreation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\VideoRentalLoanContext\201706061945407_add isDeleted property.resx">
       <DependentUpon>201706061945407_add isDeleted property.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\VideoRentalLoanContext\201706071320490_customer.resx">
-      <DependentUpon>201706071320490_customer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

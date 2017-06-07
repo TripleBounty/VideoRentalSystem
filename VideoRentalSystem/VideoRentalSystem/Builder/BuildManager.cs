@@ -75,8 +75,8 @@ namespace VideoRentalSystem.Builder
             this.Bind<ICommand>().To<CreateFilmCommand>().Named("CreateFilm");
 
             // this.Bind<ICommand>().To<AddFilmCategory>().Named("AddFilmCategory");
-            this.Bind<ICommand>().To<CreateFilmRating>().Named("CreateFilmRating");
-            this.Bind<ICommand>().To<CreateFilmGenre>().Named("CreateFilmGenre");
+            this.Bind<ICommand>().To<CreateFilmRatingCommand>().Named("CreateFilmRating");
+            this.Bind<ICommand>().To<CreateFilmGenreCommand>().Named("CreateFilmGenre");
             this.Bind<ICommand>().To<LoadFilmGenresFromJSONCommand>().Named("LoadFilmGenreFromJSON");
             this.Bind<ICommand>().To<ListAllGenresCommand>().Named("ListAllFilmGenres");
 
