@@ -17,6 +17,11 @@ namespace VideoRentalSystem.Commands.ListingCommands
         {
             var customers = this.db.Customers.GetAll();
 
+            if (customers.Count == 0)
+            {
+                return "No Customers available";
+            }
+
             return string.Join("\n", customers);
         }
     }

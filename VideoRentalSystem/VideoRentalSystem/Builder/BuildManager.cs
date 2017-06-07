@@ -4,6 +4,7 @@ using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Commands.CreateCommands;
 using VideoRentalSystem.Commands.Factory;
 using VideoRentalSystem.Commands.ListingCommands;
+using VideoRentalSystem.Commands.PdfPrintCommands;
 using VideoRentalSystem.Commands.RemoveCommands;
 using VideoRentalSystem.Commands.UpdateCommands;
 using VideoRentalSystem.Common;
@@ -51,8 +52,9 @@ namespace VideoRentalSystem.Builder
             this.Bind<ICommand>().To<UpdateAddressCommand>().Named("UpdateAddress");
 
             this.Bind<ICommand>().To<CreateEmployeeCommand>().Named("CreateEmployee");
+            this.Bind<ICommand>().To<ListAllEmployeesToPdfCommand>().Named("ListAllEmployeesToPdf");
             this.Bind<ICommand>().To<ListAllEmployeesCommand>().Named("ListAllEmployees");
-            this.Bind<ICommand>().To<LoadEmployeeFromJSONCommand>().Named("LoadEmployeeFromJSON");
+            this.Bind<ICommand>().To<LoadEmployeeFromJSONCommand>().Named("LoadEmployeesFromJSON");
             this.Bind<ICommand>().To<UpdateEmployeeCommand>().Named("UpdateEmployee");
             this.Bind<ICommand>().To<RemoveEmployeeCommand>().Named("RemoveEmployee");
 
@@ -62,13 +64,14 @@ namespace VideoRentalSystem.Builder
 
             this.Bind<ICommand>().To<CreateCustomerCommand>().Named("CreateCustomer");
             this.Bind<ICommand>().To<ListAllCustomersCommand>().Named("ListAllCustomers");
-            this.Bind<ICommand>().To<LoadCustomerFromJSONCommand>().Named("LoadCustomerFromJSON");
+            this.Bind<ICommand>().To<ListAllCustomersToPdfCommand>().Named("ListAllCustomersToPdf");
+            this.Bind<ICommand>().To<LoadCustomerFromJSONCommand>().Named("LoadCustomersFromJSON");
             this.Bind<ICommand>().To<RemoveCustomerCommand>().Named("RemoveCustomer");
-
 
             this.Bind<ICommand>().To<CreateReviewCommand>().Named("CreateReview");
             this.Bind<ICommand>().To<ListAllReviewsCommand>().Named("ListAllReviews");
-            this.Bind<ICommand>().To<LoadReviewFromJSONCommand>().Named("LoadReveiwFromJSON");
+            this.Bind<ICommand>().To<ListAllReviewsToPdfCommand>().Named("ListAllReviewsToPdf");
+            this.Bind<ICommand>().To<LoadReviewFromJSONCommand>().Named("LoadReviewsFromJSON");
             this.Bind<ICommand>().To<RemoveReviewCommand>().Named("RemoveReview");
 
 
@@ -77,7 +80,7 @@ namespace VideoRentalSystem.Builder
             // this.Bind<ICommand>().To<AddFilmCategory>().Named("AddFilmCategory");
             this.Bind<ICommand>().To<CreateFilmRatingCommand>().Named("CreateFilmRating");
             this.Bind<ICommand>().To<CreateFilmGenreCommand>().Named("CreateFilmGenre");
-            this.Bind<ICommand>().To<LoadFilmGenresFromJSONCommand>().Named("LoadFilmGenreFromJSON");
+            this.Bind<ICommand>().To<LoadFilmGenresFromJSONCommand>().Named("LoadFilmGenresFromJSON");
             this.Bind<ICommand>().To<ListAllGenresCommand>().Named("ListAllFilmGenres");
 
             this.Bind<ICommand>().To<CreateAwardCommand>().Named("CreateAward");

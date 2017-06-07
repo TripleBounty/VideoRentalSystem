@@ -40,6 +40,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>.\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
       <HintPath>..\packages\Npgsql.2.2.7\lib\net45\Mono.Security.dll</HintPath>
       <Private>True</Private>
@@ -116,6 +119,9 @@
     <Compile Include="Commands\LoadCommands\LoadEmployeeFromJSONCommand.cs" />
     <Compile Include="Commands\LoadCommands\LoadFilmGenresFromJSON.cs" />
     <Compile Include="Commands\LoadCommands\LoadReviewFromJSONCommand.cs" />
+    <Compile Include="Commands\PdfPrintCommands\ListAllCustomersToPdfCommand.cs" />
+    <Compile Include="Commands\PdfPrintCommands\ListAllEmployeesToPdfCommand.cs" />
+    <Compile Include="Commands\PdfPrintCommands\ListAllReviewsToPdfCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveEmployeeCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveManagerCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveReviewCommand.cs" />

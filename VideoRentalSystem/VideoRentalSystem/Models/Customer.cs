@@ -92,9 +92,8 @@ namespace VideoRentalSystem.Models
             List<string> reviewNames = new List<string>();
             foreach (var review in this.Reviews)
             {
-                reviewNames.Add(review.Id.ToString());
-                reviewNames.Add(review.Rating.ToString());
                 reviewNames.Add(review.Film.Name);
+                reviewNames.Add(review.Rating.ToString());                
             }
 
             var sb = new StringBuilder();

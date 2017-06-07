@@ -17,6 +17,11 @@ namespace VideoRentalSystem.Commands.ListingCommands
         {
             var genres = this.db.FilmGenres.GetAll();
 
+            if (genres.Count == 0)
+            {
+                return "No Genres available";
+            }
+
             List<string> genNames = new List<string>();
 
             foreach (var gen in genres)
