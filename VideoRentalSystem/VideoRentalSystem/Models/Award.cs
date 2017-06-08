@@ -1,31 +1,32 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
-namespace VideoRentalSystem.Models
+namespace VideoRentalSystem
 {
     public class Award
     {
-        public Award(string name, DateTime date)
+        public Award()
         {
-            this.Name = name;
-            this.Date = date;
-
             this.IsDeleted = false;
         }
 
-        public Award()
+        public Award(string name, string year, long orgId)
         {
+            this.Name = name;
+            this.Year = year;
+            this.OrganisationId = orgId;
+            this.IsDeleted = false;
         }
 
-        public int Id { get; set; }
-
+        public long Id { get; set; }
         public string Name { get; set; }
+        public string Year { get; set; }
 
-        public DateTime Date { get; set; }
-
-        // TODO: organisations
-        // public Organisation  Organisation { get; set; }
         public bool IsDeleted { get; set; }
+
+        public long OrganisationId { get; set; }
+        public virtual Organisation Organisation { get; set; }
 
         public override string ToString()
         {
@@ -34,7 +35,7 @@ namespace VideoRentalSystem.Models
             sb.Append("Award: ");
             sb.AppendLine(this.Name);
             sb.Append("Date: ");
-            sb.AppendLine(this.Date.ToString());
+            sb.AppendLine(this.Year.ToString());
 
             return sb.ToString();
         }

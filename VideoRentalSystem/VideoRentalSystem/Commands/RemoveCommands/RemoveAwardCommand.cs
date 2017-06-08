@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Data.Contracts;
 using VideoRentalSystem.Models.Factories;
@@ -18,20 +19,22 @@ namespace VideoRentalSystem.Commands.RemoveCommands
 
         public string Execute(IList<string> parameters)
         {
-            var awardName = parameters[0];
-            var award = this.db.Award.SingleOrDefault(x => x.Name == awardName);
+            //var awardName = parameters[0];
+            //var award = this.db.Award.SingleOrDefault(x => x.Name == awardName);
 
-            if (award == null)
-            {
-                return "Award not found";
-            }
+            //if (award == null)
+            //{
+            //    return "Award not found";
+            //}
 
-            var id = award.Id;
-            award.IsDeleted = true;
+            //var id = award.Id;
+            //award.IsDeleted = true;
 
-            this.db.Complete();
+            //this.db.Complete();
 
-            return "Award removed";
+            //return "Award removed";
+
+            throw new NotImplementedException();
         }
     }
 }

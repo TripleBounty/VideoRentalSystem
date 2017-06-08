@@ -22,14 +22,14 @@ namespace VideoRentalSystem.Commands.UpdateCommands
 
         public string Execute(IList<string> parameters)
         {
-            if (parameters.Count != 3)
-            {
-                return "Not valid number of parameters";
-            }
+            //if (parameters.Count != 3)
+            //{
+            //    return "Not valid number of parameters";
+            //}
 
+            throw new NotImplementedException();
 
-
-            return "";
+            //return "";
         }
     }
 }

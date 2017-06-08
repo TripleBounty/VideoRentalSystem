@@ -15,6 +15,8 @@ using VideoRentalSystem.Data;
 using VideoRentalSystem.Data.Contracts;
 using VideoRentalSystem.Data.Postgre;
 using VideoRentalSystem.Data.Postgre.Contracts;
+using VideoRentalSystem.Data.SqLite;
+using VideoRentalSystem.Data.SqLite.Contracts;
 using VideoRentalSystem.Models.Factories;
 
 namespace VideoRentalSystem.Builder
@@ -29,6 +31,7 @@ namespace VideoRentalSystem.Builder
 
             var database = this.Bind<IDatabase>().To<Database>().InSingletonScope();
             this.Bind<IDatabasePostgre>().To<DatabasePostgre>().InSingletonScope();
+            this.Bind<IDatabaseLite>().To<DatabaseLite>().InSingletonScope();
             var modelFactory = this.Bind<IModelsFactory>().To<ModelsFactory>().InSingletonScope();
 
             this.Bind<IServiceLocator>().To<ServiceLocator>().InSingletonScope();
@@ -83,22 +86,23 @@ namespace VideoRentalSystem.Builder
 
             // FILM BINDINGS
             this.Bind<ICommand>().To<CreateAwardCommand>().Named("CreateAward");
+            this.Bind<ICommand>().To<CreateOrganisationCommand>().Named("CreateFilmAwardOrganisation");
             this.Bind<ICommand>().To<CreateFilmRatingCommand>().Named("CreateFilmRating");
             this.Bind<ICommand>().To<CreateFilmGenreCommand>().Named("CreateFilmGenre");
             this.Bind<ICommand>().To<LoadFilmGenresFromJSONCommand>().Named("LoadFilmGenresFromJSON");
             this.Bind<ICommand>().To<ListAllGenresCommand>().Named("ListAllFilmGenres");
 
-            this.Bind<ICommand>().To<AddAwardFilmCommand>().Named("AddAwardToFilm");
+            //this.Bind<ICommand>().To<AddAwardFilmCommand>().Named("AddAwardToFilm");
             this.Bind<ICommand>().To<AddGenreFilmCommand>().Named("AddGenreToFilm");
             this.Bind<ICommand>().To<AddRatingFilmCommand>().Named("AddRatingToFilm");
-            this.Bind<ICommand>().To<UpdateAwardCommand>().Named("UpdateAward");
+            //this.Bind<ICommand>().To<UpdateAwardCommand>().Named("UpdateAward");
             this.Bind<ICommand>().To<UpdateFilmCommand>().Named("UpdateFilm");
             this.Bind<ICommand>().To<UpdateFilmGenreCommand>().Named("UpdateGenre");
             this.Bind<ICommand>().To<UpdateFilmRatingCommand>().Named("UpdateRating");
-            this.Bind<ICommand>().To<RemoveAwardCommand>().Named("RemoveAward");
+            //this.Bind<ICommand>().To<RemoveAwardCommand>().Named("RemoveAward");
             this.Bind<ICommand>().To<RemoveFilmRatingCommand>().Named("RemoveRating");
             this.Bind<ICommand>().To<RemoveFilmGenreCommand>().Named("RemoveGenre");
-            this.Bind<ICommand>().To<RemoveFilmCommand>().Named("RemoveFilm");
+            //this.Bind<ICommand>().To<RemoveFilmCommand>().Named("RemoveFilm");
 
             this.Bind<ICommand>().To<CreateStoreCommand>().Named("CreateStore");
             this.Bind<ICommand>().To<ListAllStoresCommand>().Named("ListAllStores");

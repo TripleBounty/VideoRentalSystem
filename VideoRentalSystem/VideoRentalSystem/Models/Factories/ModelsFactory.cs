@@ -52,9 +52,14 @@ namespace VideoRentalSystem.Models.Factories
             return new FilmGenre(genre);
         }
 
-        public Award CreateAward(string name, DateTime awardDate)
+        public Award CreateAward(string name, string year, long orgId)
         {
-            return new Award(name, awardDate);
+            return new Award(name, year, orgId);
+        }
+
+        public Organisation CreateOrganisation(string name)
+        {
+            return new Organisation(name);
         }
 
         public Store CreateStore(string name, Address address)
