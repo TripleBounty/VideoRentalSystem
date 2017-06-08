@@ -132,7 +132,10 @@
     <Compile Include="Commands\PdfPrintCommands\ListAllStoresToPdfCommand.cs" />
     <Compile Include="Commands\PdfPrintCommands\ListAllTarifsToPdfCommand.cs" />
     <Compile Include="Commands\PdfPrintCommands\ListAllTownsToPdfCommand.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveAwardCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveEmployeeCommand.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveFilmCommand.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveFilmGenreCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveManagerCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveReviewCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveTarifCommand.cs" />
