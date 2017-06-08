@@ -11,7 +11,7 @@ using System.Linq;
         public sqLiteConfiguration()
         {
             AutomaticMigrationsEnabled = false;
-            MigrationsDirectory = @"Migrations/FilmAwardSqLite";
+            MigrationsDirectory = @"Migrations\FilmAwardSqLite";
 
             SetSqlGenerator("System.Data.SQLite", new SQLiteMigrationSqlGenerator());
         }

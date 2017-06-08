@@ -153,6 +153,10 @@
     <Compile Include="Data\SqLite\Contracts\IDatabaseLite.cs" />
     <Compile Include="Data\SqLite\Contracts\IOrganisationRepository.cs" />
     <Compile Include="Data\SqLite\DatabaseLite.cs" />
+    <Compile Include="Migrations\FilmAwardSqLite\201706081631406_init.cs" />
+    <Compile Include="Migrations\FilmAwardSqLite\201706081631406_init.Designer.cs">
+      <DependentUpon>201706081631406_init.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\FilmAwardSqLite\sqLiteConfiguration.cs" />
     <Compile Include="Models\Award.cs" />
     <Compile Include="Builder\ServiceLocator.cs" />
@@ -357,6 +361,9 @@
     <None Include="Settings.StyleCop" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\FilmAwardSqLite\201706081631406_init.resx">
+      <DependentUpon>201706081631406_init.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\VideoRentalContext\201706052149449_InitialDatabaseCreation.resx">
       <DependentUpon>201706052149449_InitialDatabaseCreation.cs</DependentUpon>
     </EmbeddedResource>
