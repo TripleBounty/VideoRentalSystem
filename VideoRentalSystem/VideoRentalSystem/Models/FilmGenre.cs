@@ -1,4 +1,5 @@
-﻿using VideoRentalSystem.Models.Enum;
+﻿using System.Collections.Generic;
+using VideoRentalSystem.Models.Enum;
 
 namespace VideoRentalSystem.Models
 {
@@ -6,16 +7,20 @@ namespace VideoRentalSystem.Models
     {
         public FilmGenre()
         {
+            this.Customers = new HashSet<Customer>();
         }
 
         public FilmGenre(string genre)
         {
             this.Genre = genre;
+            this.Customers = new HashSet<Customer>();
         }
 
         public int Id { get; set; }
 
         public string Genre { get; set; }
+
+        public virtual ICollection<Customer> Customers { get; set; }
 
         public bool IsDeleted { get; set; }
     }

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using VideoRentalSystem.Models.Enum;
 
 namespace VideoRentalSystem.Models.Factories
@@ -25,14 +27,14 @@ namespace VideoRentalSystem.Models.Factories
             return new Employee(firstName, lastName, salary, manager);
         }
 
-        public Customer CreateCustomer(string firstName, string lastName, DateTime birthDate)
+        public Customer CreateCustomer(string firstName, string lastName, DateTime birthDate, List<Film> films, List<FilmGenre> genres)
         {
-            return new Customer(firstName, lastName, birthDate);
+            return new Customer(firstName, lastName, birthDate, films, genres);
         }
 
-        public Review CreateReview(double rating, string description, Film film)
+        public Review CreateReview(double rating, string description, Film film, Customer customer)
         {
-            return new Review(rating, description, film);
+            return new Review(rating, description, film, customer);
         }
 
         public Film CreateFilm(string name, string summary, DateTime realiseDate, TimeSpan duration)
@@ -68,6 +70,16 @@ namespace VideoRentalSystem.Models.Factories
         public FilmStaff CreateFilmStaff(string firstName, string lastName, DateTime birthDate, Country originePlace, StaffType type)
         {
             return new FilmStaff(firstName, lastName, birthDate, originePlace, type);
+        }
+
+        public Loan CreateLoan(int storeId, int filmId, int customerId)
+        {
+            return new Loan(storeId, filmId, customerId);
+        }
+
+        public Tarif CreateTarif(string name, int maxNumberOfDays, decimal price)
+        {
+            return new Tarif(name, maxNumberOfDays, price);
         }
     }
 }

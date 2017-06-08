@@ -17,6 +17,11 @@ namespace VideoRentalSystem.Commands.ListingCommands
         {
             var employees = this.db.Employees.GetAll();
 
+            if (employees.Count == 0)
+            {
+                return "No Employees available";
+            }
+
             return string.Join("\n", employees);
         }
     }

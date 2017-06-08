@@ -18,8 +18,11 @@ Commands separator ";" <br>
 --CreateFilmGenre -  params - Genre.<br>
 --CreateFilmRating - params - Rating.<br>
 --CreateFilmStaff - params - First Name, Last Name, Birthdate MM/dd/YYYY, CountryId, Type.<br>
---CreateStore - params - StoreName, AddressId.<br>
---CreateStorage - params - StoreName, AddressId.<br>
+--CreateStore - params - Store Name, AddressId.<br>
+--CreateStorage - params - Store Name, AddressId.<br>
+--CreateTarif - params - Tarif Name, Max number of days, Price.<br>
+--CreateLoan - params - StoreId, FilmId, CustomerId<br>
+
 <br><br>
 </li>
 <li>1.2. List Commands<br><br>
@@ -35,12 +38,18 @@ Commands separator ";" <br>
 --StoreDetails - params - StoreId <br>
 --ListAllStorages - no params <br>
 --StoragesDetails - params - StoreId <br>
+--ListAllTarifs - no params <br>
+--ListAllTarifsByType - params - Y/N (Active/Deactivated)<br>
+--TarifDetails - params - TarifId <br>
+--ListAllLoans - no params <br>
 <br><br>
 </li>
 <li>1.3. Update Commands<br><br>
 --UpdateCountry - params - CountryId, Initials, Country Code.<br>
 --UpdateTown - params - TownId, TownName, CountryId.<br>
 --UpdateAddress - params - AddressId, Street, PostalCode, TownID.<br>
+--UpdateTarif - params - TarifId, Name, Price.<br>
+--EndLoan - params - LoanId.<br>
 <br><br>
 </li>
 <li>1.4. Add Commands<br><br>
@@ -48,26 +57,42 @@ Commands separator ";" <br>
 --AddGenreToFilm - params - FilmName, Genre.<br>
 --AddRatingToFilm - params - FilmName, Rating.<br>
 --AddStoreEmployee - params - StoreId, EmployeeId.<br>
---AddFilmQuantityCommand - params - StorageId, Qunatity.<br>
+--AddFilmQuantity - params - StorageId, Qunatity.<br>
 <br><br>
 </li>
 <li>1.5. Remove Commands<br><br>
 --RemoveStoreEmployee - params - StoreId, EmployeeId.<br>
---RemoveFilmQuantityCommand - params - StorageId, Qunatity.<br>
+--RemoveFilmQuantity - params - StorageId, Qunatity.<br>
+--RemoveTarif - params - TarifId.<br>
 <br><br>
 </li>
-<li>1.6. Termination<br><br>
+<li>1.6. Export to pdf<br><br>
+--ListAllAdressesToPdf - no params -<br>
+--ListAllCountriesToPdf - no params -<br>
+--ListAllCustomersToPdf - no params -<br>
+--ListAllEmployeesToPdf - no params -<br>
+--ListAllFilmsToPdf - no params -<br>
+--ListAllGenresToPdf - no params -<br>
+--ListAllLoansToPdf - no params -<br>
+--ListAllReviewsToPdf - no params -<br>
+--ListAllStoragesToPdf - no params -<br>
+--ListAllStoresToPdf - no params -<br>
+--ListAllTarifsToPdf - no params -<br>
+--ListAllTownsToPdf - no params -<br>
+<br><br>
+</li>
+<li>1.7. Termination<br><br>
 --Exit<br>
 </li>
 <br><br>
-<li>1.7. Enums<br><br>
+<li>1.8. Enums<br><br>
   <ul>
-  <li>1.7.1 StaffType<br>
+  <li>1.8.1 StaffType<br>
         Actor<br>
         Director<br>
         Writer<br>
   </li>
-  <li>1.7.4 VideoFormat<br>
+  <li>1.8.4 VideoFormat<br>
       CD <br>
       DVD <br>
       HDDVD <br>

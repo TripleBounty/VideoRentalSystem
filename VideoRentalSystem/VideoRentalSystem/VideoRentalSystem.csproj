@@ -40,6 +40,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>.\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
       <HintPath>..\packages\Npgsql.2.2.7\lib\net45\Mono.Security.dll</HintPath>
       <Private>True</Private>
@@ -74,13 +77,14 @@
     <Compile Include="Commands\AddCommands\AddFilmQuantityCommand.cs" />
     <Compile Include="Commands\AddCommands\AddGenreFilmCommand.cs" />
     <Compile Include="Commands\AddCommands\AddRatingFilmCommand.cs" />
+    <Compile Include="Commands\AddCommands\AddFilmStaffCommand.cs" />
     <Compile Include="Commands\AddCommands\AddStoreEmployeeCommand.cs" />
     <Compile Include="Commands\Contracts\ICommand.cs" />
     <Compile Include="Commands\Contracts\ICommandsFactory.cs" />
     <Compile Include="Commands\CreateCommands\CreateAwardCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateCustomerCimmand.cs" />
-    <Compile Include="Commands\CreateCommands\CreateFilmGenre.cs" />
-    <Compile Include="Commands\CreateCommands\CreateFilmRating.cs" />
+    <Compile Include="Commands\CreateCommands\CreateFilmGenreCommand.cs" />
+    <Compile Include="Commands\CreateCommands\CreateFilmRatingCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateFilmCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateManagerCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateReviewCommand.cs" />
@@ -88,11 +92,19 @@
     <Compile Include="Commands\CreateCommands\CreateStorageCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateStoreCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateFilmStaffCommand.cs" />
+    <Compile Include="Commands\CreateCommands\CreateLoanCommand.cs" />
+    <Compile Include="Commands\CreateCommands\CreateTarifCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateTownCommand.cs" />
     <Compile Include="Commands\Factory\CommandsFactory.cs" />
     <Compile Include="Commands\ListingCommands\AddressDetailsCommand.cs" />
+    <Compile Include="Commands\ListingCommands\ListAllFilmsCommand.cs" />
+    <Compile Include="Commands\ListingCommands\ListAllGenresCommand.cs" />
+    <Compile Include="Commands\ListingCommands\ListAllTarifsByTypeCommand.cs" />
+    <Compile Include="Commands\ListingCommands\ListAllLoansCommand.cs" />
+    <Compile Include="Commands\ListingCommands\ListAllTarifsCommand.cs" />
     <Compile Include="Commands\ListingCommands\StorageDetailsCommand.cs" />
     <Compile Include="Commands\ListingCommands\StoreDetailsCommand.cs" />
+    <Compile Include="Commands\ListingCommands\TarifDetailsCommand.cs" />
     <Compile Include="Commands\ListingCommands\TownDetailsCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllAddressesCommand.cs" />
     <Compile Include="Commands\ListingCommands\CountryDetailsCommand.cs" />
@@ -106,19 +118,38 @@
     <Compile Include="Commands\ListingCommands\ListAllEmployeesCommand.cs" />
     <Compile Include="Commands\LoadCommands\LoadCustomerFromJSONCommand.cs" />
     <Compile Include="Commands\LoadCommands\LoadEmployeeFromJSONCommand.cs" />
+    <Compile Include="Commands\LoadCommands\LoadFilmGenresFromJSON.cs" />
     <Compile Include="Commands\LoadCommands\LoadReviewFromJSONCommand.cs" />
-    <Compile Include="Commands\RemoveCommands\RemoveAwardCommand.cs" />
-    <Compile Include="Commands\RemoveCommands\RemoveFilmCommand.cs" />
-    <Compile Include="Commands\RemoveCommands\RemoveFilmGenreCommand.cs" />
+    <Compile Include="Commands\PdfPrintCommands\ListAllAddressesToPdfCommand.cs" />
+    <Compile Include="Commands\PdfPrintCommands\ListAllCountriesToPdfCommand.cs" />
+    <Compile Include="Commands\PdfPrintCommands\ListAllCustomersToPdfCommand.cs" />
+    <Compile Include="Commands\PdfPrintCommands\ListAllEmployeesToPdfCommand.cs" />
+    <Compile Include="Commands\PdfPrintCommands\ListAllFilmsToPdfCommand.cs" />
+    <Compile Include="Commands\PdfPrintCommands\ListAllGenresToPdfCommand.cs" />
+    <Compile Include="Commands\PdfPrintCommands\ListAllLoansToPdfCommand.cs" />
+    <Compile Include="Commands\PdfPrintCommands\ListAllReviewsToPdfCommand.cs" />
+    <Compile Include="Commands\PdfPrintCommands\ListAllStoragesToPdfCommand.cs" />
+    <Compile Include="Commands\PdfPrintCommands\ListAllStoresToPdfCommand.cs" />
+    <Compile Include="Commands\PdfPrintCommands\ListAllTarifsToPdfCommand.cs" />
+    <Compile Include="Commands\PdfPrintCommands\ListAllTownsToPdfCommand.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveEmployeeCommand.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveManagerCommand.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveReviewCommand.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveTarifCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveFilmQuantityCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveFilmRatingCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveStoreEmployeeCommand.cs" />
+    <Compile Include="Commands\RemoveCommands\ReviewCustomerCommand.cs" />
+    <Compile Include="Commands\UpdateCommands\EndLoanCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateAddressCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateAwardCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateCountryCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateFilmCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateFilmGenreCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateFilmRatingCommand.cs" />
+    <Compile Include="Commands\UpdateCommands\UpdateEmployeeCommand.cs" />
+    <Compile Include="Commands\UpdateCommands\UpdateManagerCommand.cs" />
+    <Compile Include="Commands\UpdateCommands\UpdateTarifCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateTownCommand.cs" />
     <Compile Include="Common\CommandProcessor.cs" />
     <Compile Include="Common\ConsoleReader.cs" />
@@ -126,6 +157,8 @@
     <Compile Include="Common\Contracts\IProcessor.cs" />
     <Compile Include="Common\Contracts\IReader.cs" />
     <Compile Include="Common\Contracts\IDateProvider.cs" />
+    <Compile Include="Common\DefaultTimeProvider.cs" />
+    <Compile Include="Common\TimeProvider.cs" />
     <Compile Include="Common\Validations\EmployeeValidator.cs" />
     <Compile Include="Core\Contracts\IServiceLocator.cs" />
     <Compile Include="Common\Contracts\IWriter.cs" />
@@ -147,6 +180,12 @@
     <Compile Include="Data\Contracts\IStorageRepository.cs" />
     <Compile Include="Data\Contracts\ITownRepository.cs" />
     <Compile Include="Data\Database.cs" />
+    <Compile Include="Data\Postgre\Contracts\ITarifRepository.cs" />
+    <Compile Include="Data\Postgre\Contracts\ILoanRepository.cs" />
+    <Compile Include="Data\Postgre\Contracts\IDatabasePostgre.cs" />
+    <Compile Include="Data\Postgre\DatabasePostgre.cs" />
+    <Compile Include="Data\Repository\TarifRepository.cs" />
+    <Compile Include="Data\Repository\LoanRepository.cs" />
     <Compile Include="Data\Repository\FilmGenreRepository.cs" />
     <Compile Include="Data\Repository\FilmRatingRepository.cs" />
     <Compile Include="Data\Repository\AwardRepository.cs" />
@@ -173,6 +212,14 @@
     <Compile Include="Migrations\VideoRentalContext\201706060830057_RatingGenreModels.Designer.cs">
       <DependentUpon>201706060830057_RatingGenreModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\VideoRentalContext\201706071834088_customer.cs" />
+    <Compile Include="Migrations\VideoRentalContext\201706071834088_customer.Designer.cs">
+      <DependentUpon>201706071834088_customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\VideoRentalContext\201706072011133_Customers23.cs" />
+    <Compile Include="Migrations\VideoRentalContext\201706072011133_Customers23.Designer.cs">
+      <DependentUpon>201706072011133_Customers23.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\VideoRentalContext\201706061022518_mergin.cs" />
     <Compile Include="Migrations\VideoRentalContext\201706061022518_mergin.Designer.cs">
       <DependentUpon>201706061022518_mergin.cs</DependentUpon>
@@ -185,6 +232,10 @@
     <Compile Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.cs" />
     <Compile Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.Designer.cs">
       <DependentUpon>201706052150102_InitialDatabaseCreation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\VideoRentalLoanContext\201706061945407_add isDeleted property.cs" />
+    <Compile Include="Migrations\VideoRentalLoanContext\201706061945407_add isDeleted property.Designer.cs">
+      <DependentUpon>201706061945407_add isDeleted property.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\VideoRentalLoanContext\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
@@ -233,15 +284,19 @@
     <EmbeddedResource Include="Migrations\VideoRentalContext\201706080820242_IsDeleted Filed added to genre,age rating.resx">
       <DependentUpon>201706080820242_IsDeleted Filed added to genre,age rating.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\VideoRentalContext\201706071834088_customer.resx">
+      <DependentUpon>201706071834088_customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\VideoRentalContext\201706072011133_Customers23.resx">
+      <DependentUpon>201706072011133_Customers23.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.resx">
       <DependentUpon>201706052150102_InitialDatabaseCreation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706052023583_Genres and Rating tables.resx">
-      <DependentUpon>201706052023583_Genres and Rating tables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706052036480_merging with my db.resx">
-      <DependentUpon>201706052036480_merging with my db.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\VideoRentalLoanContext\201706061945407_add isDeleted property.resx">
+      <DependentUpon>201706061945407_add isDeleted property.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

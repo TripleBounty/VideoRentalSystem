@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Data.Contracts;
 using VideoRentalSystem.Models.Factories;
@@ -19,21 +20,36 @@ namespace VideoRentalSystem.Commands.CreateCommands
 
         public string Execute(IList<string> parameters)
         {
-            if (parameters.Count < 4)
+            if (parameters.Count != 4)
             {
-                throw new ArgumentException(string.Format(
-                    "Input parameters are not in the correct format!" + 
-                    Environment.NewLine +
-                    "The correct format is : FirstName;LastName;Salary;ManagerId"));
+                return "Not valid number of parameters";
+            }
+
+            if (parameters.Any(x => x == string.Empty))
+            {
+                return "Some of the passed parameters are empty!";
             }
 
             var firstName = parameters[0];
             var lastName = parameters[1];
-            int salary = int.Parse(parameters[2]);
-            int managerId = int.Parse(parameters[3]);
+
+            int salary;
+            int managerId;
+
+            try
+            {
+                salary = int.Parse(parameters[2]);
+                managerId = int.Parse(parameters[3]);
+            }
+            catch
+            {
+                throw new ArgumentException(string.Format(
+                    "Input parameters are not in the correct format!" +
+                    Environment.NewLine +
+                    "The correct format is: FirstName string;LastName string;Salary int; ManagerId int"));
+            }
 
             var employeeObj = this.db.Employees.SingleOrDefault(e => e.Id == managerId);
-
             if (employeeObj == null)
             {
                 throw new ArgumentException(string.Format(

@@ -17,6 +17,11 @@ namespace VideoRentalSystem.Commands.ListingCommands
         {
             var reviews = this.db.Reviews.GetAll();
 
+            if (reviews.Count == 0)
+            {
+                return "No Reviews available";
+            }
+
             return string.Join("\n", reviews);
         }
     }

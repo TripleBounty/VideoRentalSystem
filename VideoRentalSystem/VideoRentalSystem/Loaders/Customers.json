@@ -4,51 +4,78 @@
             // Employee
             "FirstName": "Telerikcho",
             "LastName": "Minkov",
-            "BirthDate": "11/11/1992"
+          "BirthDate": "11/11/1992",
+          "Films": "1,1",
+          "Genres": "1,1",
+          "Reviews": "1,1"
         },
         "emp1": { // Employee
             "FirstName": "Ochko",
             "LastName": "Strahilov",
-            "BirthDate": "11/11/1991"
+            "BirthDate": "11/11/1991",
+          "Films": "1,1",
+          "Genres": "1,1",
+          "Reviews": "1,1"
         },
         "emp2": { // Employee
             "FirstName": "Stanley",
             "LastName": "Minkov",
-            "BirthDate": "11/11/1996"
+          "BirthDate": "11/11/1996",
+          "Films": "1,1",
+          "Genres": "1,1",
+          "Reviews": "1,1"
         },
         "emp3": { // Employee
             "FirstName": "NaRizoto",
             "LastName": "Jakata",
-            "BirthDate": "11/11/1999"
+            "BirthDate": "11/11/1999",
+          "Films": "1,1",
+          "Genres": "1,1",
+          "Reviews": "1,1"
         },
         "emp4": { // Employee
             "FirstName": "Dimitros",
             "LastName": "Vamos",
-            "BirthDate": "11/11/1995"
+            "BirthDate": "11/11/1995",
+          "Films": "1,1",
+          "Genres": "1,1",
+          "Reviews": "1,1"
         }
         ,
         "emp5": { // Employee
             "FirstName": "Mitkos",
             "LastName": "Karastakis",
-            "BirthDate": "11/11/1992"
+            "BirthDate": "11/11/1992",
+          "Films": "1,1",
+          "Genres": "1,1",
+          "Reviews": "1,1"
         }
         ,
         "emp6": { // Employee
             "FirstName": "Pencho",
             "LastName": "Penchev",
-            "BirthDate": "11/11/1991"
+            "BirthDate": "11/11/1991",
+          "Films": "1,1",
+          "Genres": "1,1",
+          "Reviews": "1,1"
         }
         ,
         "emp7": { // Employee
             "FirstName": "Herher",
             "LastName": "Florman",
-            "BirthDate": "11/11/1998"
+            "BirthDate": "11/11/1998",
+          "Films": "1,1",
+          "Genres": "1,1",
+          "Reviews": "1,1"
         }
         ,
         "emp8": { // Employee
             "FirstName": "Tanya",
             "LastName": "Blader",
-            "BirthDate": "01/11/1993"
+            "BirthDate": "01/11/1993",
+          "Films": "1,1",
+          "Genres": "1,1",
+          "Reviews": "1,1"
         }
     }
 }

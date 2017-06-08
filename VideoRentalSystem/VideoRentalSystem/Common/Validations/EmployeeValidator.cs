@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace VideoRentalSystem.Common.Validations
 {
@@ -33,6 +34,15 @@ namespace VideoRentalSystem.Common.Validations
             {
                 throw new ArgumentOutOfRangeException(
                       $"The Salary must be between 0 and 150000.");
+            }
+        }
+
+        public static void ValidateParametersCount(IList<string> parameters, int value)
+        {
+            if (parameters.Count != value)
+            {
+                throw new ArgumentOutOfRangeException(
+                      $"The number of parameters is invalid");
             }
         }
     }
