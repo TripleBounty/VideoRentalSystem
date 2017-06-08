@@ -39,16 +39,19 @@ namespace VideoRentalSystem.Builder
             this.Bind<ICommand>().To<CreateCountryCommand>().Named("CreateCountry");
             this.Bind<ICommand>().To<CountryDetailsCommand>().Named("CountryDetails");
             this.Bind<ICommand>().To<ListAllCountriesCommand>().Named("ListAllCountries");
+            this.Bind<ICommand>().To<ListAllCountriesToPdfCommand>().Named("ListAllCountriesToPdf");
             this.Bind<ICommand>().To<UpdateCountryCommand>().Named("UpdateCountry");
 
             this.Bind<ICommand>().To<CreateTownCommand>().Named("CreateTown");
             this.Bind<ICommand>().To<TownDetailsCommand>().Named("TownDetails");
             this.Bind<ICommand>().To<ListAllTownsCommand>().Named("ListAllTowns");
+            this.Bind<ICommand>().To<ListAllTownsToPdfCommand>().Named("ListAllTownsToPdf");
             this.Bind<ICommand>().To<UpdateTownCommand>().Named("UpdateTown");
 
             this.Bind<ICommand>().To<CreateAddressCommand>().Named("CreateAddress");
             this.Bind<ICommand>().To<AddressDetailsCommand>().Named("AddressDetails");
             this.Bind<ICommand>().To<ListAllAddressesCommand>().Named("ListAllAddresses");
+            this.Bind<ICommand>().To<ListAllAddressesToPdfCommand>().Named("ListAllAddressesToPdf");
             this.Bind<ICommand>().To<UpdateAddressCommand>().Named("UpdateAddress");
 
             this.Bind<ICommand>().To<CreateEmployeeCommand>().Named("CreateEmployee");
@@ -75,6 +78,8 @@ namespace VideoRentalSystem.Builder
             this.Bind<ICommand>().To<RemoveReviewCommand>().Named("RemoveReview");
 
             this.Bind<ICommand>().To<CreateFilmCommand>().Named("CreateFilm");
+            this.Bind<ICommand>().To<ListAllFilmsCommand>().Named("ListAllFilms");
+            this.Bind<ICommand>().To<ListAllFilmdsToPdfCommand>().Named("ListAllFilmdsToPdf");
 
             // this.Bind<ICommand>().To<AddFilmCategory>().Named("AddFilmCategory");
             this.Bind<ICommand>().To<CreateFilmRatingCommand>().Named("CreateFilmRating");
@@ -89,12 +94,14 @@ namespace VideoRentalSystem.Builder
 
             this.Bind<ICommand>().To<CreateStoreCommand>().Named("CreateStore");
             this.Bind<ICommand>().To<ListAllStoresCommand>().Named("ListAllStores");
+            this.Bind<ICommand>().To<ListAllStoresToPdfCommand>().Named("ListAllStoresToPdf");
             this.Bind<ICommand>().To<StoreDetailsCommand>().Named("StoreDetails");
             this.Bind<ICommand>().To<AddStoreEmployeeCommand>().Named("AddStoreEmployee");
             this.Bind<ICommand>().To<RemoveStoreEmployeeCommand>().Named("RemoveStoreEmployee");
 
             this.Bind<ICommand>().To<CreateStorageCommand>().Named("CreateStorage");
             this.Bind<ICommand>().To<ListAllStoragesCommand>().Named("ListAllStorages");
+            this.Bind<ICommand>().To<ListAllStoragesToPdfCommand>().Named("ListAllStoragesToPdf");
             this.Bind<ICommand>().To<StorageDetailsCommand>().Named("StorageDetails");
             this.Bind<ICommand>().To<AddFilmQuantityCommand>().Named("AddFilmQuantity");
             this.Bind<ICommand>().To<RemoveFilmQuantityCommand>().Named("RemoveFilmQuantity");
@@ -106,6 +113,7 @@ namespace VideoRentalSystem.Builder
             this.Bind<ICommand>().To<CreateTarifCommand>().Named("CreateTarif");
             this.Bind<ICommand>().To<TarifDetailsCommand>().Named("TarifDetails");
             this.Bind<ICommand>().To<ListAllTarifsCommand>().Named("ListAllTarifs");
+            this.Bind<ICommand>().To<ListAllTarifsToPdfCommand>().Named("ListAllTarifsToPdf");
             this.Bind<ICommand>().To<ListAllTarifsByTypeCommand>().Named("ListAllTarifsByType");
             this.Bind<ICommand>().To<RemoveTarifCommand>().Named("RemoveTarif");
             this.Bind<ICommand>().To<UpdateTarifCommand>().Named("UpdateTarif");
@@ -113,6 +121,7 @@ namespace VideoRentalSystem.Builder
             this.Bind<ICommand>().To<CreateLoanCommand>().Named("CreateLoan");
             this.Bind<ICommand>().To<EndLoanCommand>().Named("EndLoan");
             this.Bind<ICommand>().To<ListAllLoansCommand>().Named("ListAllLoans");
+            this.Bind<ICommand>().To<ListAllLoansCommand>().Named("ListAllLoansToPdf");
 
             var engine = this.Bind<IEngine>().To<Engine>().InSingletonScope();
         }

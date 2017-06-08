@@ -97,6 +97,7 @@
     <Compile Include="Commands\CreateCommands\CreateTownCommand.cs" />
     <Compile Include="Commands\Factory\CommandsFactory.cs" />
     <Compile Include="Commands\ListingCommands\AddressDetailsCommand.cs" />
+    <Compile Include="Commands\ListingCommands\ListAllFilmsCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllGenresCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllTarifsByTypeCommand.cs" />
     <Compile Include="Commands\ListingCommands\ListAllLoansCommand.cs" />
@@ -119,13 +120,18 @@
     <Compile Include="Commands\LoadCommands\LoadEmployeeFromJSONCommand.cs" />
     <Compile Include="Commands\LoadCommands\LoadFilmGenresFromJSON.cs" />
     <Compile Include="Commands\LoadCommands\LoadReviewFromJSONCommand.cs" />
+    <Compile Include="Commands\PdfPrintCommands\ListAllAddressesToPdfCommand.cs" />
+    <Compile Include="Commands\PdfPrintCommands\ListAllCountriesToPdfCommand.cs" />
     <Compile Include="Commands\PdfPrintCommands\ListAllCustomersToPdfCommand.cs" />
     <Compile Include="Commands\PdfPrintCommands\ListAllEmployeesToPdfCommand.cs" />
+    <Compile Include="Commands\PdfPrintCommands\ListAllFilmsToPdfCommand.cs" />
     <Compile Include="Commands\PdfPrintCommands\ListAllGenresToPdfCommand.cs" />
     <Compile Include="Commands\PdfPrintCommands\ListAllLoansToPdfCommand.cs" />
     <Compile Include="Commands\PdfPrintCommands\ListAllReviewsToPdfCommand.cs" />
     <Compile Include="Commands\PdfPrintCommands\ListAllStoragesToPdfCommand.cs" />
     <Compile Include="Commands\PdfPrintCommands\ListAllStoresToPdfCommand.cs" />
+    <Compile Include="Commands\PdfPrintCommands\ListAllTarifsToPdfCommand.cs" />
+    <Compile Include="Commands\PdfPrintCommands\ListAllTownsToPdfCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveEmployeeCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveManagerCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveReviewCommand.cs" />
