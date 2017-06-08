@@ -207,13 +207,13 @@
     <Compile Include="Migrations\VideoRentalContext\201706060830057_RatingGenreModels.Designer.cs">
       <DependentUpon>201706060830057_RatingGenreModels.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\VideoRentalContext\201706071834088_customer.cs" />
-    <Compile Include="Migrations\VideoRentalContext\201706071834088_customer.Designer.cs">
-      <DependentUpon>201706071834088_customer.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\VideoRentalContext\201706072011133_Customers23.cs" />
     <Compile Include="Migrations\VideoRentalContext\201706072011133_Customers23.Designer.cs">
       <DependentUpon>201706072011133_Customers23.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\VideoRentalContext\201706081817478_Dimitur.cs" />
+    <Compile Include="Migrations\VideoRentalContext\201706081817478_Dimitur.Designer.cs">
+      <DependentUpon>201706081817478_Dimitur.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\VideoRentalContext\Configuration.cs" />
     <Compile Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.cs" />
@@ -265,11 +265,11 @@
     <EmbeddedResource Include="Migrations\VideoRentalContext\201706060830057_RatingGenreModels.resx">
       <DependentUpon>201706060830057_RatingGenreModels.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\VideoRentalContext\201706071834088_customer.resx">
-      <DependentUpon>201706071834088_customer.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\VideoRentalContext\201706072011133_Customers23.resx">
       <DependentUpon>201706072011133_Customers23.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\VideoRentalContext\201706081817478_Dimitur.resx">
+      <DependentUpon>201706081817478_Dimitur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.resx">
       <DependentUpon>201706052150102_InitialDatabaseCreation.cs</DependentUpon>

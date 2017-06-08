@@ -4,6 +4,7 @@ using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Data.Contracts;
 using System;
 using System.Collections.Generic;
+using VideoRentalSystem.Common;
 
 namespace VideoRentalSystem.Commands.PdfPrintCommands
 {
@@ -116,10 +117,10 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
             this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, _largeFont, new Chunk(subTitle));
             this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, _largeFont, new Chunk("\n\n\n\n\n"));
             this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, _smallFont, new Chunk("Generated " +
-                DateTime.Now.Day.ToString() + " " +
-                System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(DateTime.Now.Month) + " " +
-                DateTime.Now.Year.ToString() + " " +
-                DateTime.Now.ToShortTimeString()));
+                TimeProvider.Current.UtcNow.Day.ToString() + " " +
+                System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(TimeProvider.Current.UtcNow.Month) + " " +
+                TimeProvider.Current.UtcNow.Year.ToString() + " " +
+                TimeProvider.Current.UtcNow.ToShortTimeString()));
         }
 
         /// <summary>
