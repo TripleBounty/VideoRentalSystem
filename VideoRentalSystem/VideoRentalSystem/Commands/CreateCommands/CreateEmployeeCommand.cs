@@ -19,10 +19,10 @@ namespace VideoRentalSystem.Commands.CreateCommands
 
         public string Execute(IList<string> parameters)
         {
-            if(parameters.Count < 4)
+            if (parameters.Count < 4)
             {
-                throw new ArgumentException(String.Format(
-                    "Input parameters are not in the correct format!"+ 
+                throw new ArgumentException(string.Format(
+                    "Input parameters are not in the correct format!" + 
                     Environment.NewLine +
                     "The correct format is : FirstName;LastName;Salary;ManagerId"));
             }
@@ -36,7 +36,7 @@ namespace VideoRentalSystem.Commands.CreateCommands
 
             if (employeeObj == null)
             {
-                throw new ArgumentException(String.Format(
+                throw new ArgumentException(string.Format(
                     "The managerId cannot be null or you are trying to get a non existand Manager!"));
             }
 

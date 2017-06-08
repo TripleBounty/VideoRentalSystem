@@ -16,5 +16,7 @@ namespace VideoRentalSystem.Models
         public int Id { get; set; }
 
         public string Genre { get; set; }
+
+        public bool IsDeleted { get; set; }
     }
 }

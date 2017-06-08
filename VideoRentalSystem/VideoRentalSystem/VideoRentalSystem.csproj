@@ -107,10 +107,18 @@
     <Compile Include="Commands\LoadCommands\LoadCustomerFromJSONCommand.cs" />
     <Compile Include="Commands\LoadCommands\LoadEmployeeFromJSONCommand.cs" />
     <Compile Include="Commands\LoadCommands\LoadReviewFromJSONCommand.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveAwardCommand.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveFilmCommand.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveFilmGenreCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveFilmQuantityCommand.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveFilmRatingCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveStoreEmployeeCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateAddressCommand.cs" />
+    <Compile Include="Commands\UpdateCommands\UpdateAwardCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateCountryCommand.cs" />
+    <Compile Include="Commands\UpdateCommands\UpdateFilmCommand.cs" />
+    <Compile Include="Commands\UpdateCommands\UpdateFilmGenreCommand.cs" />
+    <Compile Include="Commands\UpdateCommands\UpdateFilmRatingCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateTownCommand.cs" />
     <Compile Include="Common\CommandProcessor.cs" />
     <Compile Include="Common\ConsoleReader.cs" />
@@ -165,6 +173,14 @@
     <Compile Include="Migrations\VideoRentalContext\201706060830057_RatingGenreModels.Designer.cs">
       <DependentUpon>201706060830057_RatingGenreModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\VideoRentalContext\201706061022518_mergin.cs" />
+    <Compile Include="Migrations\VideoRentalContext\201706061022518_mergin.Designer.cs">
+      <DependentUpon>201706061022518_mergin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\VideoRentalContext\201706080820242_IsDeleted Filed added to genre,age rating.cs" />
+    <Compile Include="Migrations\VideoRentalContext\201706080820242_IsDeleted Filed added to genre,age rating.Designer.cs">
+      <DependentUpon>201706080820242_IsDeleted Filed added to genre,age rating.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\VideoRentalContext\Configuration.cs" />
     <Compile Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.cs" />
     <Compile Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.Designer.cs">
@@ -210,6 +226,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\VideoRentalContext\201706060830057_RatingGenreModels.resx">
       <DependentUpon>201706060830057_RatingGenreModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\VideoRentalContext\201706061022518_mergin.resx">
+      <DependentUpon>201706061022518_mergin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\VideoRentalContext\201706080820242_IsDeleted Filed added to genre,age rating.resx">
+      <DependentUpon>201706080820242_IsDeleted Filed added to genre,age rating.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.resx">
       <DependentUpon>201706052150102_InitialDatabaseCreation.cs</DependentUpon>
