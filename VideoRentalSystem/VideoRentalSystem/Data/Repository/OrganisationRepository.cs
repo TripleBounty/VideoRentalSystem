@@ -3,9 +3,9 @@ using VideoRentalSystem.Data.SqLite.Contracts;
 
 namespace VideoRentalSystem.Data.Repository
 {
-    public class AwardRepository : Repository<Award>, IAwardRepository
+    public class OrganisationRepository : Repository<Organisation>, IOrganisationRepository
     {
-        public AwardRepository(DbContext context) 
+        public OrganisationRepository(DbContext context) 
             : base(context)
         {
 

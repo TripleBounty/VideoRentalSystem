@@ -66,18 +66,33 @@ Commands separator ";" <br>
 --RemoveTarif - params - TarifId.<br>
 <br><br>
 </li>
-<li>1.6. Termination<br><br>
+<li>1.6. Export to pdf<br><br>
+--ListAllAdressesToPdf - no params -<br>
+--ListAllCountriesToPdf - no params -<br>
+--ListAllCustomersToPdf - no params -<br>
+--ListAllEmployeesToPdf - no params -<br>
+--ListAllFilmsToPdf - no params -<br>
+--ListAllGenresToPdf - no params -<br>
+--ListAllLoansToPdf - no params -<br>
+--ListAllReviewsToPdf - no params -<br>
+--ListAllStoragesToPdf - no params -<br>
+--ListAllStoresToPdf - no params -<br>
+--ListAllTarifsToPdf - no params -<br>
+--ListAllTownsToPdf - no params -<br>
+<br><br>
+</li>
+<li>1.7. Termination<br><br>
 --Exit<br>
 </li>
 <br><br>
-<li>1.7. Enums<br><br>
+<li>1.8. Enums<br><br>
   <ul>
-  <li>1.7.1 StaffType<br>
+  <li>1.8.1 StaffType<br>
         Actor<br>
         Director<br>
         Writer<br>
   </li>
-  <li>1.7.4 VideoFormat<br>
+  <li>1.8.4 VideoFormat<br>
       CD <br>
       DVD <br>
       HDDVD <br>

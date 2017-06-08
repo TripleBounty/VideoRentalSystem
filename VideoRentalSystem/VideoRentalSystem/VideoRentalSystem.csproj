@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\SQLite.3.13.0\build\net45\SQLite.props" Condition="Exists('..\packages\SQLite.3.13.0\build\net45\SQLite.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -43,6 +44,42 @@
     <Reference Include="itextsharp">
       <HintPath>.\itextsharp.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Data.Sqlite, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Sqlite.1.1.0\lib\net451\Microsoft.Data.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore, Version=1.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.1.1.2\lib\net451\Microsoft.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Relational, Version=1.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Relational.1.1.2\lib\net451\Microsoft.EntityFrameworkCore.Relational.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Sqlite, Version=1.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Sqlite.1.1.2\lib\net451\Microsoft.EntityFrameworkCore.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.1.1.1\lib\netstandard1.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Memory.1.1.1\lib\net451\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.1.1.0\lib\netstandard1.1\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.1.1.0\lib\netstandard1.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.1.1.1\lib\netstandard1.1\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.1.1.1\lib\netstandard1.1\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.1.1.1\lib\netstandard1.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.1.1.0\lib\netstandard1.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
       <HintPath>..\packages\Npgsql.2.2.7\lib\net45\Mono.Security.dll</HintPath>
       <Private>True</Private>
@@ -61,9 +98,46 @@
       <HintPath>..\packages\Npgsql.EntityFramework.2.2.7\lib\net45\Npgsql.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Remotion.Linq, Version=2.1.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Remotion.Linq.2.1.1\lib\net45\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite.CodeFirst, Version=1.3.1.18, Culture=neutral, PublicKeyToken=eb96ba0a78d831a7, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLite.CodeFirst.1.3.1.18\lib\net45\SQLite.CodeFirst.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.3.0\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.105.1, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.105.1\lib\net451\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.105.1, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.105.1\lib\net451\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6.Migrations, Version=1.0.104.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.Migrations.1.0.104\lib\System.Data.SQLite.EF6.Migrations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.105.1, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.105.1\lib\net451\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.3.1\lib\portable-net45+win8+wpa81\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Interactive.Async, Version=3.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Interactive.Async.3.0.0\lib\net45\System.Interactive.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.3.0\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -72,6 +146,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\CreateCommands\CreateOrganisationCommand.cs" />
+    <Compile Include="Data\Repository\AwardRepository.cs" />
+    <Compile Include="Data\Repository\OrganisationRepository.cs" />
+    <Compile Include="Data\SqLite\Contracts\IAwardRepository.cs" />
+    <Compile Include="Data\SqLite\Contracts\IDatabaseLite.cs" />
+    <Compile Include="Data\SqLite\Contracts\IOrganisationRepository.cs" />
+    <Compile Include="Data\SqLite\DatabaseLite.cs" />
+    <Compile Include="Migrations\FilmAwardSqLite\201706081631406_init.cs" />
+    <Compile Include="Migrations\FilmAwardSqLite\201706081631406_init.Designer.cs">
+      <DependentUpon>201706081631406_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\FilmAwardSqLite\sqLiteConfiguration.cs" />
+    <Compile Include="Models\Award.cs" />
     <Compile Include="Builder\ServiceLocator.cs" />
     <Compile Include="Commands\AddCommands\AddAwardFilmCommand.cs" />
     <Compile Include="Commands\AddCommands\AddFilmQuantityCommand.cs" />
@@ -132,16 +219,24 @@
     <Compile Include="Commands\PdfPrintCommands\ListAllStoresToPdfCommand.cs" />
     <Compile Include="Commands\PdfPrintCommands\ListAllTarifsToPdfCommand.cs" />
     <Compile Include="Commands\PdfPrintCommands\ListAllTownsToPdfCommand.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveAwardCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveEmployeeCommand.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveFilmCommand.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveFilmGenreCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveManagerCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveReviewCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveTarifCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveFilmQuantityCommand.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveFilmRatingCommand.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveStoreEmployeeCommand.cs" />
     <Compile Include="Commands\RemoveCommands\ReviewCustomerCommand.cs" />
     <Compile Include="Commands\UpdateCommands\EndLoanCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateAddressCommand.cs" />
+    <Compile Include="Commands\UpdateCommands\UpdateAwardCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateCountryCommand.cs" />
+    <Compile Include="Commands\UpdateCommands\UpdateFilmCommand.cs" />
+    <Compile Include="Commands\UpdateCommands\UpdateFilmGenreCommand.cs" />
+    <Compile Include="Commands\UpdateCommands\UpdateFilmRatingCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateEmployeeCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateManagerCommand.cs" />
     <Compile Include="Commands\UpdateCommands\UpdateTarifCommand.cs" />
@@ -161,7 +256,6 @@
     <Compile Include="Core\Engine.cs" />
     <Compile Include="Commands\CreateCommands\CreateCountryCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateEmployeeCommand.cs" />
-    <Compile Include="Data\Contracts\IAwardRepository.cs" />
     <Compile Include="Data\Contracts\ICountryRepository.cs" />
     <Compile Include="Data\Contracts\ICustomerRepository.cs" />
     <Compile Include="Data\Contracts\IDatabase.cs" />
@@ -183,7 +277,6 @@
     <Compile Include="Data\Repository\LoanRepository.cs" />
     <Compile Include="Data\Repository\FilmGenreRepository.cs" />
     <Compile Include="Data\Repository\FilmRatingRepository.cs" />
-    <Compile Include="Data\Repository\AwardRepository.cs" />
     <Compile Include="Data\Repository\FilmRepository.cs" />
     <Compile Include="Data\Repository\CountryRepository.cs" />
     <Compile Include="Data\Repository\CustomerRepository.cs" />
@@ -199,6 +292,7 @@
     <Compile Include="Data\Repository\TownRepository.cs" />
     <Compile Include="Data\Postgre\VideoRentalLoanContext.cs" />
     <Compile Include="Data\VideoRentalContext.cs" />
+    <Compile Include="Data\SqLite\VideoRentalFilmAwardsContext.cs" />
     <Compile Include="Migrations\VideoRentalContext\201706052149449_InitialDatabaseCreation.cs" />
     <Compile Include="Migrations\VideoRentalContext\201706052149449_InitialDatabaseCreation.Designer.cs">
       <DependentUpon>201706052149449_InitialDatabaseCreation.cs</DependentUpon>
@@ -215,6 +309,14 @@
     <Compile Include="Migrations\VideoRentalContext\201706081817478_Dimitur.Designer.cs">
       <DependentUpon>201706081817478_Dimitur.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\VideoRentalContext\201706061022518_mergin.cs" />
+    <Compile Include="Migrations\VideoRentalContext\201706061022518_mergin.Designer.cs">
+      <DependentUpon>201706061022518_mergin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\VideoRentalContext\201706080820242_IsDeleted Filed added to genre,age rating.cs" />
+    <Compile Include="Migrations\VideoRentalContext\201706080820242_IsDeleted Filed added to genre,age rating.Designer.cs">
+      <DependentUpon>201706080820242_IsDeleted Filed added to genre,age rating.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\VideoRentalContext\Configuration.cs" />
     <Compile Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.cs" />
     <Compile Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.Designer.cs">
@@ -226,7 +328,6 @@
     </Compile>
     <Compile Include="Migrations\VideoRentalLoanContext\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
-    <Compile Include="Models\Award.cs" />
     <Compile Include="Models\FilmRating.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Country.cs" />
@@ -245,6 +346,7 @@
     <Compile Include="Models\Store.cs" />
     <Compile Include="Models\Tarif.cs" />
     <Compile Include="Models\Town.cs" />
+    <Compile Include="Models\Organisation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -259,11 +361,23 @@
     <None Include="Settings.StyleCop" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\FilmAwardSqLite\201706081631406_init.resx">
+      <DependentUpon>201706081631406_init.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\VideoRentalContext\201706052149449_InitialDatabaseCreation.resx">
       <DependentUpon>201706052149449_InitialDatabaseCreation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\VideoRentalContext\201706060830057_RatingGenreModels.resx">
       <DependentUpon>201706060830057_RatingGenreModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\VideoRentalContext\201706061022518_mergin.resx">
+      <DependentUpon>201706061022518_mergin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\VideoRentalContext\201706080820242_IsDeleted Filed added to genre,age rating.resx">
+      <DependentUpon>201706080820242_IsDeleted Filed added to genre,age rating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\VideoRentalContext\201706071834088_customer.resx">
+      <DependentUpon>201706071834088_customer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\VideoRentalContext\201706072011133_Customers23.resx">
       <DependentUpon>201706072011133_Customers23.cs</DependentUpon>
@@ -280,4 +394,12 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\SQLite.3.13.0\build\net45\SQLite.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SQLite.3.13.0\build\net45\SQLite.props'))" />
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.105.1\build\net451\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.105.1\build\net451\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.105.1\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.105.1\build\net451\System.Data.SQLite.Core.targets')" />
 </Project>

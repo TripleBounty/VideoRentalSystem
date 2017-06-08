@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Data.Contracts;
+using VideoRentalSystem.Data.SqLite.Contracts;
 using VideoRentalSystem.Models.Factories;
 
 namespace VideoRentalSystem.Commands.CreateCommands
 {
     public class CreateAwardCommand : ICommand
     {
-        private readonly IDatabase db;
+        private readonly IDatabaseLite db;
         private readonly IModelsFactory factory;
 
-        public CreateAwardCommand(IDatabase db, IModelsFactory factory)
+        public CreateAwardCommand(IDatabaseLite db, IModelsFactory factory)
         {
             this.db = db;
             this.factory = factory;
@@ -19,12 +20,26 @@ namespace VideoRentalSystem.Commands.CreateCommands
 
         public string Execute(IList<string> parameters)
         {
+            if (parameters.Count != 3)
+            {
+                return "Not valid number of parameters";
+            }
+
             var name = parameters[0];
-            DateTime date = Convert.ToDateTime(parameters[1]);
+            var year = parameters[1];
+            var orgName = parameters[2];
 
-            var award = this.factory.CreateAward(name, date);
+            var organisation = this.db.Organisations.SingleOrDefault(x => x.Name == orgName);
 
-            this.db.Award.Add(award);
+            if (organisation == null)
+            {
+                return "organisation not found";
+            }
+
+            var award = this.factory.CreateAward(name, year, organisation.Id);
+            award.Organisation = organisation;
+
+            this.db.Awards.Add(award);
             this.db.Complete();
 
             return "Award created";
