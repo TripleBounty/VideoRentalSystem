@@ -8,8 +8,6 @@ namespace VideoRentalSystem.Models
         private string lastName;
         private int salary;
 
-       //// private Employee manager;
-
         public Employee(string firstName, string lastName, int salary, Employee manager)
         {
             this.FirstName = firstName;
