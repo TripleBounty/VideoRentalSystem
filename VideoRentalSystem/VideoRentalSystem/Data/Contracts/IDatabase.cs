@@ -28,8 +28,6 @@ namespace VideoRentalSystem.Data.Contracts
 
         IFilmStaffRepository FilmStaffs { get; }
 
-        //IAwardRepository Award { get; }
-
         int Complete();
     }
 }

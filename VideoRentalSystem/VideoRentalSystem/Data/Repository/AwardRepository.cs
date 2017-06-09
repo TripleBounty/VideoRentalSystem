@@ -8,7 +8,6 @@ namespace VideoRentalSystem.Data.Repository
         public AwardRepository(DbContext context) 
             : base(context)
         {
-
         }
     }
 }

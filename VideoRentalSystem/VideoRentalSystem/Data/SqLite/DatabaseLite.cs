@@ -7,9 +7,9 @@ namespace VideoRentalSystem.Data.SqLite
     {
         private readonly VideoRentalFilmAwardsContext context;
 
-        public DatabaseLite(VideoRentalFilmAwardsContext db)
+        public DatabaseLite(VideoRentalFilmAwardsContext context)
         {
-            this.context = db;
+            this.context = context;
             this.Organisations = new OrganisationRepository(context);
             this.Awards = new AwardRepository(context);
         }

@@ -19,20 +19,20 @@ namespace VideoRentalSystem.Commands.RemoveCommands
 
         public string Execute(IList<string> parameters)
         {
-            //var awardName = parameters[0];
-            //var award = this.db.Award.SingleOrDefault(x => x.Name == awardName);
-
-            //if (award == null)
-            //{
-            //    return "Award not found";
-            //}
-
-            //var id = award.Id;
-            //award.IsDeleted = true;
-
-            //this.db.Complete();
-
-            //return "Award removed";
+            ////var awardName = parameters[0];
+            ////var award = this.db.Award.SingleOrDefault(x => x.Name == awardName);
+            
+            ////if (award == null)
+            ////{
+            ////    return "Award not found";
+            ////}
+            
+            ////var id = award.Id;
+            ////award.IsDeleted = true;
+            
+            ////this.db.Complete();
+            //
+            ////return "Award removed";
 
             throw new NotImplementedException();
         }

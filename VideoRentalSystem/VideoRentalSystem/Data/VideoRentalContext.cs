@@ -30,8 +30,6 @@ namespace VideoRentalSystem.Data
 
         public IDbSet<FilmRating> FilmCategoryTable { get; set; }
 
-        //public IDbSet<Award> AwardTable { get; set; }
-
         public IDbSet<Store> StoreTable { get; set; }
 
         public IDbSet<Storage> StoragesTable { get; set; }
@@ -46,7 +44,6 @@ namespace VideoRentalSystem.Data
             this.CreateCustomerModel(modelBuilder);
             this.CreateFilmModel(modelBuilder);
             this.CreateFilmStaffModel(modelBuilder);
-            //this.CreateAwardModel(modelBuilder);
             this.CreateStoreModel(modelBuilder);
 
             this.CreateFilmRatingModel(modelBuilder);
@@ -167,18 +164,6 @@ namespace VideoRentalSystem.Data
                 .HasMaxLength(40)
                 .IsRequired();
         }
-
-        //private void CreateAwardModel(DbModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<AwardLite>()
-        //        .Property(x => x.Name)
-        //        .HasMaxLength(255)
-        //        .IsRequired();
-
-        //    modelBuilder.Entity<AwardLite>()
-        //        .Property(x => x.Date)
-        //        .IsRequired();
-        //}
 
         private void CreateFilmStaffModel(DbModelBuilder modelBuilder)
         {

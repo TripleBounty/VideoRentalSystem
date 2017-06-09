@@ -20,12 +20,15 @@ namespace VideoRentalSystem
         }
 
         public long Id { get; set; }
+
         public string Name { get; set; }
+
         public string Year { get; set; }
 
         public bool IsDeleted { get; set; }
 
         public long OrganisationId { get; set; }
+
         public virtual Organisation Organisation { get; set; }
 
         public override string ToString()

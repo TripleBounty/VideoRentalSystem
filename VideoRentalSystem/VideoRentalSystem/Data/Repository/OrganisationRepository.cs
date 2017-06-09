@@ -8,7 +8,6 @@ namespace VideoRentalSystem.Data.Repository
         public OrganisationRepository(DbContext context) 
             : base(context)
         {
-
         }
     }
 }

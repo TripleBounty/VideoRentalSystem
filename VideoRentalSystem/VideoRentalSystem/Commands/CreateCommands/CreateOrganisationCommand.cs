@@ -31,8 +31,8 @@ namespace VideoRentalSystem.Commands.CreateCommands
 
             var org = this.factory.CreateOrganisation(name);
 
-            db.Organisations.Add(org);
-            db.Complete();
+            this.db.Organisations.Add(org);
+            this.db.Complete();
 
             return name + " created";
         }

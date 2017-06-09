@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace VideoRentalSystem
 {
-    public  class Organisation
+    public class Organisation
     {
         public Organisation()
         {
@@ -19,6 +19,7 @@ namespace VideoRentalSystem
         }
 
         public long Id { get; set; }
+
         public string Name { get; set; }
 
         public bool IsDeleted { get; set; }
