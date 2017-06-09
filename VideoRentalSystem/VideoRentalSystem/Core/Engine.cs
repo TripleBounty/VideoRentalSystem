@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 using VideoRentalSystem.Common.Contracts;
 using VideoRentalSystem.Core.Contracts;
 
@@ -13,8 +12,24 @@ namespace VideoRentalSystem.Core
 
         public Engine(IReader reader, IWriter writer, IProcessor processor)
         {
+            if (reader == null)
+            {
+                throw new ArgumentNullException("Not valid engine reader parameter");
+            }
+
             this.reader = reader;
+
+            if (writer == null)
+            {
+                throw new ArgumentNullException("Not valid engine writer parameter");
+            }
             this.writer = writer;
+
+            if (processor == null)
+            {
+                throw new ArgumentNullException("Not valid engine processor parameter");
+            }
+
             this.processor = processor;
         }
 
