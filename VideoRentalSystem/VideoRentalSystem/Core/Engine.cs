@@ -23,6 +23,7 @@ namespace VideoRentalSystem.Core
             {
                 throw new ArgumentNullException("Not valid engine writer parameter");
             }
+
             this.writer = writer;
 
             if (processor == null)

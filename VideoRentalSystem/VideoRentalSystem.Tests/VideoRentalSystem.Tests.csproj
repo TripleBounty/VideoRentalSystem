@@ -50,8 +50,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\EngineConstructorShould.cs" />
-    <Compile Include="Core\EngineStartShould.cs" />
+    <Compile Include="Common\CommandProcessor_ProcessCommandSould.cs" />
+    <Compile Include="Common\CommandProcessor_ConstructorSould.cs" />
+    <Compile Include="Core\Engine_ConstructorShould.cs" />
+    <Compile Include="Core\Engine_StartShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

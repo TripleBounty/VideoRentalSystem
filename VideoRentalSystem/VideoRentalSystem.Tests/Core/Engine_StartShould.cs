@@ -7,7 +7,7 @@ using VideoRentalSystem.Core;
 namespace VideoRentalSystem.Tests.Core
 {
     [TestFixture]
-    class EngineStartShould
+    public class Engine_StartShould
     {
         [Test]
         public void StarShould_CallReadLineOfTheReader()

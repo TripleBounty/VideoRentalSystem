@@ -11,6 +11,11 @@ namespace VideoRentalSystem.Common
 
         public CommandProcessor(ICommandsFactory factory)
         {
+            if (factory == null)
+            {
+                throw new ArgumentNullException("Null factory value is passed for command processor parameter");
+            }
+
             this.factory = factory;
         }
 

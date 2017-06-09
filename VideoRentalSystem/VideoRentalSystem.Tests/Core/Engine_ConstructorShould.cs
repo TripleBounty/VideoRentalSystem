@@ -7,7 +7,7 @@ using VideoRentalSystem.Core;
 namespace VideoRentalSystem.Tests.Core
 {
     [TestFixture]
-    public class EngineConstructorShould
+    public class Engine_ConstructorShould
     {
         [Test]
         public void NotThrowArgumentNullException_WhenParametersAreProvided()
