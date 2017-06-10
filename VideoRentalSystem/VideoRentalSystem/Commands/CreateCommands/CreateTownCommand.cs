@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Data.Contracts;
@@ -13,7 +14,18 @@ namespace VideoRentalSystem.Commands.CreateCommands
 
         public CreateTownCommand(IDatabase db, IModelsFactory factory)
         {
+            if (db == null)
+            {
+                throw new ArgumentNullException("CreateTarifCommand db parameter cannot be null");
+            }
+
             this.db = db;
+
+            if (factory == null)
+            {
+                throw new ArgumentNullException("CreateTarifCommand factory parameter cannot be null");
+            }
+
             this.factory = factory;
         }
 
