@@ -54,6 +54,8 @@
     <Compile Include="Commands\AddCommands\AddStoreEmployeeCommand_ConstructorShould.cs" />
     <Compile Include="Commands\AddCommands\AddFilmStaffCommand_ConstructorShould.cs" />
     <Compile Include="Commands\AddCommands\AddFilmQuantityCommand_ConstructorShould.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveFilmQuantityCommand_ConstructorShould.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveFilmQuantityCommand_ExecuteShould.cs" />
     <Compile Include="Common\CommandProcessor_ProcessCommandSould.cs" />
     <Compile Include="Common\CommandProcessor_ConstructorSould.cs" />
     <Compile Include="Core\Engine_ConstructorShould.cs" />
