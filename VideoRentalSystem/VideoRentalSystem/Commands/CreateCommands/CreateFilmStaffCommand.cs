@@ -16,7 +16,18 @@ namespace VideoRentalSystem.Commands.CreateCommands
 
         public CreateFilmStaffCommand(IDatabase db, IModelsFactory factory)
         {
+            if (db == null)
+            {
+                throw new ArgumentNullException("CreateFilmStaffCommand db parameter cannot be null");
+            }
+
             this.db = db;
+
+            if (factory == null)
+            {
+                throw new ArgumentNullException("CreateFilmStaffCommand factory parameter cannot be null");
+            }
+
             this.factory = factory;
         }
 
