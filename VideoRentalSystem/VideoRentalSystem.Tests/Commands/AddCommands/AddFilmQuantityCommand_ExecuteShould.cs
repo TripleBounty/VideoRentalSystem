@@ -2,10 +2,7 @@
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using VideoRentalSystem.Commands.AddCommands;
 using VideoRentalSystem.Data.Contracts;
 using VideoRentalSystem.Models;
@@ -140,12 +137,12 @@ namespace VideoRentalSystem.Tests.Commands.AddCommands
         {
             //Arrange
             var dbMock = new Mock<IDatabase>();
-            var storageMock = new Storage();
+            var storageMock = new Mock<Storage>();
 
-            storageMock.Quantity = initial;
+            storageMock.Object.Quantity = initial;
 
             var storageRepositoryMock = new Mock<IStorageRepository>();
-            storageRepositoryMock.Setup(s => s.SingleOrDefault(It.IsAny<Expression<Func<Storage, bool>>>())).Returns(storageMock);
+            storageRepositoryMock.Setup(s => s.SingleOrDefault(It.IsAny<Expression<Func<Storage, bool>>>())).Returns(storageMock.Object);
 
             dbMock.Setup(d => d.Storages).Returns(storageRepositoryMock.Object);
 
@@ -156,7 +153,7 @@ namespace VideoRentalSystem.Tests.Commands.AddCommands
             var result = sut.Execute(parameters);
 
             //Assert
-            Assert.AreEqual(expected, storageMock.Quantity);
+            Assert.AreEqual(expected, storageMock.Object.Quantity);
             StringAssert.Contains(expectedString, result);
         }
 

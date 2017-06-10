@@ -13,7 +13,7 @@ namespace VideoRentalSystem.Tests.Commands.AddCommands
         public void ThrowException_WhenInvalidParameterIsPassed()
         {
             //Arrange, Act & Assert
-            Assert.Throws<ArgumentNullException>(() => new AddFilmQuantityCommand(null));
+            Assert.Throws<ArgumentNullException>(() => new AddStoreEmployeeCommand(null));
         }
 
         [Test]
@@ -23,7 +23,7 @@ namespace VideoRentalSystem.Tests.Commands.AddCommands
             var dbMock = new Mock<IDatabase>();
 
             //Act & Assert
-            Assert.DoesNotThrow(() => new AddFilmQuantityCommand(dbMock.Object));
+            Assert.DoesNotThrow(() => new AddStoreEmployeeCommand(dbMock.Object));
         }
     }
 }
