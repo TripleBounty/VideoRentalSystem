@@ -3,14 +3,14 @@ using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using VideoRentalSystem.Commands.AddCommands;
+using VideoRentalSystem.Commands.RemoveCommands;
 using VideoRentalSystem.Data.Contracts;
 using VideoRentalSystem.Models;
 
 namespace VideoRentalSystem.Tests.Commands.AddCommands
 {
     [TestFixture]
-    public class AddStoreEmployeeCommand_ExecuteShould
+    public class RemoveStoreEmployeeCommand_ExecuteShould
     {
         [TestCase("1", "10", "invalid1", "invalid2")]
         [TestCase("1", "10", "invalid1")]
@@ -20,7 +20,7 @@ namespace VideoRentalSystem.Tests.Commands.AddCommands
         {
             //Arrange
             var dbMock = new Mock<IDatabase>();
-            var sut = new AddStoreEmployeeCommand(dbMock.Object);
+            var sut = new RemoveStoreEmployeeCommand(dbMock.Object);
             var expectedString = "Not valid number";
 
             //Act
@@ -37,7 +37,7 @@ namespace VideoRentalSystem.Tests.Commands.AddCommands
         {
             //Arrange
             var dbMock = new Mock<IDatabase>();
-            var sut = new AddStoreEmployeeCommand(dbMock.Object);
+            var sut = new RemoveStoreEmployeeCommand(dbMock.Object);
             var expectedString = "parameters are empty";
 
             //Act
@@ -54,7 +54,7 @@ namespace VideoRentalSystem.Tests.Commands.AddCommands
         {
             //Arrange
             var dbMock = new Mock<IDatabase>();
-            var sut = new AddStoreEmployeeCommand(dbMock.Object);
+            var sut = new RemoveStoreEmployeeCommand(dbMock.Object);
             var expectedString = "Not Valid Store Id";
 
             //Act
@@ -75,7 +75,7 @@ namespace VideoRentalSystem.Tests.Commands.AddCommands
 
             dbMock.Setup(d => d.Stores).Returns(storeRepositoryMock.Object);
 
-            var sut = new AddStoreEmployeeCommand(dbMock.Object);
+            var sut = new RemoveStoreEmployeeCommand(dbMock.Object);
             var expectedString = "such id doesn't exist";
 
             //Act
@@ -99,7 +99,7 @@ namespace VideoRentalSystem.Tests.Commands.AddCommands
 
             dbMock.Setup(d => d.Stores).Returns(storeRepositoryMock.Object);
 
-            var sut = new AddStoreEmployeeCommand(dbMock.Object);
+            var sut = new RemoveStoreEmployeeCommand(dbMock.Object);
             var expectedString = "Not Valid Employee Id";
 
             //Act
@@ -127,7 +127,7 @@ namespace VideoRentalSystem.Tests.Commands.AddCommands
 
             dbMock.Setup(d => d.Employees).Returns(employeefRepositoryMock.Object);
 
-            var sut = new AddStoreEmployeeCommand(dbMock.Object);
+            var sut = new RemoveStoreEmployeeCommand(dbMock.Object);
             var expectedString = "such id doesn't exist";
 
             //Act
@@ -138,17 +138,18 @@ namespace VideoRentalSystem.Tests.Commands.AddCommands
         }
 
         [Test]
-        public void ReturnAlreadyAssignedt_WhenStoreContainsTheEmployee()
+        public void ReturnNotAssignedToTheStore_WhenStoreNotContainsTheEmployee()
         {
             //Arrange
             var validParameters = new List<string>() { "1", "10" };
             var dbMock = new Mock<IDatabase>();
 
             var storeMock = new Mock<Store>();
-            var storeMockOld = new Mock<Store>();
+
+            storeMock.Setup(s => s.Employees.Contains(It.IsAny<Employee>())).Returns(false);
+
             var storeRepositoryMock = new Mock<IStoreRepository>();
-            storeRepositoryMock.SetupSequence(s => s.SingleOrDefault(It.IsAny<Expression<Func<Store, bool>>>())).Returns(storeMock.Object)
-                                                                                                                .Returns(storeMockOld.Object);
+            storeRepositoryMock.Setup(s => s.SingleOrDefault(It.IsAny<Expression<Func<Store, bool>>>())).Returns(storeMock.Object);
 
             dbMock.Setup(d => d.Stores).Returns(storeRepositoryMock.Object);
 
@@ -158,8 +159,8 @@ namespace VideoRentalSystem.Tests.Commands.AddCommands
 
             dbMock.Setup(d => d.Employees).Returns(employeefRepositoryMock.Object);
 
-            var sut = new AddStoreEmployeeCommand(dbMock.Object);
-            var expectedString = "already assigned";
+            var sut = new RemoveStoreEmployeeCommand(dbMock.Object);
+            var expectedString = "not assigned to the store";
 
             //Act
             var result = sut.Execute(validParameters);
@@ -169,18 +170,16 @@ namespace VideoRentalSystem.Tests.Commands.AddCommands
         }
 
         [Test]
-        public void AddTheEmployeeToTheFilmStaff_WhenStoreDoesNotContainsTheEmployee()
+        public void RemoveTheEmployeeToTheStore_WhenStoreContainsTheEmployee()
         {
             //Arrange
             var validParameters = new List<string>() { "1", "10" };
             var dbMock = new Mock<IDatabase>();
 
             var storeMock = new Mock<Store>();
-            storeMock.Setup(s => s.Employees).Returns(new List<Employee>());
-            var storeMockOld = new Mock<Store>();
+
             var storeRepositoryMock = new Mock<IStoreRepository>();
-            storeRepositoryMock.SetupSequence(s => s.SingleOrDefault(It.IsAny<Expression<Func<Store, bool>>>())).Returns(storeMock.Object)
-                                                                                                                .Returns((Store)null);
+            storeRepositoryMock.Setup(s => s.SingleOrDefault(It.IsAny<Expression<Func<Store, bool>>>())).Returns(storeMock.Object);
 
             dbMock.Setup(d => d.Stores).Returns(storeRepositoryMock.Object);
 
@@ -190,28 +189,28 @@ namespace VideoRentalSystem.Tests.Commands.AddCommands
 
             dbMock.Setup(d => d.Employees).Returns(employeefRepositoryMock.Object);
 
-            var sut = new AddStoreEmployeeCommand(dbMock.Object);
+            var employeeList = new List<Employee>() { employeeMock.Object };
+            storeMock.Setup(s => s.Employees).Returns(employeeList);
+
+            var sut = new RemoveStoreEmployeeCommand(dbMock.Object);
 
             //Act
-            sut.Execute(validParameters);
+            var result = sut.Execute(validParameters);
 
             //Assert
-            CollectionAssert.Contains(storeMock.Object.Employees, employeeMock.Object);
+            CollectionAssert.DoesNotContain(storeMock.Object.Employees, employeeMock.Object);
         }
 
         [Test]
-        public void ReturnEmployeeAdded_WhenStoreDoesNotContainsTheEmployee()
+        public void ReturnEmployeeRemoved_WhenStoreContainsTheEmployee()
         {
-            //Arrange
             var validParameters = new List<string>() { "1", "10" };
             var dbMock = new Mock<IDatabase>();
 
             var storeMock = new Mock<Store>();
-            storeMock.Setup(s => s.Employees).Returns(new List<Employee>());
-            var storeMockOld = new Mock<Store>();
+
             var storeRepositoryMock = new Mock<IStoreRepository>();
-            storeRepositoryMock.SetupSequence(s => s.SingleOrDefault(It.IsAny<Expression<Func<Store, bool>>>())).Returns(storeMock.Object)
-                                                                                                                .Returns((Store)null);
+            storeRepositoryMock.Setup(s => s.SingleOrDefault(It.IsAny<Expression<Func<Store, bool>>>())).Returns(storeMock.Object);
 
             dbMock.Setup(d => d.Stores).Returns(storeRepositoryMock.Object);
 
@@ -221,8 +220,11 @@ namespace VideoRentalSystem.Tests.Commands.AddCommands
 
             dbMock.Setup(d => d.Employees).Returns(employeefRepositoryMock.Object);
 
-            var sut = new AddStoreEmployeeCommand(dbMock.Object);
-            var expectedResult = "Employee added";
+            var employeeList = new List<Employee>() { employeeMock.Object };
+            storeMock.Setup(s => s.Employees).Returns(employeeList);
+
+            var sut = new RemoveStoreEmployeeCommand(dbMock.Object);
+            var expectedResult = "Employee removed";
 
             //Act
             var result = sut.Execute(validParameters);
@@ -232,18 +234,15 @@ namespace VideoRentalSystem.Tests.Commands.AddCommands
         }
 
         [Test]
-        public void CallDbComplete_WhenStoreDoesNotContainsTheEmployee()
+        public void CallDbComplete_WhenTheEmployeeIsRemoved()
         {
-            //Arrange
             var validParameters = new List<string>() { "1", "10" };
             var dbMock = new Mock<IDatabase>();
 
             var storeMock = new Mock<Store>();
-            storeMock.Setup(s => s.Employees).Returns(new List<Employee>());
-            var storeMockOld = new Mock<Store>();
+
             var storeRepositoryMock = new Mock<IStoreRepository>();
-            storeRepositoryMock.SetupSequence(s => s.SingleOrDefault(It.IsAny<Expression<Func<Store, bool>>>())).Returns(storeMock.Object)
-                                                                                                                .Returns((Store)null);
+            storeRepositoryMock.Setup(s => s.SingleOrDefault(It.IsAny<Expression<Func<Store, bool>>>())).Returns(storeMock.Object);
 
             dbMock.Setup(d => d.Stores).Returns(storeRepositoryMock.Object);
 
@@ -253,7 +252,10 @@ namespace VideoRentalSystem.Tests.Commands.AddCommands
 
             dbMock.Setup(d => d.Employees).Returns(employeefRepositoryMock.Object);
 
-            var sut = new AddStoreEmployeeCommand(dbMock.Object);
+            var employeeList = new List<Employee>() { employeeMock.Object };
+            storeMock.Setup(s => s.Employees).Returns(employeeList);
+
+            var sut = new RemoveStoreEmployeeCommand(dbMock.Object);
 
             //Act
             var result = sut.Execute(validParameters);

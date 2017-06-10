@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Data.Contracts;
-using VideoRentalSystem.Models.Factories;
 
 namespace VideoRentalSystem.Commands.RemoveCommands
 {
@@ -12,6 +12,11 @@ namespace VideoRentalSystem.Commands.RemoveCommands
 
         public RemoveStoreEmployeeCommand(IDatabase db)
         {
+            if (db == null)
+            {
+                throw new ArgumentNullException("db parameter in RemoveStoreEmployee Command cannot be null");
+            }
+
             this.db = db;
         }
 
