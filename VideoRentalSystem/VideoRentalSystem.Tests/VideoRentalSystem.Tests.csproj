@@ -56,6 +56,8 @@
     <Compile Include="Commands\AddCommands\AddStoreEmployeeCommand_ConstructorShould.cs" />
     <Compile Include="Commands\AddCommands\AddFilmStaffCommand_ConstructorShould.cs" />
     <Compile Include="Commands\AddCommands\AddFilmQuantityCommand_ConstructorShould.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveTarifCommand_ConstructorShould.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveTarifCommand_ExecuteShould.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveStoreEmployeeCommand_ConstructorShould.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveStoreEmployeeCommand_ExecuteShould.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveFilmQuantityCommand_ConstructorShould.cs" />
