@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\AddCommands\AddFilmQuantityCommand_ExecuteShould.cs" />
+    <Compile Include="Commands\AddCommands\AddFilmStaffCommand_ExecuteShould.cs" />
     <Compile Include="Commands\AddCommands\AddStoreEmployeeCommand_ConstructorShould.cs" />
     <Compile Include="Commands\AddCommands\AddFilmStaffCommand_ConstructorShould.cs" />
     <Compile Include="Commands\AddCommands\AddFilmQuantityCommand_ConstructorShould.cs" />
