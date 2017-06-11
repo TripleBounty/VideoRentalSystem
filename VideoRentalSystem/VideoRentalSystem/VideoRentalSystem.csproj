@@ -342,6 +342,9 @@
     <None Include="Loaders\Customers.json" />
     <None Include="Loaders\Employees.json" />
     <None Include="Loaders\Reviews.json" />
+    <None Include="Loaders\xml\countries.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Settings.StyleCop" />
   </ItemGroup>
