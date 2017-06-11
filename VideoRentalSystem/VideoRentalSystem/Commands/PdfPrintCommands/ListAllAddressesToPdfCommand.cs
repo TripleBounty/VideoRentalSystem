@@ -11,6 +11,7 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
     public class ListAllAddressesToPdfCommand : ICommand
     {
         private readonly string fileName = "\\AddressesList.pdf";
+        private readonly string imgPath = @"..\..\PaperAirplane.jpg";
         private readonly string title = "Addresses Report";
         private readonly string header = "Addresses Report";
         private readonly string author = "Addresses Bounty";
@@ -108,7 +109,7 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
 
             // Add a logo
             string appPath = System.IO.Directory.GetCurrentDirectory();
-            iTextSharp.text.Image logoImage = iTextSharp.text.Image.GetInstance(appPath + "\\PaperAirplane.jpg");
+            iTextSharp.text.Image logoImage = iTextSharp.text.Image.GetInstance(appPath + imgPath);
             logoImage.Alignment = iTextSharp.text.Element.ALIGN_CENTER;
             doc.Add(logoImage);
             logoImage = null;

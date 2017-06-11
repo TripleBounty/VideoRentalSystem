@@ -9,7 +9,8 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
 {
     public class ListAllStoresToPdfCommand : ICommand
     {
-        private readonly string fileName = "\\StoresList.pdf";
+        private readonly string fileName = @"..\..\..\StoresList.pdf";
+        private readonly string imgPath = @"..\..\PaperAirplane.jpg";
         private readonly string title = "Stores Report";
         private readonly string header = "Stores Report";
         private readonly string target = "Stores";
@@ -107,7 +108,7 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
 
             // Add a logo
             string appPath = System.IO.Directory.GetCurrentDirectory();
-            iTextSharp.text.Image logoImage = iTextSharp.text.Image.GetInstance(appPath + "\\PaperAirplane.jpg");
+            iTextSharp.text.Image logoImage = iTextSharp.text.Image.GetInstance(appPath + imgPath);
             logoImage.Alignment = iTextSharp.text.Element.ALIGN_CENTER;
             doc.Add(logoImage);
             logoImage = null;

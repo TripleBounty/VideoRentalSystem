@@ -10,7 +10,8 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
 {
     public class ListAllEmployeesToPdfCommand : ICommand
     {
-        private readonly string fileName = "\\EmployeesList.pdf";
+        private readonly string fileName = @"..\..\..\EmployeesList.pdf";
+        private readonly string imgPath = @"..\..\PaperAirplane.jpg";
         private readonly string title = "Employees Report";
         private readonly string header = "employees Report";
         private readonly string target = "employees";
@@ -108,7 +109,7 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
 
             // Add a logo
             string appPath = System.IO.Directory.GetCurrentDirectory();
-            iTextSharp.text.Image logoImage = iTextSharp.text.Image.GetInstance(appPath + "\\PaperAirplane.jpg");
+            iTextSharp.text.Image logoImage = iTextSharp.text.Image.GetInstance(appPath + imgPath);
             logoImage.Alignment = iTextSharp.text.Element.ALIGN_CENTER;
             doc.Add(logoImage);
             logoImage = null;
@@ -138,9 +139,7 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
             contentsAnchor.Name = "research";
 
             // Add the header anchor to the page
-            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, _largeFont, contentsAnchor);
-
-            var employees = this.db.Employees.GetAll();
+            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, _largeFont, contentsAnchor);           
 
             //string employeeList = string.Join("\n", employees);
 
@@ -149,7 +148,9 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
             list.SetListSymbol("\u2022");   // Set the bullet symbol (without this a hypen starts each list item)
             list.IndentationLeft = 20f;     // Indent the list 20 points
 
-            foreach(var emp in employees)
+            var employees = this.db.Employees.GetAll();
+
+            foreach (var emp in employees)
             {
                 list.Add(new ListItem(emp.ToString(), _standardFont));
             }
