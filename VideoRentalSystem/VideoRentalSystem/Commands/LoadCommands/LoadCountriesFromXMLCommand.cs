@@ -25,6 +25,11 @@ namespace VideoRentalSystem.Commands.CreateCommands
 
         public string Execute(IList<string> parameters)
         {
+            if (parameters.Count != 1)
+            {
+                return "Not valid number of parameters";
+            }
+
             string path = "../../Loaders/xml/";
             string fileName = parameters[0];
 
@@ -41,27 +46,39 @@ namespace VideoRentalSystem.Commands.CreateCommands
             var countryList = new List<Country>();
             Country country;
 
-            using (XmlReader reader = XmlReader.Create(fileLoc))
+            XmlReaderSettings xmlSettings = new XmlReaderSettings();
+            xmlSettings.Schemas = new System.Xml.Schema.XmlSchemaSet();
+            xmlSettings.Schemas.Add("", "../../Loaders/xml/countries.xsd");
+            xmlSettings.ValidationType = ValidationType.Schema;
+
+            using (XmlReader reader = XmlReader.Create(fileLoc, xmlSettings))
             {
-                while (reader.Read())
+                try
                 {
-                    if (reader.NodeType == XmlNodeType.Element && (reader.Name == "country"))
+                    while (reader.Read())
                     {
-                        code = reader.GetAttribute("code");
-                        if (code != null)
+                        if (reader.NodeType == XmlNodeType.Element && (reader.Name == "country"))
                         {
-                            countryName = reader.ReadElementString();
-                            try
+                            code = reader.GetAttribute("code");
+                            if (code != null)
                             {
-                                country = this.factory.CreateCountry(countryName, code);
-                                countryList.Add(country);
-                            }
-                            catch (Exception)
-                            {
-                                this.writer.WriteLine($"Country with code: {code} cannot be created");
+                                countryName = reader.ReadElementString();
+                                try
+                                {
+                                    country = this.factory.CreateCountry(countryName, code);
+                                    countryList.Add(country);
+                                }
+                                catch (Exception)
+                                {
+                                    this.writer.WriteLine($"Country with code: {code} cannot be created");
+                                }
                             }
                         }
                     }
+                }
+                catch (Exception)
+                {
+                    return "XML is not in correct format";
                 }
             }
 
