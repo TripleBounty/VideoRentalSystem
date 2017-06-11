@@ -29,7 +29,7 @@ namespace VideoRentalSystem.Commands.RemoveCommands
             }
 
             filmRating.IsDeleted = true;
-            db.Complete();
+            this.db.Complete();
 
             return "Film rating removed";
         }

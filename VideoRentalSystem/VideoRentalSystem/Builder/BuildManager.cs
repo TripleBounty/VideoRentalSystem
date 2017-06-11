@@ -44,6 +44,7 @@ namespace VideoRentalSystem.Builder
             this.Bind<ICommand>().To<ListAllCountriesCommand>().Named("ListAllCountries");
             this.Bind<ICommand>().To<ListAllCountriesToPdfCommand>().Named("ListAllCountriesToPdf");
             this.Bind<ICommand>().To<UpdateCountryCommand>().Named("UpdateCountry");
+            this.Bind<ICommand>().To<LoadCountriesFromXMLCommand>().Named("LoadCountriesFromXML");
 
             this.Bind<ICommand>().To<CreateTownCommand>().Named("CreateTown");
             this.Bind<ICommand>().To<TownDetailsCommand>().Named("TownDetails");
@@ -92,17 +93,17 @@ namespace VideoRentalSystem.Builder
             this.Bind<ICommand>().To<LoadFilmGenresFromJSONCommand>().Named("LoadFilmGenresFromJSON");
             this.Bind<ICommand>().To<ListAllGenresCommand>().Named("ListAllFilmGenres");
 
-            //this.Bind<ICommand>().To<AddAwardFilmCommand>().Named("AddAwardToFilm");
+            ////this.Bind<ICommand>().To<AddAwardFilmCommand>().Named("AddAwardToFilm");
             this.Bind<ICommand>().To<AddGenreFilmCommand>().Named("AddGenreToFilm");
             this.Bind<ICommand>().To<AddRatingFilmCommand>().Named("AddRatingToFilm");
-            //this.Bind<ICommand>().To<UpdateAwardCommand>().Named("UpdateAward");
+            ////this.Bind<ICommand>().To<UpdateAwardCommand>().Named("UpdateAward");
             this.Bind<ICommand>().To<UpdateFilmCommand>().Named("UpdateFilm");
             this.Bind<ICommand>().To<UpdateFilmGenreCommand>().Named("UpdateGenre");
             this.Bind<ICommand>().To<UpdateFilmRatingCommand>().Named("UpdateRating");
-            //this.Bind<ICommand>().To<RemoveAwardCommand>().Named("RemoveAward");
+            ////this.Bind<ICommand>().To<RemoveAwardCommand>().Named("RemoveAward");
             this.Bind<ICommand>().To<RemoveFilmRatingCommand>().Named("RemoveRating");
             this.Bind<ICommand>().To<RemoveFilmGenreCommand>().Named("RemoveGenre");
-            //this.Bind<ICommand>().To<RemoveFilmCommand>().Named("RemoveFilm");
+            ////this.Bind<ICommand>().To<RemoveFilmCommand>().Named("RemoveFilm");
 
             this.Bind<ICommand>().To<CreateStoreCommand>().Named("CreateStore");
             this.Bind<ICommand>().To<ListAllStoresCommand>().Named("ListAllStores");
@@ -133,7 +134,7 @@ namespace VideoRentalSystem.Builder
             this.Bind<ICommand>().To<CreateLoanCommand>().Named("CreateLoan");
             this.Bind<ICommand>().To<EndLoanCommand>().Named("EndLoan");
             this.Bind<ICommand>().To<ListAllLoansCommand>().Named("ListAllLoans");
-            this.Bind<ICommand>().To<ListAllLoansCommand>().Named("ListAllLoansToPdf");
+            this.Bind<ICommand>().To<ListAllLoansToPdfCommand>().Named("ListAllLoansToPdf");
 
             var engine = this.Bind<IEngine>().To<Engine>().InSingletonScope();
         }

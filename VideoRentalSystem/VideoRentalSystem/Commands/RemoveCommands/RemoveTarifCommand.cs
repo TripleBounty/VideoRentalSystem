@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Data.Postgre.Contracts;
@@ -11,6 +12,11 @@ namespace VideoRentalSystem.Commands.RemoveCommands
 
         public RemoveTarifCommand(IDatabasePostgre db)
         {
+            if (db == null)
+            {
+                throw new ArgumentNullException("db parameter in RemoveTarifCommand Command cannot be null");
+            }
+
             this.db = db;
         }
 

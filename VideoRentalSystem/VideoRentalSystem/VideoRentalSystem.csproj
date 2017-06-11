@@ -147,6 +147,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\CreateCommands\CreateOrganisationCommand.cs" />
+    <Compile Include="Commands\LoadCommands\LoadCountriesFromXMLCommand.cs" />
     <Compile Include="Data\Repository\AwardRepository.cs" />
     <Compile Include="Data\Repository\OrganisationRepository.cs" />
     <Compile Include="Data\SqLite\Contracts\IAwardRepository.cs" />
@@ -158,6 +159,14 @@
       <DependentUpon>201706081631406_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\FilmAwardSqLite\sqLiteConfiguration.cs" />
+    <Compile Include="Migrations\VideoRentalContext\201706082000516_init.cs" />
+    <Compile Include="Migrations\VideoRentalContext\201706082000516_init.Designer.cs">
+      <DependentUpon>201706082000516_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\VideoRentalContext\201706110859574_increase country name.cs" />
+    <Compile Include="Migrations\VideoRentalContext\201706110859574_increase country name.Designer.cs">
+      <DependentUpon>201706110859574_increase country name.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Award.cs" />
     <Compile Include="Builder\ServiceLocator.cs" />
     <Compile Include="Commands\AddCommands\AddAwardFilmCommand.cs" />
@@ -293,30 +302,6 @@
     <Compile Include="Data\Postgre\VideoRentalLoanContext.cs" />
     <Compile Include="Data\VideoRentalContext.cs" />
     <Compile Include="Data\SqLite\VideoRentalFilmAwardsContext.cs" />
-    <Compile Include="Migrations\VideoRentalContext\201706052149449_InitialDatabaseCreation.cs" />
-    <Compile Include="Migrations\VideoRentalContext\201706052149449_InitialDatabaseCreation.Designer.cs">
-      <DependentUpon>201706052149449_InitialDatabaseCreation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\VideoRentalContext\201706060830057_RatingGenreModels.cs" />
-    <Compile Include="Migrations\VideoRentalContext\201706060830057_RatingGenreModels.Designer.cs">
-      <DependentUpon>201706060830057_RatingGenreModels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\VideoRentalContext\201706072011133_Customers23.cs" />
-    <Compile Include="Migrations\VideoRentalContext\201706072011133_Customers23.Designer.cs">
-      <DependentUpon>201706072011133_Customers23.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\VideoRentalContext\201706081817478_Dimitur.cs" />
-    <Compile Include="Migrations\VideoRentalContext\201706081817478_Dimitur.Designer.cs">
-      <DependentUpon>201706081817478_Dimitur.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\VideoRentalContext\201706061022518_mergin.cs" />
-    <Compile Include="Migrations\VideoRentalContext\201706061022518_mergin.Designer.cs">
-      <DependentUpon>201706061022518_mergin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\VideoRentalContext\201706080820242_IsDeleted Filed added to genre,age rating.cs" />
-    <Compile Include="Migrations\VideoRentalContext\201706080820242_IsDeleted Filed added to genre,age rating.Designer.cs">
-      <DependentUpon>201706080820242_IsDeleted Filed added to genre,age rating.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\VideoRentalContext\Configuration.cs" />
     <Compile Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.cs" />
     <Compile Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.Designer.cs">
@@ -357,6 +342,9 @@
     <None Include="Loaders\Customers.json" />
     <None Include="Loaders\Employees.json" />
     <None Include="Loaders\Reviews.json" />
+    <None Include="Loaders\xml\countries.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Settings.StyleCop" />
   </ItemGroup>
@@ -364,26 +352,11 @@
     <EmbeddedResource Include="Migrations\FilmAwardSqLite\201706081631406_init.resx">
       <DependentUpon>201706081631406_init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\VideoRentalContext\201706052149449_InitialDatabaseCreation.resx">
-      <DependentUpon>201706052149449_InitialDatabaseCreation.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\VideoRentalContext\201706082000516_init.resx">
+      <DependentUpon>201706082000516_init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\VideoRentalContext\201706060830057_RatingGenreModels.resx">
-      <DependentUpon>201706060830057_RatingGenreModels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\VideoRentalContext\201706061022518_mergin.resx">
-      <DependentUpon>201706061022518_mergin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\VideoRentalContext\201706080820242_IsDeleted Filed added to genre,age rating.resx">
-      <DependentUpon>201706080820242_IsDeleted Filed added to genre,age rating.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\VideoRentalContext\201706071834088_customer.resx">
-      <DependentUpon>201706071834088_customer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\VideoRentalContext\201706072011133_Customers23.resx">
-      <DependentUpon>201706072011133_Customers23.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\VideoRentalContext\201706081817478_Dimitur.resx">
-      <DependentUpon>201706081817478_Dimitur.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\VideoRentalContext\201706110859574_increase country name.resx">
+      <DependentUpon>201706110859574_increase country name.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\VideoRentalLoanContext\201706052150102_InitialDatabaseCreation.resx">
       <DependentUpon>201706052150102_InitialDatabaseCreation.cs</DependentUpon>
@@ -392,7 +365,9 @@
       <DependentUpon>201706061945407_add isDeleted property.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Loaders\xml\countries.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

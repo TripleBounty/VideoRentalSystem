@@ -29,7 +29,7 @@ namespace VideoRentalSystem.Commands.RemoveCommands
             }
 
             film.IsDeleted = true;
-            db.Complete();
+            this.db.Complete();
 
             return "Film removed";
         }

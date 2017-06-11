@@ -17,7 +17,6 @@ namespace VideoRentalSystem.Models
 
             this.Categories = new HashSet<FilmRating>();
             this.Genres = new HashSet<FilmGenre>();
-            //this.Awards = new HashSet<Award>();
             this.FilmStaffs = new HashSet<FilmStaff>();
             this.Customers = new HashSet<Customer>();
         }
@@ -26,7 +25,6 @@ namespace VideoRentalSystem.Models
         {
             this.Categories = new HashSet<FilmRating>();
             this.Genres = new HashSet<FilmGenre>();
-            //this.Awards = new HashSet<Award>();
             this.FilmStaffs = new HashSet<FilmStaff>();
             this.Customers = new HashSet<Customer>();
         }
@@ -44,8 +42,6 @@ namespace VideoRentalSystem.Models
         public virtual ICollection<FilmRating> Categories { get; set; }
 
         public virtual ICollection<FilmGenre> Genres { get; set; }
-
-        //public virtual ICollection<Award> Awards { get; set; }
 
         public virtual ICollection<Customer> Customers { get; set; }
 
@@ -67,8 +63,6 @@ namespace VideoRentalSystem.Models
             sb.AppendLine(string.Join(",", this.Categories));
             sb.Append("Genres: ");
             sb.AppendLine(string.Join(",", this.Genres));
-            //sb.Append("Awards: ");
-            //sb.AppendLine(string.Join(",", this.Awards.ToString()));
             sb.Append("Directors/Writers/Actors: ");
             sb.AppendLine(string.Join(",", this.FilmStaffs));
 

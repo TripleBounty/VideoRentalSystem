@@ -7,13 +7,13 @@ namespace VideoRentalSystem.Migrations.VideoRentalContext
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class RatingGenreModels : IMigrationMetadata
+    public sealed partial class init : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(RatingGenreModels));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(init));
         
         string IMigrationMetadata.Id
         {
-            get { return "201706060830057_RatingGenreModels"; }
+            get { return "201706082000516_init"; }
         }
         
         string IMigrationMetadata.Source

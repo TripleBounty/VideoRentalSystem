@@ -28,7 +28,7 @@ namespace VideoRentalSystem.Commands.RemoveCommands
             }
 
             filmGenre.IsDeleted = true;
-            db.Complete();
+            this.db.Complete();
 
             return "Film genre removed";
         }

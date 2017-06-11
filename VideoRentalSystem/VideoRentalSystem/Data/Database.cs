@@ -1,5 +1,4 @@
-﻿using System;
-using VideoRentalSystem.Data.Contracts;
+﻿using VideoRentalSystem.Data.Contracts;
 using VideoRentalSystem.Data.Repository;
 using VideoRentalSystem.Data.Repository.Contracts;
 
@@ -24,7 +23,6 @@ namespace VideoRentalSystem.Data
             this.Stores = new StoreRepository(context);
             this.Storages = new StorageRepository(context);
             this.FilmStaffs = new FilmStaffRepository(context);
-            //this.Award = new AwardRepository(context);
         }
 
         public ICountryRepository Countries { get; private set; }
@@ -50,8 +48,6 @@ namespace VideoRentalSystem.Data
         public IStorageRepository Storages { get; private set; }
 
         public IFilmStaffRepository FilmStaffs { get; private set; }
-
-        //public IAwardRepository Award { get; private set; }
 
         public int Complete()
         {

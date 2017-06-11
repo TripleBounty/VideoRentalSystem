@@ -50,10 +50,42 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\AddCommands\AddFilmQuantityCommand_ExecuteShould.cs" />
+    <Compile Include="Commands\AddCommands\AddStoreEmployeeCommand_ExecuteShould.cs" />
+    <Compile Include="Commands\AddCommands\AddFilmStaffCommand_ExecuteShould.cs" />
+    <Compile Include="Commands\AddCommands\AddStoreEmployeeCommand_ConstructorShould.cs" />
+    <Compile Include="Commands\AddCommands\AddFilmStaffCommand_ConstructorShould.cs" />
+    <Compile Include="Commands\AddCommands\AddFilmQuantityCommand_ConstructorShould.cs" />
+    <Compile Include="Commands\CreateCommands\CreateTarifCommand_ConstructorShould.cs" />
+    <Compile Include="Commands\CreateCommands\CreateTarifCommand_ExecuteShould.cs" />
+    <Compile Include="Commands\CreateCommands\CreateTownCommand_ConstructorShould.cs" />
+    <Compile Include="Commands\CreateCommands\CreateTownCommand_ExecuteShould.cs" />
+    <Compile Include="Commands\CreateCommands\CreateFilmStaffCommand_ConstructorShould.cs" />
+    <Compile Include="Commands\CreateCommands\CreateCountryCommand_ConstructorShould.cs" />
+    <Compile Include="Commands\CreateCommands\CreateAddressCommand_ConstructorShould.cs" />
+    <Compile Include="Commands\CreateCommands\CreateCountryCommand_ExecuteShould.cs" />
+    <Compile Include="Commands\CreateCommands\CreateAddressCommand_ExecuteShould.cs" />
+    <Compile Include="Commands\CreateCommands\CreateFilmStaffCommand_ExecuteShould.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveTarifCommand_ConstructorShould.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveTarifCommand_ExecuteShould.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveStoreEmployeeCommand_ConstructorShould.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveStoreEmployeeCommand_ExecuteShould.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveFilmQuantityCommand_ConstructorShould.cs" />
+    <Compile Include="Commands\RemoveCommands\RemoveFilmQuantityCommand_ExecuteShould.cs" />
+    <Compile Include="Common\CommandProcessor_ProcessCommandSould.cs" />
+    <Compile Include="Common\CommandProcessor_ConstructorSould.cs" />
+    <Compile Include="Core\Engine_ConstructorShould.cs" />
+    <Compile Include="Core\Engine_StartShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VideoRentalSystem\VideoRentalSystem.csproj">
+      <Project>{7981FEE9-6A0B-4725-89A5-1DF24D13F4C8}</Project>
+      <Name>VideoRentalSystem</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
