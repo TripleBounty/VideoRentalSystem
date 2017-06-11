@@ -134,7 +134,7 @@ namespace VideoRentalSystem.Builder
             this.Bind<ICommand>().To<CreateLoanCommand>().Named("CreateLoan");
             this.Bind<ICommand>().To<EndLoanCommand>().Named("EndLoan");
             this.Bind<ICommand>().To<ListAllLoansCommand>().Named("ListAllLoans");
-            this.Bind<ICommand>().To<ListAllLoansCommand>().Named("ListAllLoansToPdf");
+            this.Bind<ICommand>().To<ListAllLoansToPdfCommand>().Named("ListAllLoansToPdf");
 
             var engine = this.Bind<IEngine>().To<Engine>().InSingletonScope();
         }
