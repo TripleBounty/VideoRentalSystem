@@ -10,7 +10,7 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
     public class ListAllCountriesToPdfCommand : ICommand
     {
         private readonly string fileName = @"..\..\..\CountriesList.pdf";
-        private readonly string imgPath = @"..\..\PaperAirplane.jpg";
+        private readonly string imgPath = @"..\..\..\PaperAirplane.jpg";
         private readonly string title = "Countries Report";
         private readonly string header = "Countries Report";
         private readonly string author = "Countries Bounty";
@@ -89,7 +89,7 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
                 doc = null;
             }
 
-            return $"Pdf - {fileName} - with the list of all {target} was created in the BIN/Debug folder";
+            return $"Pdf - {fileName} - with the list of all {target} was created in the project folder";
         }
 
         /// <summary>

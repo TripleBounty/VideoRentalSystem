@@ -11,7 +11,7 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
     public class ListAllEmployeesToPdfCommand : ICommand
     {
         private readonly string fileName = @"..\..\..\EmployeesList.pdf";
-        private readonly string imgPath = @"..\..\PaperAirplane.jpg";
+        private readonly string imgPath = @"..\..\..\PaperAirplane.jpg";
         private readonly string title = "Employees Report";
         private readonly string header = "employees Report";
         private readonly string target = "employees";
@@ -90,7 +90,7 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
                 doc = null;
             }
 
-            return $"Pdf - {fileName} - with the list of all {target} was created in the BIN/Debug folder";
+            return $"Pdf - {fileName} - with the list of all {target} was created in the project folder";
         }
 
         /// <summary>

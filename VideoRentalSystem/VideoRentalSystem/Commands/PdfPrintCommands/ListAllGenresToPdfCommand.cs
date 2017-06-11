@@ -11,7 +11,7 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
     public class ListAllGenresToPdfCommand : ICommand
     {
         private readonly string fileName = @"..\..\..\GenresList.pdf";
-        private readonly string imgPath = @"..\..\PaperAirplane.jpg";
+        private readonly string imgPath = @"..\..\..\PaperAirplane.jpg";
         private readonly string title = "Genres Report";
         private readonly string header = "Genres Report";
         private readonly string target = "Genres";
@@ -90,7 +90,7 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
                 doc = null;
             }
 
-            return $"Pdf - {fileName} - with the list of all {target} was created in the BIN/Debug folder";
+            return $"Pdf - {fileName} - with the list of all {target} was created in the project folder";
         }
 
         /// <summary>

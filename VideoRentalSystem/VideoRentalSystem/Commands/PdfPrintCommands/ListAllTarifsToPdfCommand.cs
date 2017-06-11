@@ -11,7 +11,7 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
     public class ListAllTarifsToPdfCommand : ICommand
     {
         private readonly string fileName = @"..\..\..\TarifsList.pdf";
-        private readonly string imgPath = @"..\..\PaperAirplane.jpg";
+        private readonly string imgPath = @"..\..\..\PaperAirplane.jpg";
         private readonly string title = "Tarifs Report";
         private readonly string header = "Tarifs Report";
         private readonly string author = "Tarifs Bounty";
@@ -90,7 +90,7 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
                 doc = null;
             }
 
-            return $"Pdf - {fileName} - with the list of all {target} was created in the BIN/Debug folder";
+            return $"Pdf - {fileName} - with the list of all {target} was created in the project folder";
         }
 
         /// <summary>
