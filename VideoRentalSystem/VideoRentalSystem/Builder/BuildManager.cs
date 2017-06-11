@@ -44,6 +44,7 @@ namespace VideoRentalSystem.Builder
             this.Bind<ICommand>().To<ListAllCountriesCommand>().Named("ListAllCountries");
             this.Bind<ICommand>().To<ListAllCountriesToPdfCommand>().Named("ListAllCountriesToPdf");
             this.Bind<ICommand>().To<UpdateCountryCommand>().Named("UpdateCountry");
+            this.Bind<ICommand>().To<LoadCountriesFromXMLCommand>().Named("LoadCountriesFromXML");
 
             this.Bind<ICommand>().To<CreateTownCommand>().Named("CreateTown");
             this.Bind<ICommand>().To<TownDetailsCommand>().Named("TownDetails");

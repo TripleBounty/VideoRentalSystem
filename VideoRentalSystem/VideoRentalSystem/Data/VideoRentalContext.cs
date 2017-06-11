@@ -96,7 +96,7 @@ namespace VideoRentalSystem.Data
         {
             modelBuilder.Entity<Country>()
                 .Property(c => c.Name)
-               .HasMaxLength(40)
+               .HasMaxLength(150)
                .IsRequired()
                .HasColumnAnnotation(
                     IndexAnnotation.AnnotationName,
