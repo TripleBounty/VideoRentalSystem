@@ -38,6 +38,8 @@ namespace VideoRentalSystem.Builder
             var commandFactory = this.Bind<ICommandsFactory>().To<CommandsFactory>().InSingletonScope();
             var commandProcesor = this.Bind<IProcessor>().To<CommandProcessor>().InSingletonScope();
 
+            this.Bind<IGetFilmScore>().To<GetFilmScore>();
+
             /////Bind commands
             this.Bind<ICommand>().To<CreateCountryCommand>().Named("CreateCountry");
             this.Bind<ICommand>().To<CountryDetailsCommand>().Named("CountryDetails");

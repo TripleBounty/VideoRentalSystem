@@ -156,6 +156,8 @@
     <Compile Include="Commands\LoadCommands\LoadCountriesFromXMLCommand.cs" />
     <Compile Include="Commands\PdfPrintCommands\CreatePDF.cs" />
     <Compile Include="Commands\RemoveCommands\RemoveOrganisationCommand.cs" />
+    <Compile Include="Common\Contracts\IGetFilmScore.cs" />
+    <Compile Include="Common\GetFilmScore.cs" />
     <Compile Include="Data\Repository\AwardRepository.cs" />
     <Compile Include="Data\Repository\OrganisationRepository.cs" />
     <Compile Include="Data\SqLite\Contracts\IAwardRepository.cs" />

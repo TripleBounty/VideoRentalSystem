@@ -28,6 +28,14 @@ namespace VideoRentalSystem.Commands.CreateCommands
             }
 
             var name = parameters[0];
+
+            var search = this.lite.Awards.SingleOrDefault(x => x.Name == name);
+
+            if (search != null)
+            {
+                return "award allready exists";
+            }
+
             var year = parameters[1];
             var orgName = parameters[2];
 
