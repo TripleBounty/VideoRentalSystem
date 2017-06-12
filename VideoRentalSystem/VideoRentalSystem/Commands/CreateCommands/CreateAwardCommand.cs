@@ -9,12 +9,14 @@ namespace VideoRentalSystem.Commands.CreateCommands
 {
     public class CreateAwardCommand : ICommand
     {
-        private readonly IDatabaseLite db;
+        private readonly IDatabaseLite lite;
+        //private readonly IDatabase db;
         private readonly IModelsFactory factory;
 
-        public CreateAwardCommand(IDatabaseLite db, IModelsFactory factory)
+        public CreateAwardCommand(IDatabaseLite lite, IModelsFactory factory)
         {
-            this.db = db;
+            this.lite = lite;
+            //this.db = db;
             this.factory = factory;
         }
 
@@ -29,7 +31,7 @@ namespace VideoRentalSystem.Commands.CreateCommands
             var year = parameters[1];
             var orgName = parameters[2];
 
-            var organisation = this.db.Organisations.SingleOrDefault(x => x.Name == orgName);
+            var organisation = this.lite.Organisations.SingleOrDefault(x => x.Name == orgName);
 
             if (organisation == null)
             {
@@ -39,8 +41,8 @@ namespace VideoRentalSystem.Commands.CreateCommands
             var award = this.factory.CreateAward(name, year, organisation.Id);
             award.Organisation = organisation;
 
-            this.db.Awards.Add(award);
-            this.db.Complete();
+            this.lite.Awards.Add(award);
+            this.lite.Complete();
 
             return "Award created";
         }

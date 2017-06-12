@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.Entity;
 using VideoRentalSystem.Migrations.FilmAwardSqLite;
+using VideoRentalSystem.Models;
 
 namespace VideoRentalSystem.Data.SqLite
 {

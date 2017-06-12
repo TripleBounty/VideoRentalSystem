@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace VideoRentalSystem
+namespace VideoRentalSystem.Models
 {
     public class Award
     {

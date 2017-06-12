@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace VideoRentalSystem
+namespace VideoRentalSystem.Models
 {
     public class Organisation
     {

@@ -1,40 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
 using VideoRentalSystem.Commands.Contracts;
-using VideoRentalSystem.Data.Contracts;
-using VideoRentalSystem.Models.Factories;
+using VideoRentalSystem.Data.SqLite.Contracts;
 
 namespace VideoRentalSystem.Commands.RemoveCommands
 {
     public class RemoveAwardCommand : ICommand
     {
-        private IDatabase db;
-        private IModelsFactory factory;
+        private readonly IDatabaseLite db;
 
-        public RemoveAwardCommand(IDatabase data, IModelsFactory factory)
+        public RemoveAwardCommand(IDatabaseLite data)
         {
             this.db = data;
-            this.factory = factory;
         }
 
         public string Execute(IList<string> parameters)
         {
-            ////var awardName = parameters[0];
-            ////var award = this.db.Award.SingleOrDefault(x => x.Name == awardName);
-            
-            ////if (award == null)
-            ////{
-            ////    return "Award not found";
-            ////}
-            
-            ////var id = award.Id;
-            ////award.IsDeleted = true;
-            
-            ////this.db.Complete();
-            //
-            ////return "Award removed";
+            var awardName = parameters[0];
+            var award = this.db.Awards.SingleOrDefault(x => x.Name == awardName);
 
-            throw new NotImplementedException();
+            if (award == null)
+            {
+                return "Award not found";
+            }
+
+            award.IsDeleted = true;
+            this.db.Complete();
+
+            return "Award removed";
         }
     }
 }

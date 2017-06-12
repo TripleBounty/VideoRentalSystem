@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using VideoRentalSystem.Commands.Contracts;
 using VideoRentalSystem.Data.Contracts;
-using VideoRentalSystem.Models.Factories;
 
 namespace VideoRentalSystem.Commands.RemoveCommands
 {
     public class RemoveFilmCommand : ICommand
     {
-        private IDatabase db;
-        private IModelsFactory factory;
-
-        public RemoveFilmCommand(IDatabase db, IModelsFactory factory)
+        private readonly IDatabase db;
+        
+        public RemoveFilmCommand(IDatabase db)
         {
             this.db = db;
-            this.factory = factory;
         }
 
         public string Execute(IList<string> parameters)
