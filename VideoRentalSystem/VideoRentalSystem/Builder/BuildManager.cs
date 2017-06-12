@@ -70,6 +70,8 @@ namespace VideoRentalSystem.Builder
             this.Bind<ICommand>().To<UpdateManagerCommand>().Named("UpdateManager");
 
             this.Bind<ICommand>().To<CreateCustomerCommand>().Named("CreateCustomer");
+            this.Bind<ICommand>().To<AddFilmToCustomerCommand>().Named("AddFilmToCustomer");
+            this.Bind<ICommand>().To<AddGenreToCustomerCommand>().Named("AddGenreToCustomer");
             this.Bind<ICommand>().To<ListAllCustomersCommand>().Named("ListAllCustomers");
             this.Bind<ICommand>().To<ListAllCustomersToPdfCommand>().Named("ListAllCustomersToPdf");
             this.Bind<ICommand>().To<LoadCustomerFromJSONCommand>().Named("LoadCustomersFromJSON");

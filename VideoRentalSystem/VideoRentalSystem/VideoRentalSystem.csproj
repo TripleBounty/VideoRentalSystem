@@ -146,8 +146,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\AddCommands\AddFilmToCustomerCommand.cs" />
+    <Compile Include="Commands\AddCommands\AddGenreToCustomerCommand.cs" />
     <Compile Include="Commands\CreateCommands\CreateOrganisationCommand.cs" />
     <Compile Include="Commands\LoadCommands\LoadCountriesFromXMLCommand.cs" />
+    <Compile Include="Commands\PdfPrintCommands\CreatePDF.cs" />
     <Compile Include="Data\Repository\AwardRepository.cs" />
     <Compile Include="Data\Repository\OrganisationRepository.cs" />
     <Compile Include="Data\SqLite\Contracts\IAwardRepository.cs" />

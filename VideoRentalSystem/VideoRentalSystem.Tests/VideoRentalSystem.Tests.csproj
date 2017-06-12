@@ -51,6 +51,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\AddCommands\AddFilmQuantityCommand_ExecuteShould.cs" />
+    <Compile Include="Commands\AddCommands\AddFilmToCustomerCommand_ConstructorShould.cs" />
+    <Compile Include="Commands\AddCommands\AddFilmToCustomerCommand_ExecuteShould.cs" />
+    <Compile Include="Commands\AddCommands\AddGenreToCustomerCommand_ConstructorShould.cs" />
+    <Compile Include="Commands\AddCommands\AddGenreToCustomerCommand_ExecuteShould.cs" />
     <Compile Include="Commands\AddCommands\AddStoreEmployeeCommand_ExecuteShould.cs" />
     <Compile Include="Commands\AddCommands\AddFilmStaffCommand_ExecuteShould.cs" />
     <Compile Include="Commands\AddCommands\AddStoreEmployeeCommand_ConstructorShould.cs" />
