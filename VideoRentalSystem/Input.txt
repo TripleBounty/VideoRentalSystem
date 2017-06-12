@@ -1,1 +1,40 @@
 CreateFilmAwardOrganisation;Academy Awards, USA
+CreateAward;Test;2000;Academy Awards, USA
+LoadCountriesFromXML;countries
+CountryDetails;33
+CreateTown;Sofia;33
+CreateAddress;Mladost-2;1915;1
+ListAllAddresses
+CreateManager;kr;krutz;50000
+LoadEmployeesFromJSON;..\..\Loaders\Employees.json
+CreateStore;VideoRentalSystem;1
+AddStoreEmployee;1;1
+AddStoreEmployee;1;2
+AddStoreEmployee;1;3
+StoreDetails;1
+RemoveStoreEmployee;1;3
+StoreDetails;1
+CreateFilm;Umirai Trudno;Realy good film :);1/1/1980;120
+CreateFilmGenre;action
+AddGenreToFilm;Umirai Trudno;action
+CreateFilmStaff;Brus;Ulias;03/19/1955;79;Actor
+CreateFilmStaff;Djeb;Stuard;5/5/1960;45;Writer
+ListAllFilmStaffs
+AddFilmStaff;1;1
+AddFilmStaff;1;2
+LoadReviewsFromJSON;..\..\Loaders\Reviews.json
+CreateCustomer;Krasimir;Tsvetanov;28/10/1986
+CreateReview;1;1;9;Good film
+ListAllCustomers
+CreateStorage;1;1;5;CD
+AddFilmQuantity;1;6
+StorageDetails;1
+RemoveFilmQuantity;1;10
+StorageDetails;1
+CreateTarif;Default;10;0.5
+CreateLoan;1;1;1
+EndLoan;1
+ListAllLoans
+CreateFilmAwardOrganisation;Zlaten Globus
+CreateAward;ZZ;1980;Zlaten Globus
+ListAllCountriesToPdf
