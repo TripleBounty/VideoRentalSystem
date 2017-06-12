@@ -23,5 +23,10 @@ namespace VideoRentalSystem.Models
         public virtual ICollection<Customer> Customers { get; set; }
 
         public bool IsDeleted { get; set; }
+
+        public override string ToString()
+        {
+            return Genre;
+        }
     }
 }

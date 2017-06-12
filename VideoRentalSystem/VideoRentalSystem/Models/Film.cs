@@ -63,7 +63,7 @@ namespace VideoRentalSystem.Models
             sb.AppendLine(string.Join(",", this.Categories));
             sb.Append("Genres: ");
             sb.AppendLine(string.Join(",", this.Genres));
-            sb.Append("Directors/Writers/Actors: ");
+            sb.AppendLine("Directors/Writers/Actors: ");
             sb.AppendLine(string.Join(",", this.FilmStaffs));
 
             return sb.ToString();
