@@ -351,6 +351,7 @@
     </None>
     <None Include="Loaders\Customers.json" />
     <None Include="Loaders\Employees.json" />
+    <None Include="Loaders\Genres.json" />
     <None Include="Loaders\Reviews.json" />
     <None Include="Loaders\xml\countries.xsd">
       <SubType>Designer</SubType>

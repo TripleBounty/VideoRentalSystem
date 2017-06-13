@@ -5,77 +5,77 @@
             "FirstName": "Telerikcho",
             "LastName": "Minkov",
           "BirthDate": "11/11/1992",
-          "Films": "1,1",
-          "Genres": "1,1",
-          "Reviews": "1,1"
+          "Films": "1",
+          "Genres": "5,6",
+          "Reviews": "1,2"
         },
         "emp1": { // Employee
             "FirstName": "Ochko",
             "LastName": "Strahilov",
             "BirthDate": "11/11/1991",
-          "Films": "1,1",
-          "Genres": "1,1",
-          "Reviews": "1,1"
+          "Films": "1",
+          "Genres": "4",
+          "Reviews": "3,4"
         },
         "emp2": { // Employee
             "FirstName": "Stanley",
             "LastName": "Minkov",
           "BirthDate": "11/11/1996",
-          "Films": "1,1",
-          "Genres": "1,1",
-          "Reviews": "1,1"
+          "Films": "1",
+          "Genres": "7",
+          "Reviews": "6"
         },
         "emp3": { // Employee
             "FirstName": "NaRizoto",
             "LastName": "Jakata",
             "BirthDate": "11/11/1999",
-          "Films": "1,1",
-          "Genres": "1,1",
-          "Reviews": "1,1"
+          "Films": "1",
+          "Genres": "7",
+          "Reviews": "6"
         },
         "emp4": { // Employee
             "FirstName": "Dimitros",
             "LastName": "Vamos",
             "BirthDate": "11/11/1995",
-          "Films": "1,1",
-          "Genres": "1,1",
-          "Reviews": "1,1"
+          "Films": "1",
+          "Genres": "4",
+          "Reviews": "3,4"
         }
         ,
         "emp5": { // Employee
             "FirstName": "Mitkos",
             "LastName": "Karastakis",
             "BirthDate": "11/11/1992",
-          "Films": "1,1",
-          "Genres": "1,1",
-          "Reviews": "1,1"
+          "Films": "1",
+          "Genres": "7",
+          "Reviews": "6"
         }
         ,
         "emp6": { // Employee
             "FirstName": "Pencho",
             "LastName": "Penchev",
             "BirthDate": "11/11/1991",
-          "Films": "1,1",
-          "Genres": "1,1",
-          "Reviews": "1,1"
+          "Films": "1",
+          "Genres": "4",
+          "Reviews": "3,4"
         }
         ,
         "emp7": { // Employee
             "FirstName": "Herher",
             "LastName": "Florman",
             "BirthDate": "11/11/1998",
-          "Films": "1,1",
-          "Genres": "1,1",
-          "Reviews": "1,1"
+          "Films": "1",
+          "Genres": "7",
+          "Reviews": "6"
         }
         ,
         "emp8": { // Employee
             "FirstName": "Tanya",
             "LastName": "Blader",
             "BirthDate": "01/11/1993",
-          "Films": "1,1",
-          "Genres": "1,1",
-          "Reviews": "1,1"
+          "Films": "1",
+          "Genres": "4",
+          "Reviews": "3,4"
         }
     }
 }

@@ -1,6 +1,7 @@
 CreateFilmAwardOrganisation;Academy Awards, USA
 CreateAward;Test;2000;Academy Awards, USA
 LoadCountriesFromXML;countries
+LoadReviewsFromJSON;..\..\Loaders\Genres.json
 CountryDetails;33
 CreateTown;Sofia;33
 CreateAddress;Mladost-2;1915;1
@@ -22,7 +23,7 @@ CreateFilmStaff;Djeb;Stuard;5/5/1960;45;Writer
 ListAllFilmStaffs
 AddFilmStaff;1;1
 AddFilmStaff;1;2
-LoadReviewsFromJSON;..\..\Loaders\Reviews.json
+LoadCustomersFromJSON;..\..\Loaders\Customers.json
 CreateCustomer;Krasimir;Tsvetanov;28/10/1986
 CreateReview;1;1;9;Good film
 ListAllCustomers
@@ -34,7 +35,10 @@ StorageDetails;1
 CreateTarif;Default;10;0.5
 CreateLoan;1;1;1
 EndLoan;1
+LoadReviewsFromJSON;..\..\Loaders\Reviews.json
 ListAllLoans
 CreateFilmAwardOrganisation;Zlaten Globus
 CreateAward;ZZ;1980;Zlaten Globus
 ListAllCountriesToPdf
+ListAllEmployeesToPdf
+ListAllCustomersToPdf
