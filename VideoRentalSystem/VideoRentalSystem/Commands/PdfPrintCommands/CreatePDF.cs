@@ -7,18 +7,6 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
 {
     public class CreatePDF
     {
-        private string fileName;
-        private string imgPath;
-        private string title;
-        private string header;
-        private string target;
-        private string author;
-        private string keyword;
-        private string headerRental;
-        private string listName;
-        private string subTitle;
-        private string warningMessage;
-
         //setuping fonts
         private iTextSharp.text.Font _largeFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 18, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLACK);
         private iTextSharp.text.Font _standardFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 14, iTextSharp.text.Font.NORMAL, iTextSharp.text.BaseColor.BLACK);
@@ -26,23 +14,12 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
         private iTextSharp.text.Font _smallFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 10, iTextSharp.text.Font.NORMAL, iTextSharp.text.BaseColor.BLACK);
         private iTextSharp.text.Font _linkFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 14, iTextSharp.text.Font.UNDERLINE, iTextSharp.text.BaseColor.BLUE);
 
-        public CreatePDF(string fileName, string imgPath, string title, string header, string target, string author, string keyword, string headerRental, string listName,
-                    string subTitle, string warningMessage)
+        public CreatePDF()
         {
-            this.fileName = fileName;
-            this.imgPath = imgPath;
-            this.title = title;
-            this.header = header;
-            this.target = target;
-            this.author = author;
-            this.keyword = keyword;
-            this.headerRental = headerRental;
-            this.listName = listName;
-            this.subTitle = subTitle;
-            this.warningMessage = warningMessage;
         }
 
-        public string CreatePdf(List<string> data)
+        public string CreatePdf(string fileName, string imgPath, string title, string header, string target, string author, string keyword, string headerRental, string listName,
+                    string subTitle, string warningMessage, List<string> data)
         {
             iTextSharp.text.Document doc = null;
 
@@ -73,8 +50,8 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
                 doc.Open();
 
                 // Add pages to the document
-                this.AddPageWithBasicFormatting(doc);
-                this.AddPageWithBulletList(doc, data);
+                this.AddPageWithBasicFormatting(doc, imgPath, subTitle);
+                this.AddPageWithBulletList(doc, data, listName, warningMessage);
 
                 // Add a final page
                 this.SetStandardPageSize(doc);  // Reset the margins and page size
@@ -107,7 +84,7 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
         /// various sizes.
         /// </summary>
         /// <param name="doc"></param>
-        private void AddPageWithBasicFormatting(iTextSharp.text.Document doc)
+        private void AddPageWithBasicFormatting(iTextSharp.text.Document doc, string imgPath, string subTitle)
         {
             // Write page content.  Note the use of fonts and alignment attributes.
             this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, _largeFont, new iTextSharp.text.Chunk("\n\n"));
@@ -137,7 +114,7 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
         /// Add a page that includes a bullet list.
         /// </summary>
         /// <param name="doc"></param>
-        private void AddPageWithBulletList(iTextSharp.text.Document doc, List<string> data)
+        private void AddPageWithBulletList(iTextSharp.text.Document doc, List<string> data, string listName, string warningMessage)
         {
             // Add a new page to the document
             doc.NewPage();

@@ -19,34 +19,37 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
         private readonly string warningMessage = "All employees can be fired with a two weeks prior notice. Especially Mitko1.";
 
         private readonly IDatabase db;
-        
-        public ListAllEmployeesToPdfCommand(IDatabase db)
+        private readonly CreatePDF pdf;
+
+        public ListAllEmployeesToPdfCommand(IDatabase db, CreatePDF pdf)
         {
             this.db = db;
+            this.pdf = pdf;
         }
 
-        public string Execute(IList<string> parameters)
+        public void AllObjectsToStringList(List<string> data)
         {
-            var employeesList = this.db.Employees.GetAll();
-            List<string> data = new List<string>();
-
-            if(employeesList.Count == 0)
+            var objectsList = this.db.Employees.GetAll();
+            if (objectsList.Count == 0)
             {
                 data.Add("No items");
             }
 
-            foreach (var item in employeesList)
+            foreach (var item in objectsList)
             {
                 data.Add(item.ToString());
             }
+        }
 
-            CreatePDF pdfCreator = new CreatePDF(fileName,imgPath, title, header, target, author, keyword, headerRental, listName,
-                    subTitle, warningMessage);
+        public string Execute(IList<string> parameters)
+        {
+            List<string> data = new List<string>();
+            AllObjectsToStringList(data);
 
-            pdfCreator.CreatePdf(data);
+            pdf.CreatePdf(fileName, imgPath, title, header, target, author, keyword, headerRental, listName,
+                    subTitle, warningMessage, data);
 
             return $"Pdf - {fileName} - with the list of all {target} was created in the project folder";
         }
-
     }
 }

@@ -29,6 +29,7 @@ namespace VideoRentalSystem.Builder
             var consoleWriter = this.Bind<IWriter>().To<ConsoleWriter>().InSingletonScope();
             var videoRentalContext = this.Bind<VideoRentalContext>().ToSelf().InSingletonScope();
 
+            var pdfCreator = this.Bind<CreatePDF>().ToSelf().InSingletonScope();
             var database = this.Bind<IDatabase>().To<Database>().InSingletonScope();
             this.Bind<IDatabasePostgre>().To<DatabasePostgre>().InSingletonScope();
             this.Bind<IDatabaseLite>().To<DatabaseLite>().InSingletonScope();

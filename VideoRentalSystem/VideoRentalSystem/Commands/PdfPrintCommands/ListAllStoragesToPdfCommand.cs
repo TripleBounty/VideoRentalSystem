@@ -23,17 +23,17 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
         private readonly string warningMessage = "All storages can be dropped with a two weeks prior notice. Especially Lamer once.";
 
         private readonly IDatabase db;
+        private readonly CreatePDF pdf;
 
-        public ListAllStoragesToPdfCommand(IDatabase db)
+        public ListAllStoragesToPdfCommand(IDatabase db, CreatePDF pdf)
         {
             this.db = db;
+            this.pdf = pdf;
         }
 
-        public string Execute(IList<string> parameters)
+        public void AllObjectsToStringList(List<string> data)
         {
             var objectsList = this.db.Storages.GetAll();
-            List<string> data = new List<string>();
-
             if (objectsList.Count == 0)
             {
                 data.Add("No items");
@@ -43,14 +43,17 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
             {
                 data.Add(item.ToString());
             }
+        }
 
-            CreatePDF pdfCreator = new CreatePDF(fileName, imgPath, title, header, target, author, keyword, headerRental, listName,
-                    subTitle, warningMessage);
+        public string Execute(IList<string> parameters)
+        {
+            List<string> data = new List<string>();
+            AllObjectsToStringList(data);
 
-            pdfCreator.CreatePdf(data);
+            pdf.CreatePdf(fileName, imgPath, title, header, target, author, keyword, headerRental, listName,
+                    subTitle, warningMessage, data);
 
             return $"Pdf - {fileName} - with the list of all {target} was created in the project folder";
         }
-
     }
 }
