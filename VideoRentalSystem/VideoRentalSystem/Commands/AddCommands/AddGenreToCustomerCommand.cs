@@ -42,7 +42,7 @@ namespace VideoRentalSystem.Commands.AddCommands
             var genre = this.db.FilmGenres.SingleOrDefault(x => x.Id == genreId);
             if (genre == null)
             {
-                return "Film not found";
+                return "Genre not found";
             }
 
             int customerId;

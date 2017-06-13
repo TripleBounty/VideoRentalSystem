@@ -20,7 +20,7 @@ namespace VideoRentalSystem.Tests.Commands.AddCommands
         {
             //Arrange
             var dbMock = new Mock<IDatabase>();
-            var sut = new  AddGenreToCustomerCommand(dbMock.Object);
+            var sut = new AddGenreToCustomerCommand(dbMock.Object);
             var expectedString = "Not valid number";
 
             //Act
@@ -37,7 +37,7 @@ namespace VideoRentalSystem.Tests.Commands.AddCommands
         {
             //Arrange
             var dbMock = new Mock<IDatabase>();
-            var sut = new  AddGenreToCustomerCommand(dbMock.Object);
+            var sut = new AddGenreToCustomerCommand(dbMock.Object);
             var expectedString = "parameters are empty";
 
             //Act
@@ -54,7 +54,7 @@ namespace VideoRentalSystem.Tests.Commands.AddCommands
         {
             //Arrange
             var dbMock = new Mock<IDatabase>();
-            var sut = new  AddGenreToCustomerCommand(dbMock.Object);
+            var sut = new AddGenreToCustomerCommand(dbMock.Object);
             var expectedString = "Fill in numeric value";
 
             //Act
@@ -75,7 +75,7 @@ namespace VideoRentalSystem.Tests.Commands.AddCommands
 
             dbMock.Setup(d => d.FilmGenres).Returns(genreRepositoryMock.Object);
 
-            var sut = new  AddGenreToCustomerCommand(dbMock.Object);
+            var sut = new AddGenreToCustomerCommand(dbMock.Object);
             var expectedString = "Genre not found";
 
             //Act
@@ -103,7 +103,7 @@ namespace VideoRentalSystem.Tests.Commands.AddCommands
 
             dbMock.Setup(d => d.Films).Returns(filmRepositoryMock.Object);
 
-            var sut = new  AddGenreToCustomerCommand(dbMock.Object);
+            var sut = new AddGenreToCustomerCommand(dbMock.Object);
             var expectedString = "Fill in numeric value";
 
             //Act
@@ -131,7 +131,7 @@ namespace VideoRentalSystem.Tests.Commands.AddCommands
 
             dbMock.Setup(d => d.Customers).Returns(CustomerRepositoryMock.Object);
 
-            var sut = new  AddGenreToCustomerCommand(dbMock.Object);
+            var sut = new AddGenreToCustomerCommand(dbMock.Object);
 
             var expectedString = "Customer not found";
 
@@ -171,7 +171,7 @@ namespace VideoRentalSystem.Tests.Commands.AddCommands
 
             dbMock.Setup(d => d.Customers).Returns(CustomerRepositoryMock.Object);
 
-            var sut = new  AddGenreToCustomerCommand(dbMock.Object);
+            var sut = new AddGenreToCustomerCommand(dbMock.Object);
 
             //Act
             sut.Execute(validParameters);
@@ -198,6 +198,7 @@ namespace VideoRentalSystem.Tests.Commands.AddCommands
             var CustomerRepositoryMock = new Mock<ICustomerRepository>();
 
             var CustomerMock = new Mock<Customer>();
+            CustomerMock.Setup(c => c.Genres).Returns(new List<FilmGenre>());
 
             var filmMockOld = new Mock<Film>();
             filmMockOld.Object.Id = 2;
@@ -209,7 +210,7 @@ namespace VideoRentalSystem.Tests.Commands.AddCommands
 
             dbMock.Setup(d => d.Customers).Returns(CustomerRepositoryMock.Object);
 
-            var sut = new  AddGenreToCustomerCommand(dbMock.Object);
+            var sut = new AddGenreToCustomerCommand(dbMock.Object);
             var expectedResult = "added to";
             //Act
             var result = sut.Execute(validParameters);
@@ -236,6 +237,7 @@ namespace VideoRentalSystem.Tests.Commands.AddCommands
             var CustomerRepositoryMock = new Mock<ICustomerRepository>();
 
             var CustomerMock = new Mock<Customer>();
+            CustomerMock.Setup(c => c.Genres).Returns(new List<FilmGenre>());
 
             var filmMockOld = new Mock<Film>();
             filmMockOld.Object.Id = 2;
@@ -247,7 +249,7 @@ namespace VideoRentalSystem.Tests.Commands.AddCommands
 
             dbMock.Setup(d => d.Customers).Returns(CustomerRepositoryMock.Object);
 
-            var sut = new  AddGenreToCustomerCommand(dbMock.Object);
+            var sut = new AddGenreToCustomerCommand(dbMock.Object);
 
             //Act
             sut.Execute(validParameters);
