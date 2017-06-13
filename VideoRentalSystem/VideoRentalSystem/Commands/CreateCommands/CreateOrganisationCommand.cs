@@ -39,8 +39,7 @@ namespace VideoRentalSystem.Commands.CreateCommands
                 this.db.Complete();
 
                 return name + " created";
-            }
-            
+            }           
         }
     }
 }

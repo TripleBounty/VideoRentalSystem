@@ -19,7 +19,7 @@ namespace VideoRentalSystem.Common
 
             var film = this.db.Films.SingleOrDefault(x => x.Name == filmName);
 
-            if(film == null)
+            if (film == null)
             {
                 return -1;
             }
@@ -28,7 +28,7 @@ namespace VideoRentalSystem.Common
                            where review.Film.Id == film.Id
                            select review).ToList();
 
-            foreach(var r in reviews)
+            foreach (var r in reviews)
             {
                 score += r.Rating;
             }

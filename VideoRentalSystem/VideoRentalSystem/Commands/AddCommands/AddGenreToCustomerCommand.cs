@@ -38,6 +38,7 @@ namespace VideoRentalSystem.Commands.AddCommands
             {
                 return "Not Valid Genre Id. Fill in numeric value!";
             }
+
             var genre = this.db.FilmGenres.SingleOrDefault(x => x.Id == genreId);
             if (genre == null)
             {
@@ -50,6 +51,7 @@ namespace VideoRentalSystem.Commands.AddCommands
             {
                 return "Not Valid Customer Id. Fill in numeric value!";
             }
+
             var customer = this.db.Customers.SingleOrDefault(x => x.Id == customerId);
             if (customer == null)
             {

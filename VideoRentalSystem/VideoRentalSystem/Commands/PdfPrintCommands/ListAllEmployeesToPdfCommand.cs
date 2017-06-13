@@ -19,7 +19,7 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
         private readonly string warningMessage = "All employees can be fired with a two weeks prior notice. Especially Mitko1.";
 
         private readonly IDatabase db;
-        
+
         public ListAllEmployeesToPdfCommand(IDatabase db)
         {
             this.db = db;
@@ -30,7 +30,7 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
             var employeesList = this.db.Employees.GetAll();
             List<string> data = new List<string>();
 
-            if(employeesList.Count == 0)
+            if (employeesList.Count == 0)
             {
                 data.Add("No items");
             }
@@ -40,13 +40,22 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
                 data.Add(item.ToString());
             }
 
-            CreatePDF pdfCreator = new CreatePDF(fileName,imgPath, title, header, target, author, keyword, headerRental, listName,
-                    subTitle, warningMessage);
+            CreatePDF pdfCreator = new CreatePDF(
+                                             this.fileName,
+                                             this.imgPath,
+                                             this.title,
+                                             this.header,
+                                             this.target,
+                                             this.author,
+                                             this.keyword,
+                                             this.headerRental,
+                                             this.listName,
+                                             this.subTitle,
+                                             this.warningMessage);
 
             pdfCreator.CreatePdf(data);
 
             return $"Pdf - {fileName} - with the list of all {target} was created in the project folder";
         }
-
     }
 }

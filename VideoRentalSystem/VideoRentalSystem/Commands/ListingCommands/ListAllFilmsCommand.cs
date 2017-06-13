@@ -31,7 +31,7 @@ namespace VideoRentalSystem.Commands.ListingCommands
 
             var sb = new StringBuilder();
 
-            foreach(var f in films)
+            foreach (var f in films)
             {
                 sb.Append(f.ToString());
                 sb.Append("Avg Score: ");

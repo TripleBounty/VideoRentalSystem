@@ -40,13 +40,22 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
                 data.Add(item.ToString());
             }
 
-            CreatePDF pdfCreator = new CreatePDF(fileName, imgPath, title, header, target, author, keyword, headerRental, listName,
-                    subTitle, warningMessage);
+            CreatePDF pdfCreator = new CreatePDF(
+                                               this.fileName,
+                                               this.imgPath,
+                                               this.title,
+                                               this.header,
+                                               this.target,
+                                               this.author,
+                                               this.keyword,
+                                               this.headerRental,
+                                               this.listName,
+                                               this.subTitle,
+                                               this.warningMessage);
 
             pdfCreator.CreatePdf(data);
 
             return $"Pdf - {fileName} - with the list of all {target} was created in the project folder";
         }
-
     }
 }

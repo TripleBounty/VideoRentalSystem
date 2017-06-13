@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using VideoRentalSystem.Commands.Contracts;
-using VideoRentalSystem.Data.Contracts;
 using VideoRentalSystem.Data.SqLite.Contracts;
 using VideoRentalSystem.Models.Factories;
 
@@ -10,13 +8,11 @@ namespace VideoRentalSystem.Commands.CreateCommands
     public class CreateAwardCommand : ICommand
     {
         private readonly IDatabaseLite lite;
-        //private readonly IDatabase db;
         private readonly IModelsFactory factory;
 
         public CreateAwardCommand(IDatabaseLite lite, IModelsFactory factory)
         {
             this.lite = lite;
-            //this.db = db;
             this.factory = factory;
         }
 

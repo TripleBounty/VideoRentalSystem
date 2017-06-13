@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using VideoRentalSystem.Models.Enum;
 
 namespace VideoRentalSystem.Models
 {
@@ -26,7 +25,7 @@ namespace VideoRentalSystem.Models
 
         public override string ToString()
         {
-            return Genre;
+            return this.Genre;
         }
     }
 }
