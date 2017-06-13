@@ -7,35 +7,31 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
 {
     public class CreatePDF
     {
-        //setuping fonts
-        private iTextSharp.text.Font _largeFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 18, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLACK);
-        private iTextSharp.text.Font _standardFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 14, iTextSharp.text.Font.NORMAL, iTextSharp.text.BaseColor.BLACK);
-        private iTextSharp.text.Font _standardLink = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 14, iTextSharp.text.Font.UNDERLINE, iTextSharp.text.BaseColor.BLUE);
-        private iTextSharp.text.Font _smallFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 10, iTextSharp.text.Font.NORMAL, iTextSharp.text.BaseColor.BLACK);
-        private iTextSharp.text.Font _linkFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 14, iTextSharp.text.Font.UNDERLINE, iTextSharp.text.BaseColor.BLUE);
+        private iTextSharp.text.Font largeFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 18, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLACK);
+        private iTextSharp.text.Font standardFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 14, iTextSharp.text.Font.NORMAL, iTextSharp.text.BaseColor.BLACK);
+        private iTextSharp.text.Font standardLink = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 14, iTextSharp.text.Font.UNDERLINE, iTextSharp.text.BaseColor.BLUE);
+        private iTextSharp.text.Font smallFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 10, iTextSharp.text.Font.NORMAL, iTextSharp.text.BaseColor.BLACK);
+        private iTextSharp.text.Font linkFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 14, iTextSharp.text.Font.UNDERLINE, iTextSharp.text.BaseColor.BLUE);
 
         public CreatePDF()
         {
         }
 
-        public string CreatePdf(string fileName, string imgPath, string title, string header, string target, string author, string keyword, string headerRental, string listName,
-                    string subTitle, string warningMessage, List<string> data)
+        public string CreatePdf(string fileName, string imgPath, string title, string header, string target, string author, string keyword, string headerRental, string listName, string subTitle, string warningMessage, List<string> data)
         {
             iTextSharp.text.Document doc = null;
 
             try
             {
-                // Initialize the PDF document
+                //// Initialize the PDF document
                 doc = new Document();
-                iTextSharp.text.pdf.PdfWriter writer = iTextSharp.text.pdf.PdfWriter.GetInstance(doc,
-                    new System.IO.FileStream(System.IO.Directory.GetCurrentDirectory() + fileName,
-                        System.IO.FileMode.Create));
+                iTextSharp.text.pdf.PdfWriter writer = iTextSharp.text.pdf.PdfWriter.GetInstance(doc, new System.IO.FileStream(System.IO.Directory.GetCurrentDirectory() + fileName, System.IO.FileMode.Create));
 
-                // Set the margins and page size
+                //// Set the margins and page size
                 this.SetStandardPageSize(doc);
 
-                // Add metadata to the document.  This information is visible when viewing the 
-                // document properities within Adobe Reader.
+                //// Add metadata to the document.  This information is visible when viewing the 
+                //// document properities within Adobe Reader.
                 doc.AddTitle(title);
                 doc.AddHeader("title", header);
                 doc.AddHeader("author", author);
@@ -43,21 +39,21 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
                 doc.AddKeywords(keyword);
                 doc.AddHeader("subject", headerRental);
 
-                // Add Xmp metadata to the document.
+                //// Add Xmp metadata to the document.
                 this.CreateXmpMetadata(writer);
 
-                // Open the document for writing content
+                //// Open the document for writing content
                 doc.Open();
 
-                // Add pages to the document
+                //// Add pages to the document
                 this.AddPageWithBasicFormatting(doc, imgPath, subTitle);
                 this.AddPageWithBulletList(doc, data, listName, warningMessage);
 
-                // Add a final page
+                //// Add a final page
                 this.SetStandardPageSize(doc);  // Reset the margins and page size
                 this.AddPageWithExternalLinks(doc);
 
-                // Add page labels to the document
+                //// Add page labels to the document
                 iTextSharp.text.pdf.PdfPageLabels pdfPageLabels = new iTextSharp.text.pdf.PdfPageLabels();
                 pdfPageLabels.AddPageLabel(1, iTextSharp.text.pdf.PdfPageLabels.EMPTY, "Basic Formatting");
                 pdfPageLabels.AddPageLabel(2, iTextSharp.text.pdf.PdfPageLabels.EMPTY, "Bullet List");
@@ -70,7 +66,7 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
             }
             finally
             {
-                // Clean up
+                //// Clean up
                 doc.Close();
                 doc = null;
             }
@@ -87,10 +83,10 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
         private void AddPageWithBasicFormatting(iTextSharp.text.Document doc, string imgPath, string subTitle)
         {
             // Write page content.  Note the use of fonts and alignment attributes.
-            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, _largeFont, new iTextSharp.text.Chunk("\n\n"));
-            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, _largeFont, new Chunk("VIDEO RENTAL SYSTEM\n\n"));
-            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, _standardFont, new Chunk("by Tripple Bounty"));
-            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, _largeFont, new Chunk("\n\n\n"));
+            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, this.largeFont, new iTextSharp.text.Chunk("\n\n"));
+            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, this.largeFont, new Chunk("VIDEO RENTAL SYSTEM\n\n"));
+            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, this.standardFont, new Chunk("by Tripple Bounty"));
+            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, this.largeFont, new Chunk("\n\n\n"));
 
             // Add a logo
             string appPath = System.IO.Directory.GetCurrentDirectory();
@@ -100,10 +96,14 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
             logoImage = null;
 
             // Write additional page content
-            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, _largeFont, new Chunk("\n\n\n"));
-            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, _largeFont, new Chunk(subTitle));
-            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, _largeFont, new Chunk("\n\n\n\n\n"));
-            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, _smallFont, new Chunk("Generated " +
+            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, this.largeFont, new Chunk("\n\n\n"));
+            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, this.largeFont, new Chunk(subTitle));
+            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, this.largeFont, new Chunk("\n\n\n\n\n"));
+            this.AddParagraph(
+                doc, 
+                iTextSharp.text.Element.ALIGN_CENTER, 
+                this.smallFont, 
+                new Chunk("Generated " +
                 TimeProvider.Current.UtcNow.Day.ToString() + " " +
                 System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(TimeProvider.Current.UtcNow.Month) + " " +
                 TimeProvider.Current.UtcNow.Year.ToString() + " " +
@@ -120,15 +120,12 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
             doc.NewPage();
 
             // The header at the top of the page is an anchor linked to by the table of contents.
-            iTextSharp.text.Anchor contentsAnchor = new iTextSharp.text.Anchor(listName, _largeFont);
+            iTextSharp.text.Anchor contentsAnchor = new iTextSharp.text.Anchor(listName, this.largeFont);
             contentsAnchor.Name = "research";
 
             // Add the header anchor to the page
-            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, _largeFont, contentsAnchor);
-
-
-            //string employeeList = string.Join("\n", employees);
-
+            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, this.largeFont, contentsAnchor);
+            
             // Create an unordered bullet list.  The 10f argument separates the bullet from the text by 10 points
             iTextSharp.text.List list = new iTextSharp.text.List(iTextSharp.text.List.UNORDERED, 10f);
             list.SetListSymbol("\u2022");   // Set the bullet symbol (without this a hypen starts each list item)
@@ -136,17 +133,17 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
 
             foreach (var emp in data)
             {
-                list.Add(new ListItem(emp, _standardFont));
+                list.Add(new ListItem(emp, this.standardFont));
             }
 
             doc.Add(list);  // Add the list to the page
 
             // Add some white space and another heading
-            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, _largeFont, new Chunk("\n\n\n"));
-            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, _largeFont, new Chunk("WARNING (!)\n\n"));
+            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, this.largeFont, new Chunk("\n\n\n"));
+            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, this.largeFont, new Chunk("WARNING (!)\n\n"));
 
             // Add some final text to the page
-            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_LEFT, _standardFont, new Chunk(warningMessage));
+            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_LEFT, this.standardFont, new Chunk(warningMessage));
         }
 
         /// <summary>
@@ -156,22 +153,22 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
         private void AddPageWithExternalLinks(Document doc)
         {
             // Generate external links to be embedded in the page
-            iTextSharp.text.Anchor bibliographyAnchor1 = new Anchor("Click here to explore our project in GitHub", _standardFont);
+            iTextSharp.text.Anchor bibliographyAnchor1 = new Anchor("Click here to explore our project in GitHub", this.standardFont);
             bibliographyAnchor1.Reference = "https://github.com/TripleBounty/VideoRentalSystem";
 
             // The header at the top of the page is an anchor linked to by the table of contents.
-            iTextSharp.text.Anchor contentsAnchor = new iTextSharp.text.Anchor("\n\n", _largeFont);
+            iTextSharp.text.Anchor contentsAnchor = new iTextSharp.text.Anchor("\n\n", this.largeFont);
             contentsAnchor.Name = "results";
 
             // Add a new page to the document
             doc.NewPage();
 
             // Add text to the page
-            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, _largeFont, contentsAnchor);
-            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, _largeFont, new Chunk("BIBLIOGRAPHY\n\n"));
+            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, this.largeFont, contentsAnchor);
+            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, this.largeFont, new Chunk("BIBLIOGRAPHY\n\n"));
 
             // Add the links to the page
-            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_LEFT, _standardFont, bibliographyAnchor1);
+            this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_LEFT, this.standardFont, bibliographyAnchor1);
         }
 
         /// <summary>
@@ -182,10 +179,9 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
         {
             // Set margins and page size for the document
             doc.SetMargins(50, 50, 50, 50);
-            // There are a huge number of possible page sizes, including such sizes as
+
             // EXECUTIVE, POSTCARD, LEDGER, LEGAL, LETTER_LANDSCAPE, and NOTE
-            doc.SetPageSize(new iTextSharp.text.Rectangle(iTextSharp.text.PageSize.LETTER.Width,
-                iTextSharp.text.PageSize.LETTER.Height));
+            doc.SetPageSize(new iTextSharp.text.Rectangle(iTextSharp.text.PageSize.LETTER.Width, iTextSharp.text.PageSize.LETTER.Height));
         }
 
         /// <summary>
@@ -248,13 +244,18 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
                 int bufcount = 0;
                 foreach (byte b in buffer)
                 {
-                    if (b == 0) { break; }
+                    if (b == 0)
+                    {
+                        break;
+                    }
+
                     bufcount++;
                 }
+
                 System.IO.MemoryStream ms2 = new System.IO.MemoryStream(buffer, 0, bufcount);
                 buffer = ms2.ToArray();
-                //---------------------------------------------------------------------------------
 
+                //---------------------------------------------------------------------------------
                 // Add all of the XMP metadata to the PDF doc that we're building
                 writer.XmpMetadata = buffer;
             }
