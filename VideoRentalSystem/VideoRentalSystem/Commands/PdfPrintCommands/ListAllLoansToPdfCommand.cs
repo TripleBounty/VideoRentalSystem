@@ -44,10 +44,21 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
         public string Execute(IList<string> parameters)
         {
             List<string> data = new List<string>();
-            AllObjectsToStringList(data);
+            this.AllObjectsToStringList(data);
 
-            pdf.CreatePdf(fileName, imgPath, title, header, target, author, keyword, headerRental, listName,
-                    subTitle, warningMessage, data);
+            this.pdf.CreatePdf(
+                this.fileName,
+                this.imgPath,
+                this.title,
+                this.header,
+                this.target,
+                this.author,
+                this.keyword,
+                this.headerRental,
+                this.listName,
+                this.subTitle,
+                this.warningMessage,
+                data);
 
             return $"Pdf - {fileName} - with the list of all {target} was created in the project folder";
         }

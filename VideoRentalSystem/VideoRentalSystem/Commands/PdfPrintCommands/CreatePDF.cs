@@ -153,7 +153,7 @@ namespace VideoRentalSystem.Commands.PdfPrintCommands
         private void AddPageWithExternalLinks(Document doc)
         {
             // Generate external links to be embedded in the page
-            iTextSharp.text.Anchor bibliographyAnchor1 = new Anchor("Click here to explore our project in GitHub", this.standardFont);
+            iTextSharp.text.Anchor bibliographyAnchor1 = new Anchor("Click here to explore our project in GitHub", this.linkFont);
             bibliographyAnchor1.Reference = "https://github.com/TripleBounty/VideoRentalSystem";
 
             // The header at the top of the page is an anchor linked to by the table of contents.
