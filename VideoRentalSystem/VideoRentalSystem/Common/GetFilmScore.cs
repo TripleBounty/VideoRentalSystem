@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using VideoRentalSystem.Common.Contracts;
 using VideoRentalSystem.Data.Contracts;
 
@@ -10,6 +11,11 @@ namespace VideoRentalSystem.Common
 
         public GetFilmScore(IDatabase db)
         {
+            if (db == null)
+            {
+                throw new ArgumentNullException("Null database value is passed for GetFilmScore parameter");
+            }
+
             this.db = db;
         }
 
@@ -17,11 +23,16 @@ namespace VideoRentalSystem.Common
         {
             double score = 0;
 
+            if (filmName == string.Empty || filmName == null)
+            {
+                throw new ArgumentNullException("film not provided");
+            }
+
             var film = this.db.Films.SingleOrDefault(x => x.Name == filmName);
 
             if (film == null)
             {
-                return -1;
+                throw new ArgumentException("Film was not found");
             }
 
             var reviews = (from review in this.db.Reviews.GetAll()
