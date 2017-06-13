@@ -78,6 +78,8 @@
     <Compile Include="Commands\RemoveCommands\RemoveFilmQuantityCommand_ExecuteShould.cs" />
     <Compile Include="Common\CommandProcessor_ProcessCommandSould.cs" />
     <Compile Include="Common\CommandProcessor_ConstructorSould.cs" />
+    <Compile Include="Common\GetFilmScore_ConstructorShould.cs" />
+    <Compile Include="Common\GetFilmScore_GetAvgScoreShould.cs" />
     <Compile Include="Core\Engine_ConstructorShould.cs" />
     <Compile Include="Core\Engine_StartShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

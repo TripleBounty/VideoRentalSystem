@@ -8,13 +8,11 @@ namespace VideoRentalSystem.Commands.UpdateCommands
 {
     public class UpdateFilmCommand : ICommand
     {
-        private IDatabase db;
-        private IModelsFactory factory;
+        private readonly IDatabase db;
 
-        public UpdateFilmCommand(IDatabase db, IModelsFactory factory)
+        public UpdateFilmCommand(IDatabase db)
         {
             this.db = db;
-            this.factory = factory;
         }
 
         public string Execute(IList<string> parameters)

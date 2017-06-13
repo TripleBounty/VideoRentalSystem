@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using VideoRentalSystem.Commands.Contracts;
-using VideoRentalSystem.Data.Contracts;
 using VideoRentalSystem.Data.SqLite.Contracts;
 using VideoRentalSystem.Models.Factories;
 
@@ -9,12 +7,12 @@ namespace VideoRentalSystem.Commands.CreateCommands
 {
     public class CreateAwardCommand : ICommand
     {
-        private readonly IDatabaseLite db;
+        private readonly IDatabaseLite lite;
         private readonly IModelsFactory factory;
 
-        public CreateAwardCommand(IDatabaseLite db, IModelsFactory factory)
+        public CreateAwardCommand(IDatabaseLite lite, IModelsFactory factory)
         {
-            this.db = db;
+            this.lite = lite;
             this.factory = factory;
         }
 
@@ -26,10 +24,18 @@ namespace VideoRentalSystem.Commands.CreateCommands
             }
 
             var name = parameters[0];
+
+            var search = this.lite.Awards.SingleOrDefault(x => x.Name == name);
+
+            if (search != null)
+            {
+                return "award allready exists";
+            }
+
             var year = parameters[1];
             var orgName = parameters[2];
 
-            var organisation = this.db.Organisations.SingleOrDefault(x => x.Name == orgName);
+            var organisation = this.lite.Organisations.SingleOrDefault(x => x.Name == orgName);
 
             if (organisation == null)
             {
@@ -39,8 +45,8 @@ namespace VideoRentalSystem.Commands.CreateCommands
             var award = this.factory.CreateAward(name, year, organisation.Id);
             award.Organisation = organisation;
 
-            this.db.Awards.Add(award);
-            this.db.Complete();
+            this.lite.Awards.Add(award);
+            this.lite.Complete();
 
             return "Award created";
         }

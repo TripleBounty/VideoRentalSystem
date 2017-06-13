@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using VideoRentalSystem.Models.Enum;
 
 namespace VideoRentalSystem.Models
 {
@@ -23,5 +22,10 @@ namespace VideoRentalSystem.Models
         public virtual ICollection<Customer> Customers { get; set; }
 
         public bool IsDeleted { get; set; }
+
+        public override string ToString()
+        {
+            return this.Genre;
+        }
     }
 }

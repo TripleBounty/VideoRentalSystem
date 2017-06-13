@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
 using VideoRentalSystem.Data.SqLite.Contracts;
+using VideoRentalSystem.Models;
 
 namespace VideoRentalSystem.Data.Repository
 {

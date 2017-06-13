@@ -39,6 +39,8 @@ namespace VideoRentalSystem.Builder
             var commandFactory = this.Bind<ICommandsFactory>().To<CommandsFactory>().InSingletonScope();
             var commandProcesor = this.Bind<IProcessor>().To<CommandProcessor>().InSingletonScope();
 
+            this.Bind<IGetFilmScore>().To<GetFilmScore>();
+
             /////Bind commands
             this.Bind<ICommand>().To<CreateCountryCommand>().Named("CreateCountry");
             this.Bind<ICommand>().To<CountryDetailsCommand>().Named("CountryDetails");
@@ -99,14 +101,15 @@ namespace VideoRentalSystem.Builder
             ////this.Bind<ICommand>().To<AddAwardFilmCommand>().Named("AddAwardToFilm");
             this.Bind<ICommand>().To<AddGenreFilmCommand>().Named("AddGenreToFilm");
             this.Bind<ICommand>().To<AddRatingFilmCommand>().Named("AddRatingToFilm");
-            ////this.Bind<ICommand>().To<UpdateAwardCommand>().Named("UpdateAward");
+            this.Bind<ICommand>().To<UpdateAwardCommand>().Named("UpdateAward");
             this.Bind<ICommand>().To<UpdateFilmCommand>().Named("UpdateFilm");
             this.Bind<ICommand>().To<UpdateFilmGenreCommand>().Named("UpdateGenre");
             this.Bind<ICommand>().To<UpdateFilmRatingCommand>().Named("UpdateRating");
-            ////this.Bind<ICommand>().To<RemoveAwardCommand>().Named("RemoveAward");
+            this.Bind<ICommand>().To<RemoveAwardCommand>().Named("RemoveAward");
+            this.Bind<ICommand>().To<RemoveOrganisationCommand>().Named("RemoveFilmAwardOrganisation");
             this.Bind<ICommand>().To<RemoveFilmRatingCommand>().Named("RemoveRating");
             this.Bind<ICommand>().To<RemoveFilmGenreCommand>().Named("RemoveGenre");
-            ////this.Bind<ICommand>().To<RemoveFilmCommand>().Named("RemoveFilm");
+            this.Bind<ICommand>().To<RemoveFilmCommand>().Named("RemoveFilm");
 
             this.Bind<ICommand>().To<CreateStoreCommand>().Named("CreateStore");
             this.Bind<ICommand>().To<ListAllStoresCommand>().Named("ListAllStores");

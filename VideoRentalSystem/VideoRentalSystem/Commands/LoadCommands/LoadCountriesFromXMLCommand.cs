@@ -48,7 +48,7 @@ namespace VideoRentalSystem.Commands.CreateCommands
 
             XmlReaderSettings xmlSettings = new XmlReaderSettings();
             xmlSettings.Schemas = new System.Xml.Schema.XmlSchemaSet();
-            xmlSettings.Schemas.Add("", "../../Loaders/xml/countries.xsd");
+            xmlSettings.Schemas.Add(string.Empty, "../../Loaders/xml/countries.xsd");
             xmlSettings.ValidationType = ValidationType.Schema;
 
             using (XmlReader reader = XmlReader.Create(fileLoc, xmlSettings))
